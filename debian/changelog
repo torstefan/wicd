@@ -1,4 +1,4 @@
-wicd (1.5.6-1) unstable; urgency=low
+wicd (1.5.7-1) UNRELEASED; urgency=low
 
   * New upstream release (Closes: #503737)
   * debian/control:
@@ -18,7 +18,7 @@ wicd (1.5.6-1) unstable; urgency=low
   * debian/rules:
     - get-orig-source target to ease upstream tarball fetch
 
- -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 01:27:17 +0100
+ -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 01:29:32 +0100
 
 wicd (1.5.2-1) unstable; urgency=low
 
