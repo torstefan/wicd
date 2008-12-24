@@ -19,8 +19,10 @@ wicd (1.5.7-1) UNRELEASED; urgency=low
   * debian/rules:
     - get-orig-source target to ease upstream tarball fetch
     - ensure right permissions are set in install target
+    - using dh7-style rules
+  * debian/README.source added
 
- -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 01:43:06 +0100
+ -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 10:59:07 +0100
 
 wicd (1.5.2-1) unstable; urgency=low
 
