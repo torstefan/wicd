@@ -15,8 +15,10 @@ wicd (1.5.6-1) unstable; urgency=low
       /var/log/wicd/wicd.log to root:adm (Closes: #503749)
     - 03-fix_lintian_manpage_warning.patch added, gives a more
       meaningful whatis entry
+  * debian/rules:
+    - get-orig-source target to ease upstream tarball fetch
 
- -- David Paleino <d.paleino@gmail.com>  Tue, 23 Dec 2008 16:35:32 +0100
+ -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 01:27:17 +0100
 
 wicd (1.5.2-1) unstable; urgency=low
 
