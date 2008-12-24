@@ -1,7 +1,8 @@
 Source: wicd
 Section: net
 Priority: optional
-Maintainer: David Paleino <d.paleino@gmail.com>
+Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
+Uploaders: David Paleino <d.paleino@gmail.com>
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7), python, quilt
 Build-Depends-Indep: python-support
