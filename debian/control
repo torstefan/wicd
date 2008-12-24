@@ -3,7 +3,6 @@ Section: net
 Priority: optional
 Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
 Uploaders: David Paleino <d.paleino@gmail.com>
-DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7), python, quilt
 Build-Depends-Indep: python-support
 Standards-Version: 3.8.0

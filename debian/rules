@@ -19,8 +19,8 @@ clean: unpatch
 	python setup.py clean
 	dh clean --after dh_auto_clean
 	
-	find . \( -name "*.pyc" -o -name "*.pyo" \) -exec rm -rf {} \;
-	find ./init/ \( -name "wicd" -o -name "rc.wicd" \) -exec rm -rf {} \;
+	find . \( -name "*.pyc" -o -name "*.pyo" \) -delete
+	find ./init/ \( -name "wicd" -o -name "rc.wicd" \) -delete
 	-rm -rf build/
 
 	dh_clean wpath.py install.log os wicd/wpath.py \

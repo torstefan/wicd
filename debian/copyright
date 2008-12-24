@@ -10,16 +10,16 @@ Files: debian/*
 Copyright: © 2008, David Paleino <d.paleino@gmail.com>
 License: GPL-2+
 
-Files: in/init\=gentoo\=wicd.in
+Files: in/init=gentoo=wicd.in
  init/gentoo/wicd
 Copyright: © 1996-2006, Gentoo Foundation
 License: GPL-2
 
-Files: in/man\=wicd.8.in
- in/man\=wicd-manager-settings.conf.5.in
- in/man\=wicd-wired-settings.conf.5.in
- in/man\=wicd-wireless-settings.conf.5.in
-Copyright: © Robby Workman <rworkman@slackware.com>
+Files: in/man=wicd.8.in
+ in/man=wicd-manager-settings.conf.5.in
+ in/man=wicd-wired-settings.conf.5.in
+ in/man=wicd-wireless-settings.conf.5.in
+Copyright: © 2008, Robby Workman <rworkman@slackware.com>
 License: GPL-2+
 
 Files: wicd/networking.py
@@ -43,7 +43,7 @@ License: GPL-2+
 License: GPL-2+
 License: GPL-2
  On Debian systems the full text of the GNU General Public License can 
- be found in the `/usr/share/common-licenses/GPL' file.
+ be found in the `/usr/share/common-licenses/GPL-2' file.
 
 License: BSD-1
  # Copyright 2008 Robby Workman <rworkman@slackware.com>, Northport, AL, USA

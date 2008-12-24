@@ -4,7 +4,6 @@ wicd (1.5.7-1) UNRELEASED; urgency=low
   * debian/control:
     - added some runtime dependencies (not really, but used by most 
       users) to wicd (Closes: #503739)
-    - DM-Upload-Allowed flag set
     - added Conflicts: network-manager (Closes: #509051)
     - added Suggests on pm-utils, since we now also have those
       functionalities
@@ -22,8 +21,13 @@ wicd (1.5.7-1) UNRELEASED; urgency=low
     - ensure right permissions are set in install target
     - using dh7-style rules
   * debian/README.source added
+  * debian/docs removed
+  * debian/copyright fixed:
+    - added copyright year to in/man*
+    - removed useless escaping of '=' in filenames
+    - fixed pointer to GPL-2
 
- -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 11:05:09 +0100
+ -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 17:37:13 +0100
 
 wicd (1.5.2-1) unstable; urgency=low
 
