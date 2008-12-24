@@ -1,4 +1,4 @@
-wicd (1.5.7-1) unstable; urgency=low
+wicd (1.5.7-1) UNRELEASED; urgency=low
 
   * New upstream release (Closes: #503737)
   * debian/control:
