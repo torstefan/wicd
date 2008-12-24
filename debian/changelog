@@ -8,6 +8,7 @@ wicd (1.5.7-1) UNRELEASED; urgency=low
     - added Conflicts: network-manager (Closes: #509051)
     - added Suggests on pm-utils, since we now also have those
       functionalities
+    - update Vcs-* fields to reflect injection into PAPT
   * debian/postrm added:
     - removes runtime-generated files (Closes: #503747)
   * debian/patches:
@@ -19,7 +20,7 @@ wicd (1.5.7-1) UNRELEASED; urgency=low
     - get-orig-source target to ease upstream tarball fetch
     - ensure right permissions are set in install target
 
- -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 01:40:55 +0100
+ -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 01:42:19 +0100
 
 wicd (1.5.2-1) unstable; urgency=low
 
