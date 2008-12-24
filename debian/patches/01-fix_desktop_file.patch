@@ -1,0 +1,19 @@
+Remove deprecated Encoding line.
+--- wicd.orig/other/wicd-tray.desktop
++++ wicd/other/wicd-tray.desktop
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Categories=Application;Network;
+-Encoding=UTF-8
+ Exec=wicd-client
+ GenericName=Network Manager
+ Icon=wicd-client
+--- wicd.orig/other/wicd.desktop
++++ wicd/other/wicd.desktop
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Categories=Application;Network;
+-Encoding=UTF-8
+ Exec=wicd-client --no-tray
+ GenericName=Network Manager
+ Icon=wicd-client

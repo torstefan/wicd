@@ -1,0 +1,11 @@
+Fix whatis entry
+--- trunk.orig/man/wicd-client.1
++++ trunk/man/wicd-client.1
+@@ -1,6 +1,6 @@
+ .TH WICD-CLIENT "1" "September 2008" "wicd-client " "User Commands"
+ .SH NAME
+-wicd-client \- manual page for wicd-client 
++wicd-client \- frontend to the WICD daemon
+ .SH DESCRIPTION
+ wireless (and wired) connection daemon front\-end.
+ .SS "Arguments:"

@@ -1,0 +1,13 @@
+wicd for Debian
+---------------
+
+If Wicd fails to connect after you install it, make sure that the only 
+entry in your /etc/network/interfaces file is
+
+    auto lo
+    iface lo inet loopback
+
+You can change the contents of this file by using various editors, but
+remember: you have to be root!
+
+ -- David Paleino <d.paleino@gmail.com>  Thu, 11 Sep 2008 18:46:23 +0200

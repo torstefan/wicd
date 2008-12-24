@@ -1,0 +1,25 @@
+wicd (1.5.6-1) unstable; urgency=low
+
+  * New upstream release (Closes: #503737)
+  * debian/control:
+    - added some runtime dependencies (not really, but used by most 
+      users) to wicd (Closes: #503739)
+    - DM-Upload-Allowed flag set
+    - added Conflicts: network-manager (Closes: #509051)
+    - added Suggests on pm-utils, since we now also have those
+      functionalities
+  * debian/postrm added:
+    - removes runtime-generated files (Closes: #503747)
+  * debian/patches:
+    - 02-fix_logfile_perms.patch added, sets permissions of 
+      /var/log/wicd/wicd.log to root:adm (Closes: #503749)
+    - 03-fix_lintian_manpage_warning.patch added, gives a more
+      meaningful whatis entry
+
+ -- David Paleino <d.paleino@gmail.com>  Tue, 23 Dec 2008 16:35:32 +0100
+
+wicd (1.5.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #465870)
+
+ -- David Paleino <d.paleino@gmail.com>  Sun, 14 Sep 2008 11:43:47 +0200

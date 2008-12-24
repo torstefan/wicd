@@ -1,0 +1,40 @@
+Source: wicd
+Section: net
+Priority: optional
+Maintainer: David Paleino <d.paleino@gmail.com>
+DM-Upload-Allowed: yes
+Build-Depends: debhelper (>= 7), python, quilt
+Build-Depends-Indep: python-support
+Standards-Version: 3.8.0
+Homepage: http://wicd.sourceforge.net/
+Vcs-Browser: http://svn.debian.org/wsvn/collab-maint/deb-maint/wicd/trunk/?rev=0&sc=0
+Vcs-Svn: svn://svn.debian.org/svn/collab-maint/deb-maint/wicd/trunk
+
+Package: wicd
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends},
+ python-gtk2,
+ python-dbus,
+ wpasupplicant,
+ python-glade2,
+ wireless-tools,
+ dhcpd | dhcp3-client | pump,
+ net-tools | ethtool,
+ net-tools | iproute
+Suggests: pm-utils
+Conflicts: network-manager
+Description: wired and wireless network manager
+ Wicd is an open source wired and wireless network manager which
+ aims to provide a simple interface to connect to networks with a 
+ wide variety of settings.
+ .
+ Some of Wicd's features include:
+ .
+  1. No GNOME dependencies (although it does require GTK+), so it is
+     easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+  2. Ability to connect to wired and wireless networks
+  3. Profiles for each wireless network and wired network
+  4. Many encryption schemes, some of which include WEP/WPA/WPA2 (and
+     you can add your own)
+  5. Remains compatible with wireless-tools
+  6. Tray icon showing network activity and signal strength 
