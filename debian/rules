@@ -25,7 +25,7 @@ clean: unpatch
 
 	dh_clean wpath.py install.log os wicd/wpath.py \
 		man/*.8 man/*.5 scripts/* other/*.sh \
-		other/postinst
+		other/postinst other/55wicd
 
 install: build
 	dh install --before dh_auto_install
