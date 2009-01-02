@@ -1,0 +1,20 @@
+--- a/in/scripts=wicd-client.in
++++ b/in/scripts=wicd-client.in
+@@ -1,2 +1,6 @@
+ #!/bin/bash
+-exec python -O %LIB%wicd-client.py $@
++
++PYTHONPATH=%LIB%
++export PYTHONPATH
++
++exec python %LIB%wicd-client.py $@
+--- a/in/scripts=wicd.in
++++ b/in/scripts=wicd.in
+@@ -1,3 +1,6 @@
+ #!/bin/bash
+ 
+-exec python -O %LIB%wicd-daemon.py $@
++PYTHONPATH=%LIB%
++export PYTHONPATH
++
++exec python %LIB%wicd-daemon.py $@

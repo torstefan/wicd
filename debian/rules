@@ -9,7 +9,7 @@ include /usr/share/quilt/quilt.make
 build: build-stamp
 build-stamp: $(QUILT_STAMPFN)
 	dh build --before dh_auto_configure
-	python setup.py configure --no-install-docs --lib=/usr/share/wicd
+	python setup.py configure --no-install-docs --lib=/usr/share/wicd --share=/usr/share/wicd
 	python setup.py build
 	dh build --after dh_auto_build
 	touch $@
@@ -29,7 +29,7 @@ clean: unpatch
 
 install: build
 	dh install --before dh_auto_install
-	python setup.py install --root=$(CURDIR)/debian/wicd
+	python setup.py install --root=$(CURDIR)/debian/wicd --install-lib=/usr/share/wicd 
 	install -m644 debian/wicd-client.xpm \
 		$(CURDIR)/debian/wicd/usr/share/pixmaps/wicd.xpm
 	
@@ -37,7 +37,6 @@ install: build
 	find $(CURDIR)/debian/wicd/etc/wicd/ -type f -exec chmod 644 {} \;
 	find $(CURDIR)/debian/wicd \( -name "*.glade" -o -name "*.conf" -o -name "*.desktop" \) -exec chmod 644 {} \;
 	find $(CURDIR)/debian/wicd/usr/share/wicd/ -type f -exec chmod 644 {} \;
-	rm -rf $(CURDIR)/debian/wicd/usr/lib/python*/
 	dh install --after dh_auto_install --before dh_installinit
 	dh_pysupport -i
 	dh_installinit -i

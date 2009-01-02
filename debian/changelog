@@ -4,18 +4,13 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
   * debian/rules:
     - passing --lib to configure, moving files in /usr/share/wicd
       (Closes: #510461)
-    - removing /usr/lib/python2.5/*, they're private modules
-      (Closes: #510462)
     - also removing other/55wicd in clean target
     - chmod -x files in /usr/share/wicd/
     - binary-arch target emptied, not using it
   * debian/{pre,post}rm removed:
     - fix double-{starting,stopping} of wicd, which stopped the daemon 
       from really starting
-  * debian/patches/:
-    - 00-fix_installation.patch added, some files were not being
-      installed (Closes: #510308)
-  * debian/default added:
+  * debian/default added.
   * debian/init updated:
     - allow to disable the daemon in /etc/default/wicd.
 
@@ -23,6 +18,12 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
   * debian/rules:
     - run dh_pysupport before dh_installinit, so Python modules will be
       compiled before the daemon starts (Closes: #510457)
+    - call setup.py configure and install with appropriate options, so the
+      modules are installed in the private module directory properly
+      (Closes: #510462).
+  * debian/patches/04-fix-scripts.patch:
+    - set PYTHONPATH while executing script so Python will find them
+      in the private directory (Closes: #510308)
 
  -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 15:01:28 +0100
 
