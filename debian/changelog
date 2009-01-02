@@ -5,8 +5,11 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
       (Closes: #510461)
     - removing /usr/lib/python2.5/*, they're private modules
       (Closes: #510462)
+  * debian/{pre,post}rm removed:
+    - fix double-{starting,stopping} of wicd, which stopped the daemon 
+      from really starting (Closes: #510457)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 11:55:57 +0100
+ -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 11:57:01 +0100
 
 wicd (1.5.7-1) unstable; urgency=low
 
