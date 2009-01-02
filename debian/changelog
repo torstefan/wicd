@@ -3,8 +3,10 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
   * debian/rules:
     - passing --lib to configure, moving files in /usr/share/wicd
       (Closes: #510461)
+    - removing /usr/lib/python2.5/*, they're private modules
+      (Closes: #510462)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 11:45:06 +0100
+ -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 11:55:57 +0100
 
 wicd (1.5.7-1) unstable; urgency=low
 
