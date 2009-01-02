@@ -9,8 +9,11 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
   * debian/{pre,post}rm removed:
     - fix double-{starting,stopping} of wicd, which stopped the daemon 
       from really starting (Closes: #510457)
+  * debian/patches/:
+    - 00-fix_installation.patch added, some files were not being
+      installed
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 11:58:42 +0100
+ -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 12:46:58 +0100
 
 wicd (1.5.7-1) unstable; urgency=low
 

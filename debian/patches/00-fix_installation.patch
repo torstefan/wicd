@@ -1,0 +1,12 @@
+Broken upstream installation, missing files added.
+--- wicd-1.5.7.orig/setup.py
++++ wicd-1.5.7/setup.py
+@@ -302,7 +302,7 @@
+     (wpath.bin, ['scripts/wicd-client', ]), 
+     (wpath.sbin,  ['scripts/wicd', ]),  
+     (wpath.share, ['data/wicd.glade', ]),
+-    (wpath.lib, ['wicd/wicd-client.py', 'wicd/monitor.py', 'wicd/wicd-daemon.py', 'wicd/configscript.py', 'wicd/suspend.py', 'wicd/autoconnect.py']), #'wicd/wicd-gui.py', 
++    (wpath.lib, ['wicd/wicd-client.py', 'wicd/monitor.py', 'wicd/wicd-daemon.py', 'wicd/configscript.py', 'wicd/suspend.py', 'wicd/autoconnect.py', 'wicd/gui.py', 'wicd/misc.py', 'wicd/networking.py', 'wpath.py']),
+     (wpath.autostart, ['other/wicd-tray.desktop', ]),
+     ]
+     piddir = os.path.dirname(wpath.pidfile)
