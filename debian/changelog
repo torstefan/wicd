@@ -6,9 +6,11 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
       (Closes: #510461)
     - also removing other/55wicd in clean target
     - binary-arch target emptied, not using it
-  * debian/{pre,post}rm removed:
-    - fix double-{starting,stopping} of wicd, which stopped the daemon 
-      from really starting
+  * debian/prerm removed:
+  * debian/postinst updated:
+  * debian/postrm updated:
+    - fix double-{starting,stopping} of wicd
+    - forcibly reload dbus upon installation or removal
   * debian/default added.
   * debian/init updated:
     - allow to disable the daemon in /etc/default/wicd.
@@ -24,7 +26,7 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
     - set PYTHONPATH while executing script so Python will find them
       in the private directory (Closes: #510308)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 15:01:28 +0100
+ -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 18:11:34 +0100
 
 wicd (1.5.7-1) unstable; urgency=low
 
