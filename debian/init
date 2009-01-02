@@ -103,12 +103,16 @@ do_reload() {
 
 case "$1" in
   start)
-	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
-	do_start
-	case "$?" in
-		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
-	esac
+	if [ "$START_DAEMON" != no ]; then
+	    [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
+	    do_start
+        case "$?" in
+            0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+            2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+        esac
+	else
+	    log_warning_msg "Not starting wicd daemon. Please edit /etc/default/wicd first."
+	fi
 	;;
   stop)
 	[ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
@@ -136,12 +140,16 @@ case "$1" in
 	do_stop
 	case "$?" in
 	  0|1)
-		do_start
-		case "$?" in
-			0) log_end_msg 0 ;;
-			1) log_end_msg 1 ;; # Old process is still running
-			*) log_end_msg 1 ;; # Failed to start
-		esac
+	    if [ "$START_DAEMON" != no ]; then
+	        do_start
+            case "$?" in
+                0) log_end_msg 0 ;;
+                1) log_end_msg 1 ;; # Old process is still running
+                *) log_end_msg 1 ;; # Failed to start
+            esac
+        else
+            log_warning_msg "Not starting wicd daemon. Please edit /etc/default/wicd first."
+        fi
 		;;
 	  *)
 	  	# Failed to stop

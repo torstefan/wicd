@@ -40,9 +40,7 @@ install: build
 	rm -rf $(CURDIR)/debian/wicd/usr/lib/python*/
 	dh install --after dh_auto_install
 
-binary-arch: build install
-	dh binary-arch
-
+binary-arch:
 binary-indep: build install
 	dh binary-indep
 
