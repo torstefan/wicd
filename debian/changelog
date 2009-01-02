@@ -5,7 +5,6 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
     - passing --lib to configure, moving files in /usr/share/wicd
       (Closes: #510461)
     - also removing other/55wicd in clean target
-    - chmod -x files in /usr/share/wicd/
     - binary-arch target emptied, not using it
   * debian/{pre,post}rm removed:
     - fix double-{starting,stopping} of wicd, which stopped the daemon 
