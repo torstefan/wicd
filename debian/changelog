@@ -1,4 +1,4 @@
-wicd (1.5.7-2) UNRELEASED; urgency=high
+wicd (1.5.7-2) unstable; urgency=high
 
   [ David Paleino ]
   * debian/rules:
@@ -26,7 +26,7 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
     - set PYTHONPATH while executing script so Python will find them
       in the private directory (Closes: #510308)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 18:11:34 +0100
+ -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 18:20:29 +0100
 
 wicd (1.5.7-1) unstable; urgency=low
 
