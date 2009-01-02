@@ -1,4 +1,4 @@
-wicd (1.5.7-2) UNRELEASED; urgency=high
+wicd (1.5.7-2) unstable; urgency=high
 
   * debian/rules:
     - passing --lib to configure, moving files in /usr/share/wicd
@@ -12,9 +12,9 @@ wicd (1.5.7-2) UNRELEASED; urgency=high
       from really starting (Closes: #510457)
   * debian/patches/:
     - 00-fix_installation.patch added, some files were not being
-      installed
+      installed (Closes: #510308)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 12:47:55 +0100
+ -- David Paleino <d.paleino@gmail.com>  Fri, 02 Jan 2009 12:54:53 +0100
 
 wicd (1.5.7-1) unstable; urgency=low
 
