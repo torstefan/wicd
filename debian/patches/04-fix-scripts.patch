@@ -1,3 +1,4 @@
+Make the scripts find their libraries
 --- a/in/scripts=wicd-client.in
 +++ b/in/scripts=wicd-client.in
 @@ -1,2 +1,6 @@
