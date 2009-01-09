@@ -1,6 +1,8 @@
 wicd (1.5.8-1) UNRELEASED; urgency=low
 
   * New upstream release
+  * debian/control:
+    - DM-Upload-Allowed set (ACKed by Bernd Zeimetz)
 
  -- David Paleino <d.paleino@gmail.com>  Fri, 09 Jan 2009 10:38:49 +0100
 
