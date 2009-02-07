@@ -1,8 +1,10 @@
 wicd (1.5.9-1) UNRELEASED; urgency=low
 
-  * New upstream release
+  * New upstream release:
+    - Fixed security hole in DBus configuration file
+    - Fixed the TTLS template
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 07 Feb 2009 23:11:09 +0100
+ -- David Paleino <d.paleino@gmail.com>  Sat, 07 Feb 2009 23:21:18 +0100
 
 wicd (1.5.8-1) unstable; urgency=low
 
