@@ -1,5 +1,9 @@
 wicd (1.5.9-1) UNRELEASED; urgency=low
 
+  DO NOT UPLOAD.
+  I will write a Debian.news informing users that they should add
+  themselves to the "netdev" group.
+  
   * New upstream release:
     - Fixed security hole in DBus configuration file
     - Fixed the TTLS template
