@@ -21,7 +21,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  wireless-tools,
  dhcpd | dhcp3-client | pump,
  net-tools | ethtool,
- net-tools | iproute
+ net-tools | iproute,
+ adduser
 Suggests: pm-utils
 Conflicts: network-manager
 Description: wired and wireless network manager

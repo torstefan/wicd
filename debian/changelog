@@ -3,8 +3,14 @@ wicd (1.5.9-1) UNRELEASED; urgency=low
   * New upstream release:
     - Fixed security hole in DBus configuration file
     - Fixed the TTLS template
+  * debian/patches/:
+    - 05-fix_DBus_policy.patch added, allow only members of the netdev
+      group to configure wicd (Closes: #512160)
+  * debian/postinst: add group "netdev", which will be the only one able
+    to configure wicd
+  * debian/control: added dependency on adduser
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 07 Feb 2009 23:21:18 +0100
+ -- David Paleino <d.paleino@gmail.com>  Sun, 08 Feb 2009 00:34:18 +0100
 
 wicd (1.5.8-1) unstable; urgency=low
 

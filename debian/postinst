@@ -20,6 +20,9 @@ set -e
 
 case "$1" in
     configure)
+    	if [ ! $(getent group netdev) ]; then
+    		adduser --quiet --system netdev
+    	fi
         if [ -x "/etc/init.d/dbus" ]; then
             if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
                 invoke-rc.d dbus force-reload || exit $?

@@ -1,4 +1,5 @@
-04-fix-scripts.patch
 01-fix_desktop_file.patch
 02-fix_logfile_perms.patch
 03-fix_lintian_manpage_warning.patch
+04-fix-scripts.patch
+05-fix_DBus_policy.patch
