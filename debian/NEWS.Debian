@@ -1,0 +1,20 @@
+wicd (1.5.9-1) unstable; urgency=low
+
+    From this version onwards, the wicd-client GUI will be available 
+    only to users of the `netdev' group, so as to avoid users not 
+    enabled by root to change network configuration.
+    This means that, if you do *not* belong to that group, wicd-client 
+    will refuse to start with a permission denied error by DBus, as soon 
+    as installation of 1.5.9-1 succeeds.
+
+    To add yourself to the netdev group, ask your administrator to 
+    do, or do as root yourself:
+
+      # usermod --append --groups netdev <yourusername>
+
+    (obviously replace "<yourusername>" with the user you want to grant 
+    access to wicd-client to). This could also be done with graphical 
+    user management programs.
+
+ -- David Paleino <d.paleino@gmail.com>  Sun, 08 Feb 2009 13:43:54 +0100
+                 
