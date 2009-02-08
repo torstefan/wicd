@@ -1,3 +1,10 @@
+wicd (1.5.9-2) UNRELEASED; urgency=low
+
+  * debian/patches/:
+    - 06-add_LC_MESSAGES_parsing.patch added (Closes: #514553)
+
+ -- David Paleino <d.paleino@gmail.com>  Sun, 08 Feb 2009 21:44:04 +0100
+
 wicd (1.5.9-1) unstable; urgency=low
 
   * New upstream release:
