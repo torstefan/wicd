@@ -1,0 +1,33 @@
+Only allow users of group "netdev" to configure wicd.
+See #512160
+---
+ other/wicd.conf |    7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+--- wicd-1.5.9.orig/other/wicd.conf
++++ wicd-1.5.9/other/wicd.conf
+@@ -12,20 +12,21 @@
+                 <allow send_destination="org.wicd.daemon"/>
+                 <allow send_interface="org.wicd.daemon"/>
+         </policy>
++<!--
+         <policy context="default">
+                 <deny own="org.wicd.daemon"/>
+                 <allow send_destination="org.wicd.daemon"/>
+                 <allow send_interface="org.wicd.daemon"/>
+         </policy>
++-->
+ 
+         <!-- If you would like to restrict usage of the wicd daemon to some
+              subset of users, then you can do something like this after 
+              commenting the above <policy context="default"> block
+-        <policy group="somegroup">
++        -->
++        <policy group="netdev">
+                 <deny own="org.wicd.daemon"/>
+                 <allow send_destination="org.wicd.daemon"/>
+                 <allow send_interface="org.wicd.daemon"/>
+         </policy>
+-        -->
+-
+ </busconfig>
