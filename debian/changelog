@@ -1,4 +1,4 @@
-wicd (1.5.9-1) UNRELEASED; urgency=low
+wicd (1.5.9-1) unstable; urgency=low
 
   * New upstream release:
     - Fixed security hole in DBus configuration file
@@ -12,7 +12,7 @@ wicd (1.5.9-1) UNRELEASED; urgency=low
   * debian/NEWS.Debian and debian/docs added, explain the new permissions
     policy
 
- -- David Paleino <d.paleino@gmail.com>  Sun, 08 Feb 2009 14:51:34 +0100
+ -- David Paleino <d.paleino@gmail.com>  Sun, 08 Feb 2009 14:57:56 +0100
 
 wicd (1.5.8-1) unstable; urgency=low
 
