@@ -16,5 +16,9 @@ wicd (1.5.9-1) unstable; urgency=low
     access to wicd-client to). This could also be done with graphical 
     user management programs.
 
+    Also, be sure to reload the D-Bus daemon with:
+
+      # /etc/init.d/dbus reload
+
  -- David Paleino <d.paleino@gmail.com>  Sun, 08 Feb 2009 13:43:54 +0100
                  
