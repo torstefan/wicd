@@ -7,8 +7,10 @@ wicd (1.5.9-2) UNRELEASED; urgency=low
     - add information on how to reload DBus
   * debian/NEWS.Debian updated:
     - add information on how to reload DBus
+  * debian/control:
+    - switched Maintainer/Uploaders fields
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 09 Feb 2009 09:40:22 +0100
+ -- David Paleino <d.paleino@gmail.com>  Mon, 09 Feb 2009 13:44:23 +0100
 
 wicd (1.5.9-1) unstable; urgency=low
 
