@@ -9,8 +9,10 @@ wicd (1.5.9-2) UNRELEASED; urgency=low
     - add information on how to reload DBus
   * debian/control:
     - switched Maintainer/Uploaders fields
+  * debian/postrm:
+    - only force-reload DBus if it's already started (Closes: #514778)
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 09 Feb 2009 13:44:23 +0100
+ -- David Paleino <d.paleino@gmail.com>  Thu, 12 Feb 2009 22:52:24 +0100
 
 wicd (1.5.9-1) unstable; urgency=low
 
