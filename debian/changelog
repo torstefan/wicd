@@ -12,8 +12,11 @@ wicd (1.5.9-2) UNRELEASED; urgency=low
   * debian/postrm:
     - only force-reload DBus if it's already started (Closes: #514778)
   * debian/postinst: add a netdev *group*, not *user* (Closes: #514597)
+  * debian/po/fr.po added, debian/rules updated:
+    - workaround to fix broken translation in broken i18n system
+      (Closes: #516459)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 21 Feb 2009 09:37:06 +0100
+ -- David Paleino <d.paleino@gmail.com>  Sat, 21 Feb 2009 11:57:08 +0100
 
 wicd (1.5.9-1) unstable; urgency=low
 

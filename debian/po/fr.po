@@ -1,0 +1,325 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:28+0000\n"
+"PO-Revision-Date: 2009-02-06 15:28+0000\n"
+"Language-Team: Français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Activer le partage de connexion internet"
+
+msgid "Add a new profile"
+msgstr "Ajouter un nouveau profile"
+
+msgid "Add a new wired profile"
+msgstr "Ajouter un nouveau profile cablé"
+
+msgid "Advanced Settings"
+msgstr "Paramètres avancés"
+
+msgid "Always show wired interface"
+msgstr "Toujours afficher l'interface filaire"
+
+msgid "Always switch to wired connection when available"
+msgstr "Toujours sélectionner un connection cablé quand cela est possible"
+
+msgid "Anonymous Identity"
+msgstr "Identification anonyme"
+
+msgid "Authentication"
+msgstr "Authentification"
+
+msgid "Automatic (recommended)"
+msgstr "Automatique (recommandé)"
+
+msgid "Automatic Reconnection"
+msgstr "Reconnection automatique"
+
+msgid "Automatically connect to this network"
+msgstr "Se connecter automatiquement à ce réseau"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Reconnexion automatique en cas de perte de connexion"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr ""
+"Wicd ne peux pas se connecter au démon, il essaye de le démarer "
+"automatiquement..."
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Choose from the networks below:"
+msgstr "Choisir parmi les réseaux suivants :"
+
+msgid "Configuring wireless interface..."
+msgstr "Configuration de l'interface sans fil..."
+
+msgid "Connect"
+msgstr "Se connecter"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Connecté à $A à $B (IP : $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Connecté au réseau filaire (IP : $A)"
+
+msgid "Connecting to daemon..."
+msgstr "Connection au démon"
+
+msgid "Connecting..."
+msgstr "En cours de connexion..."
+
+msgid "Connection Cancelled"
+msgstr "Connexion annulée"
+
+msgid "Connection Failed: Bad password"
+msgstr "Échec de la connexion: mot de passe erroné"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Échec de la connexion: impossible d'obtenir une adresse IP"
+
+msgid "Create Ad-Hoc network"
+msgstr "Créer un réseau Ad-Hoc"
+
+msgid "DHCP Client"
+msgstr "Client DHCP"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Debugging"
+msgstr "Déverminage"
+
+msgid "Done connecting..."
+msgstr "Connexion activée..."
+
+msgid "Enable debug mode"
+msgstr "Activer le mode débogage"
+
+msgid "External Programs"
+msgstr "Programmes externes"
+
+msgid "Flushing the routing table..."
+msgstr "Purge de la table de routage..."
+
+msgid "Gateway"
+msgstr "Passerelle"
+
+msgid "General Settings"
+msgstr "Paramètres généraux"
+
+msgid "Generating PSK..."
+msgstr "Génération de la clé PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Génération du fichier de configuration WPA..."
+
+msgid "Global DNS servers"
+msgstr "Server de nom (DNS) global"
+
+msgid "Hidden Network"
+msgstr "Réseau caché"
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID du réseau caché"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Identification"
+
+msgid "Key"
+msgstr "Clé"
+
+msgid "Netmask"
+msgstr "Masque de réseau"
+
+msgid "Network Interfaces"
+msgstr "Interface réseau"
+
+msgid "No wireless networks found."
+msgstr "Aucun réseau sans fil détecté."
+
+msgid "Not connected"
+msgstr "Non connecté"
+
+msgid "Obtaining IP address..."
+msgstr "Obtention de l'adresse IP..."
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Path to PAC File"
+msgstr "Chemin vers le fichier PAC"
+
+msgid "Preferences"
+msgstr "Préférences"
+
+msgid "Press ESC to cancel"
+msgstr "Appuyer sur Échap pour annuler"
+
+msgid "Press F8 or Q to quit."
+msgstr "Appuyer sur F8 ou Q pour quitter"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Demander le profil à utiliser lors de la connexion filaire automatique"
+
+msgid "Putting interface down..."
+msgstr "Arrêt de l'interface..."
+
+msgid "Putting interface up..."
+msgstr "Démarrage de l'interface..."
+
+msgid "Removing old connection..."
+msgstr "Suppression de l'ancienne connexion..."
+
+msgid "Rename wired profile"
+msgstr "Remomer un profile cablé"
+
+msgid "Required encryption information is missing."
+msgstr "Une information de chiffrement requise est manquante."
+
+msgid "Resetting IP address..."
+msgstr "Reconfiguration de l'adresse IP..."
+
+msgid "Route Table Flushing"
+msgstr "Purge de la table de routage"
+
+msgid "Run disconnect script"
+msgstr "Exécuter le script de déconnexion"
+
+msgid "Run script after connect"
+msgstr "Exécuter le script après la connexion"
+
+msgid "Run script before connect"
+msgstr "Exécuter le script avant la connexion"
+
+msgid "Scripts"
+msgstr "Scripts"
+
+msgid "Secured"
+msgstr "Sécurisé"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Choisir un réseau ESSID caché"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Sélectionner ou créer un profil filaire pour s'y connecter"
+
+msgid "Setting broadcast address..."
+msgstr "Configuration de l'adresse de diffusion..."
+
+msgid "Setting static DNS servers..."
+msgstr "Configuration des serveurs DNS statiques..."
+
+msgid "Setting static IP addresses..."
+msgstr "Configuration des adresses IP statiques..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Ne plus montrer les alertes de connexion automatique pour l'instant"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Ce réseau nécessite l'activation du chiffrement."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Pour se connecter à un réseau filaire, vous devez créer un profil réseau. "
+"Pour créer un profil réseau, tapez un nom le décrivant, et appuyez sur "
+"Ajouter."
+
+msgid "Unsecured"
+msgstr "Non sécurisé"
+
+msgid "Use Encryption"
+msgstr "Utiliser le chiffrement"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Utiliser une clé de cryptage (WEP uniquement)"
+
+msgid "Use Static DNS"
+msgstr "Utiliser un serveur DNS statique"
+
+msgid "Use Static IPs"
+msgstr "Utiliser des adresses IP statiques"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Utiliser dBm pour mesurer la puissance du signal"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Utiliser le profil par défaut lors de la connexion filaire automatique"
+
+msgid "Use global DNS servers"
+msgstr "Utiliser les serveurs DNS globaux"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Utiliser le dernier profil lors de la connexion filaire automatique"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Utiliser ces paramètres pour tous les réseaux partageant cet ESSID"
+
+msgid "Username"
+msgstr "Identifiant"
+
+msgid "WPA Supplicant Driver"
+msgstr "Pilote WPA Supplicant"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd doit accéder aux cartes réseau de votre ordinateur."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Paramètres de connexion filaire automatique:"
+
+msgid "Wired Interface"
+msgstr "Interface filaire"
+
+msgid "Wired Link Detection"
+msgstr "Détection du lien filaire"
+
+msgid "Wired Network"
+msgstr "Réseau filaire"
+
+msgid "Wired connection detected"
+msgstr "Connexion filaire détectée"
+
+msgid "Wireless Interface"
+msgstr "Interface sans fil"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Interrupteur de coupure du module sans fil actif"
