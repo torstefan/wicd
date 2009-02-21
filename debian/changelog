@@ -11,8 +11,9 @@ wicd (1.5.9-2) UNRELEASED; urgency=low
     - switched Maintainer/Uploaders fields
   * debian/postrm:
     - only force-reload DBus if it's already started (Closes: #514778)
+  * debian/postinst: add a netdev *group*, not *user* (Closes: #514597)
 
- -- David Paleino <d.paleino@gmail.com>  Thu, 12 Feb 2009 22:52:24 +0100
+ -- David Paleino <d.paleino@gmail.com>  Sat, 21 Feb 2009 09:37:06 +0100
 
 wicd (1.5.9-1) unstable; urgency=low
 
