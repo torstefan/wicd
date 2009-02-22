@@ -1,0 +1,149 @@
+Author: David Paleino <d.paleino@gmail.com>
+Support Debian's resolvconf mechanism.
+---
+ wicd/networking.py |   11 ++++++-----
+ wicd/wnettools.py  |   53 +++++++++++++++++++++++++++++++++++++++++++++++------
+ 2 files changed, 53 insertions(+), 11 deletions(-)
+
+--- wicd-1.5.9.orig/wicd/wnettools.py
++++ wicd-1.5.9/wicd/wnettools.py
+@@ -81,26 +81,59 @@ def _sanitize_string_strict(string):
+     else:
+         return string
+ 
+-def SetDNS(dns1=None, dns2=None, dns3=None):
++def SetDNS(dns1=None, dns2=None, dns3=None, iface=None):
+     """ Set the DNS of the system to the specified DNS servers.
+ 
+-    Opens up resolv.conf and writes in the nameservers.
++    Uses /sbin/resolvconf if present, otherwise opens up resolv.conf and
++    writes in the nameservers.
+ 
+     Keyword arguments:
+     dns1 -- IP address of DNS server 1
+     dns2 -- IP address of DNS server 2
+     dns3 -- IP address of DNS server 3
++    iface -- Interface to apply DNS addresses to (resolvconf)
+ 
+     """
+-    resolv = open("/etc/resolv.conf","w")
++
++    resolvconf = False
++    paths = ['/sbin/', '/usr/sbin/', '/bin/', '/usr/bin/',
++             '/usr/local/sbin/', '/usr/local/bin/']
++    for path in paths:
++        if os.access("%s%s" % (path, "resolvconf"), os.F_OK):
++            resolvconf = True
++            break
++
++    if resolvconf:
++        dnslist = ""
++    else:
++        resolv = open("/etc/resolv.conf","w")
++
+     for dns in [dns1, dns2, dns3]:
+         if dns:
+             if misc.IsValidIP(dns):
+                 print 'Setting DNS : ' + dns
+-                resolv.write('nameserver ' + dns + '\n')
++                if resolvconf:
++                    dnslist += dns + ' '
++                else:
++                    resolv.write('nameserver ' + dns + '\n')
+             else:
+-                print 'DNS IP is not a valid IP address, not writing to resolv.conf'
+-    resolv.close()
++                if resolvconf:
++                    print 'DNS IP is not a valid IP address, not adding to resolvconf call'
++                else:
++                    print 'DNS IP is not a valid IP address, not writing to resolv.conf'
++
++    if resolvconf:
++        if not dnslist:
++            print 'No valid DNS has been provided for resolvconf'
++        elif not iface:
++            print 'No valid interface has been provided for resolvconf, please file a bug'
++        else:
++            print dnslist
++            from subprocess import Popen, PIPE, STDOUT
++            p = Popen(['resolvconf', '-a', iface.iface], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
++            resolvconf_stdout = p.communicate(input='nameserver '+dnslist.strip())[0]
++    else:
++        resolv.close()
+ 
+ def GetDefaultGateway():
+     """ Attempts to determine the default gateway by parsing route -n. """
+@@ -175,6 +208,7 @@ class Interface(object):
+         self.MIITOOL_FOUND = False
+         self.ETHTOOL_FOUND = False
+         self.IP_FOUND = False
++        self.RESOLVCONF = False
+         self.flush_tool = flush_tool
+         self.link_detect = None
+         self.Check()
+@@ -314,6 +348,11 @@ class Interface(object):
+             self.ip_cmd = None
+             self.IP_FOUND = False
+ 
++        if self._find_client_path("resolvconf"):
++            self.RESOLVCONF = True
++        else:
++            self.RESOLVCONF = False
++
+     def Up(self):
+         """ Bring the network interface up.
+ 
+@@ -338,6 +377,8 @@ class Interface(object):
+         cmd = 'ifconfig ' + self.iface + ' down'
+         if self.verbose: print cmd
+         misc.Run(cmd)
++        if self.RESOLVCONF:
++            misc.Run(["/sbin/resolvconf", "-d", self.iface])
+         return True
+ 
+     def SetAddress(self, ip=None, netmask=None, broadcast=None):
+--- wicd-1.5.9.orig/wicd/networking.py
++++ wicd-1.5.9/wicd/networking.py
+@@ -290,7 +290,7 @@ class ConnectThread(threading.Thread):
+                 self.abort_connection(dhcp_status)
+                 return
+             
+-    def set_dns_addresses(self):
++    def set_dns_addresses(self, iface):
+         """ Set the DNS address(es).
+ 
+         If static DNS servers or global DNS servers are specified, set them.
+@@ -300,12 +300,13 @@ class ConnectThread(threading.Thread):
+         if self.network.get('use_global_dns'):
+             wnettools.SetDNS(misc.Noneify(self.global_dns_1),
+                              misc.Noneify(self.global_dns_2), 
+-                             misc.Noneify(self.global_dns_3))
++                             misc.Noneify(self.global_dns_3),
++                             iface)
+         elif self.network.get('use_static_dns') and (self.network.get('dns1') or
+                     self.network.get('dns2') or self.network.get('dns3')):
+             self.SetStatus('setting_static_dns')
+             wnettools.SetDNS(self.network.get('dns1'), self.network.get('dns2'),
+-                             self.network.get('dns3'))
++                             self.network.get('dns3'), iface)
+ 
+     def connect_aborted(self, reason):
+         """ Sets the thread status to aborted in a thread-safe way.
+@@ -707,7 +708,7 @@ class WirelessConnectThread(ConnectThrea
+         self.set_broadcast_address(wiface)
+         self.abort_if_needed()
+         self.set_ip_address(wiface)
+-        self.set_dns_addresses()
++        self.set_dns_addresses(wiface)
+         
+         # Run post-connection script.
+         self.abort_if_needed()
+@@ -924,7 +925,7 @@ class WiredConnectThread(ConnectThread):
+         self.set_broadcast_address(liface)
+         self.abort_if_needed()
+         self.set_ip_address(liface)
+-        self.set_dns_addresses()
++        self.set_dns_addresses(liface)
+         self.abort_if_needed()
+         
+         # Run post-connection script.

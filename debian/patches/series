@@ -4,3 +4,4 @@
 04-fix-scripts.patch
 05-fix_DBus_policy.patch
 06-add_LC_MESSAGES_parsing.patch
+07-add_resolvconf_support.patch

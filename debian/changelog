@@ -2,6 +2,7 @@ wicd (1.5.9-2) UNRELEASED; urgency=low
 
   * debian/patches/:
     - 06-add_LC_MESSAGES_parsing.patch added (Closes: #514553)
+    - 07-add_resolvconf_support.patch added (Closes: #514597)
   * debian/README.Debian updated:
     - add information on how to add users to netdev.
     - add information on how to reload DBus
@@ -16,7 +17,7 @@ wicd (1.5.9-2) UNRELEASED; urgency=low
     - workaround to fix broken translation in broken i18n system
       (Closes: #516459)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 21 Feb 2009 11:57:08 +0100
+ -- David Paleino <d.paleino@gmail.com>  Sun, 22 Feb 2009 20:36:24 +0100
 
 wicd (1.5.9-1) unstable; urgency=low
 
