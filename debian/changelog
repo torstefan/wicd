@@ -1,9 +1,9 @@
-wicd (1.5.9-3) UNRELEASED; urgency=low
+wicd (1.5.9-3) unstable; urgency=low
 
   * The brown-paper-bag bug release
   * debian/postinst:
     - only force-reload DBus if it's already started (Closes: #517395),
-      I had already fixed this in debian/postrm (see -2).
+      I had already fixed this in debian/postrm before (see -2).
   * debian/patches/:
     - 06-add_LC_MESSAGES_parsing.patch updated: workaround "bug" in
       python's locale.getdefaultlocale(), putting LC_CTYPE at a higher
