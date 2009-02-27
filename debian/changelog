@@ -1,3 +1,12 @@
+wicd (1.5.9-3) UNRELEASED; urgency=low
+
+  * The brown-paper-bag bug release
+  * debian/postinst:
+    - only force-reload DBus if it's already started (Closes: #517395),
+      I had already fixed this in debian/postrm (see -2).
+
+ -- David Paleino <d.paleino@gmail.com>  Fri, 27 Feb 2009 20:52:04 +0100
+
 wicd (1.5.9-2) unstable; urgency=low
 
   * debian/patches/:

@@ -24,10 +24,15 @@ case "$1" in
     		addgroup --quiet --system netdev
     	fi
         if [ -x "/etc/init.d/dbus" ]; then
-            if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
-                invoke-rc.d dbus force-reload || exit $?
-            else
-                /etc/init.d/dbus force-reload || exit $?
+            # Check if DBus has started, otherwise this fails on
+            # certain environments (chroots, for example). See
+            # #514778 #517395
+            if [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+                if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+                    invoke-rc.d dbus force-reload || exit $?
+                else
+                    /etc/init.d/dbus force-reload || exit $?
+                fi
             fi
         fi
     ;;
