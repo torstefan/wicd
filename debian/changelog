@@ -4,8 +4,13 @@ wicd (1.5.9-3) UNRELEASED; urgency=low
   * debian/postinst:
     - only force-reload DBus if it's already started (Closes: #517395),
       I had already fixed this in debian/postrm (see -2).
+  * debian/patches/:
+    - 06-add_LC_MESSAGES_parsing.patch updated: workaround "bug" in
+      python's locale.getdefaultlocale(), putting LC_CTYPE at a higher
+      priority than LC_MESSAGES (well, not considering it at all)
+      (really closes: #514553)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 27 Feb 2009 20:52:04 +0100
+ -- David Paleino <d.paleino@gmail.com>  Fri, 27 Feb 2009 22:10:05 +0100
 
 wicd (1.5.9-2) unstable; urgency=low
 
