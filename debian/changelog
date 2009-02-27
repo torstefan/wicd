@@ -21,7 +21,7 @@ wicd (1.5.9-2) unstable; urgency=low
     - swapped Maintainer/Uploaders fields
   * debian/postrm:
     - only force-reload DBus if it's already started (Closes: #514778)
-  * debian/postinst: add a netdev *group*, not *user* (Closes: #514597)
+  * debian/postinst: add a netdev *group*, not *user* (Closes: #516317)
   * debian/po/fr.po added, debian/rules updated:
     - workaround to fix broken translation in broken i18n system
       (Closes: #516459)
