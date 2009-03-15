@@ -5,8 +5,13 @@ wicd (1.5.9-5) unstable; urgency=low
       (Closes: #519433)
     - 09-fix_wire_plugging_detection.patch, added, thanks to Giuseppe 
       Martino (Closes: #503738)
+  * debian/control:
+    - Standards-Version bumped to 3.8.1:
+      + debian/init fixed, /var/run/wicd created on init.d script 
+      start, since /var/run may be mounted as a temporary filesystem 
+      (§9.3.2)
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 16 Mar 2009 00:17:20 +0100
+ -- David Paleino <d.paleino@gmail.com>  Mon, 16 Mar 2009 00:51:43 +0100
 
 wicd (1.5.9-4) unstable; urgency=low
 

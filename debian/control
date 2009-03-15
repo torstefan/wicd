@@ -6,7 +6,7 @@ Uploaders: Python Applications Packaging Team <python-apps-team@lists.alioth.deb
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7), python, quilt
 Build-Depends-Indep: python-support
-Standards-Version: 3.8.0
+Standards-Version: 3.8.1
 Homepage: http://wicd.sourceforge.net/
 Vcs-Browser: http://svn.debian.org/viewsvn/python-apps/packages/wicd/trunk/
 Vcs-Svn: svn://svn.debian.org/svn/python-apps/packages/wicd/trunk
