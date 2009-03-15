@@ -3,8 +3,10 @@ wicd (1.5.9-5) UNRELEASED; urgency=low
   * debian/patches/:
     - 08-fix_GetIP.patch added, thanks to Giuseppe Martino
       (Closes: #519433)
+    - 09-fix_wire_plugging_detection.patch, added, thanks to Giuseppe 
+      Martino (Closes: #503738)
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 16 Mar 2009 00:03:30 +0100
+ -- David Paleino <d.paleino@gmail.com>  Mon, 16 Mar 2009 00:10:41 +0100
 
 wicd (1.5.9-4) unstable; urgency=low
 

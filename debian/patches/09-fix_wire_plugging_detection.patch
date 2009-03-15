@@ -1,0 +1,55 @@
+Fix detection of wire plugging/unplugging.
+Patch provided by Giuseppe Martino <denever@truelite.it>, thank you!
+---
+ wicd/monitor.py     |   11 +++++++++++
+ wicd/wicd-daemon.py |   12 ++++++++++++
+ 2 files changed, 23 insertions(+)
+
+--- wicd-1.5.9.orig/wicd/monitor.py
++++ wicd-1.5.9/wicd/monitor.py
+@@ -64,6 +64,7 @@ class ConnectionStatus(object):
+         self.last_reconnect_time = time.time()
+         self.signal_changed = False
+         self.iwconfig = ""
++        self.plugged = False
+ 
+     def check_for_wired_connection(self, wired_ip):
+         """ Checks for an active wired connection.
+@@ -160,6 +161,16 @@ class ConnectionStatus(object):
+                 
+                 # Check for wired.
+                 wired_ip = wired.GetWiredIP()
++
++                if wired_ip is None:
++                    if not self.plugged and wired.CheckPluggedIn():
++                        daemon.SendWirePluggedSignal()
++                        self.plugged = True
++
++                if self.plugged and not wired.CheckPluggedIn():
++                    daemon.SendWireUnpluggedSignal()
++                    self.plugged = False
++
+                 wired_found = self.check_for_wired_connection(wired_ip)
+                 if wired_found:
+                     self.update_state(misc.WIRED, wired_ip=wired_ip)
+--- wicd-1.5.9.orig/wicd/wicd-daemon.py
++++ wicd-1.5.9/wicd/wicd-daemon.py
+@@ -669,6 +669,18 @@ class ConnectionWizard(dbus.service.Obje
+ 
+     @dbus.service.method('org.wicd.daemon')
+     @dbus.service.signal(dbus_interface='org.wicd.daemon', signature='')
++    def SendWirePluggedSignal(self):
++        """ Emits a signal announcing wire is plugged. """
++        pass
++
++    @dbus.service.method('org.wicd.daemon')
++    @dbus.service.signal(dbus_interface='org.wicd.daemon', signature='')
++    def SendWireUnpluggedSignal(self):
++        """ Emits a signal announcing wire is unplugged. """
++        pass
++
++    @dbus.service.method('org.wicd.daemon')
++    @dbus.service.signal(dbus_interface='org.wicd.daemon', signature='')
+     def SendStartScanSignal(self):
+         """ Emits a signal announcing a scan has started. """
+         pass
