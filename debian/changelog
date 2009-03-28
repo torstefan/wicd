@@ -1,3 +1,11 @@
+wicd (1.5.9-6) UNRELEASED; urgency=low
+
+  * debian/patches/10-add_udhcpc_support.patch added, thanks to "madmo"
+    from the Wicd forums for making it, and to Luca Capello for fixing 
+    and porting it (Closes: #520014)
+
+ -- David Paleino <d.paleino@gmail.com>  Sat, 28 Mar 2009 16:49:12 +0100
+
 wicd (1.5.9-5) unstable; urgency=low
 
   * debian/patches/:

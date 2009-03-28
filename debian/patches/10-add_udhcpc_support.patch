@@ -1,0 +1,122 @@
+Support udhcpc, this is needed to smoothly run on the OpenMoko
+FreeRunner.
+Thanks to Luca Capello <gismo@debian.org> for porting the patch, and to
+"madmo" from the linked forum for making the patch.
+
+Patch taken from http://wicd.net/punbb/viewtopic.php?id=132
+---
+ wicd/misc.py        |    1 +
+ wicd/wicd-daemon.py |    2 +-
+ wicd/wnettools.py   |   41 ++++++++++++++++++++++++++++++++++++++---
+ 3 files changed, 40 insertions(+), 4 deletions(-)
+
+--- wicd-1.5.9.orig/wicd/misc.py
++++ wicd-1.5.9/wicd/misc.py
+@@ -40,6 +40,7 @@ AUTO = 0
+ DHCLIENT = 1
+ DHCPCD = 2
+ PUMP = 3
++UDHCPC = 4
+ 
+ ETHTOOL = 1
+ MIITOOL = 2
+--- wicd-1.5.9.orig/wicd/wicd-daemon.py
++++ wicd-1.5.9/wicd/wicd-daemon.py
+@@ -494,7 +494,7 @@ class ConnectionWizard(dbus.service.Obje
+             self.wifi.connecting_thread.should_die = True
+         if self.wired.connecting_thread:
+             self.wired.connecting_thread.should_die = True
+-        misc.Run("killall dhclient dhclient3 wpa_supplicant")
++        misc.Run("killall dhclient dhclient3 udhcpc wpa_supplicant")
+ 
+     @dbus.service.method('org.wicd.daemon')
+     def GetCurrentInterface(self):
+--- wicd-1.5.9.orig/wicd/wnettools.py
++++ wicd-1.5.9/wicd/wnettools.py
+@@ -155,7 +155,7 @@ def GetDefaultGateway():
+ 
+ def StopDHCP():
+     """ Stop the DHCP client. """
+-    cmd = 'killall dhclient dhclient3 pump dhcpcd-bin'
++    cmd = 'killall dhclient dhclient3 pump dhcpcd-bin udhcpc'
+     misc.Run(cmd)
+ 
+ def GetWirelessInterfaces():
+@@ -262,6 +262,8 @@ class Interface(object):
+                 client = "dhclient"
+             elif cl in [misc.DHCPCD, "dhcpcd"]:
+                 client = "dhcpcd"
++            elif cl in [misc.UDHCPC, "udhcpc"]:
++                client = "udhcpc"
+             else:
+                 client = "pump"
+             return client
+@@ -275,7 +277,7 @@ class Interface(object):
+         if not self.DHCP_CLIENT or not dhcp_path:
+             dhcp_client = None
+             dhcp_path = None
+-            dhcpclients = ["dhclient", "dhcpcd", "pump"]
++            dhcpclients = ["dhclient", "dhcpcd", "pump", "udhcpc"]
+             for client in dhcpclients:
+                 dhcp_path = self._find_client_path(client)
+                 if dhcp_path:
+@@ -297,6 +299,10 @@ class Interface(object):
+             dhcp_client = misc.DHCPCD
+             dhcp_cmd = dhcp_path
+             dhcp_release = dhcp_cmd + " -k"
++        elif dhcp_client in [misc.UDHCPC, "udhcpc"]:
++            dhcp_client = misc.UDHCPC
++            dhcp_cmd = dhcp_path + " -n -i"
++            dhcp_release = "killall -SIGUSR2 udhcpc"
+         else:
+             dhcp_client = None
+             dhcp_cmd = None
+@@ -486,6 +492,30 @@ class Interface(object):
+ 
+         return self._check_dhcp_result(dhcpcd_success)
+ 
++    def _parse_udhcpc(self, pipe):
++        """ Determines if obtaining an IP using udhcpc succeeded.
++
++        Keyword arguments:
++        pipe -- stdout pipe to the dhcpcd process.
++
++        Returns:
++        'success' if successful, an error code string otherwise.
++
++        """
++        udhcpc_complete = False
++        udhcpc_success = True
++
++        while not udhcpc_complete:
++            line = pipe.readline()
++            if line.endswith("failing"):
++                udhcpc_success = False
++                udhcpc_complete = True
++            elif line == '':
++                udhcpc_complete = True
++            print line
++
++        return self._check_dhcp_result(udhcpc_success)
++
+     def _check_dhcp_result(self, success):
+         """ Print and return the correct DHCP connection result.
+ 
+@@ -524,11 +554,16 @@ class Interface(object):
+             return self._parse_pump(pipe)
+         elif DHCP_CLIENT == misc.DHCPCD:
+             return self._parse_dhcpcd(pipe)
++        elif DHCP_CLIENT == misc.UDHCPC:
++            return self._parse_udhcpc(pipe)
+ 
+     def ReleaseDHCP(self):
+         """ Release the DHCP lease for this interface. """
+         if not self.iface: return False
+-        cmd = self.DHCP_RELEASE + " " + self.iface + " 2>/dev/null"
++        if self.DHCP_CLIENT == misc.UDHCPC:
++            cmd = self.DHCP_RELEASE
++        else:
++            cmd = self.DHCP_RELEASE + " " + self.iface + " 2>/dev/null"
+         misc.Run(cmd)
+ 
+     def FlushRoutes(self):
