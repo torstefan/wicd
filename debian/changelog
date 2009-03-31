@@ -1,10 +1,12 @@
 wicd (1.5.9-6) UNRELEASED; urgency=low
 
+  * debian/patches/09-fix_wire_plugging_detection.patch fixed
+    (Closes: #522057)
   * debian/patches/10-add_udhcpc_support.patch added, thanks to "madmo"
     from the Wicd forums for making it, and to Luca Capello for fixing 
     and porting it (Closes: #520014)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 28 Mar 2009 16:49:12 +0100
+ -- David Paleino <d.paleino@gmail.com>  Tue, 31 Mar 2009 16:42:52 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 

@@ -1,9 +1,9 @@
 Fix detection of wire plugging/unplugging.
 Patch provided by Giuseppe Martino <denever@truelite.it>, thank you!
 ---
- wicd/monitor.py     |   11 +++++++++++
+ wicd/monitor.py     |   10 ++++++++++
  wicd/wicd-daemon.py |   12 ++++++++++++
- 2 files changed, 23 insertions(+)
+ 2 files changed, 22 insertions(+)
 
 --- wicd-1.5.9.orig/wicd/monitor.py
 +++ wicd-1.5.9/wicd/monitor.py
@@ -15,15 +15,14 @@ Patch provided by Giuseppe Martino <denever@truelite.it>, thank you!
  
      def check_for_wired_connection(self, wired_ip):
          """ Checks for an active wired connection.
-@@ -160,6 +161,16 @@ class ConnectionStatus(object):
+@@ -160,6 +161,15 @@ class ConnectionStatus(object):
                  
                  # Check for wired.
                  wired_ip = wired.GetWiredIP()
 +
-+                if wired_ip is None:
-+                    if not self.plugged and wired.CheckPluggedIn():
-+                        daemon.SendWirePluggedSignal()
-+                        self.plugged = True
++                if not self.plugged and wired.CheckPluggedIn():
++                    daemon.SendWirePluggedSignal()
++                    self.plugged = True
 +
 +                if self.plugged and not wired.CheckPluggedIn():
 +                    daemon.SendWireUnpluggedSignal()
