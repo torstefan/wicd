@@ -1,0 +1,131 @@
+Add results of the scan to the EndScanSignal.
+Thanks to Giuseppe 'denever' Martino <denever@truelite.it>
+---
+ wicd/networking.py  |    5 +++--
+ wicd/wicd-daemon.py |   14 ++++++++++++--
+ wicd/wnettools.py   |   18 +++++++++++++++---
+ 3 files changed, 30 insertions(+), 7 deletions(-)
+
+--- wicd-1.5.9.orig/wicd/networking.py
++++ wicd-1.5.9/wicd/networking.py
+@@ -424,10 +424,11 @@ class Wireless(Controller):
+             print 'Setting hidden essid' + essid
+             wiface.SetEssid(essid)
+ 
+-        aps = wiface.GetNetworks()
++        aps, stripped_aps = wiface.GetNetworks()
+         aps.sort(cmp=comp, reverse=True)
++        stripped_aps.sort(cmp=comp, reverse=True)
+         
+-        return aps
++        return aps, stripped_aps
+ 
+     def Connect(self, network, debug=False):
+         """ Spawn a connection thread to connect to the network.
+--- wicd-1.5.9.orig/wicd/wicd-daemon.py
++++ wicd-1.5.9/wicd/wicd-daemon.py
+@@ -691,6 +691,16 @@ class ConnectionWizard(dbus.service.Obje
+         """ Emits a signal announcing a scan has finished. """
+         pass
+ 
++    @dbus.service.method('org.wicd.daemon')
++    def EmitEndScanSignalWithResult(self, scan):
++        print scan
++        self.EndScanSignalWithResult(scan)
++
++    @dbus.service.signal(dbus_interface='org.wicd.daemon', signature='aa{sv}')
++    def EndScanSignalWithResult(self, scan):
++        """ Emits a signal announcing a scan has finished. """
++        pass
++
+     ########## WIRELESS FUNCTIONS
+     #################################
+ 
+@@ -711,14 +721,14 @@ class ConnectionWizard(dbus.service.Obje
+             print 'scanning start'
+         self.SendStartScanSignal()
+         time.sleep(.2)
+-        scan = self.wifi.Scan(str(self.hidden_essid))
++        scan, scan_stripped = self.wifi.Scan(str(self.hidden_essid))
+         self.LastScan = scan
+         if self.debug_mode:
+             print 'scanning done'
+             print 'found ' + str(len(scan)) + ' networks:'
+         for i, network in enumerate(scan):
+             self.ReadWirelessNetworkProfile(i)
+-        self.SendEndScanSignal()
++        self.EmitEndScanSignalWithResult(scan_stripped)
+ 
+     @dbus.service.method('org.wicd.daemon.wireless')
+     def GetIwconfig(self):
+--- wicd-1.5.9.orig/wicd/wnettools.py
++++ wicd-1.5.9/wicd/wnettools.py
+@@ -824,15 +824,19 @@ class WirelessInterface(Interface):
+ 
+         # An array for the access points
+         access_points = []
++        stripped_access_points = []
+         for cell in networks:
+             # Only use sections where there is an ESSID.
+             if 'ESSID:' in cell:
+                 # Add this network to the list of networks
+-                entry = self._ParseAccessPoint(cell, ralink_info)
++                entry, stripped_entry = self._ParseAccessPoint(cell, ralink_info)
+                 if entry is not None:
+                     access_points.append(entry)
+ 
+-        return access_points
++                if entry_stripped is not None:
++                    stripped_access_points.append(entry_stripped)
++
++        return access_points, stripped_access_points
+ 
+     def _FreqToChannel(self, freq):
+         """ Translate the specified frequency to a channel.
+@@ -927,6 +931,7 @@ class WirelessInterface(Interface):
+ 
+         """
+         ap = {}
++        stripped_ap = {}
+         # ESSID - Switch '<hidden>' to 'Hidden' to remove
+         # brackets that can mix up formatting.
+         ap['essid'] = misc.RunRegex(essid_pattern, cell)
+@@ -941,6 +946,8 @@ class WirelessInterface(Interface):
+         else:
+             ap['hidden'] = False
+ 
++        stripped_ap['essid'] = ap['essid']
++
+         # Channel - For cards that don't have a channel number,
+         # convert the frequency.
+         ap['channel'] = misc.RunRegex(channel_pattern, cell)
+@@ -970,8 +977,11 @@ class WirelessInterface(Interface):
+ 
+             if misc.RunRegex(wpa2_pattern, cell) == 'WPA2':
+                 ap['encryption_method'] = 'WPA2'
++
++            stripped_ap['encryption_method'] = ap['encryption_method']
+         else:
+             ap['encryption'] = False
++            stripped_ap['encryption_method'] = 'Open'
+ 
+         # Link Quality
+         # Set strength to -1 if the quality is not found
+@@ -993,6 +1003,8 @@ class WirelessInterface(Interface):
+         else:
+             ap['quality'] = -1
+ 
++        stripped_ap['quality'] = ap['quality']
++
+         # Signal Strength (only used if user doesn't want link
+         # quality displayed or it isn't found)
+         if misc.RunRegex(signaldbm_pattern, cell):
+@@ -1000,7 +1012,7 @@ class WirelessInterface(Interface):
+         elif self.wpa_driver != RALINK_DRIVER:  # This is already set for ralink
+             ap['strength'] = -1
+ 
+-        return ap
++        return ap, stripped_ap
+ 
+     def _ParseRalinkAccessPoint(self, ap, ralink_info, cell):
+         """ Parse encryption and signal strength info for ralink cards
