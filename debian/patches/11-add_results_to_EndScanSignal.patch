@@ -75,7 +75,7 @@ Thanks to Giuseppe 'denever' Martino <denever@truelite.it>
                      access_points.append(entry)
  
 -        return access_points
-+                if entry_stripped is not None:
++                if stripped_entry is not None:
 +                    stripped_access_points.append(entry_stripped)
 +
 +        return access_points, stripped_access_points
