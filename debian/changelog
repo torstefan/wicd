@@ -5,8 +5,6 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
   * debian/patches/10-add_udhcpc_support.patch added, thanks to "madmo"
     from the Wicd forums for making it, and to Luca Capello for fixing 
     and porting it (Closes: #520014)
-  * debian/patches/11-add_results_to_EndScanSignal.patch added, thanks to
-    Giuseppe "denever" Martino (Closes: #522204)
 
  -- David Paleino <d.paleino@gmail.com>  Wed, 01 Apr 2009 20:37:23 +0200
 
