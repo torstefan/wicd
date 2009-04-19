@@ -1,0 +1,45 @@
+#! /bin/sh
+#
+# /etc/init.d/wicd
+#
+# chkconfig: - 98 02
+# description: Wicd is a wireless and wired network manager for Linux.
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# This script was borrowed from the Wicd wiki page on building for Fedora
+# http://wicd.net/wiki/doku.php?id=fedora
+
+WICD_BIN=%SBIN%wicd
+WICD_PIDFILE=%PIDFILE%
+WICD_LOCKFILE=/var/lock/subsys/wicd
+
+case "$1" in
+        start)
+                echo -n "Starting wicd services: "
+                daemon $WICD_BIN 2> /dev/null
+                touch $WICD_LOCKFILE
+        ;;
+        stop)
+                echo -n "Shutting down wicd services: "
+                kill `/bin/cat $WICD_PIDFILE` 2> /dev/null
+                rm -f $WICD_LOCKFILE
+        ;;
+        status)
+                if pidofproc -p $WICD_PIDFILE wicd > /dev/null ; then
+                        echo "wicd is running."
+                else
+                        status wicd
+                fi
+        ;;
+        restart | reload)
+                $0 stop
+                $0 start
+        ;;
+        *)
+                echo "Usage: wicd {start|stop|status|reload|restart}"
+                exit 1
+        ;;
+esac
+

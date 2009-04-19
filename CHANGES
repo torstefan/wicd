@@ -1,0 +1,80 @@
+1.5.9
+ * Fixed security hole in DBus configuration file
+ * Fixed the TTLS template
+ * Added support for Crux to the setup.py
+
+1.5.8
+ * Improved pm-utils support
+ * Improved UTF-8 support
+
+1.5.7
+ * Improved suspend/resume support
+ * Encryption details containing % signs now work
+ * Many other bug fixes
+
+1.5.6
+ * Wicd will now start if the logging directory is present, but the log isn't
+
+1.5.5
+ * Improved Ralink legacy support
+ * Fixed log directory permissions
+ * Improved pm-utils support 
+ 
+1.5.4
+ * misc.Run no longer uses a shell to execute commands
+ * Improved power usage
+ * pm-utils support added
+
+1.5.3
+ * Wired interface is now autodetected
+ * Now /sys/class/net/*/carrier is used to detect wired link in addition to previous methods
+ * setup.py now has a --no-install-docs switch
+ * Fixed the EAP-TLS template
+ * Added wicd-client man page
+
+1.5.2
+ * Updated man page license info
+ * Fixed crashes on machines with /var/log as a tmpfs
+ * Added new WPA template: wpa-psk
+ * setup.py now comes with na uninstall script
+ * Wired profile chooser now opens properly
+ * Many small bug fixes
+
+1.5.1
+ * Added checking to make sure all input (preferences and IP addresses) are valid before executing commands
+
+1.5.0
+ * Added support for pump and dhcpcd
+ * Added wep-hex, wep-passphrase, eap-tls, and wep-shared encryption templates
+ * Autoconnect falls back to wireless if wired connection fails for any reason
+ * Fixed a memory leak
+ * Added ability to put interfaces up/down via the GUI
+ * Reduced number of external program calls for improved memory usage
+ * Added support for using one set of settings for all networks with an ESSID
+ * Made debugging output less spammy and more helpful
+ * Made GUI more responsive
+ * Added README and INSTALL
+ * Added setup.py install script
+ * Improved automatic reconnection
+ * Added option to disable tray animations
+ * Added distro-specific init scripts when installed from source
+ * Added PID file that is created on daemon start and destroyed on SIGTERM
+ * Allow resizing of Preference window and main window
+ * Added support for getting interface names from /proc/net/wireless
+ * Added a Disconnect button
+ * Added MAC address to network information that is always visible
+ * Requires root permissions to edit pre/post/disconnection scripts
+ * Daemon process is now renamed "wicd" and GUI is renamed "wicd-client"
+ * Added support for kdesu and ktsuss as well as gksudo
+ * Added ability to restart and print usage to init file
+ * Renamed desktop file "wicd.desktop"
+ * Change directory structure to be FHS compliant and customizable
+ * Added desktop file for autostarting
+ * Rewrote init file for Debian from /etc/init.d/skeleton
+ * Added manpages for the configuration files and daemon
+ * Added INSTALL, LICENSE, AUTHORS, README, and CHANGELOG
+ * Created new SVG icon and updated PNG icons accordingly
+ * Added --no-poll option to daemon which prevents polling of data
+ * Fixed various permissions issues
+ * Added wired-default profile for automatic DHCP on ethernet by default
+ * Changed log file permissions to 0600

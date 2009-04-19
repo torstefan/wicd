@@ -1,0 +1,13 @@
+include AUTHORS CHANGES INSTALL LICENSE MANIFEST.in README setup.cfg setup.py uninstall.sh
+graft data
+graft encryption
+graft icons
+graft images
+graft in
+graft init
+graft man
+graft other
+graft packaging
+graft scripts
+graft translations
+graft wicd
