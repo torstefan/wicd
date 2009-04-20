@@ -1,0 +1,32 @@
+#!/bin/bash -e
+
+# Source debconf library.
+. /usr/share/debconf/confmodule
+
+# Show the notice about permissions
+db_input medium wicd/notice || true
+db_go
+
+db_metaget wicd/users users
+db_subst wicd/users users "$(compgen -u | sort | tr '\n' ',' | sed 's@,@, @g;s@, $@@g')"
+
+db_metaget wicd/users default
+db_subst wicd/users default "$(grep netdev /etc/group | cut -d: -f4 | sed 's@,@, @g')"
+
+db_input medium wicd/users || true
+db_go
+
+db_get wicd/users
+users=$(echo $RET | sed -e 's@,@@g')
+netdev=$(grep netdev /etc/group | cut -d: -f4 | sed -e 's@,@ @g')
+
+# Add users not there yet
+for u in $users; do
+	adduser $u netdev
+	netdev=$(echo $netdev | sed -e "s@$u@@g")
+done
+
+# Remove users, present in the group, but not chosen in debconf
+for u in $netdev; do
+	deluser $u netdev
+done

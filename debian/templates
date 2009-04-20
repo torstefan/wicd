@@ -1,0 +1,13 @@
+Template: wicd/notice
+Type: note
+_Description: Wicd clients need privileges
+ As one can run scripts with root permissions from within the clients, it
+ is required that some users, which will be able to run the chosen client,
+ are added to the `netdev' group.
+
+Template: wicd/users
+Type: multiselect
+_Choices: ${users}
+Default: ${default}
+_Description: Users to add to the `netdev' group
+ These will be able to run the clients

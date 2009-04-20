@@ -1,0 +1,50 @@
+# Debconf translations for wicd.
+# Copyright © 2009, David Paleino
+# This file is distributed under the same license as the wicd package.
+# David Paleino <d.paleino@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: wicd@packages.debian.org\n"
+"POT-Creation-Date: 2009-04-20 20:32+0200\n"
+"PO-Revision-Date: 2009-04-20 20:33+0200\n"
+"Last-Translator: David Paleino <d.paleino@gmail.com>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: note
+#. Description
+#: ../templates:1001
+msgid "Wicd clients need privileges"
+msgstr "I client wicd necessitano privilegi"
+
+#. Type: note
+#. Description
+#: ../templates:1001
+msgid ""
+"As one can run scripts with root permissions from within the clients, it is "
+"required that some users, which will be able to run the chosen client, are "
+"added to the `netdev' group."
+msgstr ""
+
+#. Type: multiselect
+#. Choices
+#: ../templates:2001
+msgid "${users}"
+msgstr "${users}"
+
+#. Type: multiselect
+#. Description
+#: ../templates:2002
+msgid "Users to add to the `netdev' group"
+msgstr "Utenti da aggiungere al gruppo `netdev'"
+
+#. Type: multiselect
+#. Description
+#: ../templates:2002
+msgid "These will be able to run the clients"
+msgstr "Questi verranno abilitati all'esecuzione dei client"

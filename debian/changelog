@@ -7,8 +7,13 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
     and porting it (Closes: #520014)
   * debian/po moved to debian/wicd-po, avoid conflicts with debconf's
     translations
+  * debian/config, debian/templates added, initial debconf support
+  * debian/control:
+    - Build-Dependency on po-debconf added
+  * debian/postinst:
+    - enable debconf questions
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 20 Apr 2009 19:43:43 +0200
+ -- David Paleino <d.paleino@gmail.com>  Mon, 20 Apr 2009 20:28:59 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
