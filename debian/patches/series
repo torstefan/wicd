@@ -8,4 +8,3 @@
 08-fix_GetIP.patch
 09-fix_wire_plugging_detection.patch
 10-add_udhcpc_support.patch
-11-add_results_to_EndScanSignal.patch
