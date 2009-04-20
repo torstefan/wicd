@@ -25,7 +25,7 @@ clean: unpatch
 
 	dh_clean wpath.py install.log os wicd/wpath.py \
 		man/*.8 man/*.5 scripts/* other/*.sh \
-		other/postinst other/55wicd debian/po/*.mo
+		other/postinst other/55wicd debian/wicd-po/*.mo
 
 install: build
 	dh install --before dh_auto_install
@@ -43,7 +43,7 @@ install: build
 	dh_installinit -i
 	dh install --after dh_installinit
 
-	for i in $(CURDIR)/debian/po/*.po; do \
+	for i in $(CURDIR)/debian/wicd-po/*.po; do \
 		msgfmt -o `basename $$i .po`.mo $$i; \
 		mkdir -p $(CURDIR)/debian/wicd/usr/share/locale/`basename $$i .po`/LC_MESSAGES/ 2>/dev/null; \
 		install -m 644 `basename $$i .po`.mo \
