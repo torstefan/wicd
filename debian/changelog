@@ -7,13 +7,22 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
     and porting it (Closes: #520014)
   * debian/po moved to debian/wicd-po, avoid conflicts with debconf's
     translations
+  * debian/wicd-po/:
+    - fr.po moved to fr_FR.po
+    - ca_ES.po, da_DK.po, de_DE.po, el_GR.po, eo_EO.po, es_ES.po,
+      es_GL.po, es_GT.po, es_VE.po, et_EE.po, eu_ES.po, fi_FI.po,
+      gl_ES.po, he_HE.po, hu_HU.po, it_IT.po, ja_JA.po, ko_KR.po,
+      lt_LT.po, lv_LV.po, nl_NL.po, no_NO.po, pl_PL.po, pt_BR.po,
+      pt_PT.po, ro_RO.po, ru_RU.po, sl_SI.po, sp_MX.po, sv_SE.po,
+      tr_TR.po, ua_UA.po, vi_VN.po, zh_CN.po, zh_HK.po, zh_TW.po
+      added: fix typos (same as #516459)
   * debian/config, debian/templates added, initial debconf support
   * debian/control:
     - Build-Dependency on po-debconf added
   * debian/postinst:
     - enable debconf questions
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 20 Apr 2009 20:28:59 +0200
+ -- David Paleino <d.paleino@gmail.com>  Mon, 20 Apr 2009 20:59:42 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 

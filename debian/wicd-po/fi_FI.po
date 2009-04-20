@@ -1,0 +1,326 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Suomi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Internet-yhteyden jakaminen"
+
+msgid "Add a new profile"
+msgstr "Lisää uusi profiili"
+
+msgid "Advanced Settings"
+msgstr "Lisäasetukset"
+
+msgid "Always show wired interface"
+msgstr "Näytä aina langallinen verkkolaite"
+
+msgid "Always switch to wired connection when available"
+msgstr "Vaihda aina langalliseen yhteyteen, jos vain mahdollista."
+
+msgid "Anonymous Identity"
+msgstr "Anonyymi identiteetti"
+
+msgid "Authentication"
+msgstr "Tunnistus"
+
+msgid "Automatic (recommended)"
+msgstr "Automaattinen (suositeltava)"
+
+msgid "Automatic Reconnection"
+msgstr "Automaattinen uudelleenyhdistäminen"
+
+msgid "Automatically connect to this network"
+msgstr "Yhdistä automaattisesti tähän verkkoon"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Yhdistä automaattisesti yhteyden katkettua"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr ""
+"Ei voida yhdistää taustaprosessiin; se yritetään käynnistää "
+"automaattisesti..."
+
+msgid "Channel"
+msgstr "Kanava"
+
+msgid "Choose from the networks below:"
+msgstr "Valitse alla olevista verkoista:"
+
+msgid "Configuring wireless interface..."
+msgstr "Määritetään langattoman verkkolaitteen asetuksia..."
+
+msgid "Connect"
+msgstr "Yhdistä"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Yhdistetty verkkoon $A, $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Langallinen yhteys (IP: $A)"
+
+msgid "Connecting to daemon..."
+msgstr "Yhdistetään taustaprosessiin..."
+
+msgid "Connecting..."
+msgstr "Yhdistetään..."
+
+msgid "Connection Cancelled"
+msgstr "Yhteys peruutettu"
+
+msgid "Connection Failed: Bad password"
+msgstr "Yhteys epäonnistui: Väärä salasana"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Yhteys epäonnistui: IP-osoitetta ei vastaanotettu"
+
+msgid "Create Ad-Hoc network"
+msgstr "Luo ad hoc -verkko"
+
+msgid "DHCP Client"
+msgstr "DHCP-ohjelma"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Debugging"
+msgstr "Virheenjäljitys"
+
+msgid "Done connecting..."
+msgstr "Yhdistetty..."
+
+msgid "Enable debug mode"
+msgstr "Debug-tila"
+
+msgid "External Programs"
+msgstr "Ulkoiset ohjelmat"
+
+msgid "Flushing the routing table..."
+msgstr "Tyhjennetään reititystaulua..."
+
+msgid "Gateway"
+msgstr "Yhdyskäytävä"
+
+msgid "General Settings"
+msgstr "Yleiset asetukset"
+
+msgid "Generating PSK..."
+msgstr "Luodaan salausavainta..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Luodaan WPA-asetustiedostoa..."
+
+msgid "Hidden Network"
+msgstr "Piilotettu verkko"
+
+msgid "Hidden Network ESSID"
+msgstr "Piilotetun verkon ESSID"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Identiteetti"
+
+msgid "Key"
+msgstr "Avain"
+
+msgid "Netmask"
+msgstr "Verkon peite"
+
+msgid "No wireless networks found."
+msgstr "Langattomia verkkoa ei löytynyt"
+
+msgid "Not connected"
+msgstr "Ei kytketty"
+
+msgid "Obtaining IP address..."
+msgstr "Haetaan IP-osoitetta..."
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Path to PAC File"
+msgstr "Polku PAC-tiedostoon"
+
+msgid "Preferences"
+msgstr "Asetukset"
+
+msgid "Press ESC to cancel"
+msgstr "Paina ESC peruuttaaksesi"
+
+msgid "Press F8 or Q to quit."
+msgstr "Paina F8 tai Q poistuaksesi"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr ""
+"Kysy profiilia profiilia yhdistettäessä automaattisesti langalliseen verkkoon"
+
+msgid "Putting interface down..."
+msgstr "Poistetaan verkkolaite käytöstä..."
+
+msgid "Putting interface up..."
+msgstr "Otetaan verkkolaite käyttöön..."
+
+msgid "Removing old connection..."
+msgstr "Poistetaan vanha yhteys..."
+
+msgid "Required encryption information is missing."
+msgstr "Salausasetuksia ei ole annettu."
+
+msgid "Resetting IP address..."
+msgstr "Alustetaan IP-osoitetta..."
+
+msgid "Route Table Flushing"
+msgstr "Reititystaulun tyhjennys"
+
+msgid "Run disconnect script"
+msgstr "Yhteyden katkaisu -skripti"
+
+msgid "Run script after connect"
+msgstr "Suorita skripti yhdistämisen jälkeen"
+
+msgid "Run script before connect"
+msgstr "Suorita skripti ennen yhdistämistä"
+
+msgid "Scan"
+msgstr "Hae"
+
+msgid "Scanning networks... stand by..."
+msgstr "Haetaan verkkoja... odota..."
+
+msgid "Scripts"
+msgstr "Skriptit"
+
+msgid "Secured"
+msgstr "Salattu"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Valitse piilotetun verkon ESSID"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Valitse tai luo langallinen profiili, jolla yhdistäminen tapahtuu"
+
+msgid "Setting broadcast address..."
+msgstr "Asetetaan Broadcast-osoitetta..."
+
+msgid "Setting static DNS servers..."
+msgstr "Asetetaan staattiset DNS-palvelimia..."
+
+msgid "Setting static IP addresses..."
+msgstr "Asetetaan staattista IP-osoitetta..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Älä näytä automaattisen yhteyden ponnahdusikkunaa"
+
+msgid "This network requires encryption to be enabled."
+msgstr ""
+"Tämä verkko vaatii salauksasetukset, jotta se voitaisiin ottaa käyttöön."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Yhdistääksesi lankaverkkoon sinun on luotava verkkoprofiili. Kirjoita "
+"verkkoa kuvaava nimi ja paina Lisää."
+
+msgid "Unsecured"
+msgstr "Salaamaton"
+
+msgid "Use Encryption"
+msgstr "Käytä salausta"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Käytä salausta (vain WEP)"
+
+msgid "Use Static DNS"
+msgstr "Käytä staattista DNS:ää"
+
+msgid "Use Static IPs"
+msgstr "Käytä staattista IP:tä"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Näytä signaalin vahvuus desibeleinä"
+
+msgid "Use default profile on wired autoconnect"
+msgstr ""
+"Käytä oletusprofiilia yhdistettäessä automaattisesti langalliseen verkkoon"
+
+msgid "Use global DNS servers"
+msgstr "Käytä globaaleja DNS-palvelimia"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr ""
+"Käytä viimeksi käytettyä profiilia yhdistettäessä langattomaan verkkoon "
+"automaattisesti."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Käytä näitä asetuksia kaikille samannimisille verkoille"
+
+msgid "Username"
+msgstr "Käyttäjänimi"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant -ajuri"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd tarvitsee luvan verkkokorttien käyttöön."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Langallisen verkon automaattiasetukset:"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Langallisen yhteyden automaattiyhdistämisen asetukset"
+
+msgid "Wired Interface"
+msgstr "Langallinen verkkolaite"
+
+msgid "Wired Link Detection"
+msgstr "Langallinen linkki tunnistettu"
+
+msgid "Wired Network"
+msgstr "Langallinen verkko"
+
+msgid "Wired connection detected"
+msgstr "Langallinen yhteys tunnistettu"
+
+msgid "Wireless Interface"
+msgstr "Langaton verkkolaite"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Langattoman verkkolaitteen radio kytketty päälle"

@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Română\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Activează împărţirea conexiunii Internet"
+
+msgid "Advanced Settings"
+msgstr "Setări avansate"
+
+msgid "Always show wired interface"
+msgstr "Arată întotdeauna interfaţa reţea prin fir"
+
+msgid "Anonymous Identity"
+msgstr "Anonim"
+
+msgid "Authentication"
+msgstr "Autentificare"
+
+msgid "Automatic (recommended)"
+msgstr "Automat (recomandat)"
+
+msgid "Automatically connect to this network"
+msgstr "Conectare automată la această reţea"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Reconectare automată la pierderea legăturii"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Choose from the networks below:"
+msgstr "Alege dintre reţelele de mai jos"
+
+msgid "Configuring wireless interface..."
+msgstr "Configurare interfaţă fără fir..."
+
+msgid "Connect"
+msgstr "Conectează"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Conectat la $A ($B, IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Conectat la reţea prin fir (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Conectare..."
+
+msgid "Connection Cancelled"
+msgstr "Conexiune anulată"
+
+msgid "Connection Failed: Bad password"
+msgstr "Conexiune ratată: Parolă greşită"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Conexiune ratată: Nu a putut fi obţinută o adresă IP"
+
+msgid "Create Ad-Hoc network"
+msgstr "Crează o reţea Ad-Hoc"
+
+msgid "DHCP Client"
+msgstr "Client DHCP"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Încheiere conexiune..."
+
+msgid "Enable debug mode"
+msgstr "Mod debug"
+
+msgid "External Programs"
+msgstr "Programe externe"
+
+msgid "Flushing the routing table..."
+msgstr "Golire tabelă de rutare..."
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "General Settings"
+msgstr "Setări generale"
+
+msgid "Generating PSK..."
+msgstr "Generare PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Generare fişier configurare WPA..."
+
+msgid "Hidden Network"
+msgstr "Reţea ascunsă"
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID Reţea ascunsă"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Identitate"
+
+msgid "Key"
+msgstr "Cheie"
+
+msgid "Netmask"
+msgstr "Mască rețea"
+
+msgid "No wireless networks found."
+msgstr "Nu au fost găsite reţele fără fir"
+
+msgid "Not connected"
+msgstr "Neconectat"
+
+msgid "Obtaining IP address..."
+msgstr "Obţinere adresă IP..."
+
+msgid "Password"
+msgstr "Parolă"
+
+msgid "Path to PAC File"
+msgstr "Calea către fişier PAC"
+
+msgid "Preferences"
+msgstr "Preferinţe"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Cere profil la conectarea automată prin fir"
+
+msgid "Putting interface down..."
+msgstr "Închidere interfaţă..."
+
+msgid "Putting interface up..."
+msgstr "Deschidere interfaţă"
+
+msgid "Removing old connection..."
+msgstr "Înlocuire conexiune veche..."
+
+msgid "Required encryption information is missing."
+msgstr "Lipseşte informăţie necesară"
+
+msgid "Resetting IP address..."
+msgstr "Resetare adresă IP..."
+
+msgid "Route Table Flushing"
+msgstr "Golire tabelă de rutare"
+
+msgid "Run disconnect script"
+msgstr "Rulează script de deconectare"
+
+msgid "Run script after connect"
+msgstr "Rulează script după conectare"
+
+msgid "Run script before connect"
+msgstr "Rulează script înainte de conectare"
+
+msgid "Scripts"
+msgstr "Script-uri"
+
+msgid "Secured"
+msgstr "Asigurat"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Selectează sau crează un profil reţea prin fir pentru conectare"
+
+msgid "Setting broadcast address..."
+msgstr "Setare adresă de transmitere..."
+
+msgid "Setting static DNS servers..."
+msgstr "Setare DNS-uri statice..."
+
+msgid "Setting static IP addresses..."
+msgstr "Setare adresă IP statică..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Nu mai arăta pentru moment popup-ul deconectare automată"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Această reţea necesită folosirea unei criptări."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Pentru conectarea la o reţea prin fir este necesar un profil de reţea. "
+"Pentru a crea un profil de reţea tastaţi un nume care descrie această reţea "
+"şi apăsaţi butonul Add."
+
+msgid "Unsecured"
+msgstr "Neasigurat"
+
+msgid "Use Encryption"
+msgstr "Foloseşte criptare"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Foloseşte criptare (doar WEP)"
+
+msgid "Use Static DNS"
+msgstr "Foloseşte DNS static"
+
+msgid "Use Static IPs"
+msgstr "Foloseşte IP-uri statice"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Foloseşte dBm pentru a măsura puterea semnalului"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Foloseşte profilul default la conectarea automată prin fir"
+
+msgid "Use global DNS servers"
+msgstr "Foloseşte DNS-uri globale"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Foloseşte ultimul profilul la conectarea automată prin fir"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Foloseşte aceste setări pentru toate reţelele care împart acest essid"
+
+msgid "Username"
+msgstr "Nume utilizator"
+
+msgid "WPA Supplicant Driver"
+msgstr "Driver WPA Supplicant"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd are nevoie să acceseze plăcile de reţea ale calculatorului dvs."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Setări conectare automată prin fir:"
+
+msgid "Wired Interface"
+msgstr "Interfaţă reţea prin fir"
+
+msgid "Wired Link Detection"
+msgstr "Detectare reţea prin fir"
+
+msgid "Wired Network"
+msgstr "Reţea prin fir"
+
+msgid "Wired connection detected"
+msgstr "Conexiune prin fir detectată"
+
+msgid "Wireless Interface"
+msgstr "Interfaţă reţea făra fir"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "killswitch-ul reţelei fără fir e activat"

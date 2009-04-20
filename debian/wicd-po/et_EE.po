@@ -1,0 +1,289 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Estonian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktiveeri internetiühenduse jagamine"
+
+msgid "Add a new profile"
+msgstr "Lisa uus profiil"
+
+msgid "Advanced Settings"
+msgstr "Laiendatud sätted"
+
+msgid "Always show wired interface"
+msgstr "Juhtmega võrgu liidest näidatakse alati"
+
+msgid "Anonymous Identity"
+msgstr "Anonüümne identiteet"
+
+msgid "Authentication"
+msgstr "Autentimine"
+
+msgid "Automatic (recommended)"
+msgstr "Automaatne (soovitav)"
+
+msgid "Automatically connect to this network"
+msgstr "Selle võrguga ühendutakse automaatselt"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Ühenduse katkemisel automaatne taasühendumine"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Choose from the networks below:"
+msgstr "Vali üks alljärgnevatest võrkudest:"
+
+msgid "Configuring wireless interface..."
+msgstr "Traadita võrgu liidese seadistamine..."
+
+msgid "Connect"
+msgstr "Ühenda"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Ühendus võrguga $A loodud, signaali tugevus $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Ühendus juhtmega võrguga loodud (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Ühendumine..."
+
+msgid "Connection Cancelled"
+msgstr "Ühendumine katkestati"
+
+msgid "Connection Failed: Bad password"
+msgstr "Ühendumine nurjus: vale parool"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Ühendumine nurjus: ei saa IP-aadressi"
+
+msgid "Create Ad-Hoc network"
+msgstr "Loo Ad-Hoc võrk"
+
+msgid "DHCP Client"
+msgstr "DHCP klientprogramm"
+
+msgid "DNS"
+msgstr "Nimeserver"
+
+msgid "Done connecting..."
+msgstr "Ühendatud..."
+
+msgid "Enable debug mode"
+msgstr "Silumise režiimi lubamine"
+
+msgid "External Programs"
+msgstr "Välised programmid"
+
+msgid "Flushing the routing table..."
+msgstr "Ruutingutabeli puhastamine..."
+
+msgid "Gateway"
+msgstr "Võrgulüüs"
+
+msgid "General Settings"
+msgstr "Üldised sätted"
+
+msgid "Generating PSK..."
+msgstr "PSK loomine..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA sätete faili loomine..."
+
+msgid "Hidden Network"
+msgstr "Varjatud võrk"
+
+msgid "Hidden Network ESSID"
+msgstr "Varjatud võrgu ESSID"
+
+msgid "IP"
+msgstr "IP-aadress"
+
+msgid "Identity"
+msgstr "Identiteet"
+
+msgid "Key"
+msgstr "Võti"
+
+msgid "Netmask"
+msgstr "Võrgumask"
+
+msgid "No wireless networks found."
+msgstr "Ühtegi traadita võrku ei leitud."
+
+msgid "Not connected"
+msgstr "Pole ühendatud ühegi võrguga"
+
+msgid "Obtaining IP address..."
+msgstr "IP-aadressi hankimine..."
+
+msgid "Password"
+msgstr "Parool"
+
+msgid "Path to PAC File"
+msgstr "PAC-faili asukoht"
+
+msgid "Preferences"
+msgstr "Eelistused"
+
+msgid "Press ESC to cancel"
+msgstr "Katkestamiseks vajuta ESC-klahvile"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Juhtmega liidese iseühendumisel küsitakse profiili kohta"
+
+msgid "Putting interface down..."
+msgstr "Võrguliidese väljalülitamine..."
+
+msgid "Putting interface up..."
+msgstr "Võrguliidese sisselülitamine..."
+
+msgid "Removing old connection..."
+msgstr "Vana ühenduse andmete eemaldamine..."
+
+msgid "Required encryption information is missing."
+msgstr "Nõutud krüpto puudub."
+
+msgid "Resetting IP address..."
+msgstr "IP-aadressi nullimine..."
+
+msgid "Route Table Flushing"
+msgstr "Ruutingutabeli puhastamine"
+
+msgid "Run disconnect script"
+msgstr "Käivita ühenduse katkestamise skript"
+
+msgid "Run script after connect"
+msgstr "Käivita skript pärast ühendumist"
+
+msgid "Run script before connect"
+msgstr "Käivita skript enne ühendumist"
+
+msgid "Scripts"
+msgstr "Skriptid"
+
+msgid "Secured"
+msgstr "Turvatud võrk"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Vali või loo juhtmega võrguga ühendumiseks profiil"
+
+msgid "Setting broadcast address..."
+msgstr "Võrgu leviaadressi määramine..."
+
+msgid "Setting static DNS servers..."
+msgstr "Staatiliste nimeserverite määramine..."
+
+msgid "Setting static IP addresses..."
+msgstr "Staatiliste IP-aadresside määramine..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Ajutine automaatühenduse hüpikakna kuvamise keelamine"
+
+msgid "This network requires encryption to be enabled."
+msgstr "See võrk nõuab krüpto lubamist."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Juhtmega võrku ühendumiseks tuleb luua võrguprofiil. Selle loomiseks kirjuta "
+"profiili nimi, mis seda võrku kirjeldab, ning klõpsa nupul Lisa."
+
+msgid "Unsecured"
+msgstr "Turvamata võrk"
+
+msgid "Use Encryption"
+msgstr "Krüpteerimise kasutamine"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Krüpteeringu kasutamine (ainult WEP)"
+
+msgid "Use Static DNS"
+msgstr "Staatilise nimeserveri kasutamine"
+
+msgid "Use Static IPs"
+msgstr "Staatiline IP-aadress"
+
+msgid "Use dBm to measure signal strength"
+msgstr "dBm kasutamine signaali tugevuse mõõtühikuna"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Juhtmega liidese iseühendumine vaikimisi profiiliga"
+
+msgid "Use global DNS servers"
+msgstr "Üldiste nimeserverite kasutamine"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Juhtmega liidese iseühendumine viimatikasutatud profiiliga"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Neid sätteid kasutatakse kõikide sama SSID-ga võrkude jaoks"
+
+msgid "Username"
+msgstr "Kasutajanimi"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA krüpteeringu juhtprogramm"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd vajab ligipääsu sinu arvuti võrgukaartidele."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Juhtmega ühenduse sätted:"
+
+msgid "Wired Interface"
+msgstr "Juhtmega võrgu liides"
+
+msgid "Wired Link Detection"
+msgstr "Juhtmega ühenduse tuvastamine"
+
+msgid "Wired Network"
+msgstr "Juhtmega võrk"
+
+msgid "Wired connection detected"
+msgstr "Juhtmega ühendus tuvastatud"
+
+msgid "Wireless Interface"
+msgstr "Traadita võrgu liides"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Traadita ühenduse tapmise lüliti lubatud"

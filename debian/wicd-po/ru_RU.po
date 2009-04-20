@@ -1,0 +1,405 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: русский\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Включить общий доступ к интернету"
+
+msgid "Add a new profile"
+msgstr "Добавить новый профиль"
+
+msgid "Add a new wired profile"
+msgstr "Добавить новый профиль проводного подключения"
+
+msgid "Advanced Settings"
+msgstr "Дополнительные настройки"
+
+msgid "Always show wired interface"
+msgstr "Всегда показывать проводной интерфейс"
+
+msgid "Always switch to wired connection when available"
+msgstr "Всегда переключаться на проводное подключение если возможно"
+
+msgid "Anonymous Identity"
+msgstr "Анонимная идентификация"
+
+msgid "Authentication"
+msgstr "Проверка подлинности"
+
+msgid "Automatic (recommended)"
+msgstr "Автоматически (рекомендуется)"
+
+msgid "Automatic Reconnection"
+msgstr "Автоматическое переподключение"
+
+msgid "Automatically connect to this network"
+msgstr "Автоматически соединяться с этой сетью"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Автоматически переподключаться при потере соединения"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Не смог соединиться с демоном, пытаюсь запустить демон.."
+
+msgid "Channel"
+msgstr "Канал"
+
+msgid "Choose from the networks below:"
+msgstr "Выберите из следующих сетей:"
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Конфигурирование настроек проводного профайла\"$A\""
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Конфигурирование настроек беспроводной сети \"$A\" ($B)"
+
+msgid "Configuring wireless interface..."
+msgstr "Настройка беспроводного интерфейса..."
+
+msgid "Connect"
+msgstr "Подключиться"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Подключён к $A на $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Подключён к проводной сети (IP: $A)"
+
+msgid "Connecting to daemon..."
+msgstr "Соединяюсь с демоном"
+
+msgid "Connecting..."
+msgstr "Соединение..."
+
+msgid "Connection Cancelled"
+msgstr "Соединение прервано"
+
+msgid "Connection Failed: Bad password"
+msgstr "Ошибка при соединении: пароль неверен"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Ошибка при соединении: не удалось получить IP адрес"
+
+msgid ""
+"Could not connect to wicd's D-Bus interface. Check the wicd log for error "
+"messages."
+msgstr ""
+"Не смог установить соединение с D-Bus-интерфейсом wicd. Посмотрите сообщения "
+"об ошибках в журнале wicd."
+
+msgid "Create Ad-Hoc network"
+msgstr "Создать сеть Ad-Hoc"
+
+msgid ""
+"DBus failure! This is most likely caused by the wicd daemon stopping while "
+"wicd-curses is running. Please restart the daemon, and then restart wicd-"
+"curses."
+msgstr ""
+"Ошибка DBus! Скорее всего ошибка вызвана прекращением работы демона при "
+"запущенном curses-интерфейсе wicd. Перезапустите демон, а затем wicd-curses."
+
+msgid "DHCP Client"
+msgstr "Клиент DHCP"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Debugging"
+msgstr "Отладка"
+
+msgid "Done connecting..."
+msgstr "Соединение установлено..."
+
+msgid ""
+"EXCEPTION! Please report this to the maintainer and file a bug report with "
+"the backtrace below:"
+msgstr ""
+"Произошло ИСКЛЮЧЕНИЕ! Пожалуйста, сообщите об этом разработчикам и оставьте "
+"сообщение об ошибке со следующей информацией:"
+
+msgid "Enable debug mode"
+msgstr "Включить режим отладки"
+
+msgid "External Programs"
+msgstr "Внешние программы"
+
+msgid "Flushing the routing table..."
+msgstr "Очистка таблицы маршрутизации..."
+
+msgid "Gateway"
+msgstr "Шлюз"
+
+msgid "General Settings"
+msgstr "Основные настройки"
+
+msgid "Generating PSK..."
+msgstr "Создание PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Создание конфигурационного файла WPA..."
+
+msgid "Global DNS servers"
+msgstr "Глобальный сервер DNS"
+
+msgid "Hidden Network"
+msgstr "Скрытая сеть"
+
+msgid "Hidden Network ESSID"
+msgstr "Идентификатор (ESSID) скрытой сети"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Идентификация"
+
+msgid "Key"
+msgstr "Ключ"
+
+msgid "Netmask"
+msgstr "Маска подсети"
+
+msgid "Network Interfaces"
+msgstr "Сетевые интерфейсы"
+
+msgid "No wireless networks found."
+msgstr "Беспроводные сети не найдены."
+
+msgid "Not connected"
+msgstr "Нет соединения"
+
+msgid "Obtaining IP address..."
+msgstr "Получение IP адреса..."
+
+msgid ""
+"Once here, you can adjust (or add) the \"beforescript\", \"afterscript\", "
+"and \"disconnectscript\" variables as needed, to change the preconnect, "
+"postconnect, and disconnect scripts respectively. Alternatively, you can "
+"configure the wireless networks by ESSID, by looking for the \"[<ESSID>]\" "
+"field in the config file."
+msgstr ""
+"Здесь Вы можете изменить (добавить) переменные \"beforescript\", "
+"\"afterscript\", и \"disconnectscript\", для того чтобы изменить (задать) "
+"скрипты, выполняемые, соответственно, перед соединением, после соединения, и "
+"при разрыве соединения. Также Вы можете настроить беспроводные сети по "
+"ESSID, отыскав поле \"[]\" в файле настроек."
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Path to PAC File"
+msgstr "Путь к PAC-файлу"
+
+msgid "Preferences"
+msgstr "Настройки"
+
+msgid "Press ESC to cancel"
+msgstr "Нажмите ESC для отмены"
+
+msgid "Press F8 or Q to quit."
+msgstr "Нажмите F8 или Q чтобы выйти"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Предлагать выбор профиля для автоматического проводного подключения"
+
+msgid "Putting interface down..."
+msgstr "Отключение интерфейса..."
+
+msgid "Putting interface up..."
+msgstr "Подключение интерфейса..."
+
+msgid "Removing old connection..."
+msgstr "Удаление старого соединения..."
+
+msgid "Rename wired profile"
+msgstr "Переименовать профиль проводного подключения"
+
+msgid "Required encryption information is missing."
+msgstr "Отсутствует необходимая информация о шифровании."
+
+msgid "Resetting IP address..."
+msgstr "Сброс IP-адреса..."
+
+msgid "Route Table Flushing"
+msgstr "Очистка таблицы маршрутизации"
+
+msgid "Run disconnect script"
+msgstr "Выполнять скрипт отключения"
+
+msgid "Run script after connect"
+msgstr "Запускать скрипт после соединения"
+
+msgid "Run script before connect"
+msgstr "Запускать скрипт перед соединением"
+
+msgid "Scan"
+msgstr "Сканирование"
+
+msgid "Scanning networks... stand by..."
+msgstr "Сканирование сетей... подождите...."
+
+msgid "Scripts"
+msgstr "Скрипты"
+
+msgid "Secured"
+msgstr "Защищённое"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Выбрать идентификатор (ESSID) скрытой сети"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Выберите или создайте проводной профиль для соединения с"
+
+msgid "Setting broadcast address..."
+msgstr "Установка широковещательного адреса..."
+
+msgid "Setting static DNS servers..."
+msgstr "Установка статических DNS серверов..."
+
+msgid "Setting static IP addresses..."
+msgstr "Установка статических IP адресов..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Временно приостановить показ всплывающего окна автоподключения"
+
+msgid "Terminated by user"
+msgstr "Прервано пользователем"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Для этой сети необходимо разрешить шифрование"
+
+msgid ""
+"To avoid various complications, wicd-curses does not support directly "
+"editing the scripts directly.  However, you can edit them manually.  First, "
+"(as root)\", open the \"$A\" config file, and look for the section labeled "
+"by the $B in question.  In this case, this is:"
+msgstr ""
+"Для упрощения, wicd-curses не позволяет редактировать скрипты напрямую. Тем "
+"не менее, Вы можете изменить их вручную. Сначала, (от имени root) откройте "
+"файл \"$A\" и найдите в нем секцию, с именем $B. В данном случае, это:"
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Для соединения с проводной сетью необходимо создать сетевой профиль. Для его "
+"создания введите имя сети и нажмите \"Добавить\"."
+
+msgid "Unsecured"
+msgstr "Незащищённое"
+
+msgid "Use Encryption"
+msgstr "Использовать шифрование"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Использовать шифрование (только WEP)"
+
+msgid "Use Static DNS"
+msgstr "Использовать статические DNS"
+
+msgid "Use Static IPs"
+msgstr "Использовать статические IP"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Измерять силу сигнала в dBm"
+
+msgid "Use default profile on wired autoconnect"
+msgstr ""
+"Использовать профиль по умолчанию для автоматического проводного подключения"
+
+msgid "Use global DNS servers"
+msgstr "Использовать глобальные серверы DNS"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr ""
+"Использовать последний использовавшийся профиль для автоматического "
+"проводного подключения"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Использовать эти настройки для всех сетей с этим ESSID"
+
+msgid "Username"
+msgstr "Имя"
+
+msgid "WPA Supplicant"
+msgstr "WPA Supplicant"
+
+msgid "WPA Supplicant Driver"
+msgstr "Драйвер WPA Supplicant"
+
+msgid "Wicd Curses Interface"
+msgstr "Curses-интерфейс Wicd"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd необходим доступ к вашей сетевой карте."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Настройка проводного автоматического подключения:"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Настройки автоматического проводного подключения"
+
+msgid "Wired Interface"
+msgstr "Проводной интерфейс"
+
+msgid "Wired Link Detection"
+msgstr "Определение проводного соединения"
+
+msgid "Wired Network"
+msgstr "Проводная сеть"
+
+msgid "Wired connection detected"
+msgstr "Обнаружено проводное соединение"
+
+msgid "Wireless Interface"
+msgstr "Беспроводной интерфейс"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Беспроводной Kill Switch разрешён"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr ""
+"Вам почти всегда следует использовать wext в качестве драйвера WPA supplicant"
+
+msgid ""
+"wicd-curses does not support deleting the last wired profile.  Try renaming "
+"it ('F2')"
+msgstr ""
+"wicd-curses не поддерживает удаление последнего поднятого профиля. "
+"Используйте переименование ('F2')"

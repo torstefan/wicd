@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:30+0000\n"
+"PO-Revision-Date: 2009-02-06 15:30+0000\n"
+"Language-Team: Esperanto\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktivigi kunhavadon de interreta konekto"
+
+msgid "Advanced Settings"
+msgstr "Specialaj agordoj"
+
+msgid "Always show wired interface"
+msgstr "Ĉiam montri dratan interfacon"
+
+msgid "Anonymous Identity"
+msgstr "Anonima idento"
+
+msgid "Authentication"
+msgstr "Aŭtentokontrolo"
+
+msgid "Automatic (recommended)"
+msgstr "Aŭtomate (rekomendata)"
+
+msgid "Automatically connect to this network"
+msgstr "Aŭtomate enkonekti tiun reton"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Aŭtomate rekonekti post perdo de konekto"
+
+msgid "Channel"
+msgstr "Kanalo"
+
+msgid "Choose from the networks below:"
+msgstr "Elekti el retoj sube:"
+
+msgid "Configuring wireless interface..."
+msgstr "Agordado de sendratan interfacon..."
+
+msgid "Connect"
+msgstr "Konekti"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Konekti en $A je $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Konekti en sendrata reto (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Konektado..."
+
+msgid "Connection Cancelled"
+msgstr "Konekto rezignita"
+
+msgid "Connection Failed: Bad password"
+msgstr "Konekto fiaskis: Malbona pasvorto"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Konekto fiaskis: Neebla akiri IP adresojn"
+
+msgid "Create Ad-Hoc network"
+msgstr "Krei Ad-Hoc reton"
+
+msgid "DHCP Client"
+msgstr "DHCP kliento"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Bone konektita..."
+
+msgid "Enable debug mode"
+msgstr "Ŝalti sencimigan reĝinon"
+
+msgid "External Programs"
+msgstr "Eksteraj programaroj"
+
+msgid "Gateway"
+msgstr "Kluzo"
+
+msgid "General Settings"
+msgstr "Ĝeneralaj agordoj"
+
+msgid "Generating PSK..."
+msgstr "Generado de PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Generado de WPA agordan dosieron"
+
+msgid "Hidden Network"
+msgstr "Kaŝita reto"
+
+msgid "Hidden Network ESSID"
+msgstr "Kaŝita reto ESSID"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Idento"
+
+msgid "Key"
+msgstr "Ŝlosilo"
+
+msgid "Netmask"
+msgstr "Retmasko"
+
+msgid "No wireless networks found."
+msgstr "Sendrata reto netrovita"
+
+msgid "Not connected"
+msgstr "Nekonektita"
+
+msgid "Obtaining IP address..."
+msgstr "Akirado de IP adresoj..."
+
+msgid "Password"
+msgstr "Pasvorto"
+
+msgid "Path to PAC File"
+msgstr "Vojo je PAS dosiero"
+
+msgid "Preferences"
+msgstr "Agordoj"
+
+msgid "Removing old connection..."
+msgstr "Forigado de malnovan konekton..."
+
+msgid "Resetting IP address..."
+msgstr "Rekomencado de IP adresojn..."
+
+msgid "Run disconnect script"
+msgstr "Lanĉu skripton por malkonektigo"
+
+msgid "Run script after connect"
+msgstr "Lanĉu skripton post konekto"
+
+msgid "Run script before connect"
+msgstr "Lanĉu skripton antaŭ konekto"
+
+msgid "Scripts"
+msgstr "Skriptoj"
+
+msgid "Secured"
+msgstr "Sekurigita"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Elekti aŭ krei dratan profilon por konektado"
+
+msgid "Setting broadcast address..."
+msgstr "Agordado de elsendajn adresojn..."
+
+msgid "Setting static DNS servers..."
+msgstr "Agordado de statikaj DNS serviloj..."
+
+msgid "Setting static IP addresses..."
+msgstr "Agordado de statikaj IP adresoj..."
+
+msgid "Unsecured"
+msgstr "Nesekurigita"
+
+msgid "Use Encryption"
+msgstr "Uzi ĉifradon"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Uzi ĉifradon (nur WEP)"
+
+msgid "Use Static DNS"
+msgstr "Uzi fiksitan DNS-on"
+
+msgid "Use Static IPs"
+msgstr "Uzi fiksitan IP-adreson"
+
+msgid "Use global DNS servers"
+msgstr "Uzi globalajn DNS servilojn"
+
+msgid "Username"
+msgstr "Uzantnomo"
+
+msgid "Wired Interface"
+msgstr "Drata interfaco"
+
+msgid "Wired Network"
+msgstr "Drata reto"
+
+msgid "Wired connection detected"
+msgstr "Drata konekto detektita:"
+
+msgid "Wireless Interface"
+msgstr "Sendrata interfaco"

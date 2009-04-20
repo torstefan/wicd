@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Català\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Activa la compartició de connexió a Internet"
+
+msgid "Advanced Settings"
+msgstr "Configuració avançada"
+
+msgid "Always show wired interface"
+msgstr "Mostra sempre la interfície amb fil"
+
+msgid "Anonymous Identity"
+msgstr "Identitat anònima"
+
+msgid "Authentication"
+msgstr "Autenticació"
+
+msgid "Automatic (recommended)"
+msgstr "Automàtic (recomanat)"
+
+msgid "Automatically connect to this network"
+msgstr "Connecta automàticament a aquesta xarxa"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Reconnecta automàticament en perdre la connexió"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Choose from the networks below:"
+msgstr "Tria entre les següents xarxes:"
+
+msgid "Configuring wireless interface..."
+msgstr "Configurant la interfície sense fil"
+
+msgid "Connect"
+msgstr "Connecta"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Connectat a $A al $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Connectat a xarxa amb fil (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Connectant..."
+
+msgid "Connection Cancelled"
+msgstr "Connexió cancel·lada"
+
+msgid "Connection Failed: Bad password"
+msgstr "Connexió fallida: contrasenya incorrecta"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Connexió fallida: impossible d'obtenir una direcció IP"
+
+msgid "Create Ad-Hoc network"
+msgstr "Crea una xarxa Ad-Hoc"
+
+msgid "DHCP Client"
+msgstr "Client DHCP"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Connectat!"
+
+msgid "Enable debug mode"
+msgstr "Activa el mode de depurat"
+
+msgid "External Programs"
+msgstr "Programes externs"
+
+msgid "Flushing the routing table..."
+msgstr "Netejant la taula de ruteig"
+
+msgid "Gateway"
+msgstr "Pasareŀla"
+
+msgid "General Settings"
+msgstr "Configuració general"
+
+msgid "Generating PSK..."
+msgstr "Generant PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Generant el fitxer de configuració de WPA"
+
+msgid "Hidden Network"
+msgstr "Xarxa amagada"
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID de xarxa amagada"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Indentitat"
+
+msgid "Key"
+msgstr "Clau"
+
+msgid "Netmask"
+msgstr "Màscara de subxarxa"
+
+msgid "No wireless networks found."
+msgstr "No s'han trobat xarxes sense fil"
+
+msgid "Not connected"
+msgstr "Desconnectat"
+
+msgid "Obtaining IP address..."
+msgstr "Obtenint adreça IP..."
+
+msgid "Password"
+msgstr "Contrasenya"
+
+msgid "Path to PAC File"
+msgstr "Camí cap al fitxer PAC"
+
+msgid "Preferences"
+msgstr "Preferències"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Demana pel perfil al connectar-se a una xarxa amb fil"
+
+msgid "Putting interface down..."
+msgstr "Desactivant la interfície"
+
+msgid "Putting interface up..."
+msgstr "Activant la interfície"
+
+msgid "Removing old connection..."
+msgstr "Eliminant la connexió vella"
+
+msgid "Required encryption information is missing."
+msgstr "Falta informació referent a l'encriptació."
+
+msgid "Resetting IP address..."
+msgstr "Resetejant l'adreça IP"
+
+msgid "Route Table Flushing"
+msgstr "Neteja la taula de rutes"
+
+msgid "Run disconnect script"
+msgstr "Executa l'script de desconnexió"
+
+msgid "Run script after connect"
+msgstr "Executa un \"script\" després de connectar"
+
+msgid "Run script before connect"
+msgstr "Executa un \"script\" abans de connectar"
+
+msgid "Scripts"
+msgstr "\"Scripts\""
+
+msgid "Secured"
+msgstr "Segura"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Selecciona o crea un perfil per a la connexió per cable"
+
+msgid "Setting broadcast address..."
+msgstr "Configurant l'adreça d'emissió..."
+
+msgid "Setting static DNS servers..."
+msgstr "Configurant servidors DNS estàtics..."
+
+msgid "Setting static IP addresses..."
+msgstr "Configurant adreces IP estàtiques..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Desactiva temporalment els emergents d'autoconnexió"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Aquesta xarxa requereix encriptació per activar-se."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Per a connectar a una xarxa amb fil has de crear un perfil de xarxa. Per a "
+"crear-lo, escriu un nom que descrigui aquesta xarxa i prem afegir."
+
+msgid "Unsecured"
+msgstr "Insegura"
+
+msgid "Use Encryption"
+msgstr "Utilitza encriptació"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Utilitzar Encriptació (només WEP)"
+
+msgid "Use Static DNS"
+msgstr "Utilitza DNS estàtiques"
+
+msgid "Use Static IPs"
+msgstr "Utilitza IPs estàtiques"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Utilitzar dBm per mesurar la força de la senyal"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Utilitza el perfil predeterminat al connectar-se a una xarxa amb fil"
+
+msgid "Use global DNS servers"
+msgstr "Utilitza servidors DNS globals"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Utilitza l'últim perfil usat al connectar-se a una xarxa amb fil"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Utilitza aquesta configuració per a totes les xarxes amb el mateix nom"
+
+msgid "Username"
+msgstr "Nom d'usuari"
+
+msgid "WPA Supplicant Driver"
+msgstr "Connector de WPA Supplicant"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd necessita accedir a les tarjetes de xarxa del teu ordinador."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Paràmetres d'autoconnexió per xarxa amb fil"
+
+msgid "Wired Interface"
+msgstr "Interfície amb fil"
+
+msgid "Wired Link Detection"
+msgstr "Detecció de connexió cablejada"
+
+msgid "Wired Network"
+msgstr "Xarxa amb fil"
+
+msgid "Wired connection detected"
+msgstr "Connexió per cable detectada"
+
+msgid "Wireless Interface"
+msgstr "Interfície sense fil"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Interruptor de desconnexió inalàmbrica activat"

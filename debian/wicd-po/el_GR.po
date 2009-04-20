@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Ελληνικα\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Ενεργοποιηση Κοινης συνδεσης Ιντερνετ"
+
+msgid "Advanced Settings"
+msgstr "Προχωρημενες ρυθμισεις"
+
+msgid "Always show wired interface"
+msgstr "Δειχνε παντα ενσυρματες συσκευες"
+
+msgid "Anonymous Identity"
+msgstr "Ανωνυμη ταυτοτητα"
+
+msgid "Authentication"
+msgstr "Πιστοποιηση"
+
+msgid "Automatic (recommended)"
+msgstr "Αυτόματο (προτείνεται)"
+
+msgid "Automatically connect to this network"
+msgstr "Αυτοματη συνδεση στο δικτυο"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Αυτοματη επανασυνδεση κατα την αποσυνδεση"
+
+msgid "Channel"
+msgstr "Καναλι"
+
+msgid "Choose from the networks below:"
+msgstr "Επιλεξτε απο τα δίκτυα:"
+
+msgid "Configuring wireless interface..."
+msgstr "Ρυθμιση ασυρματης συσκευης..."
+
+msgid "Connect"
+msgstr "Συνδεση"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Συνδεμενο στο $A με $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Συνδεμενο με ενσυρματο δικτυο (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Συνδεση..."
+
+msgid "Connection Cancelled"
+msgstr "Ακύρωση Σύνδεσης"
+
+msgid "Connection Failed: Bad password"
+msgstr "Αποτυχία Σύνδεσης: Λάθος κωδικός"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Αποτυχία σύνδεσης:"
+
+msgid "Create Ad-Hoc network"
+msgstr "Δημιουργια δικτυου Ad-Hoc"
+
+msgid "DHCP Client"
+msgstr "Πελάτης DHCP"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Συνδεση Εγινε..."
+
+msgid "Enable debug mode"
+msgstr "Ενεργοπ. λειτουργιας αποσφαλματωσης"
+
+msgid "External Programs"
+msgstr "Εξωτερικά Προγράμματα"
+
+msgid "Flushing the routing table..."
+msgstr "Καθαρισμα πινακα δρομολογησης..."
+
+msgid "Gateway"
+msgstr "Πυλη"
+
+msgid "General Settings"
+msgstr "Γενικές Ρυθμίσεις"
+
+msgid "Generating PSK..."
+msgstr "Δημιουργια PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Δημιουργια αρχειου ρυθμισης WPA..."
+
+msgid "Hidden Network"
+msgstr "Κρυφο δικτυο"
+
+msgid "Hidden Network ESSID"
+msgstr "Κρυφο ESSID δικτυου"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "ταυτοτητα"
+
+msgid "Key"
+msgstr "Κλειδι"
+
+msgid "Netmask"
+msgstr "Μασκα Δικτυου"
+
+msgid "No wireless networks found."
+msgstr "Δεν βρεθηκαν ασυρματα δικτυα."
+
+msgid "Not connected"
+msgstr "Αποσυνδεμενο"
+
+msgid "Obtaining IP address..."
+msgstr "Ανακτηση διευθυνσης IP..."
+
+msgid "Password"
+msgstr "Κωδικος"
+
+msgid "Path to PAC File"
+msgstr "Διαδρομη σε αρχειο PAC"
+
+msgid "Preferences"
+msgstr "Προτιμησεις"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Ζητηση προφιλ ενσυρματου δικτυου"
+
+msgid "Putting interface down..."
+msgstr "Κλεισιμο συσκευης..."
+
+msgid "Putting interface up..."
+msgstr "Ανοιγμα συσκευης..."
+
+msgid "Removing old connection..."
+msgstr "Αφαιρεση παλιας συνδεσης..."
+
+msgid "Required encryption information is missing."
+msgstr "Η απαιτούμενη πληροφορία κρυπτογράφησης δεν υπάρχει."
+
+msgid "Resetting IP address..."
+msgstr "Επανακτηση Διευθυνσης IP..."
+
+msgid "Route Table Flushing"
+msgstr "Σβήσιμο πίνακα δρομολόγησης"
+
+msgid "Run disconnect script"
+msgstr "Τρεξε σεναριο αποσυνδεσης"
+
+msgid "Run script after connect"
+msgstr "Τρεξε σεναριο μετα τη συνδεση"
+
+msgid "Run script before connect"
+msgstr "Τρεξε σεναριο πριν τη συνδεση"
+
+msgid "Scripts"
+msgstr "Σεναρια"
+
+msgid "Secured"
+msgstr "Ασφαλης"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Επιλέξτε ή δημιουργήστε profile για την ενσύρματη σύνδεση με"
+
+msgid "Setting broadcast address..."
+msgstr "Ρυθμιση διευθυνσης εκπομπης..."
+
+msgid "Setting static DNS servers..."
+msgstr "Ρυμιση στατικου διακομιστη DNS..."
+
+msgid "Setting static IP addresses..."
+msgstr "Ρυθμιση στατικης δ/νσης IP..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Διακοπή εμφάνισης μηνύματος επανασύνδεσης"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Το δίκτυο απαιτεί ενεργοποιημένη κρυπτογράφηση."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Για ενσυρματη συνδεση, απαιτειται προφιλ δικτυου. Για δημιουργια προφιλ, "
+"πληκτρολογηστε ενα ονομα για περιγραφη και πιεστε Προσθηκη..."
+
+msgid "Unsecured"
+msgstr "Ανασφαλης"
+
+msgid "Use Encryption"
+msgstr "χρηση Κρυπτογραφησης"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Χρηση κρυπτογραφησης (μονο WEP)"
+
+msgid "Use Static DNS"
+msgstr "χρηση στατικων DNS"
+
+msgid "Use Static IPs"
+msgstr "χρηση στατικων IP"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Χρηση dBm για μετρηση ισχυος σηματος"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Χρηση προεπιλ. προφιλ σε ενσυρματο δικτυο"
+
+msgid "Use global DNS servers"
+msgstr "Χρηση παγκοσμιων διακομιστων DNS"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Χρηση τελευταιου χρησιμοποιημενου προφιλ σε επανασυνδεση"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Χρήση αυτών των ρυθμίσεων για όλα τα δίκτυα που μοιράζονται το essid"
+
+msgid "Username"
+msgstr "Ονομα"
+
+msgid "WPA Supplicant Driver"
+msgstr "Οδηγος WPA"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Το WICD χρειαζεται προσβαση στις καρτες δικτυου του Η/Υ σας."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Ρυθμισεις Ενσυρματης Επανασυνδεσης:"
+
+msgid "Wired Interface"
+msgstr "Ενσυρματη συσκευη"
+
+msgid "Wired Link Detection"
+msgstr "Ανίχνευση ενσύρματου δικτύου"
+
+msgid "Wired Network"
+msgstr "Ενσυρματο Δικτυο"
+
+msgid "Wired connection detected"
+msgstr "Βρέθηκε ενσύρματη σύνδεση"
+
+msgid "Wireless Interface"
+msgstr "Ασυρματη συσκευη"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Ενεργοποίηση του διακόπτη wifi"

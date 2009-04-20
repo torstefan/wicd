@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:30+0000\n"
+"PO-Revision-Date: 2009-02-06 15:30+0000\n"
+"Language-Team: Lietuvių\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktyvuoti Interneto dalinimąsi"
+
+msgid "Advanced Settings"
+msgstr "Išplėsti nustatimai"
+
+msgid "Always show wired interface"
+msgstr "Visada rodyti laidinę sąsają"
+
+msgid "Anonymous Identity"
+msgstr "Anoniminė tapatybė"
+
+msgid "Authentication"
+msgstr "Atpažinimas"
+
+msgid "Automatic (recommended)"
+msgstr "Automatinis (rekomenduojamas)"
+
+msgid "Automatically connect to this network"
+msgstr "Automatiškai prisijungti prie šio tinklo"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automatiškai prisijungti iš naujo kai ryšys nutrūksta"
+
+msgid "Channel"
+msgstr "Kanalas"
+
+msgid "Choose from the networks below:"
+msgstr "Pasirinkite iš apačioje esančių tinklų:"
+
+msgid "Configuring wireless interface..."
+msgstr "Konfiguruojama  bevielė sąsaja..."
+
+msgid "Connect"
+msgstr "Prisijungti"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Prisijungta prie $A  $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Prisijungta prie laidinio tinklo (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Jungiamasi..."
+
+msgid "Connection Cancelled"
+msgstr "Prisijungimas nutrauktas"
+
+msgid "Connection Failed: Bad password"
+msgstr "Prisijungimas nepavyko: Blogas slaptažodis"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Prisijungimas nepavyko: Negalima gauti IP adreso"
+
+msgid "Create Ad-Hoc network"
+msgstr "Sukurti Ad-Hoc tinklą"
+
+msgid "DHCP Client"
+msgstr "DHCP klientas"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Baigta jungtis..."
+
+msgid "Enable debug mode"
+msgstr "Įjungti derinimo režimą"
+
+msgid "External Programs"
+msgstr "Išorinės programos"
+
+msgid "Flushing the routing table..."
+msgstr "Užpildoma maršrutų lentelė..."
+
+msgid "Gateway"
+msgstr "Vartai"
+
+msgid "General Settings"
+msgstr "Bendri nustatymai"
+
+msgid "Generating PSK..."
+msgstr "Generuojamas PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Generuojamas WPA konfiguracijos failas..."
+
+msgid "Hidden Network"
+msgstr "Paslėptas tinklas"
+
+msgid "Hidden Network ESSID"
+msgstr "Paslėptas tinklo ESSID"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Tapatybė"
+
+msgid "Key"
+msgstr "Raktas"
+
+msgid "Netmask"
+msgstr "Tinklo kaukė"
+
+msgid "No wireless networks found."
+msgstr "Nerasta bevielių tinklų"
+
+msgid "Not connected"
+msgstr "Neprisijungta"
+
+msgid "Obtaining IP address..."
+msgstr "Gaunamas IP adresas..."
+
+msgid "Password"
+msgstr "Slaptažodis"
+
+msgid "Path to PAC File"
+msgstr "Kelias iki PAC failo"
+
+msgid "Preferences"
+msgstr "Nustatymai"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Klausti profilio laidiniams automatiniams prisijungimams"
+
+msgid "Putting interface down..."
+msgstr "Išjungiama sąsaja..."
+
+msgid "Putting interface up..."
+msgstr "Įjungiama sąsaja..."
+
+msgid "Removing old connection..."
+msgstr "Šalinami seni prisijungimai..."
+
+msgid "Required encryption information is missing."
+msgstr "Trūksta reikalingos šifravimo informacijos"
+
+msgid "Resetting IP address..."
+msgstr "Atstatomas IP adresas..."
+
+msgid "Route Table Flushing"
+msgstr "Maršrutų lentelės užpildymas"
+
+msgid "Run disconnect script"
+msgstr "Paleisti atsijungimo scriptą"
+
+msgid "Run script after connect"
+msgstr "Paleisti script'ą po prisijungimo"
+
+msgid "Run script before connect"
+msgstr "Paleisti script'ą prieš prisijungiant"
+
+msgid "Scripts"
+msgstr "Script'ai"
+
+msgid "Secured"
+msgstr "Saugus"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Pasirinkite ar sukurkite laidinį profilį kuriuo jungsitės"
+
+msgid "Setting broadcast address..."
+msgstr "Nustatomas transliavimo adresas..."
+
+msgid "Setting static DNS servers..."
+msgstr "Nustatomi statiniai DNS serveriai..."
+
+msgid "Setting static IP addresses..."
+msgstr "Nustatomi statiniai IP adresai"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Laikinai nerodyti automatinio prisijungimo langų"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Šis tinklas reikalauja įjungto šifravimo"
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Norėdami prisijungti prie laidinio tinklo, jūs turite sukurti tinklo "
+"profilį. Kad sukurti tinklo profilį, įveskite pavadinimą kuris apibūdina šį "
+"tinklą ir spauskite Pridėti."
+
+msgid "Unsecured"
+msgstr "Nesaugus"
+
+msgid "Use Encryption"
+msgstr "Naudoti šifravimą"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Naudoti Šifravimą (tik WEP)"
+
+msgid "Use Static DNS"
+msgstr "Naudoti dinaminius IP"
+
+msgid "Use Static IPs"
+msgstr "Naudoti statinius IP"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Naudoti dBm matuojant singalo stiprį"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Naudoti numatytą profilį laidiniams automatiniams prisijungimams"
+
+msgid "Use global DNS servers"
+msgstr "Naudoti visuotinius DNS serverius"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Naudoti paskutinį profilį laidiniams automatiniams prisijungimams"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Naudoti šiuos nustatymus visiems tinklams kurie dalinasi šį essid"
+
+msgid "Username"
+msgstr "Vartotojo vardas"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant tvarkyklė"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd reikia prieiti prie jūsų kompiuterio tinklo kortos"
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Laidinio prisijungimo nustatymai:"
+
+msgid "Wired Interface"
+msgstr "Laidinė sąsaja"
+
+msgid "Wired Link Detection"
+msgstr "Aptikta laidinė jungtis"
+
+msgid "Wired Network"
+msgstr "Laidinis tinklas"
+
+msgid "Wired connection detected"
+msgstr "Laidinis prisijungimas aptiktas"
+
+msgid "Wireless Interface"
+msgstr "Bevielė sąsaja"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Bevielio ryšio išjungimo mygtukas įjungtas"

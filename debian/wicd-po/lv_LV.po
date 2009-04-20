@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Latviešu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Atļaut Internet pieslēguma koplietošanu"
+
+msgid "Advanced Settings"
+msgstr "Paplašināti iestatījumi"
+
+msgid "Always show wired interface"
+msgstr "Vienmēr rādīt vadu tīkla interfeisus"
+
+msgid "Anonymous Identity"
+msgstr "Anonīma identitāte"
+
+msgid "Authentication"
+msgstr "Autentifikācija"
+
+msgid "Automatic (recommended)"
+msgstr "Automātiski (ieteicams)"
+
+msgid "Automatically connect to this network"
+msgstr "Automātiski pieslēgties šim tīklam"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automātiski pieslēgties pēc savienojuma pazušanas"
+
+msgid "Channel"
+msgstr "Kanāls"
+
+msgid "Choose from the networks below:"
+msgstr "Izvēlieties no sekojošiem tīkliem:"
+
+msgid "Configuring wireless interface..."
+msgstr "Tiek veikta bezvadu interfeisa konfigurēšana..."
+
+msgid "Connect"
+msgstr "Pieslēgties"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Pieslēdzies pie $A ar $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Pieslēdzies pie vadu tīkla (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Pieslēdzas..."
+
+msgid "Connection Cancelled"
+msgstr "Savienojums atcelts"
+
+msgid "Connection Failed: Bad password"
+msgstr "Savienojums neizdevās: nepareiza parole"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Savienojums neizdevās: Nevar saņemt IP adresi"
+
+msgid "Create Ad-Hoc network"
+msgstr "Izveidot Ad-Hoc tīklu"
+
+msgid "DHCP Client"
+msgstr "DHCP klients"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Pieslēgšanās pabeigta"
+
+msgid "Enable debug mode"
+msgstr "Iespējot atkļūdošanas režīmu"
+
+msgid "External Programs"
+msgstr "Ārējās lietojumprogrammas"
+
+msgid "Flushing the routing table..."
+msgstr "Tiek pārlādēta maršrutēšanas tabula..."
+
+msgid "Gateway"
+msgstr "Vārteja"
+
+msgid "General Settings"
+msgstr "Pamata iestatījumi"
+
+msgid "Generating PSK..."
+msgstr "Tiek ģenerēta PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Tiek ģenerēts WPA konfigurācijas fails..."
+
+msgid "Hidden Network"
+msgstr "Paslēptie tīkli"
+
+msgid "Hidden Network ESSID"
+msgstr "Paslēptā tīkla ESSID"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Identitāte"
+
+msgid "Key"
+msgstr "Atslēga"
+
+msgid "Netmask"
+msgstr "Tīkla maska"
+
+msgid "No wireless networks found."
+msgstr "Nav atrasti bezvadu tīkli"
+
+msgid "Not connected"
+msgstr "Nav pieslēdzies"
+
+msgid "Obtaining IP address..."
+msgstr "Tiek veikta IP adreses saņemšana..."
+
+msgid "Password"
+msgstr "Parole"
+
+msgid "Path to PAC File"
+msgstr "Ceļš uz PAC failu"
+
+msgid "Preferences"
+msgstr "Iestatījumi"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Piedāvāt profila izvēli, lai pieslēgtos vadu tīklam"
+
+msgid "Putting interface down..."
+msgstr "Tiek atslēgts interfeiss..."
+
+msgid "Putting interface up..."
+msgstr "Tiek pieslēgts interfeiss..."
+
+msgid "Removing old connection..."
+msgstr "Tiek noņemts iepriekšējais savienojums..."
+
+msgid "Required encryption information is missing."
+msgstr "Nav norādīta kriptēšanas inforācija."
+
+msgid "Resetting IP address..."
+msgstr "Tiek atjaunota IP adrese..."
+
+msgid "Route Table Flushing"
+msgstr "Maršrutēšanas tabulas pārlādēšana"
+
+msgid "Run disconnect script"
+msgstr "Palaist atslēgšanās skriptu"
+
+msgid "Run script after connect"
+msgstr "Palaist skriptu pēc pieslēgšanās"
+
+msgid "Run script before connect"
+msgstr "Palaist skriptu pirms pieslēgšanās"
+
+msgid "Scripts"
+msgstr "Skripti"
+
+msgid "Secured"
+msgstr "Drošs"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Izvēlieties vadu tīkla profilu"
+
+msgid "Setting broadcast address..."
+msgstr "Tiek uzstādīta apraides adrese..."
+
+msgid "Setting static DNS servers..."
+msgstr "Tiek uzstādīts statiskais DNS serveris..."
+
+msgid "Setting static IP addresses..."
+msgstr "Tiek uzstādīta statiskā IP adrese..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Īslaicīgi pārstāt rādīt paziņojumu"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Šim tīklam ir nepieciešama kriptēšana"
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Lai varētu pieslēgties vadu tīklam, ir nepieciešams izveidot tīkla profilu. "
+"Lai to izveidotu, ievadiet profila nosaukumu, kas raksturotu attiecīgo tīklu "
+"un nospiediet pogu \"Pievienot\"."
+
+msgid "Unsecured"
+msgstr "Nedrošs"
+
+msgid "Use Encryption"
+msgstr "Izmantot kriptēšanu"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Izmantot kriptēšanu (tikai WEP)"
+
+msgid "Use Static DNS"
+msgstr "Izmantot statisko DNS"
+
+msgid "Use Static IPs"
+msgstr "Izmantot statisko IP"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Izmantot dBm, lai mērītu signāla stiprumu"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Izmantot noklusēto profilu, lai pieslēgtos vadu tīklam"
+
+msgid "Use global DNS servers"
+msgstr "Izmantot globālos DNS serverus"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Izmantot pēdējo lietoto profilu, lai pieslēgtos vadu tīklam"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Izmantot šos iestatījumus visiem tīkliem ar šādu ESSID"
+
+msgid "Username"
+msgstr "Lietotāja vārds"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant draiveris"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd ir nepieciešama piekļuve Jūsu datora tīkla kartēm."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Vadu tīkla autopieslēgšanās iestatījumi:"
+
+msgid "Wired Interface"
+msgstr "Vadu tīkla interfeiss"
+
+msgid "Wired Link Detection"
+msgstr "Vadu tīkla meklēšana"
+
+msgid "Wired Network"
+msgstr "Vadu tīkls"
+
+msgid "Wired connection detected"
+msgstr "Atrasts vadu tīkla pieslēgums"
+
+msgid "Wireless Interface"
+msgstr "Bezvadu interfeiss"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Iespējot bezvadu atslēgšanas slēdzi"

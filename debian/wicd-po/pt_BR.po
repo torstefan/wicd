@@ -1,0 +1,286 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Português Brasileiro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Ativar compartilhamento de conexão de internet"
+
+msgid "Advanced Settings"
+msgstr "Configurações Avançadas"
+
+msgid "Always show wired interface"
+msgstr "Sempre mostrar a interface com fios"
+
+msgid "Anonymous Identity"
+msgstr "Identidade anônima"
+
+msgid "Authentication"
+msgstr "Autenticação"
+
+msgid "Automatic (recommended)"
+msgstr "Automático (recomendado)"
+
+msgid "Automatically connect to this network"
+msgstr "Conectar automaticamente a esta rede"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Conectar automaticamente após perda de conexão"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Choose from the networks below:"
+msgstr "Escolha uma das redes abaixo:"
+
+msgid "Configuring wireless interface..."
+msgstr "Configurando a interface sem fios..."
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Conectado a $A em $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Conectado a rede com fios (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Conectando..."
+
+msgid "Connection Cancelled"
+msgstr "Conexão cancelada"
+
+msgid "Connection Failed: Bad password"
+msgstr "Conexão Falhou: Senha inválida"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Conexão Falhou: Não foi possível obter um endereço IP"
+
+msgid "Create Ad-Hoc network"
+msgstr "Criar uma rede Ad-Hoc"
+
+msgid "DHCP Client"
+msgstr "Cliente DHCP"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Finalizando a conexão..."
+
+msgid "Enable debug mode"
+msgstr "Habilitar modo debug"
+
+msgid "External Programs"
+msgstr "Programas Externos"
+
+msgid "Flushing the routing table..."
+msgstr "Esvaziando a tabela de roteamento..."
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+msgid "Generating PSK..."
+msgstr "Gerando PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Gerando arquivo de configuração WPA..."
+
+msgid "Hidden Network"
+msgstr "Rede oculta"
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID da rede oculta"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Identidade"
+
+msgid "Key"
+msgstr "Chave"
+
+msgid "Netmask"
+msgstr "Máscara de rede"
+
+msgid "Network Interfaces"
+msgstr "Interfaces de Rede"
+
+msgid "No wireless networks found."
+msgstr "Nenhuma rede sem fio encontrada"
+
+msgid "Not connected"
+msgstr "Não conectado"
+
+msgid "Obtaining IP address..."
+msgstr "Obtendo endereço IP..."
+
+msgid "Password"
+msgstr "Senha"
+
+msgid "Path to PAC File"
+msgstr "Caminho para o arquivo PAC"
+
+msgid "Preferences"
+msgstr "Preferências"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Solicitar perfil para auto-conexão com fios"
+
+msgid "Putting interface down..."
+msgstr "Desligando a interface..."
+
+msgid "Putting interface up..."
+msgstr "Reconectando a interface"
+
+msgid "Removing old connection..."
+msgstr "Removendo a conexão antiga..."
+
+msgid "Required encryption information is missing."
+msgstr "Informação de encriptação necessária está faltando."
+
+msgid "Resetting IP address..."
+msgstr "Resetando o endereço IP..."
+
+msgid "Route Table Flushing"
+msgstr "Limpeza de tabela de roteamento"
+
+msgid "Run disconnect script"
+msgstr "Executar script de desconexão"
+
+msgid "Run script after connect"
+msgstr "Rodar script depois de conectar"
+
+msgid "Run script before connect"
+msgstr "Rodar script antes de conectar"
+
+msgid "Scripts"
+msgstr "Scripts"
+
+msgid "Secured"
+msgstr "Segura"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Selecione ou crie um perfil com fios para se conectar"
+
+msgid "Setting broadcast address..."
+msgstr "Configurando endereço de broadcast..."
+
+msgid "Setting static DNS servers..."
+msgstr "Configurando servidores DNS estáticos..."
+
+msgid "Setting static IP addresses..."
+msgstr "Configurando endereços IP estáticos..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Parar de mostrar o painel de auto-conexão temporariamente"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Essa conexão necessita de encriptação para ser ativada."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Para conectar a uma rede com fios você precisa criar um perfil de rede. Para "
+"criar um perfil, digite um nome que descreva esta rede e pressione Adicionar."
+
+msgid "Unsecured"
+msgstr "Insegura"
+
+msgid "Use Encryption"
+msgstr "Usar Encriptação"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Usar Encriptação (Somente WEP)"
+
+msgid "Use Static DNS"
+msgstr "Usar DNS estático"
+
+msgid "Use Static IPs"
+msgstr "Usar IP estático"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Usar dBm para medir a potência do sinal"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Usar perfil padrão para auto-conexão com fios"
+
+msgid "Use global DNS servers"
+msgstr "Usar servidores DNS globais"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Adotar o último perfil usado para auto-conexão com fios"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Use essas configurações para todas as redes compartilhando esse essid"
+
+msgid "Username"
+msgstr "Usuário"
+
+msgid "WPA Supplicant Driver"
+msgstr "Driver WPA Supplicant"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd precisa acessar as placas de rede do seu computador."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Configurações de auto-conexão com fios:"
+
+msgid "Wired Interface"
+msgstr "Interface com fios"
+
+msgid "Wired Link Detection"
+msgstr "Detecção de Link Com fios"
+
+msgid "Wired Network"
+msgstr "Rede com fios"
+
+msgid "Wired connection detected"
+msgstr "Conexão com fios encontrada"
+
+msgid "Wireless Interface"
+msgstr "Interface sem fio"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Wireless Kill Switch ativado"

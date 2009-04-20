@@ -1,0 +1,277 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Slovenščina\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktiviraj skupno rabo Interneta"
+
+msgid "Advanced Settings"
+msgstr "Napredne nastavitve"
+
+msgid "Always show wired interface"
+msgstr "Vedno pokaži žični vmesnik"
+
+msgid "Anonymous Identity"
+msgstr "Anonimna identiteta"
+
+msgid "Authentication"
+msgstr "Preverjanje istovetnosti"
+
+msgid "Automatic (recommended)"
+msgstr "Samodejno (priporočeno)"
+
+msgid "Automatically connect to this network"
+msgstr "Avtomatsko se poveži v to omrežje"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Avtomatsko ponovno poveži ob izgubi povezave"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Choose from the networks below:"
+msgstr "Izberi med spodnjimi omrežji"
+
+msgid "Configuring wireless interface..."
+msgstr "Oblikujem brezžični vmesnik"
+
+msgid "Connect"
+msgstr "Poveži"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Povezan z $A z $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Povezan v žično omrežje (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Povezujem..."
+
+msgid "Connection Cancelled"
+msgstr "Povezava prekinjena"
+
+msgid "Connection Failed: Bad password"
+msgstr "Povezava ni uspela: Napačno geslo"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Povezava ni uspela: Neuspešno pridobivanje IP naslova"
+
+msgid "Create Ad-Hoc network"
+msgstr "Ustvari Ad-Hoc omrežje"
+
+msgid "DHCP Client"
+msgstr "DHCP klient"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Povezovanje končano..."
+
+msgid "Enable debug mode"
+msgstr "Vklopi način popravljanja napak"
+
+msgid "External Programs"
+msgstr "Zunanji programi"
+
+msgid "Flushing the routing table..."
+msgstr "Splakujem usmerjevalno tabelo"
+
+msgid "Gateway"
+msgstr "Prehod"
+
+msgid "General Settings"
+msgstr "Splošne nastavitva"
+
+msgid "Generating PSK..."
+msgstr "Ustvarjam PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Ustvarjam WPA nastavitveno datoteko"
+
+msgid "Hidden Network"
+msgstr "Skrito omrežje"
+
+msgid "Hidden Network ESSID"
+msgstr "Skrit omrežni ESSID"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Identiteta"
+
+msgid "Key"
+msgstr "Ključ"
+
+msgid "Netmask"
+msgstr "Omrežna maska"
+
+msgid "No wireless networks found."
+msgstr "Nobeno brezžično omrežje ni bilo najdeno"
+
+msgid "Not connected"
+msgstr "Brez povezave"
+
+msgid "Obtaining IP address..."
+msgstr "Pridobivam IP naslov..."
+
+msgid "Password"
+msgstr "Geslo"
+
+msgid "Path to PAC File"
+msgstr "Pot do PAC datoteke"
+
+msgid "Preferences"
+msgstr "Nastavitve"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Pozovi za profil pri avtomatski povezavi v žično omrežje"
+
+msgid "Putting interface down..."
+msgstr "Zapiram vmesnik..."
+
+msgid "Putting interface up..."
+msgstr "Vzpostavljam vmesnik..."
+
+msgid "Removing old connection..."
+msgstr "Odstranjujem staro povezavo..."
+
+msgid "Required encryption information is missing."
+msgstr "Potrebne informacije enkripcije manjkajo"
+
+msgid "Resetting IP address..."
+msgstr "Ponastavljam IP naslov..."
+
+msgid "Run disconnect script"
+msgstr "Poženi prekinitveni skript"
+
+msgid "Run script after connect"
+msgstr "Poženi skripto po vzpostavitvi povezave"
+
+msgid "Run script before connect"
+msgstr "Poženi skripto pred vzpostavitvijo povezave"
+
+msgid "Scripts"
+msgstr "Skripte"
+
+msgid "Secured"
+msgstr "Zaščiteno"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Označi ali ustvari žični profil za povezavo"
+
+msgid "Setting broadcast address..."
+msgstr "Postavljam naslov prenosa.."
+
+msgid "Setting static DNS servers..."
+msgstr "Postavljam statičen DNS server..."
+
+msgid "Setting static IP addresses..."
+msgstr "Postavljam statičen IP naslov..."
+
+msgid "This network requires encryption to be enabled."
+msgstr "To omrežje potrebuje vklopljeno enkripcijo"
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Za povezavo v žično omrežje moraš ustvariti omrežni profil. Da ustvariš "
+"omrežni profil, vtipkaj ime ki opisuje omrežje in pritosni dodaj."
+
+msgid "Unsecured"
+msgstr "Nezaščiteno"
+
+msgid "Use Encryption"
+msgstr "Uporabi šifriranje"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Uporabi enkripcijo (samo WEP)"
+
+msgid "Use Static DNS"
+msgstr "Uporabi statičen DNS"
+
+msgid "Use Static IPs"
+msgstr "Uporabi statičen IP"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Uporabi dBM za merjenje moči signala"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Pri avtomatski povezavi v žično umrežje uporabi privzeti profil"
+
+msgid "Use global DNS servers"
+msgstr "Uporabi univerzalen DNS server"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Uporabi zadenj rabljen profil pri avtomatski žični povezavi"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Uporabi te nastavitve za vs omrežja s tem esid -om"
+
+msgid "Username"
+msgstr "Uporabniško ime"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant gonilnik"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd mora dostopati do mrežnih kartic tvojega računalnika"
+
+msgid "Wired Autoconnect Setting:"
+msgstr "http://localhost:8080/Morlinkz/blog/entry/show.htm"
+
+msgid "Wired Interface"
+msgstr "Žični vmesnik"
+
+msgid "Wired Link Detection"
+msgstr "Zaznava žične povezave"
+
+msgid "Wired Network"
+msgstr "Žično omrežje"
+
+msgid "Wired connection detected"
+msgstr "Zaznana žična povezava"
+
+msgid "Wireless Interface"
+msgstr "Brezžični vmesnik"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Brezžično Kill stikalo vklopljeno"

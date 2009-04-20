@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: עברית\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "הפעל שיתוף חיבור אינטרנט"
+
+msgid "Advanced Settings"
+msgstr "הגדרות מתקדמות"
+
+msgid "Always show wired interface"
+msgstr "הראה תמיד ממשק חוטי"
+
+msgid "Anonymous Identity"
+msgstr "זהות אנונימית"
+
+msgid "Authentication"
+msgstr "אימות נתונים"
+
+msgid "Automatic (recommended)"
+msgstr "אוטומטית (מומלץ)"
+
+msgid "Automatically connect to this network"
+msgstr "התחבר לרשת זו אוטומטית"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "חדש החיבור לאחר אובדן תקשורת"
+
+msgid "Channel"
+msgstr "ערוץ"
+
+msgid "Choose from the networks below:"
+msgstr "בחר מבין הרשתות הבאות:"
+
+msgid "Configuring wireless interface..."
+msgstr "מגדיר ממשק אלחוטי..."
+
+msgid "Connect"
+msgstr "התחבר"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "מחובר ל-$A ב-$B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "מחובר לרשת חוטית (IP: $A)"
+
+msgid "Connecting..."
+msgstr "חיבור"
+
+msgid "Connection Cancelled"
+msgstr "חיבור מבוטל"
+
+msgid "Connection Failed: Bad password"
+msgstr "חיבור נכשל: סיסמה שגויה"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "חיבור נכשל: לא הושגה כתובת IP"
+
+msgid "Create Ad-Hoc network"
+msgstr "צור רשת אד-הוק"
+
+msgid "DHCP Client"
+msgstr "לקוח DHCP"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "חיבור הושלם..."
+
+msgid "Enable debug mode"
+msgstr "אפשר מצב דיבוג"
+
+msgid "External Programs"
+msgstr "תוכנות חיצוניות"
+
+msgid "Flushing the routing table..."
+msgstr "מנקה טבלת ניתוב..."
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "General Settings"
+msgstr "הגדרות כלליות"
+
+msgid "Generating PSK..."
+msgstr "מייצר PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "מייצר קובץ הגדרות WPA..."
+
+msgid "Hidden Network"
+msgstr "רשת מוסתרת"
+
+msgid "Hidden Network ESSID"
+msgstr "זיהוי (ESSID) של רשת מוסתרת"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "זהות"
+
+msgid "Key"
+msgstr "מפתח"
+
+msgid "Netmask"
+msgstr "Netmask"
+
+msgid "No wireless networks found."
+msgstr "לא נמצאו רשתות אלחוטיות"
+
+msgid "Not connected"
+msgstr "מחובר"
+
+msgid "Obtaining IP address..."
+msgstr "קבלת כתובת IP"
+
+msgid "Password"
+msgstr "סיסמה"
+
+msgid "Path to PAC File"
+msgstr "נתיב לקובץ PAC"
+
+msgid "Preferences"
+msgstr "הגדרות"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "בקש מהמשתמש לבחור פרופיל בעת חיבור חוטי אוטומטי"
+
+msgid "Putting interface down..."
+msgstr "מוריד ממשק..."
+
+msgid "Putting interface up..."
+msgstr "מעלה ממשק..."
+
+msgid "Removing old connection..."
+msgstr "מסיר חיבור קודם..."
+
+msgid "Required encryption information is missing."
+msgstr "חסר מידע על ההצפנה."
+
+msgid "Resetting IP address..."
+msgstr "מאתחל כתובת IP..."
+
+msgid "Route Table Flushing"
+msgstr "ניקוי טבלת ניתוב"
+
+msgid "Run disconnect script"
+msgstr "הרץ סקריפט ניתוק"
+
+msgid "Run script after connect"
+msgstr "הרץ סקריפט לאחר התחברות"
+
+msgid "Run script before connect"
+msgstr "הרץ סקריפט טרם התחברות"
+
+msgid "Scripts"
+msgstr "סקריפטים"
+
+msgid "Secured"
+msgstr "מאובטח"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "בחר או צור פרופיל להתחברות חוטית"
+
+msgid "Setting broadcast address..."
+msgstr "קובע כתובת שידור..."
+
+msgid "Setting static DNS servers..."
+msgstr "קובע שרתי DNS סטאטיים..."
+
+msgid "Setting static IP addresses..."
+msgstr "קובע כתובות IP סטאטיות..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "בטל זמנית הודעות קופצות על חיבור אוטומטי"
+
+msgid "This network requires encryption to be enabled."
+msgstr "רשת זו דורשת הפעלת הצפנה"
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"על מנת להתחבר לרשת חוטית יש ליצור פרופיל רשת. על מנת ליצור פרופיל רשת , הזן "
+"שם המתאר רשת זו ולחץ על \"הוסף\"."
+
+msgid "Unsecured"
+msgstr "לא מאובטח"
+
+msgid "Use Encryption"
+msgstr "השתמש בהצפנה"
+
+msgid "Use Encryption (WEP only)"
+msgstr "השתמש בהצפנה (WEP בלבד)"
+
+msgid "Use Static DNS"
+msgstr "השתמש ב-DNS סטאטי"
+
+msgid "Use Static IPs"
+msgstr "השתמש ב-IP סטאטי"
+
+msgid "Use dBm to measure signal strength"
+msgstr "השתמש ב-sBm למדידת עוצמת סיגנל"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "השתמש בפרופיל ברירת מחדל עבור חיבור חוטי"
+
+msgid "Use global DNS servers"
+msgstr "השתמש בשרתי DNS גלובאליים"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "השתמש בפרופיל האחרון לחיבור חוטי"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "השתמש בהגדרות אלה עבור כל הרשתות הפועלות תחת essid זה"
+
+msgid "Username"
+msgstr "שם משתמש"
+
+msgid "WPA Supplicant Driver"
+msgstr "התקן תומך WPA"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "ל-Wicd דרושה גישה לכרטיסי הרשת במחשבך"
+
+msgid "Wired Autoconnect Setting:"
+msgstr "הגדרות התחברות אוטומטית חוטית:"
+
+msgid "Wired Interface"
+msgstr "ממשק חוטי"
+
+msgid "Wired Link Detection"
+msgstr "זיהוי חיבור חוטי"
+
+msgid "Wired Network"
+msgstr "חיבור חוטי"
+
+msgid "Wired connection detected"
+msgstr "זוהה חיבור חוטי"
+
+msgid "Wireless Interface"
+msgstr "ממשק אלחוטי"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "מתג כיבוי אלחוטי מאופשר"

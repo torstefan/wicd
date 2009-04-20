@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Magyar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Internet kapcsolat-megosztás aktiválása"
+
+msgid "Advanced Settings"
+msgstr "Haladó beállítások"
+
+msgid "Always show wired interface"
+msgstr "Vezetékes adapter állandó kijelzése"
+
+msgid "Anonymous Identity"
+msgstr "Anonymous"
+
+msgid "Authentication"
+msgstr "Hitelesítés"
+
+msgid "Automatic (recommended)"
+msgstr "Automatikus (javasolt)"
+
+msgid "Automatically connect to this network"
+msgstr "Automatikus kapcsolódás ehhez a hálózathoz"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automatikus újracsatlakozás a kapcsolat megszakadásakor"
+
+msgid "Channel"
+msgstr "Csatorna"
+
+msgid "Choose from the networks below:"
+msgstr "Válasszon az alábbi hálózatokból:"
+
+msgid "Configuring wireless interface..."
+msgstr "Vezeték nélküli hálózat beállítása..."
+
+msgid "Connect"
+msgstr "Csatlakozás"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Kapcsolat létrejött $A-val $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Vezetékes kapcsolat létrejött (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Csatlakozás..."
+
+msgid "Connection Cancelled"
+msgstr "Kapcsolódás megszakítva"
+
+msgid "Connection Failed: Bad password"
+msgstr "A kapcsolódás sikertelen: rossz a jelszó"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Siekrtelen kapcsolódás: nem sikerült IP címet kapni"
+
+msgid "Create Ad-Hoc network"
+msgstr "Ad-Hoc hálózat létrehozása"
+
+msgid "DHCP Client"
+msgstr "DHCP kliens"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "Kapcsolat létrejött..."
+
+msgid "Enable debug mode"
+msgstr "Hibakeresés engedélyezése"
+
+msgid "External Programs"
+msgstr "Külső programok"
+
+msgid "Flushing the routing table..."
+msgstr "Routing tábla ürítése..."
+
+msgid "Gateway"
+msgstr "Átjáró"
+
+msgid "General Settings"
+msgstr "Általános beállítások"
+
+msgid "Generating PSK..."
+msgstr "PSK előállítása..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA beállítás állomány előállítása..."
+
+msgid "Hidden Network"
+msgstr "Rejtett hálózat"
+
+msgid "Hidden Network ESSID"
+msgstr "Rejtett hálózat ESSID"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Azonosítás"
+
+msgid "Key"
+msgstr "Kulcs"
+
+msgid "Netmask"
+msgstr "Hálózati maszk"
+
+msgid "No wireless networks found."
+msgstr "Nincs elérhető vezeték nélküli hálózat"
+
+msgid "Not connected"
+msgstr "Nincs csatlakoztatva"
+
+msgid "Obtaining IP address..."
+msgstr "IP cím kérése..."
+
+msgid "Password"
+msgstr "Jelszó"
+
+msgid "Path to PAC File"
+msgstr "Elérési út a PAC állományhoz"
+
+msgid "Preferences"
+msgstr "Beállítások"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Profil választás vezetékes újrakapcsolódásnál"
+
+msgid "Putting interface down..."
+msgstr "Adapter lekapcsolása..."
+
+msgid "Putting interface up..."
+msgstr "Adapter bekapcsolása..."
+
+msgid "Removing old connection..."
+msgstr "Régi kapcsolat eltávolítása..."
+
+msgid "Required encryption information is missing."
+msgstr "A szükséges titkosítási információ hiányzik"
+
+msgid "Resetting IP address..."
+msgstr "IP cím visszaállítása..."
+
+msgid "Route Table Flushing"
+msgstr "Route tábla ürítése"
+
+msgid "Run disconnect script"
+msgstr "Kapcsolat megszakító script futtatása"
+
+msgid "Run script after connect"
+msgstr "Parancsfájl futtatása csatlakozás után"
+
+msgid "Run script before connect"
+msgstr "Szcript futtatása csatlakozás előtt"
+
+msgid "Scripts"
+msgstr "Parancsfájlok"
+
+msgid "Secured"
+msgstr "Biztonságos"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Vezetékes profil választása vagy létrehozása a kapcsolódáshoz"
+
+msgid "Setting broadcast address..."
+msgstr "Broadcast cím beállítása..."
+
+msgid "Setting static DNS servers..."
+msgstr "Statikus DNS szerver beállítása..."
+
+msgid "Setting static IP addresses..."
+msgstr "Statikus IP cím beállítása..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Automatikus csatlakozás megjelítésének átmeneti felfüggesztése"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Ehhez a hálózathoz engedélyezni kell a titkosítást"
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"A vezetékes hálózati kapcsolathoz profilt kell létrehozni. Hálózati profil "
+"létrehozásához adjon meg egy nevet és nyomja meg a hozzáadás gombot."
+
+msgid "Unsecured"
+msgstr "Nem biztonságos"
+
+msgid "Use Encryption"
+msgstr "Titkosítás használata"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Titkosítás használata (csak WEP)"
+
+msgid "Use Static DNS"
+msgstr "Statikus DNS használata"
+
+msgid "Use Static IPs"
+msgstr "Statikus IP használata"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Jelerősség dBm alapján"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Alapértelmezett profil használata vezetékes újrakapcsolódásnál"
+
+msgid "Use global DNS servers"
+msgstr "Globális DNS szerverek használata"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "A legutolsó profil használata vezetékes újrakapcsolódásnál"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Használd ezt a essid beállítást minden hálózaton"
+
+msgid "Username"
+msgstr "Felhasználónév"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA kompatibilis meghajtó"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd-nek el kell érni a számítógép hálózati kártyáit."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Vezetékes automatikus csatlakozás beállításai:"
+
+msgid "Wired Interface"
+msgstr "Vezetékes adapter"
+
+msgid "Wired Link Detection"
+msgstr "Vezetékes kapcsolat észlelése"
+
+msgid "Wired Network"
+msgstr "Vezetékes hálózat"
+
+msgid "Wired connection detected"
+msgstr "Vezetékes kapcsolat érzékelve"
+
+msgid "Wireless Interface"
+msgstr "Vezeték nélküli adapter"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "A vezeték nélküli tiltó gomb be van kapcsolva"

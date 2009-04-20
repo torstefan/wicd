@@ -1,0 +1,318 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Norsk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Skru på deling av internettforbindelse"
+
+msgid "Add a new profile"
+msgstr "Legg til ny profil"
+
+msgid "Add a new wired profile"
+msgstr "Legg til en ny kablet profil"
+
+msgid "Advanced Settings"
+msgstr "Avanserte innstillinger"
+
+msgid "Always show wired interface"
+msgstr "Vis alltid nettverkskort for tilkobling med kabel"
+
+msgid "Anonymous Identity"
+msgstr "Anonym identitet"
+
+msgid "Authentication"
+msgstr "Autentikasjon"
+
+msgid "Automatic (recommended)"
+msgstr "Automatisk (anbefalt)"
+
+msgid "Automatic Reconnection"
+msgstr "Automatisk"
+
+msgid "Automatically connect to this network"
+msgstr "Koble til dette nettverket automatisk"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Koble til automatisk ved brudd"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Choose from the networks below:"
+msgstr "Velg mellom nettverkene nedenfor:"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Konfigurerings innstillinger for trådløst nettverket \"$A\" ($B)"
+
+msgid "Configuring wireless interface..."
+msgstr "Konfigurerer trådløst nettverkskortet..."
+
+msgid "Connect"
+msgstr "Koble til"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Koblet til $A med $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Koblet til med kabel (IP: $A)"
+
+msgid "Connecting..."
+msgstr "Kobler til..."
+
+msgid "Connection Cancelled"
+msgstr "Tilkoblingen er avbrutt"
+
+msgid "Connection Failed: Bad password"
+msgstr "Kunne ikke koble til: Feil passord"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Kunne ikke koble til: Mangler IP-addresse"
+
+msgid "Create Ad-Hoc network"
+msgstr "Lag et ad-hoc-nettverk."
+
+msgid "DHCP Client"
+msgstr "DHCP-klient"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Debugging"
+msgstr "Avlusing"
+
+msgid "Done connecting..."
+msgstr "Koblet til..."
+
+msgid "Enable debug mode"
+msgstr "Skru på debug-modus"
+
+msgid "External Programs"
+msgstr "Eksterne programmer"
+
+msgid "Flushing the routing table..."
+msgstr "Tømmer rutetabellen..."
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "General Settings"
+msgstr "Generelle innstillinger"
+
+msgid "Generating PSK..."
+msgstr "Genererer PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Genererer WPA-konfigurasjonsfil..."
+
+msgid "Global DNS servers"
+msgstr "Globale DNS-tjenere"
+
+msgid "Hidden Network"
+msgstr "Skjult nettverk"
+
+msgid "Hidden Network ESSID"
+msgstr "Skjult nettverk ESSID"
+
+msgid "IP"
+msgstr "IP-adresse"
+
+msgid "Identity"
+msgstr "Identitet"
+
+msgid "Key"
+msgstr "Nøkkel"
+
+msgid "Netmask"
+msgstr "Nettverksmaske"
+
+msgid "No wireless networks found."
+msgstr "Ingen trådløse nettverk funnet."
+
+msgid "Not connected"
+msgstr "Ikke tilkoblet"
+
+msgid "Obtaining IP address..."
+msgstr "Venter på IP-adresse..."
+
+msgid "Password"
+msgstr "Passord"
+
+msgid "Path to PAC File"
+msgstr "Sti til PAC-fil"
+
+msgid "Preferences"
+msgstr "Innstillinger"
+
+msgid "Press ESC to cancel"
+msgstr "Trykk ESC for å avbryte"
+
+msgid "Press F8 or Q to quit."
+msgstr "Trykk F8 eller Q for å avslutte."
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Spør etter profil når du kobler til en kabel"
+
+msgid "Putting interface down..."
+msgstr "Tar ned nettverkskort..."
+
+msgid "Putting interface up..."
+msgstr "Tar opp nettverkskort..."
+
+msgid "Removing old connection..."
+msgstr "Fjerner gamle tilkoblinger..."
+
+msgid "Required encryption information is missing."
+msgstr "Mangler nødvendig informasjon om kryptering."
+
+msgid "Resetting IP address..."
+msgstr "Tilbakestiller IP-adresse..."
+
+msgid "Route Table Flushing"
+msgstr "Tøm rutingstabellen"
+
+msgid "Run disconnect script"
+msgstr "Kjør frakoplingsskript"
+
+msgid "Run script after connect"
+msgstr "Skript som kjøres etter tilkobling:"
+
+msgid "Run script before connect"
+msgstr "Skript som kjøres før tilkobling:"
+
+msgid "Scan"
+msgstr "Skann"
+
+msgid "Scanning networks... stand by..."
+msgstr "Skanner nettverkene.. vent lit..."
+
+msgid "Scripts"
+msgstr "Skript"
+
+msgid "Secured"
+msgstr "Sikret"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Velg eller lag en profil for å koble til kablet nettverk"
+
+msgid "Setting broadcast address..."
+msgstr "Setter broadcast-adresse..."
+
+msgid "Setting static DNS servers..."
+msgstr "Setter statiske DNS-tjenere..."
+
+msgid "Setting static IP addresses..."
+msgstr "Setter statisk IP-adresse..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Ikke vis oppsprett-vindu for autotilkobling"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Dette nettverket krever kryptering for tilkobling."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"For å koble til nettverk med kabel, må du først lage en nettverksprofil. For "
+"å lage denne, skriv inn et navn som beskriver nettverket du vil koble til, "
+"og trykk \"legg til\"."
+
+msgid "Unsecured"
+msgstr "Usikret"
+
+msgid "Use Encryption"
+msgstr "Bruk kryptering"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Bruk kryptering (bare WEP)"
+
+msgid "Use Static DNS"
+msgstr "Bruk statisk DNS"
+
+msgid "Use Static IPs"
+msgstr "Bruk statisk IP"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Bruk dBm for måling av signalstyrke"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Bruk automatisk standardprofil når du kobler til en kabel"
+
+msgid "Use global DNS servers"
+msgstr "Bruk globale DNS-tjenere"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Bruk profilen du sist brukte når du kobler til kabel"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr ""
+"Bruk disse innstillingene for alle nettverkene som deler denne essid-en"
+
+msgid "Username"
+msgstr "Brukernavn"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant-driver"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd trenger tilgang til nettverkskortet i maskinen din."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "Instilling for kablet autotilkobling"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Kablet Autotilkobling Innstillinger"
+
+msgid "Wired Interface"
+msgstr "Nettverkskort for tilkobling med kabel"
+
+msgid "Wired Link Detection"
+msgstr "Oppdagelse av kablet tilkobling"
+
+msgid "Wired Network"
+msgstr "Kablet nettverk"
+
+msgid "Wired connection detected"
+msgstr "Oppdaget kabeltilkobling"
+
+msgid "Wireless Interface"
+msgstr "Nettverkskort for trådløs tilkobling"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Trådløs hovedbryter skrudd av"

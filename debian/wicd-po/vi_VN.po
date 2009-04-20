@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: Việt Nam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Advanced Settings"
+msgstr "Thuộc tính nâng cao"
+
+msgid "Always show wired interface"
+msgstr "Luôn hiện mạng có dây"
+
+msgid "Anonymous Identity"
+msgstr "Ẩn danh"
+
+msgid "Authentication"
+msgstr "Chứng thực"
+
+msgid "Automatically connect to this network"
+msgstr "Tự động kết nối đến mạng này"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Tự kết nối lại"
+
+msgid "Channel"
+msgstr "Kênh"
+
+msgid "Choose from the networks below:"
+msgstr "Chọn từ các mạng dưới đây:"
+
+msgid "Connect"
+msgstr "Kết nối"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Đã kết nối vào mạng $A (chất lượng mạng đạt $B), IP: $C"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Đã kết nối với mạng có dây, IP: $A"
+
+msgid "Connecting..."
+msgstr "Đang kết nối"
+
+msgid "DNS"
+msgstr "Bộ phân giải tên miền"
+
+msgid "Gateway"
+msgstr "Cổng"
+
+msgid "Hidden Network"
+msgstr "Mạng ẩn"
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID của mạng ẩn"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "Danh định"
+
+msgid "Key"
+msgstr "Khóa"
+
+msgid "Netmask"
+msgstr "Mặt nạ mạng"
+
+msgid "No wireless networks found."
+msgstr "Không thấy mạng không dây nào"
+
+msgid "Not connected"
+msgstr "Chưa kết nối"
+
+msgid "Password"
+msgstr "Mật khẩu"
+
+msgid "Path to PAC File"
+msgstr "đường dẫn đến tập tin PAC"
+
+msgid "Preferences"
+msgstr "Cấu hình"
+
+msgid "Putting interface down..."
+msgstr "Đang tắt thiết bị...."
+
+msgid "Putting interface up..."
+msgstr "Đang khởi động thiết bị..."
+
+msgid "Removing old connection..."
+msgstr "m m n"
+
+msgid "Resetting IP address..."
+msgstr "Đang khởi động lại địa chỉ IP..."
+
+msgid "Secured"
+msgstr "Đã được bảo mật"
+
+msgid "Unsecured"
+msgstr "Không bảo mật"
+
+msgid "Use Encryption"
+msgstr "Mã hóa"
+
+msgid "Use Static DNS"
+msgstr "Dùng DNS tĩnh"
+
+msgid "Use Static IPs"
+msgstr "Sử dụng địa chỉ IP tĩnh"
+
+msgid "Username"
+msgstr "Tên người dùng"
+
+msgid "WPA Supplicant Driver"
+msgstr "Trình điều khiển WPA"
+
+msgid "Wired Interface"
+msgstr "Cổng mạng có dây"
+
+msgid "Wired Network"
+msgstr "Mạng dây"
+
+msgid "Wireless Interface"
+msgstr "Cổng mạng không dây"

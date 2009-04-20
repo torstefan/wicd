@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicd \n"
+"POT-Creation-Date: 2009-02-06 15:29+0000\n"
+"PO-Revision-Date: 2009-02-06 15:29+0000\n"
+"Language-Team: 한국어\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "0"
+msgstr "0"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "6"
+msgstr "6"
+
+msgid "7"
+msgstr "7"
+
+msgid "8"
+msgstr "8"
+
+msgid "9"
+msgstr "9"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "인터넷 연결 공유 활성화"
+
+msgid "Advanced Settings"
+msgstr "고급 설정"
+
+msgid "Always show wired interface"
+msgstr "항상 유선 네트워크 인터페이스를 보여줍니다."
+
+msgid "Anonymous Identity"
+msgstr "익명"
+
+msgid "Authentication"
+msgstr "인증"
+
+msgid "Automatic (recommended)"
+msgstr "자동 (추천)"
+
+msgid "Automatically connect to this network"
+msgstr "자동으로 인터넷에 연결합니다."
+
+msgid "Automatically reconnect on connection loss"
+msgstr "연결이 끊겼을때, 자동으로 재접속을 합니다."
+
+msgid "Channel"
+msgstr "채널"
+
+msgid "Choose from the networks below:"
+msgstr "밑에 있는 네트워크 중 하나를 선택해주세요:"
+
+msgid "Configuring wireless interface..."
+msgstr "무선 네트워크 인터페이스를 설정합니다..."
+
+msgid "Connect"
+msgstr "연결"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "$A로 연결이 되었습니다. 신호강도: $B (IP:$C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "유선 네트워크에 연결되어 있습니다.(IP:$A)"
+
+msgid "Connecting..."
+msgstr "연결 중..."
+
+msgid "Connection Cancelled"
+msgstr "연결이 취소되었습니다."
+
+msgid "Connection Failed: Bad password"
+msgstr "연결 실패: 잘못된 비밀번호"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "연결 실패: IP 주소를 가져오지 못했습니다."
+
+msgid "Create Ad-Hoc network"
+msgstr "Ad-Hoc 네트워크를 생성합니다."
+
+msgid "DHCP Client"
+msgstr "DHCP 클라이언트"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Done connecting..."
+msgstr "연결되었습니다..."
+
+msgid "Enable debug mode"
+msgstr "디버깅 모드 사용"
+
+msgid "External Programs"
+msgstr "외부 프로그램"
+
+msgid "Flushing the routing table..."
+msgstr "라우팅 테이블을 비우고 있습니다..."
+
+msgid "Gateway"
+msgstr "게이트웨이"
+
+msgid "General Settings"
+msgstr "일반 설정"
+
+msgid "Generating PSK..."
+msgstr "PSK를 생성하고 있습니다..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA 설정 파일을 생성하고 있습니다..."
+
+msgid "Hidden Network"
+msgstr "숨겨진 네트워크"
+
+msgid "Hidden Network ESSID"
+msgstr "숨겨진 네트워크의 ESSID"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Identity"
+msgstr "실명"
+
+msgid "Key"
+msgstr "키"
+
+msgid "Netmask"
+msgstr "넷마스크"
+
+msgid "No wireless networks found."
+msgstr "무선 네트워크  AP를 찾을 수 없습니다."
+
+msgid "Not connected"
+msgstr "연결되지 않았습니다."
+
+msgid "Obtaining IP address..."
+msgstr "IP 주소를 얻고 있습니다..."
+
+msgid "Password"
+msgstr "암호"
+
+msgid "Path to PAC File"
+msgstr "PAC 파일의 위치"
+
+msgid "Preferences"
+msgstr "환경설정"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "유선 네트워크 자동 연결에 필요한 프로파일의 위치"
+
+msgid "Putting interface down..."
+msgstr "인터페이스의 작동을 중지시킵니다..."
+
+msgid "Putting interface up..."
+msgstr "인터페이스를 다시 작동시킵니다..."
+
+msgid "Removing old connection..."
+msgstr "예전 연결을 지우고 있습니다..."
+
+msgid "Required encryption information is missing."
+msgstr "필요한 암호화 정보가 없습니다."
+
+msgid "Resetting IP address..."
+msgstr "IP 주소를 다시 설정하고 있습니다..."
+
+msgid "Route Table Flushing"
+msgstr "라우트 테이블 플러슁"
+
+msgid "Run disconnect script"
+msgstr "연결 끊기 스크립트 실행"
+
+msgid "Run script after connect"
+msgstr "접속한 후에 스크립트를 실행합니다."
+
+msgid "Run script before connect"
+msgstr "접속하기 전에 스크립트를 실행합니다."
+
+msgid "Scripts"
+msgstr "스크립트"
+
+msgid "Secured"
+msgstr "암호화된"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "연결하려면 유선 연결 설정 프로파일을 선택하거나 새로 만드세요."
+
+msgid "Setting broadcast address..."
+msgstr "브로드캐스트 주소를 정하고 있습니다..."
+
+msgid "Setting static DNS servers..."
+msgstr "고정된 DNS 서버의 주소를 등록하고 있습니다..."
+
+msgid "Setting static IP addresses..."
+msgstr "고정된 IP 주소를 등록하고 있습니다..."
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "자동 연결 팝업 표시를 잠시 중단합니다."
+
+msgid "This network requires encryption to be enabled."
+msgstr "이 네트워크는 암호화를 해야 합니다."
+
+msgid ""
+"To connect to a wired network, you must create a network profile.  To create "
+"a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"유선 네트워크에 연결하기 위해서는 여러분은 반드시 네트워크 프로파일을 만들어"
+"야 합니다."
+
+msgid "Unsecured"
+msgstr "암호화되지 않은"
+
+msgid "Use Encryption"
+msgstr "암호화 기능을 사용합니다."
+
+msgid "Use Encryption (WEP only)"
+msgstr "암호화 사용 (WEP 전용)"
+
+msgid "Use Static DNS"
+msgstr "고정된 DNS 주소를 사용합니다."
+
+msgid "Use Static IPs"
+msgstr "고정된 IP 주소를 사용합니다."
+
+msgid "Use dBm to measure signal strength"
+msgstr "신호 강도를 dBm으로 측정합니다."
+
+msgid "Use default profile on wired autoconnect"
+msgstr "유선 네트워크에 자동으로 연결할 때, 기본 프로파일을 사용합니다."
+
+msgid "Use global DNS servers"
+msgstr "다른 DNS 서버를 사용합니다."
+
+msgid "Use last used profile on wired autoconnect"
+msgstr ""
+"유선 네트워크에 자동으로 연결될 때, 마지막으로 쓰인 프로파일을 이용합니다."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "이 essid를 모든 네트워크에 공유하기 위해서는 이 설정을 사용하세요."
+
+msgid "Username"
+msgstr "사용자 이름"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant 드라이버"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd는 여러분의 네트워크 카드에 접근할 필요가 있습니다."
+
+msgid "Wired Autoconnect Setting:"
+msgstr "유선 자동 연결 설정:"
+
+msgid "Wired Interface"
+msgstr "유선 네트워크 인터페이스"
+
+msgid "Wired Link Detection"
+msgstr "유선 연결 찾기"
+
+msgid "Wired Network"
+msgstr "유선 네트워크"
+
+msgid "Wired connection detected"
+msgstr "유선 연결을 찾았습니다."
+
+msgid "Wireless Interface"
+msgstr "무선 네트워크 인터페이스"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "무선 자동 중지 스위치가 활성화됨"
