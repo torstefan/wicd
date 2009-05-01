@@ -17,6 +17,7 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
       tr_TR.po, ua_UA.po, vi_VN.po, zh_CN.po, zh_HK.po, zh_TW.po
       added: fix typos (same as #516459)
   * debian/config, debian/templates added, initial debconf support
+    (Closes: #524060)
   * debian/control:
     - Build-Dependency on po-debconf added
   * debian/postinst:
