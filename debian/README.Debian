@@ -1,6 +1,9 @@
 wicd for Debian
 ---------------
 
+1. Installation problems
+------------------------
+
 If Wicd fails to connect after you install it, make sure that the only 
 entry in your /etc/network/interfaces file is
 
@@ -34,5 +37,16 @@ After you did this, you have to reload DBus by:
 
 	# /etc/init.d/dbus reload
 
+
+2. Boot-time problems
+---------------------
+
+If you happen to have boot-time problems, specifically the need to
+restart DBus at each boot, please make sure that DBus is started
+*before* wicd during boot. That should be ensured by the LSB headers
+in the init script, but not everyone has a dependency-based boot
+order.
+If your boot-time problems are of some other nature, please reportbug(1)
+them.
 
  -- David Paleino <d.paleino@gmail.com>  Mon, 09 Feb 2009 09:37:13 +0100
