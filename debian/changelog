@@ -25,8 +25,10 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
     - enable debconf questions
   * debian/README.Debian updated: specify that DBus should be boot-started
     before wicd (Closes: #526408)
+  * debian/init: added support for "status" command, thanks to Peter
+    Eisentraut (Closes: #528928)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 29 May 2009 17:50:41 +0200
+ -- David Paleino <d.paleino@gmail.com>  Fri, 29 May 2009 17:52:49 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
