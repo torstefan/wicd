@@ -1,12 +1,16 @@
 Only allow users of group "netdev" to configure wicd.
 See #512160
 ---
- other/wicd.conf |    7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ other/wicd.conf |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
---- wicd-1.5.9.orig/other/wicd.conf
-+++ wicd-1.5.9/other/wicd.conf
-@@ -12,20 +12,21 @@
+--- wicd.orig/other/wicd.conf
++++ wicd/other/wicd.conf
+@@ -8,24 +8,24 @@
+                 <allow send_interface="org.wicd.daemon"/>
+         </policy>
+         <policy at_console="true">
+-                <deny own="org.wicd.daemon"/>
                  <allow send_destination="org.wicd.daemon"/>
                  <allow send_interface="org.wicd.daemon"/>
          </policy>

@@ -1,10 +1,11 @@
 wicd (1.5.9-6) UNRELEASED; urgency=low
 
-  * debian/patches/09-fix_wire_plugging_detection.patch fixed
-    (Closes: #522057)
-  * debian/patches/10-add_udhcpc_support.patch added, thanks to "madmo"
-    from the Wicd forums for making it, and to Luca Capello for fixing 
-    and porting it (Closes: #520014)
+  * debian/patches/:
+    - 05-fix_DBus_policy.patch fixed (Closes: #530505, #525622)
+    - 09-fix_wire_plugging_detection.patch fixed (Closes: #522057)
+    - 10-add_udhcpc_support.patch added, thanks to "madmo" from the
+      Wicd forums for making it, and to Luca Capello for fixing and
+      porting it (Closes: #520014)
   * debian/po moved to debian/wicd-po, avoid conflicts with debconf's
     translations
   * debian/wicd-po/:
@@ -27,8 +28,9 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
     before wicd (Closes: #526408)
   * debian/init: added support for "status" command, thanks to Peter
     Eisentraut (Closes: #528928)
+  * 
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 29 May 2009 17:52:49 +0200
+ -- David Paleino <d.paleino@gmail.com>  Fri, 29 May 2009 17:59:55 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
