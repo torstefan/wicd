@@ -20,12 +20,13 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
     (Closes: #524060)
   * debian/control:
     - Build-Dependency on po-debconf added
+    - added missing dependency on lsb-base
   * debian/postinst:
     - enable debconf questions
   * debian/README.Debian updated: specify that DBus should be boot-started
     before wicd (Closes: #526408)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 02 May 2009 08:34:40 +0200
+ -- David Paleino <d.paleino@gmail.com>  Fri, 29 May 2009 17:50:41 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 

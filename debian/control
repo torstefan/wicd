@@ -22,7 +22,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  dhcpcd | dhcp3-client | pump,
  net-tools | ethtool,
  net-tools | iproute,
- adduser
+ adduser,
+ lsb-base (>= 3.2-13)
 Suggests: pm-utils
 Conflicts: network-manager
 Description: wired and wireless network manager
