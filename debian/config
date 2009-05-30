@@ -1,19 +1,21 @@
-#!/bin/bash -e
+#!/bin/bash
+
+set -e
 
 # Source debconf library.
 . /usr/share/debconf/confmodule
 
 # Show the notice about permissions
-db_input medium wicd/notice || true
+db_input high wicd/notice || true
 db_go
 
 db_metaget wicd/users users
-db_subst wicd/users users "$(compgen -u | sort | tr '\n' ',' | sed 's@,@, @g;s@, $@@g')"
+db_subst wicd/users user "$(getent passwd | awk -F: '{if ($3 >= 1000 && $3 < 60000) print $1}' | sort | tr '\n' ',' | sed 's@,@, @g;s@, $@@g')"
 
 db_metaget wicd/users default
 db_subst wicd/users default "$(grep netdev /etc/group | cut -d: -f4 | sed 's@,@, @g')"
 
-db_input medium wicd/users || true
+db_input high wicd/users || true
 db_go
 
 db_get wicd/users

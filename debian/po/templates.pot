@@ -26,9 +26,8 @@ msgstr ""
 #. Description
 #: ../templates:1001
 msgid ""
-"As one can run scripts with root permissions from within the clients, it is "
-"required that some users, which will be able to run the chosen client, are "
-"added to the `netdev' group."
+"Users that are allowed to run the wicd clients need to be added to the "
+"`netdev' group."
 msgstr ""
 
 #. Type: multiselect

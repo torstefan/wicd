@@ -26,13 +26,11 @@ msgstr "I client wicd necessitano privilegi"
 #. Description
 #: ../templates:1001
 msgid ""
-"As one can run scripts with root permissions from within the clients, it is "
-"required that some users, which will be able to run the chosen client, are "
-"added to the `netdev' group."
+"Users that are allowed to run the wicd clients need to be added to the "
+"`netdev' group."
 msgstr ""
-"Data la possibilità di esecuzione di script con permessi root dai client, è "
-"richiesto che alcuni utenti, che saranno in grado di eseguire il client "
-"prescelto, vengano aggiunti al gruppo `netdev'."
+"Gli utenti abilitati all'esecuzione dei client wicd devono essere "
+"aggiunti al gruppo `netdev'."
 
 #. Type: multiselect
 #. Choices
