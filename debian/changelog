@@ -28,9 +28,9 @@ wicd (1.5.9-6) UNRELEASED; urgency=low
     before wicd (Closes: #526408)
   * debian/init: added support for "status" command, thanks to Peter
     Eisentraut (Closes: #528928)
-  * 
+  * debian/rules updated
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 29 May 2009 17:59:55 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 30 May 2009 20:59:41 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
