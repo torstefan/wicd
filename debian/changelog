@@ -14,7 +14,7 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
     - 09-fix_wire_plugging_detection.patch fixed (Closes: #522057)
     - 10-add_udhcpc_support.patch added, thanks to "madmo" from the
       Wicd forums for making it, and to Luca Capello for fixing and
-      porting it (Closes: #520014)
+      porting it to 1.5.9, now ported to 1.6.0 (Closes: #520014)
   * debian/po moved to debian/wicd-po, avoid conflicts with debconf's
     translations
   * debian/wicd-po/:
@@ -40,7 +40,7 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
   * debian/rules updated
   * debian/watch fixed not to catch alpha/beta releases
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 22:26:21 +0200
+ -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 23:11:03 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
