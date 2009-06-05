@@ -12,22 +12,20 @@
 # http://wicd.net/wiki/doku.php?id=fedora
 
 WICD_BIN=%SBIN%wicd
-WICD_PIDFILE=%PIDFILE%
-WICD_LOCKFILE=/var/lock/subsys/wicd
 
 case "$1" in
         start)
                 echo -n "Starting wicd services: "
                 daemon $WICD_BIN 2> /dev/null
-                touch $WICD_LOCKFILE
+                touch /var/lock/subsys/wicd
         ;;
         stop)
                 echo -n "Shutting down wicd services: "
-                kill `/bin/cat $WICD_PIDFILE` 2> /dev/null
-                rm -f $WICD_LOCKFILE
+                killall wicd 2> /dev/null
+                rm -f /var/lock/subsys/wicd
         ;;
         status)
-                if pidofproc -p $WICD_PIDFILE wicd > /dev/null ; then
+                if pidofproc wicd > /dev/null ; then
                         echo "wicd is running."
                 else
                         status wicd

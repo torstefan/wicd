@@ -1,46 +1,39 @@
 #!/bin/bash
 
-# loosely based on
-# http://repos.archlinux.org/viewvc.cgi/wicd/repos/extra-i686/wicd-daemon?revision=1&view=markup
-# and modified to use the PIDFILE
+# Arch init script for wicd
 
 . /etc/rc.conf
 . /etc/rc.d/functions
 
-# This is defined in /usr/lib/python2.5/site-packages/wicd/wpath.py
-PIDFILE="%PIDFILE%"
+WICD_BIN=%SBIN%wicd
 
-wicd_start() {
-  stat_busy "Starting wicd Daemon"
-  if [ -e $PIDFILE ]; then
-    echo "Wicd appears to already be running."
-    echo "If this is not the case, then remove "
-    echo "$PIDFILE and try again..."
-    stat_fail
-  else
-    %SBIN%wicd 2>/dev/null 1>&2
-    add_daemon wicd
-    stat_done
-  fi
-}
-
-wicd_stop() {
-  stat_busy "Stopping wicd Daemon"
-  if [ -e $PIDFILE ]; then
-    kill $(cat $PIDFILE) 2>/dev/null
-    rm -f $PIDFILE 2>/dev/null
-  fi
-  rm_daemon wicd
-  stat_done
-}
+if [ -f /var/run/wicd/wicd.pid ]; then 
+	PID="$(cat /var/run/wicd/wicd.pid)"
+fi
 
 case "$1" in
   start)
-    wicd_start
-    ;;
+    stat_busy "Starting wicd Daemon"
+	if [ -z "$PID" ]; then
+    	$WICD_BIN &> /dev/null
+	fi 
+	if [ ! -z "$PID" -o $? -gt 0 ]; then
+		stat_fail
+	else
+		add_daemon wicd
+		stat_done
+	fi
+	;;
   stop)
-    wicd_stop
-    ;;
+    stat_busy "Stopping wicd Daemon"
+    [ ! -z "$PID" ] && kill $PID &> /dev/null
+	if [ $? -gt 0 ]; then
+		stat_fail
+	else
+		rm_daemon wicd
+		stat_done
+	fi
+	;;
   restart)
     $0 stop
     sleep 1
@@ -49,6 +42,6 @@ case "$1" in
   *)
     echo "usage: $0 {start|stop|restart}"  
 esac
-exit 0
 
+exit 0
 

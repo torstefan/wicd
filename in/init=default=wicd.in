@@ -27,6 +27,8 @@ wicd_stop() {
   if [ -e $PIDFILE ]; then
     kill $(cat $PIDFILE) 2>/dev/null
     rm -f $PIDFILE 2>/dev/null
+  else
+    killall wicd-client 2>/dev/null
   fi
 }
 

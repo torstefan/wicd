@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" Configure the scripts for a particular network.
+""" configscript -- Configure the scripts for a particular network.
 
 Script for configuring the scripts for a network passed in as a
 command line argument.  This needs to run a separate process because
@@ -10,8 +10,8 @@ run as the current user.
 """
 
 #
-#   Copyright (C) 2007 - 2008 Adam Blackburn
-#   Copyright (C) 2007 - 2008 Dan O'Reilly
+#   Copyright (C) 2007-2009 Adam Blackburn
+#   Copyright (C) 2007-2009 Dan O'Reilly
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 2 as
@@ -30,13 +30,13 @@ import sys
 import os
 import gtk
 import ConfigParser
-import dbus
 import gtk.glade
 
-import wicd.wpath as wpath
-import wicd.misc as misc
+from wicd import wpath
+from wicd import translations
+from wicd import dbusmanager
 
-_ = misc.get_gettext()
+_ = translations.get_gettext()
 
 language = {}
 language['configure_scripts'] = _("Configure Scripts")
@@ -44,21 +44,11 @@ language['before_script'] = _("Pre-connection Script")
 language['after_script'] = _("Post-connection Script")
 language['disconnect_script'] = _("Disconnection Script")
 
-bus = dbus.SystemBus()
+dbus = dbusmanager.DBusManager()
+dbus.connect_to_dbus()
 
-# Connect to the daemon
-try:
-    print 'Attempting to connect tray to daemon...'
-    proxy_obj = bus.get_object('org.wicd.daemon', '/org/wicd/daemon')
-    print 'Success.'
-except Exception:
-    print 'Daemon not running...'
-    misc.PromptToStartDaemon()
-    sys.exit(1)
-
-wireless = dbus.Interface(proxy_obj, 'org.wicd.daemon.wireless')
-wired = dbus.Interface(proxy_obj, 'org.wicd.daemon.wired')
-config = dbus.Interface(proxy_obj, 'org.wicd.daemon.config')
+wireless = dbus.get_interface("wireless")
+wired = dbus.get_interface("wired")
 
 wireless_conf = wpath.etc + 'wireless-settings.conf'
 wired_conf = wpath.etc + 'wired-settings.conf'
@@ -132,8 +122,9 @@ def write_scripts(network, network_type, script_info):
         con.set(network, "afterscript", script_info["post_entry"])
         con.set(network, "disconnectscript", script_info["disconnect_entry"])
         con.write(open(wired_conf, "w"))
-        config.ReadWiredNetworkProfile(network)
-        config.SaveWiredNetworkProfile(network)
+        wired.ReloadConfig()
+        wired.ReadWiredNetworkProfile(network)
+        wired.SaveWiredNetworkProfile(network)
     else:
         bssid = wireless.GetWirelessProperty(int(network), "bssid")
         con.read(wireless_conf)
@@ -143,8 +134,10 @@ def write_scripts(network, network_type, script_info):
         con.set(bssid, "afterscript", script_info["post_entry"])
         con.set(bssid, "disconnectscript", script_info["disconnect_entry"])
         con.write(open(wireless_conf, "w"))
-        config.ReadWirelessNetworkProfile(int(network))
-        config.SaveWirelessNetworkProfile(int(network))
+        wireless.ReloadConfig()
+        wireless.ReadWirelessNetworkProfile(int(network))
+        wireless.SaveWirelessNetworkProfile(int(network))
+
 
 def main (argv):
     """ Runs the script configuration dialog. """

@@ -1,8 +1,13 @@
-""" Misc - miscellaneous functions for wicd """
+""" misc - miscellaneous functions for wicd
+
+This module contains a large variety of utility functions used
+throughout wicd.
+
+"""
 
 #
-#   Copyright (C) 2007 - 2008 Adam Blackburn
-#   Copyright (C) 2007 - 2008 Dan O'Reilly
+#   Copyright (C) 2007 - 2009 Adam Blackburn
+#   Copyright (C) 2007 - 2009 Dan O'Reilly
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 2 as
@@ -19,39 +24,57 @@
 
 import os
 import locale
-import gettext
 import sys
 import re
+import gobject
+from threading import Thread
 from subprocess import Popen, STDOUT, PIPE, call
-import commands
+from commands import getoutput
+from itertools import repeat, chain, izip
 
-import wicd.wpath as wpath
+# wicd imports
+import wpath
 
-if __name__ == '__main__':
-    wpath.chdir(__file__)
-    
+# Connection state constants
 NOT_CONNECTED = 0
 CONNECTING = 1
 WIRELESS = 2
 WIRED = 3
 SUSPENDED = 4
 
+# Automatic app selection constant
 AUTO = 0
+
+# DHCP Clients
 DHCLIENT = 1
 DHCPCD = 2
 PUMP = 3
 
+# Link detection tools
 ETHTOOL = 1
 MIITOOL = 2
 
+# Route flushing tools
 IP = 1
 ROUTE = 2
+
+# Graphical sudo apps
+GKSUDO = 1
+KDESU = 2
+KTSUSS = 3
+_sudo_dict = { 
+    AUTO : "",
+    GKSUDO : "gksudo",
+    KDESU : "kdesu",
+    KTSUSS: "ktsuss",
+}
 
 class WicdError(Exception):
     pass
     
-__LANG = None
-def Run(cmd, include_stderr=False, return_pipe=False):
+
+def Run(cmd, include_stderr=False, return_pipe=False,
+        return_obj=False, return_retcode=True):
     """ Run a command.
 
     Runs the given command, returning either the output
@@ -63,11 +86,12 @@ def Run(cmd, include_stderr=False, return_pipe=False):
                       be included in the pipe to the cmd.
     return_pipe - Boolean specifying if a pipe to the
                   command should be returned.  If it is
-                  false, all that will be returned is
+                  False, all that will be returned is
                   one output string from the command.
+    return_obj - If True, Run will return the Popen object
+                 for the command that was run.
 
     """
-    global __LANG
     if not isinstance(cmd, list):
         cmd = to_unicode(str(cmd))
         cmd = cmd.split()
@@ -77,58 +101,63 @@ def Run(cmd, include_stderr=False, return_pipe=False):
     else:
         err = None
         fds = False
+    if return_obj:
+        std_in = PIPE
+    else:
+        std_in = None
     
-    if not __LANG:
-        __LANG = get_good_lang()
-
+    # We need to make sure that the results of the command we run
+    # are in English, so we set up a temporary environment.
     tmpenv = os.environ.copy()
-    tmpenv["LC_ALL"] = __LANG
-    tmpenv["LANG"] = __LANG
+    tmpenv["LC_ALL"] = "C"
+    tmpenv["LANG"] = "C"
+    
     try:
-        f = Popen(cmd, shell=False, stdout=PIPE, stderr=err, close_fds=fds,
-                  cwd='/', env=tmpenv)
+        f = Popen(cmd, shell=False, stdout=PIPE, stdin=std_in, stderr=err,
+                  close_fds=fds, cwd='/', env=tmpenv)
     except OSError, e:
         print "Running command %s failed: %s" % (str(cmd), str(e))
         return ""
         
-    
+    if return_obj:
+        return f
     if return_pipe:
         return f.stdout
     else:
         return f.communicate()[0]
     
-def get_good_lang():
-    """ Check if en_US.utf8 is an available locale, if not use C. """
-    output = Popen(["locale", "-a"], shell=False, stdout=PIPE).communicate()[0]
-    if "en_US.utf8" in output:
-        return "en_US.utf8"
-    else:
-        return "C"
-    
 def LaunchAndWait(cmd):
     """ Launches the given program with the given arguments, then blocks.
 
     cmd : A list contained the program name and its arguments.
+
+    returns: The exit code of the process.
     
     """
-    
-    call(cmd, shell=False)
+    if not isinstance(cmd, list):
+        cmd = to_unicode(str(cmd))
+        cmd = cmd.split()
+    p = Popen(cmd, shell=False, stdout=PIPE, stderr=STDOUT, stdin=None)
+    return p.wait()
 
 def IsValidIP(ip):
     """ Make sure an entered IP is valid. """
-    if ip and ip.count('.') == 3:
-        ipNumbers = ip.split('.')
-        for number in ipNumbers:
-            if not number.isdigit() or int(number) > 255:
-                return False
-        return ipNumbers
+    if ip != None:
+        if ip.count('.') == 3:
+            ipNumbers = ip.split('.')
+            for number in ipNumbers:
+                if not number.isdigit() or int(number) > 255:
+                    return False
+            return ipNumbers
     return False
 
 def PromptToStartDaemon():
     """ Prompt the user to start the daemon """
     daemonloc = wpath.sbin + 'wicd'
     sudo_prog = choose_sudo_prog()
-    if sudo_prog.endswith("gksudo") or sudo_prog.endswith("ktsuss"):
+    if not sudo_prog:
+        return False
+    if "gksu" in sudo_prog or "ktsuss" in sudo_prog:
         msg = '--message'
     else:
         msg = '--caption'
@@ -136,6 +165,7 @@ def PromptToStartDaemon():
                  'Wicd needs to access your computer\'s network cards.',
                  daemonloc]
     os.spawnvpe(os.P_WAIT, sudo_prog, sudo_args, os.environ)
+    return True
 
 def RunRegex(regex, string):
     """ runs a regex search on a string """
@@ -149,9 +179,20 @@ def WriteLine(my_file, text):
     """ write a line to a file """
     my_file.write(text + "\n")
 
-def ExecuteScript(script):
+def ExecuteScripts(scripts_dir, verbose=False):
+    """ Execute every executable file in a given directory. """
+    for obj in os.listdir(scripts_dir):
+        obj = os.path.abspath(os.path.join(scripts_dir, obj))
+        if os.path.isfile(obj) and os.access(obj, os.X_OK):
+            ExecuteScript(os.path.abspath(obj), verbose=verbose)
+
+def ExecuteScript(script, verbose=False):
     """ Execute a command and send its output to the bit bucket. """
-    call("%s > /dev/null 2>&1" % script, shell=True)
+    if verbose:
+        print "Executing %s" % script
+    ret = call("%s > /dev/null 2>&1" % script, shell=True)
+    if verbose:
+        print "%s returned %s" % (script, ret)
 
 def ReadFile(filename):
     """ read in a file and return it's contents as a string """
@@ -190,29 +231,47 @@ def ParseEncryption(network):
     """
     enctemplate = open(wpath.encryption + network["enctype"])
     template = enctemplate.readlines()
-    # Set these to nothing so that we can hold them outside the loop
-    z = "ap_scan=1\n"
-    # Loop through the lines in the template, selecting ones to use
-    for y, x in enumerate(template):
-        x = x.strip("\n")
-        if y > 4:
-            # replace values
-            x = x.replace("$_SCAN","0")
-            for t in network:
-                # Don't bother if z's value is None cause it will cause errors
-                if Noneify(network[t]) is not None:
-                    x = x.replace("$_" + str(t).upper(), str(network[t]))
-            z = z + "\n" + x
+    config_file = "ap_scan=1\n"
+    should_replace = False
+    for index, line in enumerate(template):
+        if not should_replace:
+            if line.strip().startswith('---'):
+                should_replace = True
+        else:
+            if line.strip().startswith("}"):
+                # This is the last line, so we just write it.
+                config_file = ''.join([config_file, line])
+            elif "$_" in line: 
+                cur_val = re.findall('\$_([A-Z0-9_]+)', line)
+                if cur_val:
+                    if cur_val[0] == 'SCAN':
+                        #TODO should this be hardcoded?
+                        line = line.replace("$_SCAN", "0")
+                        config_file = ''.join([config_file, line])
+                    else:
+                        rep_val = network.get(cur_val[0].lower())
+                        if rep_val:
+                            line = line.replace("$_%s" % cur_val[0], 
+                                                str(rep_val))
+                            config_file = ''.join([config_file, line])
+                        else:
+                            print "Ignoring template line: '%s'" % line
+                else:
+                    print "Weird parsing error occurred"
+            else:  # Just a regular entry.
+                config_file = ''.join([config_file, line])
 
     # Write the data to the files then chmod them so they can't be read 
     # by normal users.
-    file = open(wpath.networks + network["bssid"].replace(":", "").lower(), "w")
-    os.chmod(wpath.networks + network["bssid"].replace(":", "").lower(), 0600)
-    os.chown(wpath.networks + network["bssid"].replace(":", "").lower(), 0, 0)
+    file_loc = os.path.join(wpath.networks,
+                            network['bssid'].replace(":", "").lower())
+    f = open(file_loc, "w")
+    os.chmod(file_loc, 0600)
+    os.chown(file_loc, 0, 0)
     # We could do this above, but we'd like to read protect
     # them before we write, so that it can't be read.
-    file.write(z)
-    file.close()
+    f.write(config_file)
+    f.close()
 
 def LoadEncryptionMethods():
     """ Load encryption methods from configuration files
@@ -222,10 +281,6 @@ def LoadEncryptionMethods():
     loaded, the template must be listed in the "active" file.
 
     """
-    def parse_ent(line, key):
-        return line.replace(key, "").replace("=", "").strip()
-    
-    encryptionTypes = []
     try:
         enctypes = open(wpath.encryption + "active","r").readlines()
     except IOError, e:
@@ -233,48 +288,72 @@ def LoadEncryptionMethods():
         raise IOError(e)
     
     # Parse each encryption method
-    for x in enctypes:
-        x = x.strip()
-        try:
-            f = open(wpath.encryption + x, "r")
-        except IOError:
-            print 'Failed to load encryption type ' + str(x)
-            continue
-        line = f.readlines()
-        f.close()
-        
-        cur_type = {}
-        cur_type[0] = parse_ent(line[0], "name")
-        cur_type[1] = x
-        cur_type[2] = {}
-        
-        # Find the line containing our required fields.
-        i = 1
-        try:
-            while not line[i].startswith("require"):
-                i += 1
-        except IndexError:
-            print "Bad encryption template: Couldn't find 'require' line"
-        requiredFields = parse_ent(line[i], "require")
-        requiredFields = requiredFields.split(" ")
-
-        # Get the required fields.
-        index = -1
-        for current in requiredFields:
-            # The pretty names will start with an * so we can
-            # separate them with that.
-            if current[0] == "*":
-                # Make underscores spaces
-                # and remove the *
-                cur_type[2][index][0] = current.replace("_", " ").lstrip("*")
-            else:
-                # Add to the list of things that are required.
-                index = len(cur_type[2])
-                cur_type[2][index] = {}
-                cur_type[2][index][1] = current
-        # Add the current type to the dict of encryption types.
-        encryptionTypes.append(cur_type)
+    encryptionTypes = []
+    for enctype in enctypes:
+        parsed_template = _parse_enc_template(enctype.strip())
+        if parsed_template:
+            encryptionTypes.append(parsed_template)
     return encryptionTypes
+
+def __parse_field_ent(fields, field_type='require'):
+    fields = fields.split(" ")
+    ret = []
+    # We need an even number of entries in the line for it to be valid.
+    if (len(fields) % 2) != 0:
+        return None
+    else:
+        for val, disp_val in grouper(2, fields, fillvalue=None):
+            if val.startswith("*") or not disp_val.startswith("*"):
+                return None
+            ret.append([val, disp_val[1:]])
+        return ret
+
+def _parse_enc_template(enctype):
+    """ Parse an encryption template. """
+    def parse_ent(line, key):
+        return line.replace(key, "").replace("=", "").strip()
+
+    try:
+        f = open(os.path.join(wpath.encryption, enctype), "r")
+    except IOError:
+        print "Failed to open template file %s" % enctype
+        return None
+
+    cur_type = {}
+    cur_type["type"] = enctype
+    cur_type["fields"] = []
+    cur_type['optional'] = []
+    cur_type['required'] = []
+    cur_type['name'] = ""
+    for index, line in enumerate(f):
+        if line.startswith("name") and not cur_type["name"]:
+            cur_type["name"] = parse_ent(line, "name")
+        elif line.startswith("require"):
+            cur_type["required"] = __parse_field_ent(parse_ent(line, "require"))
+            if not cur_type["required"]:
+                # An error occured parsing the require line.
+                print "Invalid 'required' line found in template %s" % enctype
+                continue
+        elif line.startswith("optional"):
+            cur_type["optional"] = __parse_field_ent(parse_ent(line,
+                                                               "optional"),
+                                                     field_type="optional")
+            if not cur_type["optional"]:
+                # An error occured parsing the optional line.
+                print "Invalid 'optional' line found in template %s" % enctype
+                continue
+        elif line.startswith("----"):
+            # We're done.
+            break
+    f.close()
+    if not cur_type["required"]:
+        print "Failed to find a 'require' line in template %s" % enctype
+        return None
+    if not cur_type["name"]:
+        print "Failed to find a 'name' line in template %s" % enctype
+        return None
+    else:
+        return cur_type
 
 def noneToString(text):
     """ Convert None, "None", or "" to string type "None"
@@ -287,51 +366,6 @@ def noneToString(text):
         return "None"
     else:
         return str(text)
-
-def noneToBlankString(text):
-    """ Converts NoneType or "None" to a blank string. """
-    if text in (None, "None"):
-        return ""
-    else:
-        return str(text)
-
-def stringToNone(text):
-    """ Performs opposite function of noneToString. """
-    if text in ("", None, "None"):
-        return None
-    else:
-        return str(text)
-
-def stringToBoolean(text):
-    """ Turns a string representation of a bool to a boolean if needed. """
-    if text in ("True", "1"):
-        return True
-    if text in ("False", "0"):
-        return False
-    return bool(text)
-    
-def get_gettext():
-    """ Set up gettext for translations. """
-    # Borrowed from an excellent post on how to do this at
-    # http://www.learningpython.com/2006/12/03/translating-your-pythonpygtk-application/
-    local_path = wpath.translations
-    langs = []
-    try:
-        lc, encoding = locale.getdefaultlocale()
-    except ValueError, e:
-        print str(e)
-        print "Default locale unavailable, falling back to en_US"
-        lc = None
-    if lc:
-        langs = [lc]
-    osLanguage = os.environ.get('LANGUAGE', None)
-    if osLanguage:
-        langs += osLanguage.split(":")
-    langs += ["en_US"]
-    lang = gettext.translation('wicd', local_path, languages=langs, 
-                               fallback=True)
-    _ = lang.gettext
-    return _
 
 def to_unicode(x):
     """ Attempts to convert a string to utf-8. """
@@ -351,9 +385,11 @@ def to_unicode(x):
                 ret = x.decode('latin-1').encode('utf-8')
             except UnicodeError:
                 ret = x.decode('utf-8', 'replace').encode('utf-8')
+            
     return ret
-
+    
 def RenameProcess(new_name):
+    """ Renames the process calling the function to the given name. """
     if sys.platform != 'linux2':
         print 'Unsupported platform'
         return False
@@ -367,9 +403,16 @@ def RenameProcess(new_name):
         libc.prctl(15, new_name, 0, 0, 0)
         return True
     except:
+        print "rename failed"
         return False
     
 def detect_desktop_environment():
+    """ Try to determine which desktop environment is in use. 
+    
+    Choose between kde, gnome, or xfce based on environment
+    variables and a call to xprop.
+    
+    """
     desktop_environment = 'generic'
     if os.environ.get('KDE_FULL_SESSION') == 'true':
         desktop_environment = 'kde'
@@ -377,17 +420,16 @@ def detect_desktop_environment():
         desktop_environment = 'gnome'
     else:
         try:
-            info = commands.getoutput('xprop -root _DT_SAVE_MODE')
+            info = getoutput('xprop -root _DT_SAVE_MODE')
             if ' = "xfce4"' in info:
                 desktop_environment = 'xfce'
         except (OSError, RuntimeError):
             pass
-    
     return desktop_environment
 
-def get_sudo_cmd(msg):
+def get_sudo_cmd(msg, prog_num=0):
     """ Returns a graphical sudo command for generic use. """
-    sudo_prog = choose_sudo_prog()
+    sudo_prog = choose_sudo_prog(prog_num)
     if not sudo_prog: return None
     if re.search("(ktsuss|gksu|gksudo)$", sudo_prog):
         msg_flag = "-m"
@@ -395,28 +437,108 @@ def get_sudo_cmd(msg):
         msg_flag = "--caption"
     return [sudo_prog, msg_flag, msg]
 
-
-def choose_sudo_prog():
+def choose_sudo_prog(prog_num=0):
+    """ Try to intelligently decide which graphical sudo program to use. """
+    if prog_num:
+        return find_path(_sudo_dict[prog_num])
     desktop_env = detect_desktop_environment()
     env_path = os.environ['PATH'].split(":")
+    paths = []
     
     if desktop_env == "kde":
-        paths = []
-        for p in env_path:
-            paths.extend([p + '/kdesu', p + '/kdesudo', p + '/ktsuss'])
+        progs = ["kdesu", "kdesudo", "ktusss"]
     else:
-        paths = []
-        for p in env_path:
-            paths.extend([p + '/gksudo', p + '/ktsuss'])
+        progs = ["gksudo", "gksu", "ktsuss"]
+        
+    for prog in progs:
+        paths.extend([os.path.join(p, prog) for p in env_path])
+        
     for path in paths:
-        if os.access(path, os.F_OK):
+        if os.path.exists(path):
             return path
-    
-    raise WicdError("Couldn't find graphical sudo program.")
+    return ""
 
 def find_path(cmd):
-    paths = os.getenv("PATH", default="/usr/bin:/usr/local/bin").split(':')
+    """ Try to find a full path for a given file name. 
+    
+    Search the all the paths in the environment variable PATH for
+    the given file name, or return None if a full path for
+    the file can not be found.
+    
+    """
+    paths = os.getenv("PATH").split(':')
+    if not paths:
+        paths = ["/usr/local/sbin", "/usr/local/bin", "/usr/sbin", "/usr/bin",
+                 "/sbin", "/bin"]
     for path in paths:
-        if os.access(os.path.join(path, cmd), os.F_OK):
+        if os.path.exists(os.path.join(path, cmd)):
             return os.path.join(path, cmd)
     return None
+
+def noneToBlankString(text):
+    """ Converts NoneType or "None" to a blank string. """
+    if text in (None, "None"):
+        return ""
+    else:
+        return str(text)
+
+def stringToNone(text):
+    """ Performs opposite function of noneToString. """
+    if text in ("", None, "None"):
+        return None
+    else:
+        return str(text)
+
+def checkboxTextboxToggle(checkbox, textboxes):
+    for textbox in textboxes:
+        textbox.set_sensitive(checkbox.get_active())
+
+def threaded(f):
+    """ A decorator that will make any function run in a new thread. """
+
+    def wrapper(*args, **kwargs):
+        t = Thread(target=f, args=args, kwargs=kwargs)
+        t.setDaemon(True)
+        t.start()
+
+    wrapper.__name__ = f.__name__
+    wrapper.__dict__ = f.__dict__
+    wrapper.__doc__ = f.__doc__
+    wrapper.__module__ = f.__module__
+
+    return wrapper
+
+def timeout_add(time, func, milli=False):
+    """ Convience function for running a function on a timer. """
+    if hasattr(gobject, "timeout_add_seconds") and not milli:
+        return gobject.timeout_add_seconds(time, func)
+    else:
+        if not milli: time = time * 1000
+        return gobject.timeout_add(time, func)
+
+def izip_longest(*args, **kwds):
+    """ Implement the itertools.izip_longest method.
+    
+    We implement the method here because its new in Python 2.6.
+    
+    """
+    # izip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-
+    fillvalue = kwds.get('fillvalue')
+    def sentinel(counter = ([fillvalue]*(len(args)-1)).pop):
+        yield counter()         # yields the fillvalue, or raises IndexError
+    fillers = repeat(fillvalue)
+    iters = [chain(it, sentinel(), fillers) for it in args]
+    try:
+        for tup in izip(*iters):
+            yield tup
+    except IndexError:
+        pass
+
+def grouper(n, iterable, fillvalue=None):
+    """ Iterate over several elements at once
+
+    "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
+
+    """
+    args = [iter(iterable)] * n
+    return izip_longest(fillvalue=fillvalue, *args)
