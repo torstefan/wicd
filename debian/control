@@ -24,7 +24,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  net-tools | ethtool,
  net-tools | iproute,
  adduser,
- lsb-base (>= 3.2-13)
+ lsb-base (>= 3.2-13),
+ psmisc
 Suggests: pm-utils
 Conflicts: network-manager
 Description: wired and wireless network manager
