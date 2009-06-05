@@ -96,7 +96,7 @@ Patch ported to 1.6.0 code by David Paleino <d.paleino@gmail.com>.
                  },
 +            "udhcpc":
 +                {'connect' : r"%s -n -i %s",
-+                 'release' : r"killall -SIGUSR2 %s %s",
++                 'release' : r"killall -SIGUSR2 %s",
 +                 'id' : misc.UDHCPC,
 +                },
          }
