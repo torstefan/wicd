@@ -1,7 +1,6 @@
 02-fix_logfile_perms.patch
 03-fix_lintian_manpage_warning.patch
 04-fix-scripts.patch
-06-add_LC_MESSAGES_parsing.patch
 07-add_resolvconf_support.patch
 08-fix_GetIP.patch
 09-fix_wire_plugging_detection.patch

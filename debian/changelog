@@ -8,6 +8,8 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
       04-fix-scripts.patch refreshed
     - 05-fix_DBus_policy.patch removed, permissions given to the
       `netdev' group via a configuration option
+    - 06-add_LC_MESSAGES_parsing.patch removed, fixed upstream (in
+      wicd/translations.py)
     - 09-fix_wire_plugging_detection.patch fixed (Closes: #522057)
     - 10-add_udhcpc_support.patch added, thanks to "madmo" from the
       Wicd forums for making it, and to Luca Capello for fixing and
@@ -37,7 +39,7 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
   * debian/rules updated
   * debian/watch fixed not to catch alpha/beta releases
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 22:20:24 +0200
+ -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 22:24:35 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
