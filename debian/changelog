@@ -3,7 +3,8 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
   * New upstream version
     - DBus at_console policy fixed (Closes: #530505, #525622)
   * debian/patches/:
-    - 01-fix_desktop_file.patch removed, fixed upstream
+    - 01-fix_desktop_file.patch, 07-add_resolvconf_support.patch
+      removed, fixed upstream
     - 02-fix_logfile_perms.patch, 03-fix_lintian_manpage_warning.patch,
       04-fix-scripts.patch refreshed
     - 05-fix_DBus_policy.patch removed, permissions given to the
@@ -39,7 +40,7 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
   * debian/rules updated
   * debian/watch fixed not to catch alpha/beta releases
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 22:24:35 +0200
+ -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 22:26:21 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
