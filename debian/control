@@ -15,6 +15,7 @@ Package: wicd
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
  python-gtk2,
+ python-urwid,
  python-dbus,
  wpasupplicant,
  python-glade2,
