@@ -10,8 +10,8 @@ Patch ported to 1.6.0 code by David Paleino <d.paleino@gmail.com>.
  data/wicd.glade   |   15 +++++++++++++++
  wicd/misc.py      |    1 +
  wicd/prefs.py     |    7 +++++--
- wicd/wnettools.py |   42 ++++++++++++++++++++++++++++++++++++++++--
- 4 files changed, 61 insertions(+), 4 deletions(-)
+ wicd/wnettools.py |   53 ++++++++++++++++++++++++++++++++++++++++++++---------
+ 4 files changed, 65 insertions(+), 11 deletions(-)
 
 --- wicd.orig/wicd/misc.py
 +++ wicd/wicd/misc.py
@@ -90,31 +90,51 @@ Patch ported to 1.6.0 code by David Paleino <d.paleino@gmail.com>.
              else:
                  client = None
                  cmd = ""
-@@ -271,6 +274,11 @@ class BaseInterface(object):
-                  'release' : r"%s -k %s",
+@@ -257,20 +260,25 @@ class BaseInterface(object):
+         
+         client_dict = {
+             "dhclient" : 
+-                {'connect' : r"%s %s", 
+-                 'release' : r"%s -r %s",
++                {'connect' : r"%(cmd)s %(iface)s",
++                 'release' : r"%(cmd)s -r %(iface)s",
+                  'id' : misc.DHCLIENT, 
+                  },
+             "pump" : 
+-                { 'connect' : r"%s -i %s", 
+-                  'release' : r"%s -r -i %s",
++                { 'connect' : r"%(cmd)s -i %(iface)s",
++                  'release' : r"%(cmd)s -r -i %(iface)s",
+                   'id' : misc.PUMP,
+                 },
+             "dhcpcd" : 
+-                {'connect' : r"%s %s",
+-                 'release' : r"%s -k %s",
++                {'connect' : r"%(cmd)s %(iface)s",
++                 'release' : r"%(cmd)s -k %(iface)s",
                   'id' : misc.DHCPCD,
                  },
 +            "udhcpc":
-+                {'connect' : r"%s -n -i %s",
-+                 'release' : r"killall -SIGUSR2 %s",
++                {'connect' : r"%(cmd)s -n -i %(iface)s",
++                 'release' : r"killall -SIGUSR2 %(cmd)s",
 +                 'id' : misc.UDHCPC,
 +                },
          }
          (client_name, cmd) = get_client_name(self.DHCP_CLIENT)
          if not client_name or not cmd:
-@@ -280,7 +288,10 @@ class BaseInterface(object):
+@@ -278,9 +286,9 @@ class BaseInterface(object):
+             return ""
+             
          if flavor == "connect":
-             return client_dict[client_name]['connect'] % (cmd, self.iface)
+-            return client_dict[client_name]['connect'] % (cmd, self.iface)
++            return client_dict[client_name]['connect'] % {"cmd":cmd, "iface":self.iface}
          elif flavor == "release":
 -            return client_dict[client_name]['release'] % (cmd, self.iface)
-+            if client_name == "udhcpc":
-+                return client_dict[client_name]['release'] % (cmd)
-+            else:
-+                return client_dict[client_name]['release'] % (cmd, self.iface)
++            return client_dict[client_name]['release'] % {"cmd":cmd, "iface":self.iface}
          else:
              return client_dict[client_name]['id']
      
-@@ -327,6 +338,7 @@ class BaseInterface(object):
+@@ -327,6 +335,7 @@ class BaseInterface(object):
                  self.dhclient_needs_verbose = False
          self.dhcpcd_cmd = self._find_program_path("dhcpcd")
          self.pump_cmd = self._find_program_path("pump")
@@ -122,7 +142,7 @@ Patch ported to 1.6.0 code by David Paleino <d.paleino@gmail.com>.
          
      def CheckWiredTools(self):
          """ Check for the existence of ethtool and mii-tool. """
-@@ -485,7 +497,31 @@ class BaseInterface(object):
+@@ -485,7 +494,31 @@ class BaseInterface(object):
              print line
              
          return self._check_dhcp_result(dhcpcd_success)
@@ -155,7 +175,7 @@ Patch ported to 1.6.0 code by David Paleino <d.paleino@gmail.com>.
      def _check_dhcp_result(self, success):
          """ Print and return the correct DHCP connection result. 
          
-@@ -524,6 +560,8 @@ class BaseInterface(object):
+@@ -524,6 +557,8 @@ class BaseInterface(object):
              return self._parse_pump(pipe)
          elif DHCP_CLIENT == misc.DHCPCD:
              return self._parse_dhcpcd(pipe)
