@@ -35,6 +35,7 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
     - added missing dependency on lsb-base
     - added missing dependency on python-urwid, needed by wicd-curses
     - added missing dependency on psmisc (Closes: #520925)
+    - added alternative dependency on udhcpc
   * debian/postinst:
     - enable debconf questions
   * debian/README.Debian updated: specify that DBus should be boot-started
@@ -44,7 +45,7 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
   * debian/rules updated
   * debian/watch fixed not to catch alpha/beta releases
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 06 Jun 2009 00:40:43 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 06 Jun 2009 00:55:04 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
