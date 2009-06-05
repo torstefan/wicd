@@ -3,8 +3,8 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
   * New upstream version
   * debian/patches/:
     - 01-fix_desktop_file.patch removed, fixed upstream
-    - 02-fix_logfile_perms.patch, 03-fix_lintian_manpage_warning.patch
-      refreshed
+    - 02-fix_logfile_perms.patch, 03-fix_lintian_manpage_warning.patch,
+      04-fix-scripts.patch refreshed
     - 05-fix_DBus_policy.patch fixed (Closes: #530505, #525622)
     - 09-fix_wire_plugging_detection.patch fixed (Closes: #522057)
     - 10-add_udhcpc_support.patch added, thanks to "madmo" from the
@@ -35,7 +35,7 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
   * debian/rules updated
   * debian/watch fixed not to catch alpha/beta releases
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 22:13:57 +0200
+ -- David Paleino <d.paleino@gmail.com>  Fri, 05 Jun 2009 22:17:45 +0200
 
 wicd (1.5.9-5) unstable; urgency=low
 
