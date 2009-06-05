@@ -1,2 +1,2 @@
 version=3
-http://sf.net/wicd/wicd-(.*)\.tar\.gz
+http://sf.net/wicd/wicd-([^a-zA-Z]*)\.tar\.gz
