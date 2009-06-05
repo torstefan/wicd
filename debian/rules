@@ -43,14 +43,6 @@ install: build
 	dh_installinit -i
 	dh install --after dh_installinit
 
-	for i in $(CURDIR)/debian/wicd-po/*.po; do \
-		msgfmt -o `basename $$i .po`.mo $$i; \
-		mkdir -p $(CURDIR)/debian/wicd/usr/share/locale/`basename $$i .po`/LC_MESSAGES/ 2>/dev/null; \
-		install -m 644 `basename $$i .po`.mo \
-			$(CURDIR)/debian/wicd/usr/share/locale/`basename $$i .po`/LC_MESSAGES/wicd.mo; \
-		rm `basename $$i .po`.mo; \
-	done
-
 binary-arch:
 binary-indep: build install
 	dh binary-indep 
