@@ -1,18 +1,22 @@
 Let the users of group "adm" read the logs
---- trunk.orig/wicd/wicd-daemon.py
-+++ trunk/wicd/wicd-daemon.py
-@@ -79,9 +79,12 @@
-             os.chmod(wpath.log, 755)
-         self.file = open(wpath.log + 'wicd.log', 'w')
-         try:
--            os.chmod(wpath.log + 'wicd.log', 0600)
-+            os.chmod(wpath.log + 'wicd.log', 0640)
-+            import grp
-+            group = grp.getgrnam("adm")
-+            os.chown(wpath.log + 'wicd.log', 0, group[2])
-         except:
--            print 'unable to chmod the log 0600'
-+            print 'unable to chmod the log 0640'
-         self.eol = True
+---
+ wicd/wicd-daemon.py |    7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+--- wicd.orig/wicd/wicd-daemon.py
++++ wicd/wicd/wicd-daemon.py
+@@ -1671,9 +1671,12 @@ def main(argv):
+         output = ManagedStdio(logpath)
+         if os.path.exists(logpath):
+             try:
+-                os.chmod(logpath, 0600)
++                os.chmod(logpath, 0640)
++                import grp
++                group = grp.getgrnam("adm")
++                os.chown(logpath, 0, group[2])
+             except:
+-                print 'unable to chmod log file to 0600'
++                print 'unable to chmod log file to 0640'
  
-     def __del__(self):
+     if redirect_stdout: sys.stdout = output
+     if redirect_stderr: sys.stderr = output
