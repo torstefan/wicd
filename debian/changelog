@@ -2,6 +2,8 @@ wicd (1.6.0-1) UNRELEASED; urgency=low
 
   * New upstream version
     - DBus at_console policy fixed (Closes: #530505, #525622)
+    - wireless channel shown in overview (Closes: #525542)
+    - added "Search domain" option in preferences tab (Closes: #516466)
   * debian/patches/:
     - 01-fix_desktop_file.patch, 07-add_resolvconf_support.patch
       removed, fixed upstream
