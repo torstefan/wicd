@@ -12,9 +12,6 @@ db_go
 db_metaget wicd/users users
 db_subst wicd/users user "$(getent passwd | awk -F: '{if ($3 >= 1000 && $3 < 60000) print $1}' | sort | tr '\n' ',' | sed 's@,@, @g;s@, $@@g')"
 
-db_metaget wicd/users default
-db_subst wicd/users default "$(getent group netdev | cut -d: -f4 | sed 's@,@, @g')"
-
 db_input high wicd/users || true
 db_go
 

@@ -2,8 +2,11 @@ wicd (1.6.0-2) UNRELEASED; urgency=low
 
   * debian/config:
     - use getent group instead of grepping /etc/group
+    - remove ${default} substitution
+  * debian/templates:
+    - remove Default field in wicd/users
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 06 Jun 2009 18:34:15 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 06 Jun 2009 22:09:56 +0200
 
 wicd (1.6.0-1) experimental; urgency=low
 

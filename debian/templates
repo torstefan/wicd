@@ -6,7 +6,6 @@ _Description: Wicd clients need privileges
 
 Template: wicd/users
 Type: multiselect
-__Choices: ${users}
-Default: ${default}
+Choices: ${users}
 _Description: Users to add to the `netdev' group
  These will be able to run the clients
