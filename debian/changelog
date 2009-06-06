@@ -1,3 +1,10 @@
+wicd (1.6.0-2) UNRELEASED; urgency=low
+
+  * debian/config:
+    - use getent group instead of grepping /etc/group
+
+ -- David Paleino <d.paleino@gmail.com>  Sat, 06 Jun 2009 18:34:15 +0200
+
 wicd (1.6.0-1) experimental; urgency=low
 
   * New upstream version

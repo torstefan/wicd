@@ -13,14 +13,14 @@ db_metaget wicd/users users
 db_subst wicd/users user "$(getent passwd | awk -F: '{if ($3 >= 1000 && $3 < 60000) print $1}' | sort | tr '\n' ',' | sed 's@,@, @g;s@, $@@g')"
 
 db_metaget wicd/users default
-db_subst wicd/users default "$(grep netdev /etc/group | cut -d: -f4 | sed 's@,@, @g')"
+db_subst wicd/users default "$(getent group netdev | cut -d: -f4 | sed 's@,@, @g')"
 
 db_input high wicd/users || true
 db_go
 
 db_get wicd/users
 users=$(echo $RET | sed -e 's@,@@g')
-netdev=$(grep netdev /etc/group | cut -d: -f4 | sed -e 's@,@ @g')
+netdev=$(getent group netdev | cut -d: -f4 | sed -e 's@,@ @g')
 
 # Add users not there yet
 for u in $users; do
