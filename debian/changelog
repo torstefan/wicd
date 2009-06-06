@@ -6,8 +6,9 @@ wicd (1.6.0-2~pre1) experimental; urgency=low
     - fixed typo in db_subst of ${users}
   * debian/templates:
     - remove Default field in wicd/users (Closes: #532112)
+  * debian/po/* updated
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 06 Jun 2009 22:13:03 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 06 Jun 2009 22:25:27 +0200
 
 wicd (1.6.0-1) experimental; urgency=low
 
