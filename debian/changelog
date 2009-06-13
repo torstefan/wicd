@@ -6,8 +6,10 @@ wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
   * debian/control:
     - long description wording improved, thanks to Justin B Rye
       from the debian-l10n-english mailing list
+    - Recommend graphical su programs to handle scripts (and sudo for
+      wicd-curses) (Closes: #519915)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 13 Jun 2009 17:44:55 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 13 Jun 2009 18:22:51 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
