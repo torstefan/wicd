@@ -29,17 +29,15 @@ Depends: ${misc:Depends}, ${python:Depends},
 Suggests: pm-utils
 Conflicts: network-manager
 Description: wired and wireless network manager
- Wicd is an open source wired and wireless network manager which
- aims to provide a simple interface to connect to networks with a 
+ Wicd is a general-purpose network configuration server which aims
+ to provide a simple but flexible interface for connecting to networks.
+ Its features include:
  wide variety of settings.
- .
- Some of Wicd's features include:
- .
-  1. No GNOME dependencies (although it does require GTK+), so it is
-     easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
-  2. Ability to connect to wired and wireless networks
-  3. Profiles for each wireless network and wired network
-  4. Many encryption schemes, some of which include WEP/WPA/WPA2 (and
-     you can add your own)
-  5. Remains compatible with wireless-tools
-  6. Tray icon showing network activity and signal strength 
+  * ability to connect to (and maintain profiles for) both wired and
+    wireless networks;
+  * support for many encryption schemes, including WEP, WPA, WPA2 and
+    custom schemes;
+  * wireless-tools compatibility;
+  * tray icon showing network activity and signal strength;
+  * lack of GNOME dependencies (although it does require GTK+), making it
+    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.

@@ -3,8 +3,11 @@ wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
   * debian/templates:
     - merged the note into the multiselect screen
     - updated multiselect text, removed note
+  * debian/control:
+    - long description wording improved, thanks to Justin B Rye
+      from the debian-l10n-english mailing list
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 13 Jun 2009 17:40:46 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 13 Jun 2009 17:44:55 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
