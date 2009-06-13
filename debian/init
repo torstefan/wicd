@@ -162,7 +162,7 @@ case "$1" in
 	esac
 	;;
   status)
-	status_of_proc $DAEMON $NAME -p $PIDFILE
+	status_of_proc -p $PIDFILE $DAEMON $NAME
 	;;
   *)
 	echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload|status}" >&2
