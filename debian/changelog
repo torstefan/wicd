@@ -8,8 +8,10 @@ wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
       from the debian-l10n-english mailing list
     - Recommend graphical su programs to handle scripts (and sudo for
       wicd-curses) (Closes: #519915)
+  * debian/patches/:
+    - 11-fix_graphical_sudo_detection.patch added
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 13 Jun 2009 18:22:51 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 13 Jun 2009 18:42:57 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
