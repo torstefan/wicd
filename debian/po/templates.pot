@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: wicd@packages.debian.org\n"
-"POT-Creation-Date: 2009-06-06 22:24+0200\n"
+"POT-Creation-Date: 2009-06-13 17:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,28 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Type: note
+#. Type: multiselect
 #. Description
 #: ../templates:1001
-msgid "Wicd clients need privileges"
+msgid "Users to add to the netdev group:"
 msgstr ""
 
-#. Type: note
+#. Type: multiselect
 #. Description
 #: ../templates:1001
 msgid ""
-"Users that are allowed to run the wicd clients need to be added to the "
-"`netdev' group."
-msgstr ""
-
-#. Type: multiselect
-#. Description
-#: ../templates:2001
-msgid "Users to add to the `netdev' group"
-msgstr ""
-
-#. Type: multiselect
-#. Description
-#: ../templates:2001
-msgid "These will be able to run the clients"
+"Users who should be able to run wicd clients need to be added to the group "
+"\"netdev\"."
 msgstr ""

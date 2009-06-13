@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: wicd@packages.debian.org\n"
-"POT-Creation-Date: 2009-06-06 22:24+0200\n"
+"POT-Creation-Date: 2009-06-13 17:38+0200\n"
 "PO-Revision-Date: 2009-04-20 20:33+0200\n"
 "Last-Translator: David Paleino <d.paleino@gmail.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -16,30 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. Type: note
+#. Type: multiselect
 #. Description
 #: ../templates:1001
-msgid "Wicd clients need privileges"
-msgstr "I client wicd necessitano privilegi"
+msgid "Users to add to the netdev group:"
+msgstr "Utenti da aggiungere al gruppo netdev:"
 
-#. Type: note
+#. Type: multiselect
 #. Description
 #: ../templates:1001
 msgid ""
-"Users that are allowed to run the wicd clients need to be added to the "
-"`netdev' group."
+"Users who should be able to run wicd clients need to be added to the group "
+"\"netdev\"."
 msgstr ""
-"Gli utenti abilitati all'esecuzione dei client wicd devono essere aggiunti "
-"al gruppo `netdev'."
-
-#. Type: multiselect
-#. Description
-#: ../templates:2001
-msgid "Users to add to the `netdev' group"
-msgstr "Utenti da aggiungere al gruppo `netdev'"
-
-#. Type: multiselect
-#. Description
-#: ../templates:2001
-msgid "These will be able to run the clients"
-msgstr "Questi verranno abilitati all'esecuzione dei client"
+"Gli utenti che dovrebbero essere abilitati all'esecuzione dei client wicd "
+"devono essere aggiunti al gruppo \"netdev\"."
