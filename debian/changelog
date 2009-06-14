@@ -11,8 +11,10 @@ wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
   * debian/patches/:
     - 11-fix_graphical_sudo_detection.patch added
   * debian/init updated, status_of_proc() works now!
+  * debian/po/:
+    - cs.po added, thanks to Martin Šín (Closes: #532210)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 13 Jun 2009 20:52:43 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 14 Jun 2009 11:36:49 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
