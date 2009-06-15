@@ -116,7 +116,7 @@ Description: provide a pre-/post-down script
          self.after_script = None
 -        self.disconnect_script = None
 +        self.pre_disconnect_script = None
-+		self.post_disconnect_script = None
++        self.post_disconnect_script = None
          self.driver = None
          self.iface = None
      
@@ -176,7 +176,7 @@ Description: provide a pre-/post-down script
          self.after_script = after_script
 -        self.disconnect_script = disconnect_script
 +        self.pre_disconnect_script = pre_disconnect_script
-+		self.post_disconnect_script = post_disconnect_script
++        self.post_disconnect_script = post_disconnect_script
          self._should_die = False
          self.abort_reason = ""
          self.connect_result = ""
