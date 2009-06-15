@@ -10,13 +10,14 @@ wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
       wicd-curses) (Closes: #519915)
   * debian/patches/:
     - 11-fix_graphical_sudo_detection.patch added
+    - 12-add_pre-post_disconnection_script.patch added (Closes: #517383)
   * debian/init updated, status_of_proc() works now!
   * debian/po/:
     - cs.po added, thanks to Martin Šín (Closes: #532210)
     - fi.po added, thanks to Esko Arajärvi (Closes: #533226)
     - ru.po added, thanks to Yuri Kozlov (Closes: #533213)
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 15 Jun 2009 20:36:33 +0200
+ -- David Paleino <d.paleino@gmail.com>  Mon, 15 Jun 2009 21:05:32 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 

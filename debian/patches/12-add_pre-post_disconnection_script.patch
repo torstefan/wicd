@@ -1,0 +1,520 @@
+---
+ curses/configscript_curses.py           |   20 ++++++----
+ curses/wicd-curses.py                   |    2 -
+ data/wicd.glade                         |   39 +++++++++++++++++++-
+ in/man=wicd-wired-settings.conf.5.in    |    8 +++-
+ in/man=wicd-wireless-settings.conf.5.in |    7 ++-
+ in/wicd=wpath.py.in                     |    3 +
+ setup.py                                |    3 +
+ wicd/configscript.py                    |   30 ++++++++++------
+ wicd/networking.py                      |   60 ++++++++++++++++++++------------
+ wicd/translations.py                    |    3 +
+ wicd/wicd-daemon.py                     |   21 +++++++----
+ 11 files changed, 139 insertions(+), 57 deletions(-)
+
+--- wicd.orig/wicd/configscript.py
++++ wicd/wicd/configscript.py
+@@ -42,7 +42,8 @@ language = {}
+ language['configure_scripts'] = _("Configure Scripts")
+ language['before_script'] = _("Pre-connection Script")
+ language['after_script'] = _("Post-connection Script")
+-language['disconnect_script'] = _("Disconnection Script")
++language['pre_disconnect_script'] = _("Pre-disconnection Script")
++language['post_disconnect_script'] = _("Post-disconnection Script")
+ 
+ dbus = dbusmanager.DBusManager()
+ dbus.connect_to_dbus()
+@@ -100,14 +101,16 @@ def get_script_info(network, network_typ
+         if con.has_section(network):
+             info["pre_entry"] = get_val(con, network, "beforescript")
+             info["post_entry"] = get_val(con, network, "afterscript")
+-            info["disconnect_entry"] = get_val(con, network, "disconnectscript")
++            info["pre_disconnect_entry"] = get_val(con, network, "predisconnectscript")
++            info["post_disconnect_entry"] = get_val(con, network, "postdisconnectscript")
+     else:
+         bssid = wireless.GetWirelessProperty(int(network), "bssid")
+         con.read(wireless_conf)
+         if con.has_section(bssid):
+             info["pre_entry"] = get_val(con, bssid, "beforescript")
+             info["post_entry"] = get_val(con, bssid, "afterscript")
+-            info["disconnect_entry"] = get_val(con, bssid, "disconnectscript")
++            info["pre_disconnect_entry"] = get_val(con, bssid, "predisconnectscript")
++            info["post_disconnect_entry"] = get_val(con, bssid, "postdisconnectscript")
+     return info
+ 
+ def write_scripts(network, network_type, script_info):
+@@ -120,7 +123,8 @@ def write_scripts(network, network_type,
+             con.add_section(network)
+         con.set(network, "beforescript", script_info["pre_entry"])
+         con.set(network, "afterscript", script_info["post_entry"])
+-        con.set(network, "disconnectscript", script_info["disconnect_entry"])
++        con.set(network, "predisconnectscript", script_info["pre_disconnect_entry"])
++        con.set(network, "postdisconnectscript", script_info["post_disconnect_entry"])
+         con.write(open(wired_conf, "w"))
+         wired.ReloadConfig()
+         wired.ReadWiredNetworkProfile(network)
+@@ -132,7 +136,8 @@ def write_scripts(network, network_type,
+             con.add_section(bssid)
+         con.set(bssid, "beforescript", script_info["pre_entry"])
+         con.set(bssid, "afterscript", script_info["post_entry"])
+-        con.set(bssid, "disconnectscript", script_info["disconnect_entry"])
++        con.set(bssid, "predisconnectscript", script_info["pre_disconnect_entry"])
++        con.set(bssid, "postdisconnectscript", script_info["post_disconnect_entry"])
+         con.write(open(wireless_conf, "w"))
+         wireless.ReloadConfig()
+         wireless.ReadWirelessNetworkProfile(int(network))
+@@ -155,25 +160,30 @@ def main (argv):
+     dialog = wTree.get_widget("configure_script_dialog")
+     wTree.get_widget("pre_label").set_label(language['before_script'] + ":")
+     wTree.get_widget("post_label").set_label(language['after_script'] + ":")
+-    wTree.get_widget("disconnect_label").set_label(language['disconnect_script'] 
++    wTree.get_widget("pre_disconnect_label").set_label(language['pre_disconnect_script']
++                                                   + ":")
++    wTree.get_widget("post_disconnect_label").set_label(language['post_disconnect_script']
+                                                    + ":")
+     wTree.get_widget("window1").hide()
+     
+     pre_entry = wTree.get_widget("pre_entry")
+     post_entry = wTree.get_widget("post_entry")
+-    disconnect_entry = wTree.get_widget("disconnect_entry")
++    pre_disconnect_entry = wTree.get_widget("pre_disconnect_entry")
++    post_disconnect_entry = wTree.get_widget("post_disconnect_entry")
+     
+     pre_entry.set_text(none_to_blank(script_info.get("pre_entry")))
+     post_entry.set_text(none_to_blank(script_info.get("post_entry")))
+-    disconnect_entry.set_text(none_to_blank(script_info.get("disconnect_entry")))
+-    
++    pre_disconnect_entry.set_text(none_to_blank(script_info.get("pre_disconnect_entry")))
++    post_disconnect_entry.set_text(none_to_blank(script_info.get("post_disconnect_entry")))
++
+     dialog.show_all()
+     
+     result = dialog.run()
+     if result == 1:
+         script_info["pre_entry"] = blank_to_none(pre_entry.get_text())
+         script_info["post_entry"] = blank_to_none(post_entry.get_text())
+-        script_info["disconnect_entry"] = blank_to_none(disconnect_entry.get_text())
++        script_info["pre_disconnect_entry"] = blank_to_none(pre_disconnect_entry.get_text())
++        script_info["post_disconnect_entry"] = blank_to_none(post_disconnect_entry.get_text())
+         write_scripts(network, network_type, script_info)
+     dialog.destroy()
+  
+--- wicd.orig/wicd/networking.py
++++ wicd/wicd/networking.py
+@@ -151,7 +151,8 @@ class Controller(object):
+         self.connecting_thread = None
+         self.before_script = None
+         self.after_script = None
+-        self.disconnect_script = None
++        self.pre_disconnect_script = None
++		self.post_disconnect_script = None
+         self.driver = None
+         self.iface = None
+     
+@@ -203,17 +204,23 @@ class Controller(object):
+     def Disconnect(self, *args, **kargs):
+         """ Disconnect from the network. """
+         iface = self.iface
+-        misc.ExecuteScripts(wpath.disconnectscripts, self.debug)
+-        if self.disconnect_script:
+-            print 'Running disconnect script'
+-            misc.ExecuteScript(expand_script_macros(self.disconnect_script,
+-                                                    'disconnection', *args),
++        misc.ExecuteScripts(wpath.predisconnectscripts, self.debug)
++        if self.pre_disconnect_script:
++            print 'Running pre-disconnect script'
++            misc.ExecuteScript(expand_script_macros(self.pre_disconnect_script,
++                                                    'pre-disconnection', *args),
+                                self.debug)
+         iface.ReleaseDHCP()
+         iface.SetAddress('0.0.0.0')
+         iface.FlushRoutes()
+         iface.Down()
+         iface.Up()
++        misc.ExecuteScripts(wpath.postdisconnectscripts, self.debug)
++        if self.post_disconnect_script:
++            print 'Running post-disconnect script'
++            misc.ExecuteScript(expand_script_macros(self.post_disconnect_script,
++                                                    'post-disconnection', *args),
++                               self.debug)
+         
+     def ReleaseDHCP(self):
+         """ Release the DHCP lease for this interface. """
+@@ -273,8 +280,8 @@ class ConnectThread(threading.Thread):
+     lock = threading.Lock()
+ 
+     def __init__(self, network, interface_name, before_script, after_script, 
+-                 disconnect_script, gdns1, gdns2, gdns3, gdns_dom, gsearch_dom, 
+-                 iface, debug):
++                 pre_disconnect_script, post_disconnect_script, gdns1,
++				 gdns2, gdns3, gdns_dom, gsearch_dom, iface, debug):
+         """ Initialise the required object variables and the thread.
+ 
+         Keyword arguments:
+@@ -283,7 +290,8 @@ class ConnectThread(threading.Thread):
+         wired -- name of the wired interface
+         before_script -- script to run before bringing up the interface
+         after_script -- script to run after bringing up the interface
+-        disconnect_script -- script to run after disconnection
++        pre_disconnect_script -- script to run before disconnection
++		post_disconnect_script -- script to run after disconnection
+         gdns1 -- global DNS server 1
+         gdns2 -- global DNS server 2
+         gdns3 -- global DNS server 3
+@@ -297,7 +305,8 @@ class ConnectThread(threading.Thread):
+         self.connect_result = None
+         self.before_script = before_script
+         self.after_script = after_script
+-        self.disconnect_script = disconnect_script
++        self.pre_disconnect_script = pre_disconnect_script
++		self.post_disconnect_script = post_disconnect_script
+         self._should_die = False
+         self.abort_reason = ""
+         self.connect_result = ""
+@@ -600,7 +609,8 @@ class Wireless(Controller):
+         
+         self.connecting_thread = WirelessConnectThread(network,
+             self.wireless_interface, self.wpa_driver, self.before_script,
+-            self.after_script, self.disconnect_script, self.global_dns_1,
++            self.after_script, self.pre_disconnect_script,
++			self.post_disconnect_script, self.global_dns_1,
+             self.global_dns_2, self.global_dns_3, self.global_dns_dom,
+             self.global_search_dom, self.wiface, debug)
+         self.connecting_thread.setDaemon(True)
+@@ -772,8 +782,9 @@ class WirelessConnectThread(ConnectThrea
+     """
+ 
+     def __init__(self, network, wireless, wpa_driver, before_script,
+-                 after_script, disconnect_script, gdns1, gdns2, gdns3, 
+-                 gdns_dom, gsearch_dom, wiface, debug=False):
++                 after_script, pre_disconnect_script, post_disconnect_script,
++				 gdns1, gdns2, gdns3, gdns_dom, gsearch_dom, wiface,
++				 debug=False):
+         """ Initialise the thread with network information.
+ 
+         Keyword arguments:
+@@ -782,14 +793,16 @@ class WirelessConnectThread(ConnectThrea
+         wpa_driver -- type of wireless interface
+         before_script -- script to run before bringing up the interface
+         after_script -- script to run after bringing up the interface
+-        disconnect_script -- script to run after disconnection
++        pre_disconnect_script -- script to run before disconnection
++		post_disconnect_script -- script to run after disconnection
+         gdns1 -- global DNS server 1
+         gdns2 -- global DNS server 2
+         gdns3 -- global DNS server 3
+ 
+         """
+         ConnectThread.__init__(self, network, wireless, before_script, 
+-                               after_script, disconnect_script, gdns1, gdns2, 
++                               after_script, pre_disconnect_script,
++							   post_disconnect_script, gdns1, gdns2,
+                                gdns3, gdns_dom, gsearch_dom, wiface, debug)
+         self.wpa_driver = wpa_driver
+ 
+@@ -960,9 +973,10 @@ class Wired(Controller):
+         if not self.liface: return False
+         self.connecting_thread = WiredConnectThread(network,
+             self.wired_interface, self.before_script, self.after_script,
+-            self.disconnect_script, self.global_dns_1, self.global_dns_2, 
+-            self.global_dns_3, self.global_dns_dom, self.global_search_dom, 
+-            self.liface, debug)
++            self.pre_disconnect_script, self.post_disconnect_script,
++			self.global_dns_1, self.global_dns_2, self.global_dns_3,
++			self.global_dns_dom, self.global_search_dom, self.liface,
++			debug)
+         self.connecting_thread.setDaemon(True)
+         self.connecting_thread.start()
+         return self.connecting_thread
+@@ -986,8 +1000,8 @@ class WiredConnectThread(ConnectThread):
+ 
+     """
+     def __init__(self, network, wired, before_script, after_script, 
+-                 disconnect_script, gdns1, gdns2, gdns3, gdns_dom, gsearch_dom, 
+-                 liface, debug=False):
++                 pre_disconnect_script, post_disconnect_script, gdns1,
++				 gdns2, gdns3, gdns_dom, gsearch_dom, liface, debug=False):
+         """ Initialise the thread with network information.
+ 
+         Keyword arguments:
+@@ -996,14 +1010,16 @@ class WiredConnectThread(ConnectThread):
+         wired -- name of the wired interface
+         before_script -- script to run before bringing up the interface
+         after_script -- script to run after bringing up the interface
+-        disconnect_script -- script to run after disconnection
++        pre_disconnect_script -- script to run before disconnection
++		post_disconnect_script -- script to run after disconnection
+         gdns1 -- global DNS server 1
+         gdns2 -- global DNS server 2
+         gdns3 -- global DNS server 3
+ 
+         """
+         ConnectThread.__init__(self, network, wired, before_script, 
+-                               after_script, disconnect_script, gdns1, gdns2, 
++                               after_script, pre_disconnect_script,
++							   post_disconnect_script, gdns1, gdns2,
+                                gdns3, gdns_dom, gsearch_dom, liface, debug)
+ 
+     def run(self):
+--- wicd.orig/wicd/translations.py
++++ wicd/wicd/translations.py
+@@ -74,7 +74,8 @@ language['wired_networks'] = _('''Wired 
+ language['backend_alert'] = _('''Changes to your backend won't occur until the daemon is restarted.''')
+ language['about_help'] = _('''Stop a network connection in progress''')
+ language['connecting'] = _('''Connecting''')
+-language['disconnect_script'] = _('''Run disconnect script''')
++language['pre_disconnect_script'] = _('''Run pre-disconnect script''')
++language['post_disconnect_script'] = _('''Run post-disconnect script''')
+ language['cannot_edit_scripts_1'] = _('''To avoid various complications, wicd-curses does not support directly editing the scripts directly.  However, you can edit them manually.  First, (as root)", open the "$A" config file, and look for the section labeled by the $B in question.  In this case, this is:''')
+ language['cannot_edit_scripts_3'] = _('''You can also configure the wireless networks by looking for the "[<ESSID>]" field in the config file.''')
+ language['cannot_edit_scripts_2'] = _('''Once there, you can adjust (or add) the "beforescript", "afterscript", and "disconnectscript" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information.''')
+--- wicd.orig/curses/configscript_curses.py
++++ wicd/curses/configscript_curses.py
+@@ -38,7 +38,8 @@ language = {}
+ language['configure_scripts'] = _("Configure Scripts")
+ language['before_script'] = _("Pre-connection Script")
+ language['after_script'] = _("Post-connection Script")
+-language['disconnect_script'] = _("Disconnection Script")
++language['pre_disconnect_script'] = _("Pre-disconnection Script")
++language['post_disconnect_script'] = _("Post-disconnection Script")
+ 
+ def main(argv):
+     global ui,frame
+@@ -62,16 +63,19 @@ def main(argv):
+     blank = urwid.Text('')
+     pre_entry_t = ('body',language['before_script']+': ')
+     post_entry_t  = ('body',language['after_script']+': ')
+-    disconnect_entry_t = ('body',language['disconnect_script']+': ')
++    pre_disconnect_entry_t = ('body',language['pre_disconnect_script']+': ')
++    post_disconnect_entry_t = ('body',language['post_disconnect_script']+': ')
+ 
+-    global pre_entry,post_entry,disconnect_entry
++    global pre_entry,post_entry,pre_disconnect_entry,post_disconnect_entry
+     pre_entry  = urwid.AttrWrap(urwid.Edit(pre_entry_t,
+             none_to_blank(script_info.get('pre_entry'))),'editbx','editfc' )
+     post_entry  = urwid.AttrWrap(urwid.Edit(post_entry_t,
+             none_to_blank(script_info.get('post_entry'))),'editbx','editfc' )
+ 
+-    disconnect_entry  = urwid.AttrWrap(urwid.Edit(disconnect_entry_t,
+-            none_to_blank(script_info.get('disconnect_entry'))),'editbx','editfc' )
++    pre_disconnect_entry  = urwid.AttrWrap(urwid.Edit(pre_disconnect_entry_t,
++            none_to_blank(script_info.get('pre_disconnect_entry'))),'editbx','editfc' )
++    post_disconnect_entry  = urwid.AttrWrap(urwid.Edit(post_disconnect_entry_t,
++            none_to_blank(script_info.get('post_disconnect_entry'))),'editbx','editfc' )
+ 
+     # The buttons
+     ok_button = urwid.AttrWrap(urwid.Button('OK',ok_callback),'body','focus')
+@@ -82,7 +86,8 @@ def main(argv):
+     lbox = urwid.Pile([('fixed',2,urwid.Filler(pre_entry)),
+                        #('fixed',urwid.Filler(blank),1),
+                        ('fixed',2,urwid.Filler(post_entry)),
+-                       ('fixed',2,urwid.Filler(disconnect_entry)),
++                       ('fixed',2,urwid.Filler(pre_disconnect_entry)),
++                       ('fixed',2,urwid.Filler(post_disconnect_entry)),
+                        #blank,blank,blank,blank,blank,
+                        urwid.Filler(button_cols,'bottom')
+                        ])
+@@ -92,7 +97,8 @@ def main(argv):
+     if result == True:
+         script_info["pre_entry"] = blank_to_none(pre_entry.get_edit_text())
+         script_info["post_entry"] = blank_to_none(post_entry.get_edit_text())
+-        script_info["disconnect_entry"] = blank_to_none(disconnect_entry.get_edit_text())
++        script_info["pre_disconnect_entry"] = blank_to_none(pre_disconnect_entry.get_edit_text())
++        script_info["post_disconnect_entry"] = blank_to_none(post_disconnect_entry.get_edit_text())
+         write_scripts(network, network_type, script_info)
+ 
+ OK_PRESSED = False
+--- wicd.orig/curses/wicd-curses.py
++++ wicd/curses/wicd-curses.py
+@@ -263,7 +263,7 @@ def run_configscript(parent,netname,nett
+ # Translation needs to be changed to accomidate this text below.
+ """You can also configure the wireless networks by looking for the "[<ESSID>]" field in the config file.  
+ 
+-Once there, you can adjust (or add) the "beforescript", "afterscript", and "disconnectscript" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."""]
++Once there, you can adjust (or add) the "beforescript", "afterscript", "predisconnectscript" and "postdisconnectscript" variables as needed, to change the preconnect, postconnect, predisconnect and postdisconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."""]
+     dialog = TextDialog(theText,20,80)
+     dialog.run(ui,parent)
+     # This code works with many distributions, but not all of them.  So, to
+--- wicd.orig/in/man=wicd-wired-settings.conf.5.in
++++ wicd/in/man=wicd-wired-settings.conf.5.in
+@@ -33,8 +33,12 @@ The script should be a Bourne-compatible
+ IMPORTANT - scripts should ONLY be writable by root and located in a
+ directory that is only writable by root.
+ .TP
+-.BI "disconnectscript = " <None|arbitrary_script>
+-This defines a script to run when Wicd disconnects the interface.
++.BI "predisconnectscript = " <None|arbitrary_script>
++This defines a script to run before Wicd disconnects the interface.
++The script should be a Bourne-compatible script and should be executable.
++.TP
++.BI "postdisconnectscript = " <None|arbitrary_script>
++This defines a script to run after Wicd disconnects the interface.
+ The script should be a Bourne-compatible script and should be executable.
+ .br
+ IMPORTANT - scripts should ONLY be writable by root and located in a
+--- wicd.orig/in/man=wicd-wireless-settings.conf.5.in
++++ wicd/in/man=wicd-wireless-settings.conf.5.in
+@@ -99,8 +99,11 @@ This defines a script to run after Wicd 
+ IMPORTANT - scripts should ONLY be writable by root and located 
+ in a directory that is writable by only root.
+ .TP
+-.BI "disconnectscript = " <None|arbitrary_script>
+-This defines a script to run when Wicd disconnects the interface.
++.BI "predisconnectscript = " <None|arbitrary_script>
++This defines a script to run before Wicd disconnects the interface.
++.TP
++.BI "postdisconnectscript = " <None|arbitrary_script>
++This defines a script to run after Wicd disconnects the interface.
+ .br
+ IMPORTANT - scripts should ONLY be writable by root and located 
+ in a directory that is writable by only root.
+--- wicd.orig/in/wicd=wpath.py.in
++++ wicd/in/wicd=wpath.py.in
+@@ -27,7 +27,8 @@ lib = '%LIB%'
+ share = '%SHARE%'
+ etc = '%ETC%'
+ scripts = '%SCRIPTS%'
+-disconnectscripts = '%SCRIPTS%disconnect'
++predisconnectscripts = '%SCRIPTS%predisconnect'
++postdisconnectscripts = '%SCRIPTS%postdisconnect'
+ preconnectscripts = '%SCRIPTS%preconnect'
+ postconnectscripts = '%SCRIPTS%postconnect'
+ images = '%IMAGES%'
+--- wicd.orig/setup.py
++++ wicd/setup.py
+@@ -488,7 +488,8 @@ try:
+     (wpath.backends, ['wicd/backends/be-external.py', 'wicd/backends/be-ioctl.py']),
+     (wpath.autostart, ['other/wicd-tray.desktop', ]),
+     (wpath.scripts, []),
+-    (wpath.disconnectscripts, []),
++    (wpath.predisconnectscripts, []),
++    (wpath.postdisconnectscripts, []),
+     (wpath.preconnectscripts, []),
+     (wpath.postconnectscripts, []),
+     ]
+--- wicd.orig/wicd/wicd-daemon.py
++++ wicd/wicd/wicd-daemon.py
+@@ -1134,8 +1134,10 @@ class WirelessDaemon(dbus.service.Object
+         # is done.
+         self.wifi.before_script = self.GetWirelessProperty(id, 'beforescript')
+         self.wifi.after_script = self.GetWirelessProperty(id, 'afterscript')
+-        self.wifi.disconnect_script = self.GetWirelessProperty(id,
+-                                                               'disconnectscript')
++        self.wifi.pre_disconnect_script = self.GetWirelessProperty(id,
++                                                               'predisconnectscript')
++        self.wifi.post_disconnect_script = self.GetWirelessProperty(id,
++                                                               'postdisconnectscript')
+         print 'Connecting to wireless network ' + self.LastScan[id]['essid']
+         self.daemon.wired_bus.wired.Disconnect()
+         self.daemon.SetForcedDisconnect(False)
+@@ -1222,12 +1224,14 @@ class WirelessDaemon(dbus.service.Object
+ 
+         write_script_ent(bssid_key, "beforescript")
+         write_script_ent(bssid_key, "afterscript")
+-        write_script_ent(bssid_key, "disconnectscript")
++        write_script_ent(bssid_key, "predisconnectscript")
++        write_script_ent(bssid_key, "postdisconnectscript")
+ 
+         if cur_network["use_settings_globally"]:
+             write_script_ent(essid_key, "beforescript")
+             write_script_ent(essid_key, "afterscript")
+-            write_script_ent(essid_key, "disconnectscript")
++            write_script_ent(essid_key, "predisconnectscript")
++            write_script_ent(essid_key, "postdisconnectscript")
+ 
+         self.config.write()
+ 
+@@ -1421,7 +1425,8 @@ class WiredDaemon(dbus.service.Object):
+         """ Connects to a wired network. """
+         self.wired.before_script = self.GetWiredProperty("beforescript")
+         self.wired.after_script = self.GetWiredProperty("afterscript")
+-        self.wired.disconnect_script = self.GetWiredProperty("disconnectscript")
++        self.wired.pre_disconnect_script = self.GetWiredProperty("predisconnectscript")
++        self.wired.post_disconnect_script = self.GetWiredProperty("postdisconnectscript")
+         self.daemon.wireless_bus.wifi.Disconnect()
+         self.daemon.SetForcedDisconnect(False)
+         self.UnsetWiredLastUsed()
+@@ -1439,7 +1444,8 @@ class WiredDaemon(dbus.service.Object):
+ 
+         for option in ["ip", "broadcast", "netmask","gateway", "search_domain", 
+                        "dns_domain", "dns1", "dns2", "dns3", "beforescript", 
+-                       "afterscript", "disconnectscript"]:
++                       "afterscript", "predisconnectscript",
++                       "postdisconnectscript"]:
+             self.config.set(profilename, option, None)
+         self.config.set(profilename, "default", default)
+         self.config.write()
+@@ -1507,7 +1513,8 @@ class WiredDaemon(dbus.service.Object):
+ 
+         write_script_ent(profilename, "beforescript")
+         write_script_ent(profilename, "afterscript")
+-        write_script_ent(profilename, "disconnectscript")
++        write_script_ent(profilename, "predisconnectscript")
++        write_script_ent(profilename, "postdisconnectscript")
+         self.config.write()
+         return "100: Profile Written"
+ 
+--- wicd.orig/data/wicd.glade
++++ wicd/data/wicd.glade
+@@ -342,18 +342,18 @@
+                 <property name="visible">True</property>
+                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                 <child>
+-                  <widget class="GtkLabel" id="disconnect_label">
++                  <widget class="GtkLabel" id="pre_disconnect_label">
+                     <property name="width_request">150</property>
+                     <property name="visible">True</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+-                    <property name="label" translatable="yes">Disconnection Script:</property>
++                    <property name="label" translatable="yes">Pre-disconnection Script:</property>
+                   </widget>
+                   <packing>
+                     <property name="position">0</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <widget class="GtkEntry" id="disconnect_entry">
++                  <widget class="GtkEntry" id="pre_disconnect_entry">
+                     <property name="visible">True</property>
+                     <property name="can_focus">True</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+@@ -370,6 +370,39 @@
+                 <property name="position">3</property>
+               </packing>
+             </child>
++			<child>
++              <widget class="GtkHBox" id="hbox10">
++                <property name="visible">True</property>
++                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                <child>
++                  <widget class="GtkLabel" id="post_disconnect_label">
++                    <property name="width_request">150</property>
++                    <property name="visible">True</property>
++                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                    <property name="label" translatable="yes">Post-disconnection Script:</property>
++                  </widget>
++                  <packing>
++                    <property name="position">0</property>
++                  </packing>
++                </child>
++                <child>
++                  <widget class="GtkEntry" id="post_disconnect_entry">
++                    <property name="visible">True</property>
++                    <property name="can_focus">True</property>
++                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
++                  </widget>
++                  <packing>
++                    <property name="position">1</property>
++                  </packing>
++                </child>
++              </widget>
++              <packing>
++                <property name="expand">False</property>
++                <property name="fill">False</property>
++                <property name="padding">5</property>
++                <property name="position">4</property>
++              </packing>
++            </child>
+           </widget>
+           <packing>
+             <property name="position">1</property>
