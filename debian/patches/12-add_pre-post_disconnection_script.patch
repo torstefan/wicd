@@ -1,3 +1,12 @@
+Author: David Paleino <d.paleino@gmail.com>
+Bugs-Debian: #517383
+Description: provide a pre-/post-down script
+
+  WICD currently only provides pre-/post-connection scripts, and
+  only a disconnection script, that is run before actually
+  disconnecting. This provides pre-/post-disconnection scripts,
+  thus increasing configuration flexibility.
+
 ---
  curses/configscript_curses.py           |   20 ++++++----
  curses/wicd-curses.py                   |    2 -
@@ -482,7 +491,7 @@
                  <property name="position">3</property>
                </packing>
              </child>
-+			<child>
++            <child>
 +              <widget class="GtkHBox" id="hbox10">
 +                <property name="visible">True</property>
 +                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
