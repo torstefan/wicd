@@ -14,13 +14,14 @@ wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
   * debian/init updated, status_of_proc() works now!
   * debian/po/:
     - cs.po added, thanks to Martin Šín (Closes: #532210)
+    - de.po added, thanks to Helge Kreutzmann (Closes: #533446)
     - fi.po added, thanks to Esko Arajärvi (Closes: #533226)
     - pt.po added, thanks to Américo Monteiro (Closes: #533244)
     - ru.po added, thanks to Yuri Kozlov (Closes: #533213)
     - sv.po added, thanks to Martin Bagge (Closes: #532160)
     - zh_CN.po added, thanks to Deng Xiyue (Closes: #533392)
 
- -- David Paleino <d.paleino@gmail.com>  Wed, 17 Jun 2009 08:56:12 +0200
+ -- David Paleino <d.paleino@gmail.com>  Wed, 17 Jun 2009 19:19:31 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
