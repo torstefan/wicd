@@ -1,5 +1,6 @@
-wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
+wicd (1.6.1-1) UNRELEASED; urgency=low
 
+  * New upstream version
   * debian/templates:
     - merged the note into the multiselect screen
     - updated multiselect text, removed note
@@ -22,7 +23,7 @@ wicd (1.6.0-2~pre2) UNRELEASED; urgency=low
     - sv.po added, thanks to Martin Bagge (Closes: #532160)
     - zh_CN.po added, thanks to Deng Xiyue (Closes: #533392)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 19 Jun 2009 12:40:50 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:13:15 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
