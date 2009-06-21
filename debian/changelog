@@ -2,8 +2,10 @@ wicd (1.6.1-2) UNRELEASED; urgency=low
 
   * debian/control:
     - Vcs-* fields updated (oops.)
+  * debian/patches/05-fix_typo.patch added, fixes missing rename of
+    global var
 
- -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:51:26 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 20:58:37 +0200
 
 wicd (1.6.1-1) unstable; urgency=low
 
