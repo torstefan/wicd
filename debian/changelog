@@ -10,6 +10,7 @@ wicd (1.6.1-1) UNRELEASED; urgency=low
     - Recommend graphical su programs to handle scripts (and sudo for
       wicd-curses) (Closes: #519915)
   * debian/patches/:
+    - 01-fix_desktop_file.patch removed, merged upstream
     - 11-fix_graphical_sudo_detection.patch added
     - 12-add_pre-post_disconnection_script.patch added (Closes: #517383)
   * debian/init updated, status_of_proc() works now!
@@ -23,7 +24,7 @@ wicd (1.6.1-1) UNRELEASED; urgency=low
     - sv.po added, thanks to Martin Bagge (Closes: #532160)
     - zh_CN.po added, thanks to Deng Xiyue (Closes: #533392)
 
- -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:13:15 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:16:37 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
