@@ -2,11 +2,10 @@ Source: wicd
 Section: net
 Priority: optional
 Maintainer: David Paleino <d.paleino@gmail.com>
-Uploaders: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7), python, quilt
 Build-Depends-Indep: python-support, po-debconf
-Standards-Version: 3.8.1
+Standards-Version: 3.8.2
 Homepage: http://wicd.sourceforge.net/
 Vcs-Browser: http://svn.debian.org/viewsvn/python-apps/packages/wicd/trunk/
 Vcs-Svn: svn://svn.debian.org/svn/python-apps/packages/wicd/trunk

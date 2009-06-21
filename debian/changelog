@@ -10,6 +10,8 @@ wicd (1.6.1-1) UNRELEASED; urgency=low
       from the debian-l10n-english mailing list
     - Recommend graphical su programs to handle scripts (and sudo for
       wicd-curses) (Closes: #519915)
+    - PAPT removed from Uploaders
+    - Standards-Version bumped to 3.8.2, no changes needed
   * debian/patches/:
     - 01-fix_desktop_file.patch, 02-fix_logfile_perms.patch,
       03-fix_lintian_manpage_warning.patch, 10-add_udhcpc_support.patch
@@ -27,7 +29,7 @@ wicd (1.6.1-1) UNRELEASED; urgency=low
   * debian/rules:
     - pass --loggroup and --logperms to setup.py
 
- -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:21:35 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:28:29 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
