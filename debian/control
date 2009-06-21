@@ -7,8 +7,8 @@ Build-Depends: debhelper (>= 7), python, quilt
 Build-Depends-Indep: python-support, po-debconf
 Standards-Version: 3.8.2
 Homepage: http://wicd.sourceforge.net/
-Vcs-Browser: http://svn.debian.org/viewsvn/python-apps/packages/wicd/trunk/
-Vcs-Svn: svn://svn.debian.org/svn/python-apps/packages/wicd/trunk
+Vcs-Browser: http://git.debian.org/?p=collab-maint/wicd.git
+Vcs-Git: git://git.debian.org/collab-maint/wicd.git
 
 Package: wicd
 Architecture: all
