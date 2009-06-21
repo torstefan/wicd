@@ -10,7 +10,8 @@ wicd (1.6.1-1) UNRELEASED; urgency=low
     - Recommend graphical su programs to handle scripts (and sudo for
       wicd-curses) (Closes: #519915)
   * debian/patches/:
-    - 01-fix_desktop_file.patch, 02-fix_logfile_perms.patch removed,
+    - 01-fix_desktop_file.patch, 02-fix_logfile_perms.patch,
+      03-fix_lintian_manpage_warning.patch removed,
       merged upstream
     - 11-fix_graphical_sudo_detection.patch added
     - 12-add_pre-post_disconnection_script.patch added (Closes: #517383)
@@ -27,7 +28,7 @@ wicd (1.6.1-1) UNRELEASED; urgency=low
   * debian/rules:
     - pass --loggroup and --logperms to setup.py
 
- -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:18:47 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 21 Jun 2009 11:20:30 +0200
 
 wicd (1.6.0-2~pre1) experimental; urgency=low
 
