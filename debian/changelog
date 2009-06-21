@@ -1,6 +1,7 @@
 wicd (1.6.1-1) UNRELEASED; urgency=low
 
-  * New upstream version
+  * New upstream version:
+    - Add Pre/Post-Disconnection scripts (Closes: #517383)
   * debian/templates:
     - merged the note into the multiselect screen
     - updated multiselect text, removed note
@@ -13,7 +14,6 @@ wicd (1.6.1-1) UNRELEASED; urgency=low
     - 01-fix_desktop_file.patch, 02-fix_logfile_perms.patch,
       03-fix_lintian_manpage_warning.patch, 10-add_udhcpc_support.patch
       removed, merged upstream
-    - 12-add_pre-post_disconnection_script.patch added (Closes: #517383)
   * debian/init updated, status_of_proc() works now!
   * debian/po/:
     - cs.po added, thanks to Martin Šín (Closes: #532210)
