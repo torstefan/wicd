@@ -1,6 +1,5 @@
 04-fix-scripts.patch
 #08-fix_GetIP.patch
 #09-fix_wire_plugging_detection.patch
-10-add_udhcpc_support.patch
 11-fix_graphical_sudo_detection.patch
 12-add_pre-post_disconnection_script.patch
