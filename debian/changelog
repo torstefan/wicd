@@ -1,4 +1,4 @@
-wicd (1.6.1-3) UNRELEASED; urgency=low
+wicd (1.6.1-3) unstable; urgency=low
 
   * debian/config, debian/templates updated:
     - only show users to add to netdev, skip those who are already
@@ -7,7 +7,7 @@ wicd (1.6.1-3) UNRELEASED; urgency=low
       debconf set a value of ${default} for wicd/users
       (Closes: #532112)
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 22 Jun 2009 17:06:04 +0200
+ -- David Paleino <d.paleino@gmail.com>  Mon, 22 Jun 2009 17:59:27 +0200
 
 wicd (1.6.1-2) unstable; urgency=low
 
