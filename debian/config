@@ -6,25 +6,23 @@ set -e
 . /usr/share/debconf/confmodule
 
 db_metaget wicd/users users
-db_subst wicd/users users "$(getent passwd | awk -F: '{if ($3 >= 1000 && $3 < 60000) print $1}' | sort | tr '\n' ',' | sed 's@,@, @g;s@, $@@g')"
+users="$(getent passwd | awk -F: '{if ($3 >= 1000 && $3 < 60000) print $1}' | sort | tr '\n' ',' | sed 's@,@, @g;s@, $@@g')"
+netdev=$(getent group netdev | cut -d: -f4 | sed -e 's@,@ @g')
 
-db_metaget wicd/users default
-db_subst wicd/users default "$(getent group netdev | cut -d: -f4 | sed -e 's@,@, @g')"
+# Don't show users already in netdev
+for u in $netdev; do
+	users=$(echo $users | sed "s@$u, @@g;s@, $u\$@@g");
+done
+
+db_subst wicd/users users "$users"
 
 db_input high wicd/users || true
 db_go
 
 db_get wicd/users
 users=$(echo $RET | sed -e 's@,@@g')
-netdev=$(getent group netdev | cut -d: -f4 | sed -e 's@,@ @g')
 
-# Add users not there yet
+# Add selected users
 for u in $users; do
 	adduser $u netdev
-	netdev=$(echo $netdev | sed -e "s@$u@@g")
-done
-
-# Remove users, present in the group, but not chosen in debconf
-for u in $netdev; do
-	deluser $u netdev
 done
