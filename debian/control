@@ -25,7 +25,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  adduser,
  lsb-base (>= 3.2-13),
  psmisc
-Recommends: gksu | kdesu | ktsuss | sudo
+Recommends: gksu | kdesu | ktsuss | sudo,
+ python-notify
 Suggests: pm-utils
 Conflicts: network-manager
 Description: wired and wireless network manager
