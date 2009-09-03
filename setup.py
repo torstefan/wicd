@@ -26,7 +26,7 @@ import subprocess
 
 # Be sure to keep this updated!
 # VERSIONNUMBER
-VERSION_NUM = '1.6.1'
+VERSION_NUM = '1.6.2'
 # REVISION_NUM is automatically updated
 REVISION_NUM = 'unknown'
 CURSES_REVNO = 'uimod'
@@ -412,7 +412,8 @@ class get_translations(Command):
 
     def run(self):
         import urllib, shutil
-        shutil.rmtree('translations/')
+        if os.path.exists('translations'):
+            shutil.rmtree('translations/')
         os.makedirs('translations')
         filename, headers = urllib.urlretrieve('http://wicd.sourceforge.net/translator/idlist/')
         id_file = open(filename, 'r')
