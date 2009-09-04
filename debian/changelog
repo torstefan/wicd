@@ -1,6 +1,7 @@
 wicd (1.6.2-1) UNRELEASED; urgency=low
 
   * New upstream version
+    - fixed connection templates (Closes: #536219)
   * debian/control:
     - added python-notify to Recommends (Closes: #534271)
   * debian/patches/05-fix_typo.patch removed, fixed upstream
