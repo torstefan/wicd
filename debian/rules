@@ -10,6 +10,7 @@ build: build-stamp
 build-stamp: $(QUILT_STAMPFN)
 	dh build --before dh_auto_configure
 	python setup.py configure \
+		--no-install-acpi \
 		--no-install-docs \
 		--lib=/usr/share/wicd \
 		--share=/usr/share/wicd \
