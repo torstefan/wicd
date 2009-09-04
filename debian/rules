@@ -9,7 +9,13 @@ include /usr/share/quilt/quilt.make
 build: build-stamp
 build-stamp: $(QUILT_STAMPFN)
 	dh build --before dh_auto_configure
-	python setup.py configure --no-install-docs --lib=/usr/share/wicd --share=/usr/share/wicd --wicdgroup=netdev --loggroup=adm --logperms=0640
+	python setup.py configure \
+		--no-install-docs \
+		--lib=/usr/share/wicd \
+		--share=/usr/share/wicd \
+		--wicdgroup=netdev \
+		--loggroup=adm \
+		--logperms=0640
 	python setup.py build
 	dh build --after dh_auto_build
 	touch $@
