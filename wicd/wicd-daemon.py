@@ -1198,9 +1198,12 @@ class WirelessDaemon(dbus.service.Object):
             cur_network[option] = bool(cur_network.get(option))
         # Read the essid because we need to name those hidden
         # wireless networks now - but only read it if it is hidden.
-        if cur_network["hidden"]:
-            if cur_network.get("essid") in ["", "Hidden", "<hidden>", None]:
-                cur_network["essid"] = "<hidden>"
+        # check if there is an essid in the config file
+        # if there isn't, .get( will return None
+        stored_essid = self.config.get(section, 'essid')
+        if stored_essid:
+            # set the current network's ESSID to the stored one
+            cur_network['essid'] = stored_essid
         return "100: Loaded Profile"
 
     @dbus.service.method('org.wicd.daemon.wireless')

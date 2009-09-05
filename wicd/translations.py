@@ -55,7 +55,7 @@ def get_gettext():
     _ = lang.gettext
     return _
 
-# Generated automatically on Sun, 05 Jul 2009 14:28:38 CDT
+# Generated automatically on Tue, 25 Aug 2009 22:54:24 CDT
 _ = get_gettext()
 language = {}
 language['resetting_ip_address'] = _('''Resetting IP address...''')
@@ -218,3 +218,6 @@ language['access_denied'] = _('''Unable to contact the Wicd daemon due to an acc
 language['disconnecting_active'] = _('''Disconnecting active connections...''')
 language['access_denied_wc'] = _('''ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the "$A" group.''')
 language['post_disconnect_script'] = _('''Run post-disconnect script''')
+language['resume_script'] = _('''Resume script''')
+language['suspend_script'] = _('''Suspend script''')
+language['invalid_ip_address'] = _('''Invalid IP address entered.''')
