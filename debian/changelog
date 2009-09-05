@@ -1,4 +1,4 @@
-wicd (1.6.2-1) UNRELEASED; urgency=low
+wicd (1.6.2.1-1) UNRELEASED; urgency=low
 
   * New upstream version
     - fixed connection templates (Closes: #536219)
@@ -10,7 +10,7 @@ wicd (1.6.2-1) UNRELEASED; urgency=low
     - don't install acpi-support integration anymore, let's
       just use pm-utils (LP: #366119)
 
- -- David Paleino <d.paleino@gmail.com>  Fri, 04 Sep 2009 20:33:19 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 05 Sep 2009 09:38:13 +0200
 
 wicd (1.6.1-3) unstable; urgency=low
 
