@@ -4,13 +4,15 @@ wicd (1.6.2.1-1) UNRELEASED; urgency=low
     - fixed connection templates (Closes: #536219)
   * debian/control:
     - added python-notify to Recommends (Closes: #534271)
-  * debian/patches/05-fix_typo.patch removed, fixed upstream
+  * debian/patches/:
+    - 01-remove_unused_icons.patch added (Closes: #538218)
+    - 05-fix_typo.patch removed, fixed upstream
   * debian/rules:
     - stylistic changes
     - don't install acpi-support integration anymore, let's
       just use pm-utils (LP: #366119)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 05 Sep 2009 09:38:13 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 05 Sep 2009 12:03:30 +0200
 
 wicd (1.6.1-3) unstable; urgency=low
 
