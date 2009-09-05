@@ -42,7 +42,8 @@ from misc import find_path
 
 # Regular expressions.
 _re_mode = (re.I | re.M | re.S)
-essid_pattern = re.compile('.*ESSID:"?(.*?)"?\s*\n', _re_mode)
+blank_essid_pattern = re.compile('.*ESSID:"?()"??\s*\n', _re_mode)
+essid_pattern = re.compile('.*ESSID:"(\w+)"|(\w+)\s*\n', _re_mode)
 ap_mac_pattern = re.compile('.*Address: (.*?)\n', _re_mode)
 channel_pattern = re.compile('.*Channel:?=? ?(\d\d?)', _re_mode)
 strength_pattern = re.compile('.*Quality:?=? ?(\d+)\s*/?\s*(\d*)', _re_mode)
@@ -1171,13 +1172,19 @@ class BaseWirelessInterface(BaseInterface):
 
         """
         ap = {}
-        ap['essid'] = misc.RunRegex(essid_pattern, cell)
+        real_essid = misc.RunRegex(essid_pattern, cell)
+
+        if real_essid == None:
+            ap['essid'] = None
+        else:
+            ap['essid'] = real_essid
+
         try:
             ap['essid'] = misc.to_unicode(ap['essid'])
         except (UnicodeDecodeError, UnicodeEncodeError):
             print 'Unicode problem with current network essid, ignoring!!'
             return None
-        if ap['essid'] in ['<hidden>', "", None]:
+        if ap['essid'] in ['Hidden', '<hidden>', "", None]:
             print 'hidden'
             ap['hidden'] = True
             ap['essid'] = "<hidden>"

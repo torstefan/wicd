@@ -1,4 +1,9 @@
 Wicd 1.6.0 Branch
+1.6.2.1:
+	Minor Changes:
+	- Hidden networks now work better
+	- Properly handle double ESSID: entries in iwlist scan output
+
 1.6.2:
 	Minor Changes:
 	- Now deals better if the interface disappears while running
