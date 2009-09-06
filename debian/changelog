@@ -2,6 +2,7 @@ wicd (1.6.2.2-1) UNRELEASED; urgency=low
 
   * New upstream version
     - fixed connection templates (Closes: #536219)
+    - fixed Ad-Hoc Network creation (Closes: #534718)
   * debian/control:
     - added python-notify to Recommends (Closes: #534271)
   * debian/patches/:
@@ -15,7 +16,7 @@ wicd (1.6.2.2-1) UNRELEASED; urgency=low
     - es.po added, thanks to Francisco Javier Cuadrado (Closes: #534661)
     - fr.po added, thanks to Steve Petruzzello (Closes: #537213)
 
- -- David Paleino <d.paleino@gmail.com>  Sun, 06 Sep 2009 21:44:32 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 06 Sep 2009 21:47:53 +0200
 
 wicd (1.6.1-3) unstable; urgency=low
 
