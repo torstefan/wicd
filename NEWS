@@ -1,4 +1,8 @@
 Wicd 1.6.0 Branch
+1.6.2.2:
+	Minor Changes:
+	- Fix handling of ESSIDs with spaces and special characters
+
 1.6.2.1:
 	Minor Changes:
 	- Hidden networks now work better
