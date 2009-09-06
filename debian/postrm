@@ -25,6 +25,7 @@ case "$1" in
         rm -rf /etc/wicd
         rm -rf /var/lib/wicd
         rm -rf /var/log/wicd
+        rm -rf /var/run/wicd
         if [ -x "/etc/init.d/dbus" ]; then
             # Check if DBus has started, otherwise this fails on
             # certain environments (chroots, for example). See
