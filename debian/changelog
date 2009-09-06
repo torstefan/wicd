@@ -18,9 +18,11 @@ wicd (1.6.2.2-1) UNRELEASED; urgency=low
   * debian/po/:
     - es.po added, thanks to Francisco Javier Cuadrado (Closes: #534661)
     - fr.po added, thanks to Steve Petruzzello (Closes: #537213)
-  * debian/postrm: removing /var/run/wicd on purge (Closes: #536444)
+  * debian/postrm:
+    - removing /var/run/wicd on purge (Closes: #536444)
+    - early load Debconf (Closes: #534648)
 
- -- David Paleino <d.paleino@gmail.com>  Sun, 06 Sep 2009 22:49:56 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sun, 06 Sep 2009 23:25:54 +0200
 
 wicd (1.6.1-3) unstable; urgency=low
 
