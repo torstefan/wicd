@@ -43,7 +43,7 @@ from misc import find_path
 # Regular expressions.
 _re_mode = (re.I | re.M | re.S)
 blank_essid_pattern = re.compile('.*ESSID:"?()"??\s*\n', _re_mode)
-essid_pattern = re.compile('.*ESSID:"(\w+)"|(\w+)\s*\n', _re_mode)
+essid_pattern = re.compile(r'.*ESSID:("(")"|("?)((?!("")\s*\n)[^\n].+?)(\3))\s*$', _re_mode)
 ap_mac_pattern = re.compile('.*Address: (.*?)\n', _re_mode)
 channel_pattern = re.compile('.*Channel:?=? ?(\d\d?)', _re_mode)
 strength_pattern = re.compile('.*Quality:?=? ?(\d+)\s*/?\s*(\d*)', _re_mode)
@@ -1172,7 +1172,15 @@ class BaseWirelessInterface(BaseInterface):
 
         """
         ap = {}
-        real_essid = misc.RunRegex(essid_pattern, cell)
+        try:
+            r_groups = essid_pattern.search(cell).groups()
+        except:
+            real_essid = None
+        else:
+            if r_groups[1]:
+                real_essid = r_groups[1]
+            else:
+                real_essid = r_groups[3]
 
         if real_essid == None:
             ap['essid'] = None
