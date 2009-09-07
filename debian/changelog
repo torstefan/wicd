@@ -9,7 +9,7 @@ wicd (1.6.2.2-1) UNRELEASED; urgency=low
   * debian/control:
     - added python-notify to Recommends (Closes: #534271)
   * debian/patches/:
-    - 01-remove_unused_icons.patch added (Closes: #538218)
+    - 01-remove_unused_icons.patch added (Closes: #538009)
     - 05-fix_typo.patch removed, fixed upstream
   * debian/rules:
     - stylistic changes
