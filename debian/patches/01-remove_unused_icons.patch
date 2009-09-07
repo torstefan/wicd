@@ -1,3 +1,4 @@
+Don't install rarely-used icons, save disk space
 ---
  setup.py |    4 ----
  1 file changed, 4 deletions(-)
