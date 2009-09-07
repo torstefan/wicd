@@ -22,8 +22,11 @@ wicd (1.6.2.2-1) UNRELEASED; urgency=low
   * debian/postrm:
     - removing /var/run/wicd on purge (Closes: #536444)
     - early load Debconf (Closes: #534648)
+  * debian/README.Debian updated: explain the differences between
+    iputils-ping and inetutils-ping, related to 02-detect_ping_flavour.patch.
+    (Closes: #545458)
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 07 Sep 2009 11:54:57 +0200
+ -- David Paleino <d.paleino@gmail.com>  Mon, 07 Sep 2009 12:19:51 +0200
 
 wicd (1.6.1-3) unstable; urgency=low
 
