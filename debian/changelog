@@ -1,3 +1,9 @@
+wicd (1.6.2.2-2) UNRELEASED; urgency=low
+
+  * debian/po/ja.po added, thanks to Hideki Yamane (Closes: #546231)
+
+ -- David Paleino <d.paleino@gmail.com>  Fri, 11 Sep 2009 21:38:34 +0200
+
 wicd (1.6.2.2-1) unstable; urgency=low
 
   * New upstream version
