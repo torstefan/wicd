@@ -29,7 +29,6 @@ Depends: ${misc:Depends}, ${python:Depends},
 Recommends: gksu | kdesu | ktsuss | sudo,
  python-notify
 Suggests: pm-utils
-Conflicts: network-manager
 Description: wired and wireless network manager
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
