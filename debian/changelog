@@ -6,8 +6,9 @@ wicd (1.6.2.2-2) UNRELEASED; urgency=low
       the same time, provided they don't try to control the same
       interface (Closes: #548978)
     - added dependency on dbus (Closes: #540331, #551605)
+  * debian/patches/05-use_binsh.patch added (Closes: #549443)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 24 Oct 2009 23:23:00 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 24 Oct 2009 23:23:37 +0200
 
 wicd (1.6.2.2-1) unstable; urgency=low
 
