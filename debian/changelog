@@ -5,9 +5,9 @@ wicd (1.6.2.2-2) UNRELEASED; urgency=low
     - remove Conflict on network-manager, since both can be used at
       the same time, provided they don't try to control the same
       interface (Closes: #548978)
-    - added dependency on dbus (Closes: #551605)
+    - added dependency on dbus (Closes: #540331, #551605)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 24 Oct 2009 22:00:40 +0200
+ -- David Paleino <d.paleino@gmail.com>  Sat, 24 Oct 2009 23:23:00 +0200
 
 wicd (1.6.2.2-1) unstable; urgency=low
 
