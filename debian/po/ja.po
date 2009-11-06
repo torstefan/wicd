@@ -1,5 +1,5 @@
 # Debconf translations for wicd.
-# Copyright © 2009, David Paleino
+# Copyright © 2009, David Paleino <d.paleino@gmail.com>
 # This file is distributed under the same license as the wicd package.
 # Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
 #
@@ -28,6 +28,6 @@ msgid ""
 "Users who should be able to run wicd clients need to be added to the group "
 "\"netdev\"."
 msgstr ""
-"wicd クライアントを動作させられるユーザは「netdev」グループに追加されている"
+"wicd クライアントを動作可能なユーザは「netdev」グループに追加されている"
 "必要があります。"
 
