@@ -1,10 +1,10 @@
-wicd (1.6.2.2-3) UNRELEASED; urgency=low
+wicd (1.6.2.2-3) unstable; urgency=low
 
   * debian/po/ja.po updated (Closes: #554838)
   * debian/patches/06-dont_bomb_out_on_configparser_error.patch added
     (Closes: #554949)
 
- -- David Paleino <d.paleino@gmail.com>  Sat, 07 Nov 2009 16:47:44 +0100
+ -- David Paleino <d.paleino@gmail.com>  Sat, 07 Nov 2009 16:59:06 +0100
 
 wicd (1.6.2.2-2) unstable; urgency=low
 
