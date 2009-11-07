@@ -4,3 +4,4 @@
 #08-fix_GetIP.patch
 #09-fix_wire_plugging_detection.patch
 05-use_binsh.patch
+06-dont_bomb_out_on_configparser_error.patch
