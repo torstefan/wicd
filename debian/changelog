@@ -2,8 +2,9 @@ wicd (1.6.2.2-4) UNRELEASED; urgency=low
 
   * debian/control:
     - updated my email address
+    - DMUA removed
 
- -- David Paleino <dapal@debian.org>  Sun, 08 Nov 2009 23:50:02 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 08 Nov 2009 23:50:30 +0100
 
 wicd (1.6.2.2-3) unstable; urgency=low
 
