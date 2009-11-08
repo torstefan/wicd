@@ -1,7 +1,7 @@
 Source: wicd
 Section: net
 Priority: optional
-Maintainer: David Paleino <d.paleino@gmail.com>
+Maintainer: David Paleino <dapal@debian.org>
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7), python, quilt
 Build-Depends-Indep: python-support, po-debconf
