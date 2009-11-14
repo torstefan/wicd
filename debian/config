@@ -31,5 +31,5 @@ users=$(echo $RET | sed -e 's@,@@g')
 
 # Add selected users
 for u in $users; do
-	adduser $u netdev
+	adduser --quiet $u netdev
 done
