@@ -11,9 +11,11 @@ wicd (1.6.2.2-4) UNRELEASED; urgency=low
       (Closes: #557462)
     - 08-fix_help_message.patch added, fix minor issue with help
       message of wicd-curses
+    - 09-allow_empty_DNS.patch added, one might run a local
+      forwarder and 127.0.0.1 wouldn't work (Closes: #552598)
   * debian/links removed, debian/manpages added (Closes: #557173)
 
- -- David Paleino <dapal@debian.org>  Sat, 05 Dec 2009 11:39:08 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 05 Dec 2009 11:59:56 +0100
 
 wicd (1.6.2.2-3) unstable; urgency=low
 
