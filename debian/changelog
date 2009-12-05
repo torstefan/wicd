@@ -15,9 +15,11 @@ wicd (1.6.2.2-4) UNRELEASED; urgency=low
       forwarder and 127.0.0.1 wouldn't work (Closes: #552598)
     - 10-order_scripts_directories.patch added, scripts were run
       in a random order (python's os.listdir())
+    - 11-fix_gui_showing_from_tray.patch added, raises the GUI
+      also when it was trayed in an iconified state (Closes: #549625)
   * debian/links removed, debian/manpages added (Closes: #557173)
 
- -- David Paleino <dapal@debian.org>  Sat, 05 Dec 2009 12:20:01 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 05 Dec 2009 12:39:56 +0100
 
 wicd (1.6.2.2-3) unstable; urgency=low
 

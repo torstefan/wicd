@@ -1,0 +1,19 @@
+From: David Paleino <dapal@debian.org>
+Subject: raise window after it was trayed when iconified
+Bug-Debian: http://bugs.debian.org/549625
+Forwarded: yes, https://bugs.launchpad.net/wicd/+bug/492806
+
+---
+ wicd/gui.py |    1 +
+ 1 file changed, 1 insertion(+)
+
+--- wicd.orig/wicd/gui.py
++++ wicd/wicd/gui.py
+@@ -759,6 +759,7 @@ class appGui(object):
+         
+         """
+         self.window.present()
++        self.window.deiconify()
+         self.wait_for_events()
+         self.is_visible = True
+         daemon.SetGUIOpen(True)
