@@ -5,8 +5,12 @@ wicd (1.6.2.2-4) UNRELEASED; urgency=low
     - DMUA removed
   * debian/config: add --quiet to adduser, don't show messages if
     user is already in netdev (Closes: #556182)
+  * debian/patches/:
+    - 07-workaround_urwid_API_change.patch added, handle API change
+      between python-urwid 0.9.8.4 and python-urwid 0.9.9
+      (Closes: #557462)
 
- -- David Paleino <dapal@debian.org>  Sat, 14 Nov 2009 08:22:15 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 05 Dec 2009 11:07:45 +0100
 
 wicd (1.6.2.2-3) unstable; urgency=low
 
