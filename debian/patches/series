@@ -6,3 +6,4 @@
 05-use_binsh.patch
 06-dont_bomb_out_on_configparser_error.patch
 07-workaround_urwid_API_change.patch
+08-fix_help_message.patch

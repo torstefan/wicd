@@ -9,8 +9,10 @@ wicd (1.6.2.2-4) UNRELEASED; urgency=low
     - 07-workaround_urwid_API_change.patch added, handle API change
       between python-urwid 0.9.8.4 and python-urwid 0.9.9
       (Closes: #557462)
+    - 08-fix_help_message.patch added, fix minor issue with help
+      message of wicd-curses
 
- -- David Paleino <dapal@debian.org>  Sat, 05 Dec 2009 11:07:45 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 05 Dec 2009 11:36:20 +0100
 
 wicd (1.6.2.2-3) unstable; urgency=low
 
