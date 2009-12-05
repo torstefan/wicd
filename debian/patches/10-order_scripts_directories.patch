@@ -1,6 +1,6 @@
 From: David Paleino <dapal@debian.org>
 Subject: run the scripts in an ordered way
-Forwarded: no
+Forwarded: yes, https://bugs.launchpad.net/wicd/+bug/492803
 
 ---
  wicd/misc.py |    2 +-
