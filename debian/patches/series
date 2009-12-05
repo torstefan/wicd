@@ -8,3 +8,4 @@
 07-workaround_urwid_API_change.patch
 08-fix_help_message.patch
 09-allow_empty_DNS.patch
+10-order_scripts_directories.patch
