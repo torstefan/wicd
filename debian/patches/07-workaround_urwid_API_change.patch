@@ -2,7 +2,7 @@ From: David Paleino <dapal@debian.org>
 Subject: Handle API change between urwid 0.9.8.4 and urwid 0.9.9
 Bug-Debian: http://bugs.debian.org/557462
 Bug: https://bugs.launchpad.net/wicd/+bug/490416
-Forwarded: no
+Forwarded: yes,  https://bugs.launchpad.net/wicd/+bug/490416/comments/2
 
 ---
  curses/curses_misc.py |   24 ++++++++++++++++++++----
