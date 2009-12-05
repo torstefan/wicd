@@ -1,7 +1,7 @@
 From: David Paleino <dapal@debian.org>
 Subject: allow empty DNS fields, one might run a local forwarder
 Bug-Debian: http://bugs.debian.org/552598
-Forwarded: no
+Forwarded: yes, https://bugs.launchpad.net/wicd/+bug/492795
 
 ---
  wicd/gui.py |    7 ++-----
