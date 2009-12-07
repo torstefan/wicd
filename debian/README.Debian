@@ -13,31 +13,6 @@ entry in your /etc/network/interfaces file is
 You can change the contents of this file by using various editors, but
 remember: you have to be root!
 
-From version 1.5.9-1 onwards, the wicd-client GUI will be available
-only to users of the `netdev' group, so as to avoid users not 
-enabled by root to change network configuration.
-This means that, if you do *not* belong to that group, wicd-client 
-will refuse to start with a permission denied error by DBus, as soon 
-as installation succeeds.
-
-To add yourself to the netdev group, ask your administrator to do, or
-do as root yourself:
-
-	# usermod --append --groups netdev <yourusername>
-
-or:
-
-	# adduser <yourusername> netdev
-
-(obviously replace "<yourusername>" with the user you want to grant 
-access to wicd-client to). This could also be done with graphical 
-user management programs.
-
-After you did this, you have to reload DBus by:
-
-	# /etc/init.d/dbus reload
-
-
 2. Boot-time problems
 ---------------------
 
@@ -62,4 +37,4 @@ timeout (roughly, ~10 seconds). A solution is using iputils-ping or, if you
 can't, bug inetutils-ping maintainers to add that feature.
 
 
- -- David Paleino <d.paleino@gmail.com>  Mon, 07 Sep 2009 12:10:32 +0200
+ -- David Paleino <dapal@debian.org>  Mon, 07 Dec 2009 16:58:07 +0100
