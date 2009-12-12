@@ -13,7 +13,7 @@ Package: wicd
 Architecture: all
 Depends: ${misc:Depends},
  wicd-daemon (= ${source:Version}),
- wicd-client (= ${source:Version})
+ wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-client
 Conflicts: wicd (<< 1.6.2.2-5~)
 Replaces: wicd (<< 1.6.2.2-5~)
 Description: wired and wireless network manager - metapackage
@@ -47,7 +47,7 @@ Depends: ${misc:Depends}, ${python:Depends},
  lsb-base (>= 3.2-13),
  psmisc,
  iputils-ping | inetutils-ping,
- wicd-client (= ${source:Version})
+ wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-client
 Suggests: pm-utils
 Description: wired and wireless network manager - daemon
  Wicd is a general-purpose network configuration server which aims
