@@ -1,0 +1,51 @@
+From: David Paleino <dapal@debian.org>
+Subject: rename wicd-client to wicd-gtk where needed
+Forwarded: not-needed
+
+---
+ in/man=wicd.8.in        |    2 +-
+ other/wicd-tray.desktop |    6 +++---
+ other/wicd.desktop      |    6 +++---
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+--- wicd.orig/in/man=wicd.8.in
++++ wicd/in/man=wicd.8.in
+@@ -53,7 +53,7 @@ The daemon's job is split between two pr
+ All the connection status monitoring, as well as the auto-reconnection logic,
+ takes place in monitor.py.  Everthing else is done by wicd-daemon.py.
+ 
+-The user interface (stored in wicd-client), which is made up of a tray 
++The user interface (stored in wicd-gtk), which is made up of a tray
+ icon, a main GUI window, and its child dialogs, gets configuration and network
+ info from the daemon either by querying it using the methods in the daemon's 
+ dbus interface or by receiving signals emitted from the daemon over D-Bus.  
+--- wicd.orig/other/wicd-tray.desktop
++++ wicd/other/wicd-tray.desktop
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Categories=Application;Network;
+-Exec=wicd-client
++Exec=wicd-gtk
+ GenericName=Network Manager
+-Icon=wicd-client
+-Icon[en_US]=wicd-client
++Icon=wicd-gtk
++Icon[en_US]=wicd-gtk
+ Name=Wicd Network Manager Tray
+ Name[en_US]=Wicd Network Manager Tray
+ Comment=Display network connection status in the system tray
+--- wicd.orig/other/wicd.desktop
++++ wicd/other/wicd.desktop
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Categories=Application;Network;
+-Exec=wicd-client --no-tray
++Exec=wicd-gtk --no-tray
+ GenericName=Network Manager
+-Icon=wicd-client
+-Icon[en_US]=wicd-client
++Icon=wicd-gtk
++Icon[en_US]=wicd-gtk
+ Name=Wicd Network Manager
+ Name[en_US]=Wicd Network Manager
+ Comment=Start the Wicd client without system tray icon

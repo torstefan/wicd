@@ -19,8 +19,10 @@ wicd (1.6.2.2-5~exp1) UNRELEASED; urgency=low
     - rewritten to use dh7
   * debian/source/format added -- use 3.0 (quilt)
   * debian/wicd-curses.docs added
+  * debian/patches/12-rename_wicd-client_to_wicd-gtk.patch , rename
+    wicd-client to wicd-gtk where appropriate
 
- -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 17:57:03 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 18:00:38 +0100
 
 wicd (1.6.2.2-4) unstable; urgency=low
 

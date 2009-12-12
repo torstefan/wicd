@@ -27,7 +27,7 @@ override_dh_auto_clean:
 override_dh_auto_install:
 	python setup.py install --root=$(CURDIR)/debian/tmp --install-lib=/usr/share/wicd 
 	install -m644 debian/wicd-client.xpm \
-		$(CURDIR)/debian/tmp/usr/share/pixmaps/wicd.xpm
+		$(CURDIR)/debian/tmp/usr/share/pixmaps/wicd-gtk.xpm
 	
 	find $(CURDIR)/debian/tmp -name "*.png" -exec chmod 644 {} \;
 	find $(CURDIR)/debian/tmp/etc/wicd/ -type f -exec chmod 644 {} \;

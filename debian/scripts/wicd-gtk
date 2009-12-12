@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+PYTHONPATH=/usr/share/wicd/
+export PYTHONPATH
+
+# check_firstrun()
+if [ ! -d "$HOME/.wicd" ]; then
+    mkdir -p "$HOME/.wicd"
+fi
+# Make sure the user knows WHEREAREMYFILES ;-)
+if [ -e "/var/lib/wicd/WHEREAREMYFILES" ] && [ ! -L "$HOME/.wicd/WHEREAREMYFILES" ]; then
+    ln -s "/var/lib/wicd/WHEREAREMYFILES" "$HOME/.wicd/WHEREAREMYFILES"
+fi
+
+exec python -O /usr/share/wicd/wicd-client.py $@
