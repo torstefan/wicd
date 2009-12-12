@@ -79,7 +79,7 @@ Recommends: gksu | kdesu | ktsuss | sudo,
 Provides: wicd-client
 Conflicts: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
-Description: wired and wireless network manager - GTK client
+Description: wired and wireless network manager - GTK+ client
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
@@ -93,7 +93,7 @@ Description: wired and wireless network manager - GTK client
   * lack of GNOME dependencies (although it does require GTK+), making it
     easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
  .
- This package provides the GTK client
+ This package provides the GTK+ client
 
 Package: wicd-curses
 Architecture: all
