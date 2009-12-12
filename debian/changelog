@@ -23,8 +23,9 @@ wicd (1.6.2.2-5~exp1) UNRELEASED; urgency=low
   * debian/patches/12-rename_wicd-client_to_wicd-gtk.patch , rename
     wicd-client to wicd-gtk where appropriate
   * debian/po/POTFILES.in fixed with the new templates file
+  * debian/wicd-gtk.links added
 
- -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 18:32:19 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 18:39:59 +0100
 
 wicd (1.6.2.2-4) unstable; urgency=low
 
