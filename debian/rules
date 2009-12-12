@@ -6,6 +6,14 @@
 
 include /usr/share/quilt/quilt.make
 
+override_dh_install:
+	dh_install
+	# strip everything from "wicd" package that is not-daemon-related
+	find $(CURDIR)/debian/wicd-daemon \( -name "*curses*" -o -name "*gui*" -o -name "*.glade" \) -delete
+	-for file in wicd-client.py wicd/netentry.py wicd/prefs.py; \
+	    do rm -rf $(CURDIR)/debian/wicd-daemon/usr/share/wicd/$$file*; \
+	done
+
 build: build-stamp
 build-stamp: $(QUILT_STAMPFN)
 	dh build --before dh_auto_configure
@@ -36,14 +44,14 @@ clean: unpatch
 
 install: build
 	dh install --before dh_auto_install
-	python setup.py install --root=$(CURDIR)/debian/wicd --install-lib=/usr/share/wicd 
+	python setup.py install --root=$(CURDIR)/debian/tmp --install-lib=/usr/share/wicd 
 	install -m644 debian/wicd-client.xpm \
-		$(CURDIR)/debian/wicd/usr/share/pixmaps/wicd.xpm
+		$(CURDIR)/debian/tmp/usr/share/pixmaps/wicd.xpm
 	
-	find $(CURDIR)/debian/wicd -name "*.png" -exec chmod 644 {} \;
-	find $(CURDIR)/debian/wicd/etc/wicd/ -type f -exec chmod 644 {} \;
-	find $(CURDIR)/debian/wicd \( -name "*.glade" -o -name "*.conf" -o -name "*.desktop" \) -exec chmod 644 {} \;
-	-rm -rf $(CURDIR)/debian/wicd/var/run
+	find $(CURDIR)/debian/tmp -name "*.png" -exec chmod 644 {} \;
+	find $(CURDIR)/debian/tmp/etc/wicd/ -type f -exec chmod 644 {} \;
+	find $(CURDIR)/debian/tmp \( -name "*.glade" -o -name "*.conf" -o -name "*.desktop" \) -exec chmod 644 {} \;
+	-rm -rf $(CURDIR)/debian/tmp/var/run
 
 	dh install --after dh_auto_install --before dh_installinit
 	dh_pysupport -i
