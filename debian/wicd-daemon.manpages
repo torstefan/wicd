@@ -1,1 +1,2 @@
-man/wicd-client.1
+man/*.5
+man/wicd.8
