@@ -37,6 +37,7 @@ Package: wicd-daemon
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
  python-dbus,
+ python-gobject,
  dbus,
  wpasupplicant,
  wireless-tools,
