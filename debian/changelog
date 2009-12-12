@@ -17,8 +17,9 @@ wicd (1.6.2.2-5~exp1) UNRELEASED; urgency=low
   * debian/rules:
     - fixed to deal with multiple binary packages
     - rewritten to use dh7
+  * debian/source/format added -- use 3.0 (quilt)
 
- -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 16:47:26 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 16:52:06 +0100
 
 wicd (1.6.2.2-4) unstable; urgency=low
 
