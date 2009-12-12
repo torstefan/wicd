@@ -14,6 +14,7 @@ wicd (1.6.2.2-5~exp1) UNRELEASED; urgency=low
       to allow seamless upgrade from older versions.
     - made all packages conflict with older versions
     - added python-gobject dependency to wicd-daemon
+    - bump Build-Depends to use dh7 overrides and quilt
   * debian/rules:
     - fixed to deal with multiple binary packages
     - rewritten to use dh7
@@ -22,7 +23,7 @@ wicd (1.6.2.2-5~exp1) UNRELEASED; urgency=low
   * debian/patches/12-rename_wicd-client_to_wicd-gtk.patch , rename
     wicd-client to wicd-gtk where appropriate
 
- -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 18:00:38 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 18:31:22 +0100
 
 wicd (1.6.2.2-4) unstable; urgency=low
 
