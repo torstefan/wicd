@@ -1,0 +1,11 @@
+etc/xdg/autostart/wicd-tray.desktop
+usr/bin/wicd-client
+usr/share/applications/
+usr/share/icons/hicolor/
+usr/share/pixmaps/
+
+usr/share/wicd/wicd.glade
+usr/share/wicd/wicd-client.py
+usr/share/wicd/wicd/gui*
+usr/share/wicd/wicd/netentry.py
+usr/share/wicd/wicd/prefs.py
