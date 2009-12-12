@@ -4,19 +4,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-include /usr/share/quilt/quilt.make
-
-override_dh_install:
-	dh_install
-	# strip everything from "wicd" package that is not-daemon-related
-	find $(CURDIR)/debian/wicd-daemon \( -name "*curses*" -o -name "*gui*" -o -name "*.glade" \) -delete
-	-for file in wicd-client.py wicd/netentry.py wicd/prefs.py; \
-	    do rm -rf $(CURDIR)/debian/wicd-daemon/usr/share/wicd/$$file*; \
-	done
-
-build: build-stamp
-build-stamp: $(QUILT_STAMPFN)
-	dh build --before dh_auto_configure
+override_dh_auto_configure:
 	python setup.py configure \
 		--no-install-acpi \
 		--no-install-docs \
@@ -25,15 +13,9 @@ build-stamp: $(QUILT_STAMPFN)
 		--wicdgroup=netdev \
 		--loggroup=adm \
 		--logperms=0640
-	python setup.py build
-	dh build --after dh_auto_build
-	touch $@
 
-clean: unpatch
-	dh clean --before dh_auto_clean
-	python setup.py clean
-	dh clean --after dh_auto_clean
-	
+override_dh_auto_clean:
+	dh_auto_clean
 	@find . \( -name "*.pyc" -o -name "*.pyo" \) -delete
 	#@find init/ \( -name "wicd" -o -name "rc.wicd" \) -delete
 	-rm -rf build/
@@ -42,8 +24,7 @@ clean: unpatch
 		man/*.8 man/*.5 scripts/* other/*.sh \
 		other/postinst other/55wicd debian/wicd-po/*.mo
 
-install: build
-	dh install --before dh_auto_install
+override_dh_auto_install:
 	python setup.py install --root=$(CURDIR)/debian/tmp --install-lib=/usr/share/wicd 
 	install -m644 debian/wicd-client.xpm \
 		$(CURDIR)/debian/tmp/usr/share/pixmaps/wicd.xpm
@@ -53,14 +34,17 @@ install: build
 	find $(CURDIR)/debian/tmp \( -name "*.glade" -o -name "*.conf" -o -name "*.desktop" \) -exec chmod 644 {} \;
 	-rm -rf $(CURDIR)/debian/tmp/var/run
 
-	dh install --after dh_auto_install --before dh_installinit
+override_dh_install:
+	dh_install
+	# strip everything from "wicd" package that is not-daemon-related
+	find $(CURDIR)/debian/wicd-daemon \( -name "*curses*" -o -name "*gui*" -o -name "*.glade" \) -delete
+	-for file in wicd-client.py wicd/netentry.py wicd/prefs.py; \
+	    do rm -rf $(CURDIR)/debian/wicd-daemon/usr/share/wicd/$$file*; \
+	done
+
+override_dh_installinit:
 	dh_pysupport -i
 	dh_installinit -i --name=wicd
-	dh install --after dh_installinit
 
-binary-arch:
-binary-indep: build install
-	dh binary-indep 
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+%:
+	dh --with quilt $@
