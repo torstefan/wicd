@@ -6,6 +6,6 @@ usr/share/pixmaps/
 
 usr/share/wicd/wicd.glade
 usr/share/wicd/wicd-client.py
-usr/share/wicd/wicd/gui*
+usr/share/wicd/wicd/gui*.py
 usr/share/wicd/wicd/netentry.py
 usr/share/wicd/wicd/prefs.py
