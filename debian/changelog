@@ -1,8 +1,11 @@
 wicd (1.6.2.2-5) UNRELEASED; urgency=low
 
   * debian/README.Debian: removed old instructions
+  * debian/control: add wicd-gtk and wicd-curses packages, both
+    providing wicd-client. This should allow for wicd installation
+    without depending on GTK (then, X) (Closes: #546906)
 
- -- David Paleino <dapal@debian.org>  Mon, 07 Dec 2009 16:56:53 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 11:57:53 +0100
 
 wicd (1.6.2.2-4) unstable; urgency=low
 
