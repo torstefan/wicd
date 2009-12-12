@@ -14,8 +14,8 @@ Architecture: all
 Depends: ${misc:Depends},
  wicd-daemon (= ${source:Version}),
  wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-client
-Conflicts: wicd (<< 1.6.2.2-5~)
-Replaces: wicd (<< 1.6.2.2-5~)
+Conflicts: wicd (<= 1.6.2.2-4)
+Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - metapackage
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
@@ -50,8 +50,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  iputils-ping | inetutils-ping,
  wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-client
 Suggests: pm-utils
-Conflicts: wicd (<< 1.6.2.2-5~)
-Replaces: wicd (<< 1.6.2.2-5~)
+Conflicts: wicd (<= 1.6.2.2-4)
+Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - daemon
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
@@ -77,8 +77,8 @@ Depends: ${misc:Depends}, ${python:Depends},
 Recommends: gksu | kdesu | ktsuss | sudo,
  python-notify
 Provides: wicd-client
-Conflicts: wicd (<< 1.6.2.2-5~)
-Replaces: wicd (<< 1.6.2.2-5~)
+Conflicts: wicd (<= 1.6.2.2-4)
+Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - GTK client
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
@@ -102,8 +102,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  wicd-daemon (= ${source:Version})
 Recommends: sudo
 Provides: wicd-client
-Conflicts: wicd (<< 1.6.2.2-5~)
-Replaces: wicd (<< 1.6.2.2-5~)
+Conflicts: wicd (<= 1.6.2.2-4)
+Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - Curses client
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
