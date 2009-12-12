@@ -55,7 +55,7 @@ install: build
 
 	dh install --after dh_auto_install --before dh_installinit
 	dh_pysupport -i
-	dh_installinit -i
+	dh_installinit -i --name=wicd
 	dh install --after dh_installinit
 
 binary-arch:
