@@ -11,6 +11,30 @@ Vcs-Git: git://git.debian.org/collab-maint/wicd.git
 
 Package: wicd
 Architecture: all
+Depends: ${misc:Depends},
+ wicd-daemon (= ${source:Version}),
+ wicd-client (= ${source:Version})
+Conflicts: wicd (<< 1.6.2.2-5~)
+Replaces: wicd (<< 1.6.2.2-5~)
+Description: wired and wireless network manager - metapackage
+ Wicd is a general-purpose network configuration server which aims
+ to provide a simple but flexible interface for connecting to networks.
+ Its features include:
+ wide variety of settings.
+  * ability to connect to (and maintain profiles for) both wired and
+    wireless networks;
+  * support for many encryption schemes, including WEP, WPA, WPA2 and
+    custom schemes;
+  * wireless-tools compatibility;
+  * tray icon showing network activity and signal strength;
+  * lack of GNOME dependencies (although it does require GTK+), making it
+    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+ .
+ This is a metapackage, it allows installation of all the components of
+ Wicd, including one of the clients, which must be manually chosen.
+
+Package: wicd-daemon
+Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
  python-dbus,
  dbus,
@@ -25,7 +49,7 @@ Depends: ${misc:Depends}, ${python:Depends},
  iputils-ping | inetutils-ping,
  wicd-client (= ${source:Version})
 Suggests: pm-utils
-Description: wired and wireless network manager
+Description: wired and wireless network manager - daemon
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
@@ -38,12 +62,15 @@ Description: wired and wireless network manager
   * tray icon showing network activity and signal strength;
   * lack of GNOME dependencies (although it does require GTK+), making it
     easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+ .
+ This package contains the daemon needed to run Wicd.
 
 Package: wicd-gtk
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
  python-gtk2,
- python-glade2
+ python-glade2,
+ wicd-daemon (= ${source:Version})
 Recommends: gksu | kdesu | ktsuss | sudo,
  python-notify
 Provides: wicd-client
@@ -66,7 +93,8 @@ Description: wired and wireless network manager - GTK client
 Package: wicd-curses
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
- python-urwid
+ python-urwid,
+ wicd-daemon (= ${source:Version})
 Recommends: sudo
 Provides: wicd-client
 Description: wired and wireless network manager - Curses client
