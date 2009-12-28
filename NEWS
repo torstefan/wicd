@@ -1,12 +1,21 @@
 Wicd 1.6.0 Branch
-1.6.2.2:
-	Minor Changes:
-	- Fix handling of ESSIDs with spaces and special characters
+1.7.0a3:
+	Major Changes:
+	- Connection information is available by right clicking the tray icon
+	- Can set the hostname per network for all DHCP clients
+	- urwid 0.9.9 is now supported
+	- Added wicd-cli, a command line interface for use in scripts
+	- Global scripts are now passed parameters specifying the network
 
-1.6.2.1:
 	Minor Changes:
-	- Hidden networks now work better
-	- Properly handle double ESSID: entries in iwlist scan output
+	- Support for only displaying notifications using -o to wicd-client
+	- Reconnecting now works when measuring signal strength in dBm
+	- ESSIDs made of numbers now work properly
+	- All valid wpa_supplicant drivers are now displayed
+	- Wired network is now displayed while scanning wireless networks
+
+	Planned Changes:
+	- Hidden ESSIDs will be completely fixed
 
 1.6.2:
 	Minor Changes:
