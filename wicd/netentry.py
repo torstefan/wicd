@@ -8,6 +8,7 @@ contained within them.
 #
 #   Copyright (C) 2008-2009 Adam Blackburn
 #   Copyright (C) 2008-2009 Dan O'Reilly
+#   Copyright (C) 2009      Andrew Psaltis
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 2 as
@@ -73,6 +74,11 @@ class AdvancedSettingsDialog(gtk.Dialog):
         self.txt_dns_1 = LabelEntry(language['dns'] + ' 1')
         self.txt_dns_2 = LabelEntry(language['dns'] + ' 2')
         self.txt_dns_3 = LabelEntry(language['dns'] + ' 3')
+        dhcp_hostname_hbox = gtk.HBox(False, 0)
+        self.chkbox_use_dhcp_hostname = gtk.CheckButton()
+        self.txt_dhcp_hostname = LabelEntry("DHCP Hostname")
+        dhcp_hostname_hbox.pack_start(self.chkbox_use_dhcp_hostname)
+        dhcp_hostname_hbox.pack_start(self.txt_dhcp_hostname)
         self.chkbox_static_ip = gtk.CheckButton(language['use_static_ip'])
         self.chkbox_static_dns = gtk.CheckButton(language['use_static_dns'])
         self.chkbox_global_dns = gtk.CheckButton(language['use_global_dns'])
@@ -104,6 +110,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
         self.vbox.pack_start(self.txt_dns_1, fill=False, expand=False)
         self.vbox.pack_start(self.txt_dns_2, fill=False, expand=False)
         self.vbox.pack_start(self.txt_dns_3, fill=False, expand=False)
+        self.vbox.pack_start(dhcp_hostname_hbox, fill=False, expand=False)
         self.vbox.pack_end(self.button_hbox, fill=False, expand=False, padding=5)
         
         
@@ -111,6 +118,8 @@ class AdvancedSettingsDialog(gtk.Dialog):
         self.chkbox_static_ip.connect("toggled", self.toggle_ip_checkbox)
         self.chkbox_static_dns.connect("toggled", self.toggle_dns_checkbox)
         self.chkbox_global_dns.connect("toggled", self.toggle_global_dns_checkbox)
+        self.chkbox_use_dhcp_hostname.connect('toggled',
+                                              self.toggle_dhcp_hostname_checkbox)
         
         # Start with all disabled, then they will be enabled later.
         self.chkbox_static_ip.set_active(False)
@@ -118,6 +127,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
         
     def set_defaults(self, widget=None, event=None):
         """ Put some default values into entries to help the user out. """
+        self.txt_ip.set_text(self.txt_ip.get_text().strip())
         ipAddress = self.txt_ip.get_text()  # For easy typing :)
         netmask = self.txt_netmask
         gateway = self.txt_gateway
@@ -130,7 +140,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
             if stringToNone(netmask.get_text()) is None:  # Make sure the netmask is blank
                 netmask.set_text('255.255.255.0')  # Fill in the most common one
         elif ipAddress != "":
-            error(None, "Invalid IP Address Entered.")
+            error(None, language['invalid_ip_address'])
 
     def reset_static_checkboxes(self):
         # Enable the right stuff
@@ -188,6 +198,10 @@ class AdvancedSettingsDialog(gtk.Dialog):
                 w.set_sensitive(False)
             self.chkbox_global_dns.set_active(False)
 
+    def toggle_dhcp_hostname_checkbox(self, widget=None):
+        self.txt_dhcp_hostname.set_sensitive(
+            self.chkbox_use_dhcp_hostname.get_active())
+
     def toggle_global_dns_checkbox(self, widget=None):
         """ Set the DNS entries' sensitivity based on the Global checkbox. """
         global_dns_active = daemon.GetUseGlobalDNS()
@@ -237,6 +251,9 @@ class AdvancedSettingsDialog(gtk.Dialog):
             self.set_net_prop("dns1", '')
             self.set_net_prop("dns2", '')
             self.set_net_prop("dns3", '')
+        self.set_net_prop('use_dhcphostname',
+                          self.chkbox_use_dhcp_hostname.get_active())
+        self.set_net_prop("dhcphostname",noneToString(self.txt_dhcp_hostname.get_text()))
 
         
 class WiredSettingsDialog(AdvancedSettingsDialog):
@@ -278,6 +295,12 @@ class WiredSettingsDialog(AdvancedSettingsDialog):
         self.txt_domain.set_text(self.format_entry("dns_domain"))
         self.txt_search_dom.set_text(self.format_entry("search_domain"))
         self.chkbox_global_dns.set_active(bool(wired.GetWiredProperty("use_global_dns")))
+
+        dhcphname = wired.GetWiredProperty("dhcphostname")
+        if dhcphname is None:
+            dhcphname = os.uname()[1]
+
+        self.txt_dhcp_hostname.set_text(dhcphname)
         self.reset_static_checkboxes()
         
     def save_settings(self):
@@ -393,6 +416,17 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
                                                                        'encryption')))
         self.chkbox_global_settings.set_active(bool(wireless.GetWirelessProperty(networkID,
                                                              'use_settings_globally')))
+
+        self.chkbox_use_dhcp_hostname.set_active(
+            bool(wireless.GetWirelessProperty(networkID, 'use_dhcphostname')))
+
+
+        dhcphname = wireless.GetWirelessProperty(networkID,"dhcphostname")
+        if dhcphname is None:
+            dhcphname = os.uname()[1]
+        self.txt_dhcp_hostname.set_text(dhcphname)
+
+        self.toggle_dhcp_hostname_checkbox()
 
         activeID = -1  # Set the menu to this item when we are done
         user_enctype = wireless.GetWirelessProperty(networkID, "enctype")
@@ -655,17 +689,16 @@ class WiredNetworkEntry(NetworkEntry):
             
     def add_profile(self, widget):
         """ Add a profile to the profile list. """
-        print "adding profile"
-
         response = string_input("Enter a profile name", "The profile name " +
                                   "will not be used by the computer. It " +
                                   "allows you to " + 
                                   "easily distinguish between different network " +
-                                  "profiles.", "Profile name:")
+                                  "profiles.", "Profile name:").strip()
 
         # if response is "" or None
         if not response:
-            return
+            error(None, "Invalid profile name", block=True)
+            return False
 
         profile_name = response
         profile_list = wired.GetWiredProfileList()

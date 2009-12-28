@@ -16,6 +16,7 @@ class BaseWirelessInterface() -- Control a wireless network interface.
 #   Copyright (C) 2007 - 2009 Adam Blackburn
 #   Copyright (C) 2007 - 2009 Dan O'Reilly
 #   Copyright (C) 2007 - 2009 Byron Hillis
+#   Copyright (C) 2009        Andrew Psaltis
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 2 as
@@ -42,8 +43,7 @@ from misc import find_path
 
 # Regular expressions.
 _re_mode = (re.I | re.M | re.S)
-blank_essid_pattern = re.compile('.*ESSID:"?()"??\s*\n', _re_mode)
-essid_pattern = re.compile(r'.*ESSID:("(")"|("?)((?!("")\s*\n)[^\n].+?)(\3))\s*$', _re_mode)
+essid_pattern = re.compile('.*ESSID:"?(.*?)"?\s*\n', _re_mode)
 ap_mac_pattern = re.compile('.*Address: (.*?)\n', _re_mode)
 channel_pattern = re.compile('.*Channel:?=? ?(\d\d?)', _re_mode)
 strength_pattern = re.compile('.*Quality:?=? ?(\d+)\s*/?\s*(\d*)', _re_mode)
@@ -60,7 +60,7 @@ wpa2_pattern = re.compile('(WPA2)', _re_mode)
 #iwconfig-only regular expressions.
 ip_pattern = re.compile(r'inet [Aa]d?dr[^.]*:([^.]*\.[^.]*\.[^.]*\.[0-9]*)', re.S)
 bssid_pattern = re.compile('.*Access Point: (([0-9A-Z]{2}:){5}[0-9A-Z]{2})', _re_mode)
-bitrate_pattern = re.compile('.*Bit Rate=(.*?/s)', _re_mode)
+bitrate_pattern = re.compile('.*Bit Rate[=:](.*?/s)', _re_mode)
 opmode_pattern = re.compile('.*Mode:(.*?) ', _re_mode)
 authmethods_pattern = re.compile('.*Authentication capabilities :\n(.*?)Current', _re_mode)
 
@@ -156,6 +156,20 @@ def NeedsExternalCalls():
     """ Returns True if the backend needs to use an external program. """
     raise NotImplementedError
 
+def GetWpaSupplicantDrivers():
+    """ Returns a list of all valid wpa_supplicant drivers. """
+    output = misc.Run(["wpa_supplicant", "-h"])
+    try:
+        output = output.split("drivers:")[1].split("options:")[0].strip()
+    except:
+        print "Warning: Couldn't get list of valid wpa_supplicant drivers"
+        return [""]
+    patt = re.compile("(\S+)\s+=.*")
+    drivers = patt.findall(output) or [""]
+    # We cannot use the "wired" driver for wireless interfaces.
+    if 'wired' in drivers:
+        drivers.remove('wired')
+    return drivers
 def IsValidWpaSuppDriver(driver):
     """ Returns True if given string is a valid wpa_supplicant driver. """
     output = misc.Run(["wpa_supplicant", "-D%s" % driver, "-iolan19",
@@ -231,7 +245,7 @@ class BaseInterface(object):
         return path
 
     
-    def _get_dhcp_command(self, flavor=None):
+    def _get_dhcp_command(self, flavor=None, hostname=None):
         """ Returns the correct DHCP client command. 
        
         Given a type of DHCP request (create or release a lease),
@@ -259,36 +273,71 @@ class BaseInterface(object):
                 client = None
                 cmd = ""
             return (client, cmd)
+
+                # probably /var/lib/wicd/dhclient.conf with defaults
+        dhclient_conf_path = os.path.join(
+                    wpath.varlib,
+                    'dhclient.conf'
+                )
         
         client_dict = {
             "dhclient" : 
-                {'connect' : r"%(cmd)s %(iface)s",
+                {'connect' : r"%(cmd)s -cf %(dhclientconf)s %(iface)s",
                  'release' : r"%(cmd)s -r %(iface)s",
                  'id' : misc.DHCLIENT, 
                  },
             "pump" : 
-                { 'connect' : r"%(cmd)s -i %(iface)s",
+                { 'connect' : r"%(cmd)s -i %(iface)s -h %(hostname)s",
                   'release' : r"%(cmd)s -r -i %(iface)s",
                   'id' : misc.PUMP,
                 },
             "dhcpcd" : 
-                {'connect' : r"%(cmd)s %(iface)s",
+                {'connect' : r"%(cmd)s %(iface)s -h %(hostname)s ",
                  'release' : r"%(cmd)s -k %(iface)s",
                  'id' : misc.DHCPCD,
                 },
             "udhcpc":
-                {'connect' : r"%(cmd)s -n -i %(iface)s",
+                {'connect' : r"%(cmd)s -n -i %(iface)s -H %(hostname)s ",
                  'release' : r"killall -SIGUSR2 %(cmd)s",
                  'id' : misc.UDHCPC,
                 },
         }
         (client_name, cmd) = get_client_name(self.DHCP_CLIENT)
+
+        # cause dhclient doesn't have a handy dandy argument
+        # for specifing the hostname to be sent
+        if client_name == "dhclient" and flavor:
+            if hostname == None:
+                # <hostname> will use the system hostname
+                # we'll use that if there is hostname passed
+                # that shouldn't happen, though
+                hostname = '<hostname>'
+            print 'attempting to set hostname with dhclient'
+            print 'using dhcpcd or another supported client may work better'
+            dhclient_template = \
+                open(os.path.join(wpath.etc, 'dhclient.conf.template'), 'r')
+
+            output_conf = open(dhclient_conf_path, 'w')
+
+            for line in dhclient_template.readlines():
+                line = line.replace('$_HOSTNAME', hostname)
+                output_conf.write(line)
+
+            output_conf.close()
+            dhclient_template.close()
+
         if not client_name or not cmd:
             print "WARNING: Failed to find a valid dhcp client!"
             return ""
             
         if flavor == "connect":
-            return client_dict[client_name]['connect'] % {"cmd":cmd, "iface":self.iface}
+            if not hostname:
+                hostname = os.uname()[1]
+            return client_dict[client_name]['connect'] % \
+                    { "cmd" : cmd,
+                      "iface" : self.iface,
+                      "hostname" : hostname,
+                      'dhclientconf' : dhclient_conf_path }
         elif flavor == "release":
             return client_dict[client_name]['release'] % {"cmd":cmd, "iface":self.iface}
         else:
@@ -524,7 +573,7 @@ class BaseInterface(object):
     def _check_dhcp_result(self, success):
         """ Print and return the correct DHCP connection result. 
         
-        Keyword Arguents:
+        Keyword Arguments:
         success -- boolean specifying if DHCP was succesful.
         
         Returns:
@@ -539,31 +588,35 @@ class BaseInterface(object):
             return 'dhcp_failed'
             
     @neediface(False)
-    def StartDHCP(self):
+    def StartDHCP(self, hostname):
         """ Start the DHCP client to obtain an IP address.
+
+        Keyword Arguments:
+        hostname -- the hostname to send to the DHCP server
         
         Returns:
         A string representing the result of the DHCP command.  See
         _check_dhcp_result for the possible values.
         
         """
-        cmd = self._get_dhcp_command('connect')
+        cmd = self._get_dhcp_command('connect', hostname)
         if self.verbose: print cmd
         self.dhcp_object = misc.Run(cmd, include_stderr=True, return_obj=True)
         pipe = self.dhcp_object.stdout
+        client_dict = { misc.DHCLIENT : self._parse_dhclient,
+                        misc.DHCPCD : self._parse_dhcpcd,
+                        misc.PUMP : self._parse_pump,
+                        misc.UDHCPC : self._parse_udhcpc,
+                      }
         
-        DHCP_CLIENT = self._get_dhcp_command() 
-        if DHCP_CLIENT == misc.DHCLIENT:
-            return self._parse_dhclient(pipe)
-        elif DHCP_CLIENT == misc.PUMP:
-            return self._parse_pump(pipe)
-        elif DHCP_CLIENT == misc.DHCPCD:
-            return self._parse_dhcpcd(pipe)
-        elif DHCP_CLIENT == misc.UDHCPC:
-            return self._parse_udhcpc(pipe)
+        DHCP_CLIENT = self._get_dhcp_command()
+        if DHCP_CLIENT in client_dict:
+            ret = client_dict[DHCP_CLIENT](pipe)
         else:
-            print 'ERROR no dhclient found!'
-    
+            print "ERROR: no dhcp client found"
+            ret = None
+        return ret
+        
     @neediface(False)
     def ReleaseDHCP(self):
         """ Release the DHCP lease for this interface. """
@@ -844,7 +897,7 @@ class BaseWirelessInterface(BaseInterface):
         essid -- essid to set the interface to
 
         """
-        cmd = ['iwconfig', self.iface, 'essid', essid]
+        cmd = ['iwconfig', self.iface, 'essid', '--', str(essid)]
         if self.verbose: print str(cmd)
         misc.Run(cmd)
 
@@ -1055,7 +1108,7 @@ class BaseWirelessInterface(BaseInterface):
         if not wpa_pass_path: return None
         key_pattern = re.compile('network={.*?\spsk=(.*?)\n}.*',
                                  re.I | re.M  | re.S)
-        cmd = [wpa_pass_path, network['essid'], str(network['key'])]
+        cmd = [wpa_pass_path, str(network['essid']), str(network['key'])]
         if self.verbose: print cmd
         return misc.RunRegex(key_pattern, misc.Run(cmd))
 
@@ -1172,21 +1225,7 @@ class BaseWirelessInterface(BaseInterface):
 
         """
         ap = {}
-        try:
-            r_groups = essid_pattern.search(cell).groups()
-        except:
-            real_essid = None
-        else:
-            if r_groups[1]:
-                real_essid = r_groups[1]
-            else:
-                real_essid = r_groups[3]
-
-        if real_essid == None:
-            ap['essid'] = None
-        else:
-            ap['essid'] = real_essid
-
+        ap['essid'] = misc.RunRegex(essid_pattern, cell)
         try:
             ap['essid'] = misc.to_unicode(ap['essid'])
         except (UnicodeDecodeError, UnicodeEncodeError):
