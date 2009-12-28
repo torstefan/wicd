@@ -5,12 +5,12 @@
  in/scripts=wicd.in        |    2 +-
  in/wicd=wpath.py.in       |    4 ++++
  setup.py                  |   31 +++++++++++++++++++------------
- wicd/gui.py               |   10 +++++-----
+ wicd/gui.py               |   12 ++++++------
  wicd/guiutil.py           |    2 +-
  wicd/netentry.py          |   10 +++++-----
  wicd/prefs.py             |    2 +-
  wicd/wicd-client.py       |    4 ++--
- 11 files changed, 41 insertions(+), 33 deletions(-)
+ 11 files changed, 42 insertions(+), 34 deletions(-)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -129,6 +129,15 @@
  from wicd.translations import language
  
  if __name__ == '__main__':
+@@ -148,7 +148,7 @@ class appGui(object):
+ 
+         self.tray = tray
+ 
+-        gladefile = os.path.join(wpath.share, "wicd.glade")
++        gladefile = os.path.join(wpath.gtk, "wicd.glade")
+         self.wTree = gtk.glade.XML(gladefile)
+         self.window = self.wTree.get_widget("window1")
+         self.window.set_icon_name("wicd-client")
 --- wicd.orig/wicd/wicd-client.py
 +++ wicd/wicd/wicd-client.py
 @@ -60,9 +60,9 @@ except ImportError:
