@@ -3,5 +3,6 @@ etc/wicd/
 usr/lib/
 usr/sbin/
 usr/share/locale/
-usr/share/wicd/
+usr/share/wicd/daemon/
+usr/share/wicd/backends/
 var/

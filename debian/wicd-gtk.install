@@ -4,10 +4,5 @@ usr/share/applications/
 usr/share/icons/hicolor/
 usr/share/pixmaps/
 
-usr/share/wicd/wicd.glade
-usr/share/wicd/wicd-client.py
-usr/share/wicd/wicd/gui*.py
-usr/share/wicd/wicd/netentry.py
-usr/share/wicd/wicd/prefs.py
-
+usr/share/wicd/gtk/
 debian/scripts/wicd-gtk         /usr/bin/

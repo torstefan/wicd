@@ -1,2 +1,2 @@
 /usr/bin/wicd-curses
-/usr/share/wicd/*curses*.py
+/usr/share/wicd/curses/
