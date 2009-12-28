@@ -26,7 +26,7 @@ override_dh_auto_clean:
 		other/91wicd other/wicd.conf other/WHEREAREMYFILES
 
 override_dh_auto_install:
-	python setup.py install --root=$(CURDIR)/debian/tmp --install-lib=/usr/share/wicd 
+	python setup.py install --root=$(CURDIR)/debian/tmp
 	install -m644 debian/wicd-client.xpm \
 		$(CURDIR)/debian/tmp/usr/share/pixmaps/wicd-gtk.xpm
 	
