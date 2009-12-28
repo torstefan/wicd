@@ -1,11 +1,14 @@
 wicd (1.7.0~a3-1) UNRELEASED; urgency=low
 
   * debian/watch updated to track latest experimental version
-  * debian/patches/* resfreshed to cleanly apply
+  * debian/patches/:
+    - all patches refreshed to cleanly apply
+    - 13-split_files_in_subdirs.patch added, makes it easier to
+      provide split binary packages
   * debian/wicd-curses.docs: adding README.curses and TODO.curses
   * debian/rules: clean target, remove extra stale files
 
- -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 11:03:44 +0100
+ -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 12:06:08 +0100
 
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 

@@ -11,3 +11,4 @@
 10-order_scripts_directories.patch
 11-fix_gui_showing_from_tray.patch
 12-rename_wicd-client_to_wicd-gtk.patch
+13-split_files_in_subdirs.patch
