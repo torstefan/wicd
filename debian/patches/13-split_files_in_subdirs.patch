@@ -6,10 +6,11 @@
  in/wicd=wpath.py.in       |    4 ++++
  setup.py                  |   31 +++++++++++++++++++------------
  wicd/gui.py               |   10 +++++-----
+ wicd/guiutil.py           |    2 +-
  wicd/netentry.py          |   10 +++++-----
  wicd/prefs.py             |    2 +-
  wicd/wicd-client.py       |    4 ++--
- 10 files changed, 40 insertions(+), 32 deletions(-)
+ 11 files changed, 41 insertions(+), 33 deletions(-)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -204,9 +205,9 @@
 -import wpath
 -import dbusmanager
 -from misc import noneToString, stringToNone, noneToBlankString, to_bool
-+import wicd.misc
-+import wicd.wpath
-+import wicd.dbusmanager
++import wicd.misc as misc
++import wicd.wpath as wpath
++import wicd.dbusmanager as dbusmanager
 +from wicd.misc import noneToString, stringToNone, noneToBlankString, to_bool
  from guiutil import error, LabelEntry, GreyLabel, LeftAlignedLabel, string_input
  
@@ -215,3 +216,14 @@
  
  # These get set when a NetworkEntry is instantiated.
  daemon = None
+--- wicd.orig/wicd/guiutil.py
++++ wicd/wicd/guiutil.py
+@@ -19,7 +19,7 @@
+ import gtk
+ import os.path
+ 
+-import wpath
++import wicd.wpath as wpath
+ 
+ HAS_NOTIFY = True
+ try:
