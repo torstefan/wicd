@@ -1,4 +1,4 @@
-wicd (1.6.2.2-5~exp3) UNRELEASED; urgency=low
+wicd (1.7.0~a3-1) UNRELEASED; urgency=low
 
   * debian/watch updated to track latest experimental version
 
