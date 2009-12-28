@@ -1,9 +1,12 @@
 ---
- in/wicd=wpath.py.in |    4 ++++
- setup.py            |   31 +++++++++++++++++++------------
- wicd/gui.py         |    6 +++---
- wicd/wicd-client.py |    4 ++--
- 4 files changed, 28 insertions(+), 17 deletions(-)
+ in/scripts=wicd-cli.in    |    2 +-
+ in/scripts=wicd-curses.in |    2 +-
+ in/scripts=wicd.in        |    2 +-
+ in/wicd=wpath.py.in       |    4 ++++
+ setup.py                  |   31 +++++++++++++++++++------------
+ wicd/gui.py               |    6 +++---
+ wicd/wicd-client.py       |    4 ++--
+ 7 files changed, 31 insertions(+), 20 deletions(-)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -131,3 +134,25 @@
  
  from wicd.translations import language
  
+--- wicd.orig/in/scripts=wicd-cli.in
++++ wicd/in/scripts=wicd-cli.in
+@@ -1,2 +1,2 @@
+ #!/bin/bash
+-exec python -O %LIB%wicd-cli.py $@
++exec python -O %LIB%cli/wicd-cli.py $@
+--- wicd.orig/in/scripts=wicd-curses.in
++++ wicd/in/scripts=wicd-curses.in
+@@ -6,4 +6,4 @@ if [ -e "%VARLIB%WHEREAREMYFILES" ] && [
+     ln -s "%VARLIB%WHEREAREMYFILES" "$HOME/.wicd/WHEREAREMYFILES"
+ fi
+ 
+-exec python -O %LIB%wicd-curses.py $@
++exec python -O %LIB%curses/wicd-curses.py $@
+--- wicd.orig/in/scripts=wicd.in
++++ wicd/in/scripts=wicd.in
+@@ -3,4 +3,4 @@
+ PYTHONPATH=%LIB%
+ export PYTHONPATH
+ 
+-exec python %LIB%wicd-daemon.py $@
++exec python %LIB%daemon/wicd-daemon.py $@

@@ -11,4 +11,4 @@ if [ -e "/var/lib/wicd/WHEREAREMYFILES" ] && [ ! -L "$HOME/.wicd/WHEREAREMYFILES
     ln -s "/var/lib/wicd/WHEREAREMYFILES" "$HOME/.wicd/WHEREAREMYFILES"
 fi
 
-exec python -O /usr/share/wicd/wicd-client.py $@
+exec python -O /usr/share/wicd/gtk/wicd-client.py $@
