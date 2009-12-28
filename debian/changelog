@@ -10,8 +10,9 @@ wicd (1.7.0~a3-1) UNRELEASED; urgency=low
   * debian/*.install updated, use the new directory layout provided
     by 13-split_files_in_subdirs.patch
   * debian/control: added python-wicd and wicd-cli packages
+  * debian/wicd-cli.* added
 
- -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 12:26:08 +0100
+ -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 14:47:22 +0100
 
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 
