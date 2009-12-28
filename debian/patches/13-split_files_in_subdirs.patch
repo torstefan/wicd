@@ -1,7 +1,9 @@
 ---
  in/wicd=wpath.py.in |    4 ++++
- setup.py            |   30 +++++++++++++++++++-----------
- 2 files changed, 23 insertions(+), 11 deletions(-)
+ setup.py            |   31 +++++++++++++++++++------------
+ wicd/gui.py         |    6 +++---
+ wicd/wicd-client.py |    4 ++--
+ 4 files changed, 28 insertions(+), 17 deletions(-)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -47,8 +49,11 @@
                   'wicd/suspend.py', 'wicd/autoconnect.py']), 
      (wpath.backends, ['wicd/backends/be-external.py', 'wicd/backends/be-ioctl.py']),
      (wpath.scripts, []),
-@@ -491,8 +499,8 @@ try:
-         py_modules.extend(['wicd.gui', 'wicd.guiutil'])
+@@ -488,11 +496,10 @@ try:
+     (wpath.postconnectscripts, []),
+     ]
+     if not wpath.no_install_gtk:
+-        py_modules.extend(['wicd.gui', 'wicd.guiutil'])
          data.append((wpath.desktop, ['other/wicd.desktop']))
          data.append((wpath.bin, ['scripts/wicd-client']))
 -        data.append((wpath.share, ['data/wicd.glade']))
@@ -58,7 +63,7 @@
          data.append((wpath.autostart, ['other/wicd-tray.desktop']))
          if not wpath.no_install_man:
              data.append((wpath.mandir + 'man1/', [ 'man/wicd-client.1' ]))
-@@ -506,11 +514,11 @@ try:
+@@ -506,11 +513,11 @@ try:
          data.append((wpath.icons + '16x16/apps/', ['icons/16px/wicd-client.png']))
          data.append((wpath.images, [('images/' + b) for b in os.listdir('images') if not b.startswith('.')]))
      if not wpath.no_install_ncurses:
@@ -75,7 +80,7 @@
          data.append((wpath.bin, ['scripts/wicd-curses'])) 
          if not wpath.no_install_man:
              data.append(( wpath.mandir + 'man8/', ['man/wicd-curses.8'])) 
-@@ -518,7 +526,7 @@ try:
+@@ -518,7 +525,7 @@ try:
              data.append(( wpath.docdir, ['curses/README.curses'])) 
              data.append(( wpath.docdir, ['curses/TODO.curses'])) 
      if not wpath.no_install_cli:
@@ -97,3 +102,32 @@
  translations = '%TRANSLATIONS%'
  icons = '%ICONS%'
  autostart = '%AUTOSTART%'
+--- wicd.orig/wicd/gui.py
++++ wicd/wicd/gui.py
+@@ -39,9 +39,9 @@ from wicd import dbusmanager
+ from wicd import prefs
+ from wicd import netentry
+ from wicd.misc import noneToString
+-from wicd.netentry import WiredNetworkEntry, WirelessNetworkEntry
+-from wicd.prefs import PreferencesDialog
+-from wicd.guiutil import error, LabelEntry
++from netentry import WiredNetworkEntry, WirelessNetworkEntry
++from prefs import PreferencesDialog
++from guiutil import error, LabelEntry
+ from wicd.translations import language
+ 
+ if __name__ == '__main__':
+--- wicd.orig/wicd/wicd-client.py
++++ wicd/wicd/wicd-client.py
+@@ -60,9 +60,9 @@ except ImportError:
+ # Wicd specific imports
+ from wicd import wpath
+ from wicd import misc
+-from wicd import gui
+ from wicd import dbusmanager
+-from wicd.guiutil import error, can_use_notify
++import gui
++from guiutil import error, can_use_notify
+ 
+ from wicd.translations import language
+ 
