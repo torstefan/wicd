@@ -1,8 +1,9 @@
 wicd (1.7.0~a3-1) UNRELEASED; urgency=low
 
   * debian/watch updated to track latest experimental version
+  * debian/patches/* resfreshed to cleanly apply
 
- -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 10:37:57 +0100
+ -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 10:57:28 +0100
 
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 
