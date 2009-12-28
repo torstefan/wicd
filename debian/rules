@@ -16,8 +16,8 @@ override_dh_auto_configure:
 
 override_dh_auto_clean:
 	dh_auto_clean
-	@find . \( -name "*.pyc" -o -name "*.pyo" \) -delete
-	@find init/ \( -name "wicd" -o -name "rc.wicd" \) -delete
+	-find . \( -name "*.pyc" -o -name "*.pyo" \) -delete
+	-find init/ \( -name "wicd" -o -name "rc.wicd" \) -delete
 	-rm -rf build/
 
 	dh_clean wpath.py install.log os wicd/wpath.py \
