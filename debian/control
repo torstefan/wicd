@@ -13,7 +13,7 @@ Package: wicd
 Architecture: all
 Depends: ${misc:Depends},
  wicd-daemon (= ${source:Version}),
- wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-client
+ wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
 Conflicts: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - metapackage
@@ -48,7 +48,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  lsb-base (>= 3.2-13),
  psmisc,
  iputils-ping | inetutils-ping,
- wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-client
+ wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client,
+ python-wicd (= ${source:Version})
 Suggests: pm-utils
 Conflicts: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
@@ -119,3 +120,49 @@ Description: wired and wireless network manager - Curses client
     easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
  .
  This package provides the Curses/Urwid client
+
+Package: wicd-cli
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends},
+ wicd-daemon (= ${source:Version})
+Recommends: sudo
+Provides: wicd-client
+Conflicts: wicd (<< 1.7.0~a3)
+Replaces: wicd (<< 1.7.0~a3)
+Description: wired and wireless network manager - scriptable cli client
+ Wicd is a general-purpose network configuration server which aims
+ to provide a simple but flexible interface for connecting to networks.
+ Its features include:
+ wide variety of settings.
+  * ability to connect to (and maintain profiles for) both wired and
+    wireless networks;
+  * support for many encryption schemes, including WEP, WPA, WPA2 and
+    custom schemes;
+  * wireless-tools compatibility;
+  * tray icon showing network activity and signal strength;
+  * lack of GNOME dependencies (although it does require GTK+), making it
+    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+ .
+ This package provides a scriptable console client.
+
+Package: python-wicd
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Conflicts: wicd (<< 1.7.0~a3)
+Replaces: wicd (<< 1.7.0~a3)
+Description: wired and wireless network manager - Python module
+ Wicd is a general-purpose network configuration server which aims
+ to provide a simple but flexible interface for connecting to networks.
+ Its features include:
+ wide variety of settings.
+  * ability to connect to (and maintain profiles for) both wired and
+    wireless networks;
+  * support for many encryption schemes, including WEP, WPA, WPA2 and
+    custom schemes;
+  * wireless-tools compatibility;
+  * tray icon showing network activity and signal strength;
+  * lack of GNOME dependencies (although it does require GTK+), making it
+    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+ .
+ This package provides the Python module.
+
