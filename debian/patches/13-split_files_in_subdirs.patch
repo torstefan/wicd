@@ -6,9 +6,10 @@
  in/wicd=wpath.py.in       |    4 ++++
  setup.py                  |   31 +++++++++++++++++++------------
  wicd/gui.py               |   10 +++++-----
+ wicd/netentry.py          |   10 +++++-----
  wicd/prefs.py             |    2 +-
  wicd/wicd-client.py       |    4 ++--
- 9 files changed, 35 insertions(+), 27 deletions(-)
+ 10 files changed, 40 insertions(+), 32 deletions(-)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -193,3 +194,24 @@
  
  USER_SETTINGS_DIR = os.path.expanduser('~/.wicd/')
  
+--- wicd.orig/wicd/netentry.py
++++ wicd/wicd/netentry.py
+@@ -26,13 +26,13 @@ contained within them.
+ import gtk
+ import os
+ 
+-import misc
+-import wpath
+-import dbusmanager
+-from misc import noneToString, stringToNone, noneToBlankString, to_bool
++import wicd.misc
++import wicd.wpath
++import wicd.dbusmanager
++from wicd.misc import noneToString, stringToNone, noneToBlankString, to_bool
+ from guiutil import error, LabelEntry, GreyLabel, LeftAlignedLabel, string_input
+ 
+-from translations import language
++from wicd.translations import language
+ 
+ # These get set when a NetworkEntry is instantiated.
+ daemon = None

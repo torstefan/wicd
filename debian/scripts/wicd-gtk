@@ -1,6 +1,4 @@
 #!/bin/sh
-PYTHONPATH=/usr/share/wicd/
-export PYTHONPATH
 
 # check_firstrun()
 if [ ! -d "$HOME/.wicd" ]; then
