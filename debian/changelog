@@ -1,3 +1,9 @@
+wicd (1.6.2.2-5~exp3) UNRELEASED; urgency=low
+
+  * debian/watch updated to track latest experimental version
+
+ -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 10:37:57 +0100
+
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 
   * The OH-MY-GOD-IT'S-TOO-LATE brown-paper-bug upload
