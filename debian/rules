@@ -25,6 +25,11 @@ override_dh_auto_clean:
 		other/postinst other/55wicd debian/wicd-po/*.mo \
 		other/91wicd other/wicd.conf other/WHEREAREMYFILES
 
+	# recreate directories needed during the compilation
+	-for i in arch debian default gentoo lunar pld redhat slackware suse; do \
+		mkdir -p $(CURDIR)/init/$$i ; \
+	done
+
 override_dh_auto_install:
 	python setup.py install --root=$(CURDIR)/debian/tmp
 	install -m644 debian/wicd-client.xpm \

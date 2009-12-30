@@ -8,6 +8,8 @@ wicd (1.7.0~a3-1) UNRELEASED; urgency=low
   * debian/wicd-curses.docs: adding README.curses and TODO.curses
   * debian/rules:
     - clean target, remove extra stale files
+    - clean target, recreate the init/ hierarchy, needed for build
+      (or after a "git clone")
     - don't override install-lib anymore
   * debian/*.install updated, use the new directory layout provided
     by 13-split_files_in_subdirs.patch
@@ -15,7 +17,7 @@ wicd (1.7.0~a3-1) UNRELEASED; urgency=low
   * debian/wicd-cli.* added
   * debian/python-wicd.install added
 
- -- David Paleino <dapal@debian.org>  Mon, 28 Dec 2009 15:02:52 +0100
+ -- David Paleino <dapal@debian.org>  Wed, 30 Dec 2009 15:31:03 +0100
 
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 
