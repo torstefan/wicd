@@ -9,11 +9,11 @@ Make the scripts find their libraries
 @@ -1,3 +1,6 @@
  #!/bin/bash
  
--exec python -O %LIB%wicd-daemon.py $@
+-exec %PYTHON% -O %LIB%wicd-daemon.py $@
 +PYTHONPATH=%LIB%
 +export PYTHONPATH
 +
-+exec python %LIB%wicd-daemon.py $@
++exec %PYTHON% %LIB%wicd-daemon.py $@
 --- wicd.orig/in/scripts=wicd-client.in
 +++ wicd/in/scripts=wicd-client.in
 @@ -2,6 +2,10 @@

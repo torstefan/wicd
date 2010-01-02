@@ -12,11 +12,13 @@ Date:   Sat Jan 2 12:58:49 2010 +1300
     
     Signed-off-by: martin f. krafft <madduck@debian.org>
 
-diff --git a/setup.py b/setup.py
-index b305c40..de95d63 100644
---- a/setup.py
-+++ b/setup.py
-@@ -324,6 +324,10 @@ class configure(Command):
+---
+ setup.py |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+--- wicd.orig/setup.py
++++ wicd/setup.py
+@@ -332,6 +332,10 @@ class configure(Command):
                  original_name = os.path.join('in',item)
                  item_in = open(original_name, 'r')
                  final_name = item[:-3].replace('=','/')
@@ -27,7 +29,7 @@ index b305c40..de95d63 100644
                  print final_name
                  item_out = open(final_name, 'w')
                  for line in item_in.readlines():
-@@ -363,6 +367,7 @@ class clear_generated(Command):
+@@ -371,6 +375,7 @@ class clear_generated(Command):
                  print final_name, '...',
                  if os.path.exists(final_name):
                      os.remove(final_name)

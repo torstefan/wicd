@@ -8,7 +8,7 @@ Forwarded: no
 
 --- wicd.orig/curses/wicd-curses.py
 +++ wicd/curses/wicd-curses.py
-@@ -1072,7 +1072,7 @@ setup_dbus()
+@@ -1049,7 +1049,7 @@ setup_dbus()
  ########################################
  if __name__ == '__main__':
      try:

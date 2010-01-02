@@ -10,7 +10,8 @@
  wicd/netentry.py          |   10 +++++-----
  wicd/prefs.py             |    2 +-
  wicd/wicd-client.py       |    4 ++--
- 11 files changed, 42 insertions(+), 34 deletions(-)
+ wicd/wicd-daemon.py       |    2 +-
+ 12 files changed, 43 insertions(+), 35 deletions(-)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -70,7 +71,7 @@
          data.append((wpath.autostart, ['other/wicd-tray.desktop']))
          if not wpath.no_install_man:
              data.append((wpath.mandir + 'man1/', [ 'man/wicd-client.1' ]))
-@@ -506,11 +513,11 @@ try:
+@@ -506,18 +513,18 @@ try:
          data.append((wpath.icons + '16x16/apps/', ['icons/16px/wicd-client.png']))
          data.append((wpath.images, [('images/' + b) for b in os.listdir('images') if not b.startswith('.')]))
      if not wpath.no_install_ncurses:
@@ -87,9 +88,8 @@
          data.append((wpath.bin, ['scripts/wicd-curses'])) 
          if not wpath.no_install_man:
              data.append(( wpath.mandir + 'man8/', ['man/wicd-curses.8'])) 
-@@ -518,7 +525,7 @@ try:
+         if not wpath.no_install_docs:
              data.append(( wpath.docdir, ['curses/README.curses'])) 
-             data.append(( wpath.docdir, ['curses/TODO.curses'])) 
      if not wpath.no_install_cli:
 -        data.append((wpath.lib, ['cli/wicd-cli.py']))
 +        data.append((wpath.cli, ['cli/wicd-cli.py']))
@@ -156,24 +156,24 @@
 +++ wicd/in/scripts=wicd-cli.in
 @@ -1,2 +1,2 @@
  #!/bin/bash
--exec python -O %LIB%wicd-cli.py $@
-+exec python -O %LIB%cli/wicd-cli.py $@
+-exec %PYTHON% -O %LIB%wicd-cli.py $@
++exec %PYTHON% -O %LIB%cli/wicd-cli.py $@
 --- wicd.orig/in/scripts=wicd-curses.in
 +++ wicd/in/scripts=wicd-curses.in
 @@ -6,4 +6,4 @@ if [ -e "%VARLIB%WHEREAREMYFILES" ] && [
      ln -s "%VARLIB%WHEREAREMYFILES" "$HOME/.wicd/WHEREAREMYFILES"
  fi
  
--exec python -O %LIB%wicd-curses.py $@
-+exec python -O %LIB%curses/wicd-curses.py $@
+-exec %PYTHON% -O %LIB%wicd-curses.py $@
++exec %PYTHON% -O %LIB%curses/wicd-curses.py $@
 --- wicd.orig/in/scripts=wicd.in
 +++ wicd/in/scripts=wicd.in
 @@ -3,4 +3,4 @@
  PYTHONPATH=%LIB%
  export PYTHONPATH
  
--exec python %LIB%wicd-daemon.py $@
-+exec python %LIB%daemon/wicd-daemon.py $@
+-exec %PYTHON% %LIB%wicd-daemon.py $@
++exec %PYTHON% %LIB%daemon/wicd-daemon.py $@
 --- wicd.orig/in/scripts=wicd-client.in
 +++ wicd/in/scripts=wicd-client.in
 @@ -3,9 +3,6 @@ BOLD=$(tput bold)
@@ -190,7 +190,7 @@
  
      fi
  else
--    exec python -O %LIB%wicd-client.py $@
+-    exec %PYTHON% -O %LIB%wicd-client.py $@
 +    exec %BIN%wicd-gtk
  fi
 --- wicd.orig/wicd/prefs.py
@@ -236,12 +236,12 @@
  
  HAS_NOTIFY = True
  try:
---- wicd/wicd-daemon.py
-+++ wicd/wicd-daemon.py
-@@ -1750,7 +1750,7 @@ def main(argv):
+--- wicd.orig/wicd/wicd-daemon.py
++++ wicd/wicd/wicd-daemon.py
+@@ -1790,7 +1790,7 @@ def main(argv):
      daemon = WicdDaemon(wicd_bus, auto_connect=auto_connect)
      if not no_poll:
-         child_pid = Popen([misc.find_path("python"), "-O",
+         child_pid = Popen([misc.find_path("python"), "-O", 
 -                          os.path.join(wpath.lib, "monitor.py")],
 +                          os.path.join(wpath.lib, "daemon", "monitor.py")],
                            shell=False, close_fds=True).pid
