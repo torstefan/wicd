@@ -56,6 +56,7 @@ else:
 from wicd import wpath
 from wicd import networking
 from wicd import misc
+from wicd import wnettools
 from wicd.misc import noneToBlankString
 from wicd.logfile import ManagedStdio
 from wicd.configmanager import ConfigManager
@@ -698,9 +699,11 @@ class WicdDaemon(dbus.service.Object):
         or the preferences dialog window.
 
         """
-        if win_name == "main":
-            height_str = "window_height"
-            width_str = "window_width"
+        if win_name:
+            height_str = '%s_height' % win_name
+            width_str = '%s_width' % win_name
+        # probably don't need the else, but the previous code
+        # had an else that caught everything
         else:
             height_str = "pref_height"
             width_str = "pref_width"
@@ -717,16 +720,15 @@ class WicdDaemon(dbus.service.Object):
         and if that fails, returns a default of 605 x 400.
 
         """
-        if win_name == "main":
-            default_width = -1
-            default_height = -1
-            width_str = "window_width"
-            height_str = "window_height"
+        default_width, default_height = (-1, -1)
+        if win_name:
+            height_str = '%s_height' % win_name
+            width_str = '%s_width' % win_name
+        # probably don't need the else, but the previous code
+        # had an else that caught everything
         else:
-            default_width = -1
-            default_height = -1
-            width_str = "pref_width"
             height_str = "pref_height"
+            width_str = "pref_width"
 
         width = self.config.get("Settings", width_str, default=default_width)
         height = self.config.get("Settings", height_str, default=default_height)
@@ -1161,6 +1163,7 @@ class WirelessDaemon(dbus.service.Object):
     @dbus.service.method('org.wicd.daemon.wireless')
     def ConnectWireless(self, id):
         """ Connects the the wireless network specified by i"""
+        self.SaveWirelessNetworkProfile(id)
         # Will returned instantly, that way we don't hold up dbus.
         # CheckIfWirelessConnecting can be used to test if the connection
         # is done.
@@ -1305,6 +1308,11 @@ class WirelessDaemon(dbus.service.Object):
     def ReloadConfig(self):
         """ Reloads the active config file. """
         self.config.reload()
+
+    @dbus.service.method('org.wicd.daemon.wireless')
+    def GetWirelessInterfaces(self):
+        ''' Returns a list of wireless interfaces on the system. '''
+        return wnettools.GetWirelessInterfaces()
 
     @dbus.service.signal(dbus_interface='org.wicd.daemon.wireless', signature='')
     def SendStartScanSignal(self):
@@ -1596,6 +1604,10 @@ class WiredDaemon(dbus.service.Object):
         """ Reloads the active config file. """
         self.config.reload()
 
+    @dbus.service.method('org.wicd.daemon.wired')
+    def GetWiredInterfaces(self):
+        ''' Returns a list of wireless interfaces on the system. '''
+        return wnettools.GetWiredInterfaces()
 
 def usage():
     print """
@@ -1683,15 +1695,26 @@ def main(argv):
     argv -- The arguments passed to the script.
 
     """
+    # back up resolv.conf before we do anything else
+    try:
+        backup_location = wpath.varlib + 'resolv.conf.orig'
+        # don't back up if .orig exists, probably there cause
+        # wicd exploded
+        if not os.path.exists(backup_location):
+            shutil.copy2('/etc/resolv.conf', backup_location)
+    except IOError:
+        print 'error backing up resolv.conf'
+
     do_daemonize = True
     redirect_stderr = True
     redirect_stdout = True
     auto_connect = True
+    kill = False
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], 'fenoah',
+        opts, args = getopt.getopt(sys.argv[1:], 'fenoahk',
                                    ['help', 'no-daemon', 'no-poll', 'no-stderr', 'no-stdout',
-                                    'no-autoconnect'])
+                                    'no-autoconnect', 'kill'])
     except getopt.GetoptError:
         # Print help information and exit
         usage()
@@ -1712,7 +1735,24 @@ def main(argv):
             auto_connect = False
         if o in ('-n', '--no-poll'):
             no_poll = True
+        if o in ('-k', '--kill'):
+	        kill = True	
 
+    if kill:
+        try:
+            f = open(wpath.pidfile)
+        except:
+            #print >> sys.stderr, "No wicd instance active, aborting."
+            sys.exit(1)
+        from wicd import dbusmanager
+        bus = dbusmanager.connect_to_dbus()
+        dbus_ifaces = dbusmanager.get_dbus_ifaces()
+        dbus_ifaces['daemon'].Disconnect()
+        pid = int(f.readline())
+        f.close()
+        os.kill(pid,signal.SIGTERM)
+
+   
     if do_daemonize: daemonize()
 
     if redirect_stderr or redirect_stdout:
@@ -1764,6 +1804,12 @@ def main(argv):
 
 def on_exit(child_pid):
     """ Called when a SIGTERM is caught, kills monitor.py before exiting. """
+    # restore resolv.conf on quit
+    try:
+        shutil.move(wpath.varlib + 'resolv.conf.orig', '/etc/resolv.conf')
+    except IOError:
+        print 'error restoring resolv.conf'
+
     if child_pid:
         print 'Daemon going down, killing wicd-monitor...'
         try:
