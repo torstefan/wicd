@@ -8,7 +8,7 @@ wicd (1.7.0~b1-1) UNRELEASED; urgency=low
       provide split binary packages
     - 14-ensure_template_dir_exists.patch added, thanks to Martin
       F. Krafft
-  * debian/wicd-curses.docs: adding README.curses and TODO.curses
+  * debian/wicd-curses.docs: adding README.curses
   * debian/rules:
     - clean target, remove extra stale files
     - clean target, recreate the init/ hierarchy, needed for build
