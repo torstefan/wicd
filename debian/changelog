@@ -1,5 +1,6 @@
-wicd (1.7.0~a3-1) UNRELEASED; urgency=low
+wicd (1.7.0~b1-1) UNRELEASED; urgency=low
 
+  * New experimental upstream version
   * debian/watch updated to track latest experimental version
   * debian/patches/:
     - all patches refreshed to cleanly apply
