@@ -13,8 +13,8 @@ Date:   Sat Jan 2 12:58:49 2010 +1300
     Signed-off-by: martin f. krafft <madduck@debian.org>
 
 ---
- setup.py |    5 +++++
- 1 file changed, 5 insertions(+)
+ setup.py |    4 ++++
+ 1 file changed, 4 insertions(+)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -29,11 +29,3 @@ Date:   Sat Jan 2 12:58:49 2010 +1300
                  print final_name
                  item_out = open(final_name, 'w')
                  for line in item_in.readlines():
-@@ -371,6 +375,7 @@ class clear_generated(Command):
-                 print final_name, '...',
-                 if os.path.exists(final_name):
-                     os.remove(final_name)
-+                    os.removedirs(os.path.dirname(final_name))
-                     print 'Removed.'
-                 else:
-                     print 'Does not exist.'
