@@ -4,14 +4,14 @@
  in/scripts=wicd-curses.in |    2 +-
  in/scripts=wicd.in        |    2 +-
  in/wicd=wpath.py.in       |    4 ++++
- setup.py                  |   31 +++++++++++++++++++------------
+ setup.py                  |   32 ++++++++++++++++++++------------
  wicd/gui.py               |   12 ++++++------
  wicd/guiutil.py           |    2 +-
- wicd/netentry.py          |   10 +++++-----
+ wicd/netentry.py          |   14 +++++++-------
  wicd/prefs.py             |    2 +-
  wicd/wicd-client.py       |    4 ++--
  wicd/wicd-daemon.py       |    2 +-
- 12 files changed, 43 insertions(+), 35 deletions(-)
+ 12 files changed, 46 insertions(+), 37 deletions(-)
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
@@ -53,11 +53,11 @@
      (wpath.networks, []),
      (wpath.sbin,  ['scripts/wicd']),  
 -    (wpath.lib, ['wicd/monitor.py', 'wicd/wicd-daemon.py', 'wicd/configscript.py',
-+    (wpath.daemon, ['wicd/monitor.py', 'wicd/wicd-daemon.py', 'wicd/configscript.py',
++    (wpath.daemon, ['wicd/monitor.py', 'wicd/wicd-daemon.py',
                   'wicd/suspend.py', 'wicd/autoconnect.py']), 
      (wpath.backends, ['wicd/backends/be-external.py', 'wicd/backends/be-ioctl.py']),
      (wpath.scripts, []),
-@@ -488,11 +496,10 @@ try:
+@@ -488,11 +496,11 @@ try:
      (wpath.postconnectscripts, []),
      ]
      if not wpath.no_install_gtk:
@@ -67,11 +67,12 @@
 -        data.append((wpath.share, ['data/wicd.glade']))
 -        data.append((wpath.lib, ['wicd/wicd-client.py']))
 +        data.append((wpath.gtk, ['wicd/wicd-client.py', 'wicd/netentry.py', 'wicd/prefs.py',
-+                                 'wicd/gui.py', 'wicd/guiutil.py', 'data/wicd.glade']))
++                                 'wicd/gui.py', 'wicd/guiutil.py', 'data/wicd.glade',
++                                 'wicd/configscript.py']))
          data.append((wpath.autostart, ['other/wicd-tray.desktop']))
          if not wpath.no_install_man:
              data.append((wpath.mandir + 'man1/', [ 'man/wicd-client.1' ]))
-@@ -506,18 +513,18 @@ try:
+@@ -506,18 +514,18 @@ try:
          data.append((wpath.icons + '16x16/apps/', ['icons/16px/wicd-client.png']))
          data.append((wpath.images, [('images/' + b) for b in os.listdir('images') if not b.startswith('.')]))
      if not wpath.no_install_ncurses:
@@ -225,6 +226,24 @@
  
  # These get set when a NetworkEntry is instantiated.
  daemon = None
+@@ -303,7 +303,7 @@ class WiredSettingsDialog(AdvancedSettin
+     def edit_scripts(self, widget=None, event=None):
+         """ Launch the script editting dialog. """
+         profile = self.prof_name
+-        cmdend = [os.path.join(wpath.lib, "configscript.py"), profile, "wired"]
++        cmdend = [os.path.join(wpath.gtk, "configscript.py"), profile, "wired"]
+         if os.getuid() != 0:
+             cmdbase = misc.get_sudo_cmd(language['scripts_need_pass'],
+                                         prog_num=daemon.GetSudoApp())
+@@ -408,7 +408,7 @@ class WirelessSettingsDialog(AdvancedSet
+         
+     def edit_scripts(self, widget=None, event=None):
+         """ Launch the script editting dialog. """
+-        cmdend = [os.path.join(wpath.lib, "configscript.py"), 
++        cmdend = [os.path.join(wpath.gtk, "configscript.py"),
+                                 str(self.networkID), "wireless"]
+         if os.getuid() != 0:
+             cmdbase = misc.get_sudo_cmd(language['scripts_need_pass'],
 --- wicd.orig/wicd/guiutil.py
 +++ wicd/wicd/guiutil.py
 @@ -19,7 +19,7 @@
