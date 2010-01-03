@@ -32,21 +32,11 @@ override_dh_auto_clean:
 
 override_dh_auto_install:
 	python setup.py install --root=$(CURDIR)/debian/tmp
-	install -m644 debian/wicd-client.xpm \
-		$(CURDIR)/debian/tmp/usr/share/pixmaps/wicd-gtk.xpm
 	
 	find $(CURDIR)/debian/tmp -name "*.png" -exec chmod 644 {} \;
 	find $(CURDIR)/debian/tmp/etc/wicd/ -type f -exec chmod 644 {} \;
 	find $(CURDIR)/debian/tmp \( -name "*.glade" -o -name "*.conf" -o -name "*.desktop" \) -exec chmod 644 {} \;
 	-rm -rf $(CURDIR)/debian/tmp/var/run
-
-override_dh_install:
-	dh_install
-	# strip everything from "wicd" package that is not-daemon-related
-	find $(CURDIR)/debian/wicd-daemon \( -name "*curses*" -o -name "*gui*" -o -name "*.glade" \) -delete
-	-for file in wicd-client.py wicd/netentry.py wicd/prefs.py; \
-	    do rm -rf $(CURDIR)/debian/wicd-daemon/usr/share/wicd/$$file*; \
-	done
 
 override_dh_installinit:
 	dh_pysupport -i

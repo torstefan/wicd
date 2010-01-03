@@ -10,8 +10,7 @@ wicd (1.7.0~b3-1) UNRELEASED; urgency=low
     - clean target, recreate the init/ hierarchy, needed for build
       (or after a "git clone")
     - don't override install-lib anymore
-  * debian/*.install updated, use the new directory layout provided
-    by 13-split_files_in_subdirs.patch
+  * debian/*.install updated, use the new directory layout
   * debian/control: added python-wicd and wicd-cli packages
   * debian/wicd-cli.* added
   * debian/python-wicd.install added
