@@ -4,6 +4,8 @@ wicd (1.7.0~b3-1) UNRELEASED; urgency=low
   * debian/watch updated to track latest experimental version
   * debian/patches/:
     - all patches refreshed to cleanly apply
+    - 12-fix_wrong_PYTHONPATHs.patch added, fix spurious PYTHONPATHs
+      in beta release
   * debian/wicd-curses.docs: adding README.curses
   * debian/rules:
     - clean target, remove extra stale files
@@ -15,7 +17,7 @@ wicd (1.7.0~b3-1) UNRELEASED; urgency=low
   * debian/wicd-cli.* added
   * debian/python-wicd.install added
 
- -- David Paleino <dapal@debian.org>  Sun, 03 Jan 2010 10:07:59 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 03 Jan 2010 17:23:54 +0100
 
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 

@@ -9,3 +9,4 @@
 09-allow_empty_DNS.patch
 10-order_scripts_directories.patch
 11-fix_gui_showing_from_tray.patch
+12-fix_wrong_PYTHONPATHs.patch
