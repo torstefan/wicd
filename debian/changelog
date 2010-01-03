@@ -1,4 +1,4 @@
-wicd (1.7.0~b3-1) UNRELEASED; urgency=low
+wicd (1.7.0~b3-1) experimental; urgency=low
 
   * New experimental upstream version
   * debian/watch updated to track latest experimental version
@@ -21,7 +21,7 @@ wicd (1.7.0~b3-1) UNRELEASED; urgency=low
   * debian/wicd-cli.* added
   * debian/python-wicd.install added
 
- -- David Paleino <dapal@debian.org>  Sun, 03 Jan 2010 21:01:30 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 03 Jan 2010 21:02:28 +0100
 
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 
