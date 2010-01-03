@@ -4,10 +4,6 @@ wicd (1.7.0~b3-1) UNRELEASED; urgency=low
   * debian/watch updated to track latest experimental version
   * debian/patches/:
     - all patches refreshed to cleanly apply
-    - 13-split_files_in_subdirs.patch added, makes it easier to
-      provide split binary packages
-    - 14-ensure_template_dir_exists.patch added, thanks to Martin
-      F. Krafft
   * debian/wicd-curses.docs: adding README.curses
   * debian/rules:
     - clean target, remove extra stale files

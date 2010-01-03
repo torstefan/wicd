@@ -31,5 +31,5 @@ Forwarded: no
 -#!/bin/bash
 +#!/bin/sh
  
- PYTHONPATH=%LIB%
+ PYTHONPATH=%SHARE%
  export PYTHONPATH

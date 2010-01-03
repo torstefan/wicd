@@ -5,11 +5,7 @@
 #09-fix_wire_plugging_detection.patch
 05-use_binsh.patch
 06-dont_bomb_out_on_configparser_error.patch
-07-workaround_urwid_API_change.patch
 08-fix_help_message.patch
 09-allow_empty_DNS.patch
 10-order_scripts_directories.patch
 11-fix_gui_showing_from_tray.patch
-12-rename_wicd-client_to_wicd-gtk.patch
-13-split_files_in_subdirs.patch
-14-ensure_template_dir_exists.patch

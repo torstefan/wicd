@@ -1,19 +1,19 @@
 Make the scripts find their libraries
 ---
  in/scripts=wicd-client.in |    4 ++++
- in/scripts=wicd.in        |    5 ++++-
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ in/scripts=wicd.in        |    2 +-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
 --- wicd.orig/in/scripts=wicd.in
 +++ wicd/in/scripts=wicd.in
-@@ -1,3 +1,6 @@
+@@ -1,6 +1,6 @@
  #!/bin/bash
  
--exec %PYTHON% -O %LIB%wicd-daemon.py $@
-+PYTHONPATH=%LIB%
-+export PYTHONPATH
-+
-+exec %PYTHON% %LIB%wicd-daemon.py $@
+-PYTHONPATH=%LIB%
++PYTHONPATH=%SHARE%
+ export PYTHONPATH
+ 
+ exec %PYTHON% -O %SHARE%daemon/wicd-daemon.py $@
 --- wicd.orig/in/scripts=wicd-client.in
 +++ wicd/in/scripts=wicd-client.in
 @@ -2,6 +2,10 @@
