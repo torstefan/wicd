@@ -1744,6 +1744,14 @@ def main(argv):
         except:
             #print >> sys.stderr, "No wicd instance active, aborting."
             sys.exit(1)
+
+        # restore resolv.conf on quit
+        try:
+            shutil.move(wpath.varlib + 'resolv.conf.orig', '/etc/resolv.conf')
+        except IOError:
+            print 'error restoring resolv.conf'
+
+        # connect to dbus, trigger a disconnect, then knock out the daemon
         from wicd import dbusmanager
         bus = dbusmanager.connect_to_dbus()
         dbus_ifaces = dbusmanager.get_dbus_ifaces()
@@ -1752,6 +1760,8 @@ def main(argv):
         f.close()
         os.kill(pid,signal.SIGTERM)
 
+        # quit, this should be the only option specified
+        sys.exit(0)
    
     if do_daemonize: daemonize()
 
@@ -1790,7 +1800,7 @@ def main(argv):
     daemon = WicdDaemon(wicd_bus, auto_connect=auto_connect)
     if not no_poll:
         child_pid = Popen([misc.find_path("python"), "-O", 
-                          os.path.join(wpath.lib, "monitor.py")],
+                          os.path.join(wpath.daemon, "monitor.py")],
                           shell=False, close_fds=True).pid
     atexit.register(on_exit, child_pid)
 
@@ -1804,12 +1814,6 @@ def main(argv):
 
 def on_exit(child_pid):
     """ Called when a SIGTERM is caught, kills monitor.py before exiting. """
-    # restore resolv.conf on quit
-    try:
-        shutil.move(wpath.varlib + 'resolv.conf.orig', '/etc/resolv.conf')
-    except IOError:
-        print 'error restoring resolv.conf'
-
     if child_pid:
         print 'Daemon going down, killing wicd-monitor...'
         try:

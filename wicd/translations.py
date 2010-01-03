@@ -55,7 +55,7 @@ def get_gettext():
     _ = lang.gettext
     return _
 
-# Generated automatically on Sat, 02 Jan 2010 01:47:30 CST
+# Generated automatically on Sun, 03 Jan 2010 02:34:35 CST
 _ = get_gettext()
 language = {}
 language['resetting_ip_address'] = _('''Resetting IP address...''')
