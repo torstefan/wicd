@@ -14,8 +14,6 @@ Architecture: all
 Depends: ${misc:Depends},
  wicd-daemon (= ${source:Version}),
  wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
-Conflicts: wicd (<= 1.6.2.2-4)
-Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - metapackage
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
@@ -147,6 +145,7 @@ Description: wired and wireless network manager - scriptable cli client
 
 Package: python-wicd
 Architecture: all
+Section: python
 Depends: ${misc:Depends}, ${python:Depends}
 Conflicts: wicd (<< 1.7.0~a3)
 Replaces: wicd (<< 1.7.0~a3)

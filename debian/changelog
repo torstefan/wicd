@@ -15,11 +15,13 @@ wicd (1.7.0~b3-1) UNRELEASED; urgency=low
       (or after a "git clone")
     - don't override install-lib anymore
   * debian/*.install updated, use the new directory layout
-  * debian/control: added python-wicd and wicd-cli packages
+  * debian/control:
+    - added python-wicd and wicd-cli packages
+    - remove Conflicts/Replaces from wicd binary section
   * debian/wicd-cli.* added
   * debian/python-wicd.install added
 
- -- David Paleino <dapal@debian.org>  Sun, 03 Jan 2010 17:47:54 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 03 Jan 2010 21:01:30 +0100
 
 wicd (1.6.2.2-5~exp2) experimental; urgency=low
 
