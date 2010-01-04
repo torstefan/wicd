@@ -16,3 +16,4 @@
 16-fix_wicd-cli_properties_case_sensitivity.patch
 17-fix_wicd-cli_default_to_active.patch
 18-dont_run_unexpected_files_in_scripts.patch
+19-dhcpcd_dont_handle_link-local.patch
