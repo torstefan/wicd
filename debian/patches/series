@@ -14,3 +14,4 @@
 14-fix_wicd-cli_dbus.patch
 15-fix_udhcpc_status.patch
 16-fix_wicd-cli_properties_case_sensitivity.patch
+17-fix_wicd-cli_default_to_active.patch
