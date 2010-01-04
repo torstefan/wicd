@@ -11,8 +11,11 @@ wicd (1.7.0~b3-2) UNRELEASED; urgency=low
     - 17-fix_wicd-cli_default_to_active.patch added, default to
       current active network, if no network ID is specified, when
       querying for a property. (Closes: #563622)
+    - 18-dont_run_unexpected_files_in_scripts.patch added, don't
+      execute backup files (*~) or hidden ones (.*) from the scripts
+      directories. (Closes: #563553)
 
- -- David Paleino <dapal@debian.org>  Mon, 04 Jan 2010 10:02:39 +0100
+ -- David Paleino <dapal@debian.org>  Mon, 04 Jan 2010 10:15:19 +0100
 
 wicd (1.7.0~b3-1) experimental; urgency=low
 
