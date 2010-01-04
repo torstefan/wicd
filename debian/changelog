@@ -3,8 +3,10 @@ wicd (1.7.0~b3-2) UNRELEASED; urgency=low
   * debian/patches/:
     - 14-fix_wicd-cli_dbus.patch backported from upstream rev531,
       fixes wrong calls to DBus
+    - 15-fix_udhcpc_status.patch added, fixes failure check
+      (Closes: #563619)
 
- -- David Paleino <dapal@debian.org>  Mon, 04 Jan 2010 09:10:23 +0100
+ -- David Paleino <dapal@debian.org>  Mon, 04 Jan 2010 09:22:53 +0100
 
 wicd (1.7.0~b3-1) experimental; urgency=low
 

@@ -12,3 +12,4 @@
 12-fix_wrong_PYTHONPATHs.patch
 13-fix_codesplit_remnants.patch
 14-fix_wicd-cli_dbus.patch
+15-fix_udhcpc_status.patch
