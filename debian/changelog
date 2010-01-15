@@ -1,23 +1,19 @@
 wicd (1.7.0-1) UNRELEASED; urgency=low
 
-  * debian/patches/:
-    - 14-fix_wicd-cli_dbus.patch backported from upstream rev531,
-      fixes wrong calls to DBus
-    - 15-fix_udhcpc_status.patch added, fixes failure check
-      (Closes: #563619)
-    - 16-fix_wicd-cli_properties_case_sensitivity.patch added,
-      makes network properties from command-line case-insensitive
+  * New upstream release:
+    - fixes udhcpc failure check (Closes: #563619)
+    - makes network properties from command-line case-insensitive
       (Closes: #563620)
-    - 17-fix_wicd-cli_default_to_active.patch added, default to
-      current active network, if no network ID is specified, when
-      querying for a property. (Closes: #563622)
+    - wicd-cli defaults to current active network, if no network
+      ID is specified, when querying for a property. (Closes: #563622)
+  * debian/patches/:
     - 18-dont_run_unexpected_files_in_scripts.patch added, don't
       execute backup files (*~) or hidden ones (.*) from the scripts
       directories. (Closes: #563553)
     - 19-dhcpcd_dont_handle_link-local.patch added, don't let it
       handle link-local.
 
- -- David Paleino <dapal@debian.org>  Mon, 04 Jan 2010 10:48:00 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 10:42:46 +0100
 
 wicd (1.7.0~b3-1) experimental; urgency=low
 
