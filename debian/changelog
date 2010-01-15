@@ -7,6 +7,9 @@ wicd (1.7.0-1) UNRELEASED; urgency=low
     - wicd-cli defaults to current active network, if no network
       ID is specified, when querying for a property. (Closes: #563622)
   * debian/patches/:
+    - 01-remove_unused_icons.patch, 02-detect_ping_flavour.patch,
+      05-use_binsh.patch and 08-fix_help_message.patch refreshed to
+      cleanly apply.
     - 18-dont_run_unexpected_files_in_scripts.patch added, don't
       execute backup files (*~) or hidden ones (.*) from the scripts
       directories. (Closes: #563553)
@@ -18,7 +21,7 @@ wicd (1.7.0-1) UNRELEASED; urgency=low
       + 12-fix_wrong_PYTHONPATHs.patch
       + 13-fix_codesplit_remnants.patch
 
- -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 10:50:53 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 10:52:12 +0100
 
 wicd (1.7.0~b3-1) experimental; urgency=low
 

@@ -10,7 +10,7 @@ Author: David Paleino <d.paleino@gmail.com>
 
 --- wicd.orig/wicd/wnettools.py
 +++ wicd/wicd/wnettools.py
-@@ -732,7 +732,16 @@ class BaseInterface(object):
+@@ -736,7 +736,16 @@ class BaseInterface(object):
          trying to ping it.
          
          """
