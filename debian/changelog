@@ -22,8 +22,10 @@ wicd (1.7.0-1) UNRELEASED; urgency=low
       + 13-fix_codesplit_remnants.patch
   * debian/rules:
     - remove .empty_on_purpose files from the binary packages
+  * debian/wicd-daemon.wicd.init: add $remote_fs to Required-Start
+    and Required-Stop, thanks Lintian!
 
- -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 11:11:44 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 11:13:47 +0100
 
 wicd (1.7.0~b3-1) experimental; urgency=low
 
