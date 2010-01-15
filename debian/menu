@@ -1,5 +1,0 @@
-?package(wicd):\
- needs="X11" \
- section="Applications/Network/Monitoring" \
- title="WICD" command="/usr/bin/wicd-client" \
- icon="/usr/share/pixmaps/wicd.xpm"

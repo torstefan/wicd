@@ -7,9 +7,9 @@ Forwarded: yes, https://bugs.launchpad.net/wicd/+bug/492806
  wicd/gui.py |    1 +
  1 file changed, 1 insertion(+)
 
---- wicd.orig/wicd/gui.py
-+++ wicd/wicd/gui.py
-@@ -759,6 +759,7 @@ class appGui(object):
+--- wicd.orig/gtk/gui.py
++++ wicd/gtk/gui.py
+@@ -789,6 +789,7 @@ class appGui(object):
          
          """
          self.window.present()

@@ -1,8 +1,85 @@
-wicd (1.6.2.2-5) UNRELEASED; urgency=low
+wicd (1.7.0~b3-2) UNRELEASED; urgency=low
+
+  * debian/patches/:
+    - 14-fix_wicd-cli_dbus.patch backported from upstream rev531,
+      fixes wrong calls to DBus
+    - 15-fix_udhcpc_status.patch added, fixes failure check
+      (Closes: #563619)
+    - 16-fix_wicd-cli_properties_case_sensitivity.patch added,
+      makes network properties from command-line case-insensitive
+      (Closes: #563620)
+    - 17-fix_wicd-cli_default_to_active.patch added, default to
+      current active network, if no network ID is specified, when
+      querying for a property. (Closes: #563622)
+    - 18-dont_run_unexpected_files_in_scripts.patch added, don't
+      execute backup files (*~) or hidden ones (.*) from the scripts
+      directories. (Closes: #563553)
+    - 19-dhcpcd_dont_handle_link-local.patch added, don't let it
+      handle link-local.
+
+ -- David Paleino <dapal@debian.org>  Mon, 04 Jan 2010 10:48:00 +0100
+
+wicd (1.7.0~b3-1) experimental; urgency=low
+
+  * New experimental upstream version
+  * debian/watch updated to track latest experimental version
+  * debian/patches/:
+    - all patches refreshed to cleanly apply
+    - 12-fix_wrong_PYTHONPATHs.patch added, fix spurious PYTHONPATHs
+      in beta release
+    - 13-fix_codesplit_remnants.patch added, needed to fix some
+      remaining issues happened between 1.7.0~a1 and 1.7.0~b3
+  * debian/wicd-curses.docs: adding README.curses
+  * debian/rules:
+    - clean target, remove extra stale files
+    - clean target, recreate the init/ hierarchy, needed for build
+      (or after a "git clone")
+    - don't override install-lib anymore
+  * debian/*.install updated, use the new directory layout
+  * debian/control:
+    - added python-wicd and wicd-cli packages
+    - remove Conflicts/Replaces from wicd binary section
+  * debian/wicd-cli.* added
+  * debian/python-wicd.install added
+
+ -- David Paleino <dapal@debian.org>  Sun, 03 Jan 2010 21:02:28 +0100
+
+wicd (1.6.2.2-5~exp2) experimental; urgency=low
+
+  * The OH-MY-GOD-IT'S-TOO-LATE brown-paper-bug upload
+  * debian/scripts/wicd-gtk, it's really a shell script, not
+    a Python one o:)
+
+ -- David Paleino <dapal@debian.org>  Sun, 20 Dec 2009 17:58:23 +0100
+
+wicd (1.6.2.2-5~exp1) experimental; urgency=low
 
   * debian/README.Debian: removed old instructions
+  * Most debian/* files split to proper per-package files
+  * debian/control:
+    - GUI and non-GUI packages split. This should allow
+      for wicd installation without depending on GTK
+      (then, X) (Closes: #546906)
+    - add wicd-gtk and wicd-curses packages, both providing
+      wicd-client.
+    - added wicd-daemon package, substituting old "wicd"
+      package
+    - added wicd metapackage, depending on everything else,
+      to allow seamless upgrade from older versions.
+    - made all packages conflict with older versions
+    - added python-gobject dependency to wicd-daemon
+    - bump Build-Depends to use dh7 overrides and quilt
+  * debian/rules:
+    - fixed to deal with multiple binary packages
+    - rewritten to use dh7
+  * debian/source/format added -- use 3.0 (quilt)
+  * debian/wicd-curses.docs added
+  * debian/patches/12-rename_wicd-client_to_wicd-gtk.patch , rename
+    wicd-client to wicd-gtk where appropriate
+  * debian/po/POTFILES.in fixed with the new templates file
+  * debian/wicd-gtk.links added
 
- -- David Paleino <dapal@debian.org>  Mon, 07 Dec 2009 16:56:53 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 12 Dec 2009 18:53:23 +0100
 
 wicd (1.6.2.2-4) unstable; urgency=low
 

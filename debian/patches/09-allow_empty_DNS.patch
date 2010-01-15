@@ -7,9 +7,9 @@ Forwarded: yes, https://bugs.launchpad.net/wicd/+bug/492795
  wicd/gui.py |    7 ++-----
  1 file changed, 2 insertions(+), 5 deletions(-)
 
---- wicd.orig/wicd/gui.py
-+++ wicd/wicd/gui.py
-@@ -571,11 +571,8 @@ class appGui(object):
+--- wicd.orig/gtk/gui.py
++++ wicd/gtk/gui.py
+@@ -598,11 +598,8 @@ class appGui(object):
                  
          if entry.chkbox_static_dns.get_active() and \
             not entry.chkbox_global_dns.get_active():
