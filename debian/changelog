@@ -12,8 +12,13 @@ wicd (1.7.0-1) UNRELEASED; urgency=low
       directories. (Closes: #563553)
     - 19-dhcpcd_dont_handle_link-local.patch added, don't let it
       handle link-local.
+    - removed (merged upstream or no more applicable):
+      + 04-fix-scripts.patch
+      + 10-order_scripts_directories.patch
+      + 12-fix_wrong_PYTHONPATHs.patch
+      + 13-fix_codesplit_remnants.patch
 
- -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 10:42:46 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 10:50:53 +0100
 
 wicd (1.7.0~b3-1) experimental; urgency=low
 
