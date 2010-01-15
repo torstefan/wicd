@@ -8,6 +8,7 @@ contained within them.
 #
 #   Copyright (C) 2008-2009 Adam Blackburn
 #   Copyright (C) 2008-2009 Dan O'Reilly
+#   Copyright (C) 2009      Andrew Psaltis
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 2 as
@@ -25,13 +26,13 @@ contained within them.
 import gtk
 import os
 
-import misc
-import wpath
-import dbusmanager
-from misc import noneToString, stringToNone, noneToBlankString, to_bool
+import wicd.misc as misc
+import wicd.wpath as wpath
+import wicd.dbusmanager as dbusmanager
+from wicd.misc import noneToString, stringToNone, noneToBlankString, to_bool
 from guiutil import error, LabelEntry, GreyLabel, LeftAlignedLabel, string_input
 
-from translations import language
+from wicd.translations import language
 
 # These get set when a NetworkEntry is instantiated.
 daemon = None
@@ -63,6 +64,12 @@ class AdvancedSettingsDialog(gtk.Dialog):
                                                            gtk.RESPONSE_REJECT,
                                                            gtk.STOCK_OK,
                                                            gtk.RESPONSE_ACCEPT))
+
+        self.set_default_size()
+
+        self.connect('show', lambda *a, **k: self.set_default_size())
+        self.connect('hide', lambda *a, **k: self.write_size())
+
         # Set up the Advanced Settings Dialog.
         self.txt_ip = LabelEntry(language['ip'])
         self.txt_ip.entry.connect('focus-out-event', self.set_defaults)
@@ -73,6 +80,11 @@ class AdvancedSettingsDialog(gtk.Dialog):
         self.txt_dns_1 = LabelEntry(language['dns'] + ' 1')
         self.txt_dns_2 = LabelEntry(language['dns'] + ' 2')
         self.txt_dns_3 = LabelEntry(language['dns'] + ' 3')
+        dhcp_hostname_hbox = gtk.HBox(False, 0)
+        self.chkbox_use_dhcp_hostname = gtk.CheckButton()
+        self.txt_dhcp_hostname = LabelEntry("DHCP Hostname")
+        dhcp_hostname_hbox.pack_start(self.chkbox_use_dhcp_hostname, fill=False, expand=False)
+        dhcp_hostname_hbox.pack_start(self.txt_dhcp_hostname)
         self.chkbox_static_ip = gtk.CheckButton(language['use_static_ip'])
         self.chkbox_static_dns = gtk.CheckButton(language['use_static_dns'])
         self.chkbox_global_dns = gtk.CheckButton(language['use_global_dns'])
@@ -92,32 +104,58 @@ class AdvancedSettingsDialog(gtk.Dialog):
         self.button_hbox = gtk.HBox(False, 2)
         self.button_hbox.pack_start(self.script_button, fill=False, expand=False)
         self.button_hbox.show()
+
+        self.swindow = gtk.ScrolledWindow()
+        self.swindow.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
+        self.viewport = gtk.Viewport()
+        self.viewport.set_shadow_type(gtk.SHADOW_NONE)
+        self.cvbox = gtk.VBox()
+        self.viewport.add(self.cvbox)
+        self.swindow.add(self.viewport)
+        self.vbox.pack_start(self.swindow)
         
-        assert(isinstance(self.vbox, gtk.VBox))
-        self.vbox.pack_start(self.chkbox_static_ip, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_ip, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_netmask, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_gateway, fill=False, expand=False)
-        self.vbox.pack_start(self.hbox_dns, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_domain, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_search_dom, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_dns_1, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_dns_2, fill=False, expand=False)
-        self.vbox.pack_start(self.txt_dns_3, fill=False, expand=False)
-        self.vbox.pack_end(self.button_hbox, fill=False, expand=False, padding=5)
-        
+        assert(isinstance(self.cvbox, gtk.VBox))
+        self.cvbox.pack_start(self.chkbox_static_ip, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_ip, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_netmask, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_gateway, fill=False, expand=False)
+        self.cvbox.pack_start(self.hbox_dns, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_domain, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_search_dom, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_dns_1, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_dns_2, fill=False, expand=False)
+        self.cvbox.pack_start(self.txt_dns_3, fill=False, expand=False)
+        self.cvbox.pack_start(dhcp_hostname_hbox, fill=False, expand=False)
+        self.cvbox.pack_end(self.button_hbox, fill=False, expand=False, padding=5)
         
         # Connect the events to the actions
         self.chkbox_static_ip.connect("toggled", self.toggle_ip_checkbox)
         self.chkbox_static_dns.connect("toggled", self.toggle_dns_checkbox)
         self.chkbox_global_dns.connect("toggled", self.toggle_global_dns_checkbox)
+        self.chkbox_use_dhcp_hostname.connect('toggled',
+                                              self.toggle_dhcp_hostname_checkbox)
         
         # Start with all disabled, then they will be enabled later.
         self.chkbox_static_ip.set_active(False)
         self.chkbox_static_dns.set_active(False)
+
+
+    def set_default_size(self):
+        width, height = daemon.ReadWindowSize('netprop')
+        if width > -1 and height > -1:
+            self.resize(int(width), int(height))
+        else:
+            width, height = self.get_size()
+            s_height = gtk.gdk.screen_height()
+            if s_height < 768:
+                height = s_height * .75 
+            else:
+                height = 600
+            self.resize(int(width), int(height))
         
     def set_defaults(self, widget=None, event=None):
         """ Put some default values into entries to help the user out. """
+        self.txt_ip.set_text(self.txt_ip.get_text().strip())
         ipAddress = self.txt_ip.get_text()  # For easy typing :)
         netmask = self.txt_netmask
         gateway = self.txt_gateway
@@ -130,7 +168,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
             if stringToNone(netmask.get_text()) is None:  # Make sure the netmask is blank
                 netmask.set_text('255.255.255.0')  # Fill in the most common one
         elif ipAddress != "":
-            error(None, "Invalid IP Address Entered.")
+            error(None, language['invalid_ip_address'])
 
     def reset_static_checkboxes(self):
         # Enable the right stuff
@@ -188,6 +226,10 @@ class AdvancedSettingsDialog(gtk.Dialog):
                 w.set_sensitive(False)
             self.chkbox_global_dns.set_active(False)
 
+    def toggle_dhcp_hostname_checkbox(self, widget=None):
+        self.txt_dhcp_hostname.set_sensitive(
+            self.chkbox_use_dhcp_hostname.get_active())
+
     def toggle_global_dns_checkbox(self, widget=None):
         """ Set the DNS entries' sensitivity based on the Global checkbox. """
         global_dns_active = daemon.GetUseGlobalDNS()
@@ -204,6 +246,10 @@ class AdvancedSettingsDialog(gtk.Dialog):
         super(AdvancedSettingsDialog, self).destroy()
         self.destroy()
         del self
+
+    def write_size(self):
+        w, h = self.get_size()
+        daemon.WriteWindowSize(w, h, 'netprop')
     
     def save_settings(self):
         """ Save settings common to wired and wireless settings dialogs. """
@@ -237,6 +283,9 @@ class AdvancedSettingsDialog(gtk.Dialog):
             self.set_net_prop("dns1", '')
             self.set_net_prop("dns2", '')
             self.set_net_prop("dns3", '')
+        self.set_net_prop('use_dhcphostname',
+                          self.chkbox_use_dhcp_hostname.get_active())
+        self.set_net_prop("dhcphostname",noneToString(self.txt_dhcp_hostname.get_text()))
 
         
 class WiredSettingsDialog(AdvancedSettingsDialog):
@@ -254,7 +303,7 @@ class WiredSettingsDialog(AdvancedSettingsDialog):
     def edit_scripts(self, widget=None, event=None):
         """ Launch the script editting dialog. """
         profile = self.prof_name
-        cmdend = [os.path.join(wpath.lib, "configscript.py"), profile, "wired"]
+        cmdend = [os.path.join(wpath.gtk, "configscript.py"), profile, "wired"]
         if os.getuid() != 0:
             cmdbase = misc.get_sudo_cmd(language['scripts_need_pass'],
                                         prog_num=daemon.GetSudoApp())
@@ -278,6 +327,12 @@ class WiredSettingsDialog(AdvancedSettingsDialog):
         self.txt_domain.set_text(self.format_entry("dns_domain"))
         self.txt_search_dom.set_text(self.format_entry("search_domain"))
         self.chkbox_global_dns.set_active(bool(wired.GetWiredProperty("use_global_dns")))
+
+        dhcphname = wired.GetWiredProperty("dhcphostname")
+        if dhcphname is None:
+            dhcphname = os.uname()[1]
+
+        self.txt_dhcp_hostname.set_text(dhcphname)
         self.reset_static_checkboxes()
         
     def save_settings(self):
@@ -333,10 +388,10 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
             self.combo_encryption.set_active(0)
         self.change_encrypt_method()
 
-        self.vbox.pack_start(self.chkbox_global_settings, False, False)
-        self.vbox.pack_start(self.chkbox_encryption, False, False)
-        self.vbox.pack_start(self.combo_encryption, False, False)
-        self.vbox.pack_start(self.vbox_encrypt_info, False, False)
+        self.cvbox.pack_start(self.chkbox_global_settings, False, False)
+        self.cvbox.pack_start(self.chkbox_encryption, False, False)
+        self.cvbox.pack_start(self.combo_encryption, False, False)
+        self.cvbox.pack_start(self.vbox_encrypt_info, False, False)
         
         # Connect signals.
         self.chkbox_encryption.connect("toggled", self.toggle_encryption)
@@ -353,7 +408,7 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
         
     def edit_scripts(self, widget=None, event=None):
         """ Launch the script editting dialog. """
-        cmdend = [os.path.join(wpath.lib, "configscript.py"), 
+        cmdend = [os.path.join(wpath.gtk, "configscript.py"),
                                 str(self.networkID), "wireless"]
         if os.getuid() != 0:
             cmdbase = misc.get_sudo_cmd(language['scripts_need_pass'],
@@ -393,6 +448,17 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
                                                                        'encryption')))
         self.chkbox_global_settings.set_active(bool(wireless.GetWirelessProperty(networkID,
                                                              'use_settings_globally')))
+
+        self.chkbox_use_dhcp_hostname.set_active(
+            bool(wireless.GetWirelessProperty(networkID, 'use_dhcphostname')))
+
+
+        dhcphname = wireless.GetWirelessProperty(networkID,"dhcphostname")
+        if dhcphname is None:
+            dhcphname = os.uname()[1]
+        self.txt_dhcp_hostname.set_text(dhcphname)
+
+        self.toggle_dhcp_hostname_checkbox()
 
         activeID = -1  # Set the menu to this item when we are done
         user_enctype = wireless.GetWirelessProperty(networkID, "enctype")
@@ -655,17 +721,16 @@ class WiredNetworkEntry(NetworkEntry):
             
     def add_profile(self, widget):
         """ Add a profile to the profile list. """
-        print "adding profile"
-
         response = string_input("Enter a profile name", "The profile name " +
                                   "will not be used by the computer. It " +
                                   "allows you to " + 
                                   "easily distinguish between different network " +
-                                  "profiles.", "Profile name:")
+                                  "profiles.", "Profile name:").strip()
 
         # if response is "" or None
         if not response:
-            return
+            error(None, "Invalid profile name", block=True)
+            return False
 
         profile_name = response
         profile_list = wired.GetWiredProfileList()

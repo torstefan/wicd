@@ -1,59 +1,511 @@
 ------------------------------------------------------------
-revno: 462
+revno: 526
 committer: Adam Blackburn <compwiz18@gmail.com>
-branch nick: 1.6
-timestamp: Mon 2009-08-31 18:57:58 -0500
+branch nick: 1.7
+timestamp: Sat 2010-01-02 21:27:41 -1000
 message:
-  use the data from the essid pattern correctly
+  restore old resolv.conf file on -k instead of sigterm
+------------------------------------------------------------
+revno: 525
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:59:10 -1000
+message:
+  update CHANGES
+------------------------------------------------------------
+revno: 524
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:59:05 -1000
+message:
+  put the Dutch man pages in the correct directory
+------------------------------------------------------------
+revno: 523
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:50:31 -1000
+message:
+  updated CHANGES
+------------------------------------------------------------
+revno: 522
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:50:16 -1000
+message:
+  added wireless-settings.conf Dutch man page
+------------------------------------------------------------
+revno: 521
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:43:26 -1000
+message:
+  update CHANGES
+------------------------------------------------------------
+revno: 520
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:42:36 -1000
+message:
+  renamed a Dutch manpage
+------------------------------------------------------------
+revno: 519
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:29:53 -1000
+message:
+  update CHANGES
+------------------------------------------------------------
+revno: 518
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:29:18 -1000
+message:
+  remove setup.py reference to Dutch version of wicd-cli.8 that doesn't exist
+------------------------------------------------------------
+revno: 517
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:23:48 -1000
+message:
+  updated CHANGES, NEWS, and setup.py version number
+------------------------------------------------------------
+revno: 516
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:22:00 -1000
+message:
+  added no_install_i18n_man to wpath.py.in
+------------------------------------------------------------
+revno: 515
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 20:14:43 -1000
+message:
+  add Dutch man pages
+------------------------------------------------------------
+revno: 514 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 19:55:04 -1000
+message:
+  merged iconfallout
+------------------------------------------------------------
+revno: 513 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 19:49:05 -1000
+message:
+  changed the path of monitor.py to the correct one so it will run again [again]
+------------------------------------------------------------
+revno: 512
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 19:46:33 -1000
+message:
+  changed the path of monitor.py to the correct one so it will run again
+------------------------------------------------------------
+revno: 511
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 18:43:42 -1000
+message:
+  change Slackware's wicdgroup to netdev
+------------------------------------------------------------
+revno: 510 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 18:35:06 -1000
+message:
+  add pixmaps to wpath
+------------------------------------------------------------
+revno: 509 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 09:22:51 -1000
+message:
+  add an xpm icon so that the .desktop file will have an icon
+------------------------------------------------------------
+revno: 508
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 08:22:06 -1000
+message:
+  fix potential urwid compatibility problem
+------------------------------------------------------------
+revno: 507
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 08:11:31 -1000
+message:
+  create directories if they do not exist when running configure
+------------------------------------------------------------
+revno: 506
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 07:57:14 -1000
+message:
+  use wicd-gtk to launch the GTK UI instead of wicd-client
+------------------------------------------------------------
+revno: 505 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Sat 2010-01-02 07:52:03 -1000
+message:
+  merged David Paleino's split file installation branch
+------------------------------------------------------------
+revno: 504
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Fri 2010-01-01 21:44:48 -1000
+message:
+  updated setup.py and CHANGES for release
+------------------------------------------------------------
+revno: 503
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-30 11:29:59 -1000
+message:
+  fixed connection info dialog text alignment
+------------------------------------------------------------
+revno: 502
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-30 11:29:42 -1000
+message:
+  updated translations.py
+------------------------------------------------------------
+revno: 501
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-30 11:06:27 -1000
+message:
+  fix network list not being enabled after disconnect button clicked
+------------------------------------------------------------
+revno: 500
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-30 10:13:49 -1000
+message:
+  fix a typo in the Slackware init script
+------------------------------------------------------------
+revno: 499
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-30 10:06:39 -1000
+message:
+  update the Arch init script to use the -k switch
+------------------------------------------------------------
+revno: 498
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-30 08:29:22 -1000
+message:
+  change the default height of the network properties dialog so that scrollbars will never be needed
+------------------------------------------------------------
+revno: 497
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-30 08:28:50 -1000
+message:
+  update news with a note to packagers about the -k option
+------------------------------------------------------------
+revno: 496
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Tue 2009-12-29 21:22:23 -0500
+message:
+  Modified two initscripts to support wicd -k, made wicd -k have a non-zero exit code if it can't find a daemon to kill.
+------------------------------------------------------------
+revno: 495
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Tue 2009-12-29 21:01:59 -0500
+message:
+  Cleaned up the wicd-curses code, pruned the documentation of old stuff, and removed the -c/-r options from wicd-curses, since only -r works.
+------------------------------------------------------------
+revno: 494
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Tue 2009-12-29 20:50:31 -0500
+message:
+  Added a command-line argument to the wicd daemon that will disconnect active connections before terminating the daemon.
+------------------------------------------------------------
+revno: 493
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Tue 2009-12-29 14:36:03 -1000
+message:
+  added code to make the network properties dialog box resizable
+------------------------------------------------------------
+revno: 492
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Tue 2009-12-29 12:09:42 -1000
+message:
+  backup and restore user's resolv.conf on start/exit
+------------------------------------------------------------
+revno: 491
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Tue 2009-12-29 11:11:14 -1000
+message:
+  save the wireless network profile when connecting in order to save hidden essids
+------------------------------------------------------------
+revno: 490
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Mon 2009-12-28 10:21:18 -1000
+message:
+  expose methods for getting a list of interfaces over DBus
+------------------------------------------------------------
+revno: 489
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Sun 2009-12-27 22:22:09 -0500
+message:
+  Use the system python instead of a local one (which may be referenced inside the scripts that call wicd).  Thanks to Russel O'Connor.
+------------------------------------------------------------
+revno: 488
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-23 16:51:19 -1000
+message:
+  updated version number, CHANGES, and NEWS
+------------------------------------------------------------
+revno: 487
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Wed 2009-12-23 16:48:39 -1000
+message:
+  add support for copying dhclient.conf.template from a default file if it isn't found
+------------------------------------------------------------
+revno: 486
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Tue 2009-12-22 18:48:43 -1000
+message:
+  added dhclient.conf.template and made setup.py install it
+------------------------------------------------------------
+revno: 485
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Mon 2009-12-14 16:21:02 -0500
+message:
+  Fix crash on accessing preferences.
+------------------------------------------------------------
+revno: 484
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Tue 2009-12-01 23:35:45 -0500
+message:
+  Remove the 'wired' wpa_supplicant driver from the list of drivers returned from
+  GetWpaSupplicantDrivers().
+------------------------------------------------------------
+revno: 483
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Tue 2009-12-01 23:24:48 -0500
+message:
+  Improved compatibility with the init system in Fedora/RHEL/CentOS.
+------------------------------------------------------------
+revno: 482
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Tue 2009-12-01 20:59:27 -0600
+message:
+  updated version number, CHANGES, and NEWS for release
+------------------------------------------------------------
+revno: 481
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Mon 2009-11-30 12:14:45 -0500
+message:
+  Some wicd-curses cleanup.
+------------------------------------------------------------
+revno: 480 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Thu 2009-11-26 21:43:15 -0600
+message:
+  merged optional-dhcp-hostnames to make optional hostnames work in the daemon
+------------------------------------------------------------
+revno: 479
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: 1.7
+timestamp: Thu 2009-11-26 21:42:39 -0600
+message:
+  add checkbox to GTK UI to make using the DHCP Hostname optional
+------------------------------------------------------------
+revno: 478 [merge]
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Thu 2009-11-26 00:05:03 -0500
+message:
+  Merge in Adam's dhclient-hostname stuff, and fix up the dhcphostname KeyError.
+------------------------------------------------------------
+revno: 477 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Wed 2009-11-25 21:27:29 -0600
+message:
+  merged Erik de Castro Lopo's branch to allow multiple configuration files
+------------------------------------------------------------
+revno: 476
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Tue 2009-11-24 00:27:41 -0500
+message:
+  Make pinging wireless access points when using static gateways optional.
+------------------------------------------------------------
+revno: 475
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Mon 2009-11-23 12:22:43 -0600
+message:
+  make sure that disconnect scripts are run when the connection is dropped
+------------------------------------------------------------
+revno: 474
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Mon 2009-11-23 11:43:50 -0600
+message:
+  make setting the essid work even if the essid is a reserved word
+------------------------------------------------------------
+revno: 473
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Mon 2009-11-23 11:01:32 -0600
+message:
+  fixed incorrect translation when using a wired network
+------------------------------------------------------------
+revno: 472
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Sat 2009-11-21 22:08:33 -0600
+message:
+  updated setup.py, NEWS, and CHANGES
+------------------------------------------------------------
+revno: 471
+committer: Andrew Psaltis <ampsaltis@gmail.com>
+branch nick: 1.6
+timestamp: Sat 2009-11-21 18:27:41 -0500
+message:
+  Fix dhcp hostname bug in wicd-curses, and fix a small formatting issue.
+------------------------------------------------------------
+revno: 470 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Sat 2009-11-21 12:06:46 -0600
+message:
+  merged optionalgui
+------------------------------------------------------------
+revno: 469 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Sat 2009-11-21 11:56:03 -0600
+message:
+  merged cli_integration
+------------------------------------------------------------
+revno: 468 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Sat 2009-11-21 11:55:50 -0600
+message:
+  merged connection-info
+------------------------------------------------------------
+revno: 467 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Sat 2009-11-21 11:47:02 -0600
+message:
+  merged dhcp-hostnames
+------------------------------------------------------------
+revno: 466 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Sat 2009-11-21 11:03:28 -0600
+message:
+  merged global-parameters
+------------------------------------------------------------
+revno: 465 [merge]
+committer: Adam Blackburn <compwiz18@gmail.com>
+branch nick: wicd
+timestamp: Sat 2009-11-21 11:02:56 -0600
+message:
+  merged wired-while-scanning
+------------------------------------------------------------
+revno: 464
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Sun 2009-11-01 15:22:45 -0500
+message:
+  Retry AP association verification 10 times to accomodate cards that are slow to associate.  Thanks to muttoni for the patch.
+------------------------------------------------------------
+revno: 463
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Fri 2009-10-30 23:52:30 -0400
+message:
+  Determine valid wpa_supplicant drivers by parsing the list from wpa_supplicant, rather than comparing it's output to a static list of possible drivers.
+------------------------------------------------------------
+revno: 462
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Sat 2009-10-24 01:03:29 -0400
+message:
+  Handle essids that are made up of numbers.  Thanks to anish for the patch.
 ------------------------------------------------------------
 revno: 461
-committer: Adam Blackburn <compwiz18@gmail.com>
+committer: Andrew Psaltis <ampsaltis@gmail.com>
 branch nick: 1.6
-timestamp: Mon 2009-08-31 22:57:35 -0500
+timestamp: Tue 2009-09-29 12:38:11 -0400
 message:
-  fixed the essid pattern regular expression
+  Remove uses of ternary operator from wicd-curses, restoring support for python 2.4.
 ------------------------------------------------------------
 revno: 460
-committer: Adam Blackburn <compwiz18@gmail.com>
+committer: Andrew Psaltis <ampsaltis@gmail.com>
 branch nick: 1.6
-timestamp: Tue 2009-08-25 22:44:52 -0500
+timestamp: Sun 2009-09-27 17:35:26 -0400
 message:
-  updated version number to 1.6.2.1
+  Reduce cursor flicker in wicd-curses.
 ------------------------------------------------------------
 revno: 459
-committer: Adam Blackburn <compwiz18@gmail.com>
-branch nick: 1.6
-timestamp: Tue 2009-08-25 22:33:50 -0500
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Sat 2009-09-19 17:24:40 -0400
 message:
-  updated CHANGES and NEWS
+  Still trying to get rid of this empty wired-settings.conf section bug.
 ------------------------------------------------------------
 revno: 458
-committer: Adam Blackburn <compwiz18@gmail.com>
-branch nick: 1.6
-timestamp: Tue 2009-08-25 22:29:03 -0500
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Sat 2009-09-19 14:58:00 -0400
 message:
-  applied hidden essid fixing patches
+  chmod to 0755, not 755. Fixes LP #431304
 ------------------------------------------------------------
 revno: 457
-committer: Adam Blackburn <compwiz18@gmail.com>
-branch nick: 1.6
-timestamp: Tue 2009-08-25 22:25:44 -0500
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Thu 2009-09-10 19:43:26 -0400
 message:
-  fix problem that occurs if iwlist scan output has multiple ESSID entries
+  Fix for crash when trying to connect to an essid with all numeric characters.
 ------------------------------------------------------------
 revno: 456
-committer: Adam Blackburn <compwiz18@gmail.com>
+committer: Andrew Psaltis <ampsaltis@gmail.com>
 branch nick: 1.6
-timestamp: Tue 2009-08-25 22:25:19 -0500
+timestamp: Wed 2009-09-02 10:20:13 -0400
 message:
-  applied patch to fix sudo in prefs.py
+  Adjusted the keystrokes in wicd-curses to support 8-bit terminals (like xterms by default).
+  
+  Thanks to DarkStarSword for the patch.
 ------------------------------------------------------------
 revno: 455
-committer: Adam Blackburn <compwiz18@gmail.com>
-branch nick: 1.6
-timestamp: Tue 2009-08-25 22:24:45 -0500
+committer: Dan O'Reilly <oreilldf@gmail.com>
+branch nick: trunk
+timestamp: Fri 2009-08-28 19:47:55 -0400
 message:
-  reverted to revision 436 (1.6.2)
+  Wait for the network interface to finish coming up before moving on during the connection process.
+  Use a dict instead of if/elifs in StartDHCP() method.
 ------------------------------------------------------------
 revno: 454
 committer: Adam Blackburn <compwiz18@gmail.com>

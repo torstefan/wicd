@@ -3,8 +3,8 @@
 
 """ wicd-curses. (curses/urwid-based) console interface to wicd
 
-Provides the a console UI for wicd, so that people with broken X servers can
-at least get a network connection.  Or those who don't like using X.  ;-)
+Provides a console UI for wicd, so that people with broken X servers can
+at least get a network connection.  Or those who don't like using X and/or GTK.
 
 """
 
@@ -94,7 +94,6 @@ def wrap_exceptions(func):
                 print >> sys.stderr, "\n"+language['terminated']
                 #raise
             except DBusException:
-                #gobject.source_remove(redraw_tag)
                 loop.quit()
                 ui.stop()
                 print >> sys.stderr,"\n"+language['dbus_fail']
@@ -111,7 +110,6 @@ def wrap_exceptions(func):
                 # backtrace
                 sys.stdout.flush()
                 # Raise the exception
-                #sleep(2)
                 raise
 
     wrapper.__name__ = func.__name__
@@ -164,7 +162,7 @@ def check_for_wireless(iwconfig, wireless_ip, set_status):
 
 # Generate the list of networks.
 # Mostly borrowed/stolen from wpa_cli, since I had no clue what all of those
-# DBUS interfaces do.  ^_^
+# DBUS interfaces do. :P
 # Whatever calls this must be exception-wrapped if it is run if the UI is up
 def gen_network_list():
     wiredL = wired.GetWiredProfileList()
@@ -192,9 +190,9 @@ def about_dialog(body):
 ('green',"\\||  \\\\")," |+| ",('green',"//  ||/    \n"),
 ('green'," \\\\\\"),"    |+|    ",('green',"///"),"      http://wicd.net\n",
 ('green',"  \\\\\\"),"   |+|   ",('green',"///"),"      ",language["brought_to_you"],"\n",
-('green',"   \\\\\\"),"  |+|  ",('green',"///"),"       Adam Blackburn (wicd)\n",
-"     ___|+|___         Dan O'Reilly   (wicd)\n",
-"    |---------|        Andrew Psaltis (this ui)\n",
+('green',"   \\\\\\"),"  |+|  ",('green',"///"),"       Adam Blackburn\n",
+"     ___|+|___         Dan O'Reilly\n",
+"    |---------|        Andrew Psaltis\n",
 "-----------------------------------------------------"]
     about = TextDialog(theText,16,55,header=('header','About Wicd'))
     about.run(ui,body)
@@ -254,9 +252,14 @@ def help_dialog(body):
 
 def run_configscript(parent,netname,nettype):
     configfile = wpath.etc+netname+'-settings.conf'
-    header = 'profile' if nettype == 'wired' else 'BSSID'
-    profname = netname if nettype == 'wired' else wireless.GetWirelessProperty(
-            int(netname),'bssid')
+    if nettype != 'wired':
+        header = 'profile'
+    else:
+        header ='BSSID'
+    if nettype == 'wired':
+        profname = nettype
+    else:
+        profname = wireless.GetWirelessProperty( int(netname),'bssid')
     theText = [ 
             language['cannot_edit_scripts_1'].replace('$A',configfile).replace('$B',header),
 "\n\n["+profname+"]\n\n",
@@ -329,7 +332,12 @@ class NetLabel(urwid.WidgetWrap):
                 str(wireless.GetWirelessProperty(id, strenstr)))
         self.essid = wireless.GetWirelessProperty(id, 'essid')
         self.bssid = wireless.GetWirelessProperty(id, 'bssid')
-        self.encrypt = wireless.GetWirelessProperty(id,'encryption_method') if wireless.GetWirelessProperty(id, 'encryption') else language['unsecured']
+
+        if wireless.GetWirelessProperty(id, 'encryption'):
+            self.encrypt = wireless.GetWirelessProperty(id,'encryption_method')
+        else:
+            self.encrypt = language['unsecured']
+
         self.mode  = wireless.GetWirelessProperty(id, 'mode') # Master, Ad-Hoc
         self.channel = wireless.GetWirelessProperty(id, 'channel')
         theString = '  %-*s %25s %9s %17s %6s %4s' % (gap,
@@ -383,18 +391,24 @@ class WiredComboBox(ComboBox):
 
     def keypress(self,size,key):
         prev_focus = self.get_focus()[1]
-        key = self.__super.keypress(size,key)
-        if self.get_focus()[1] == len(self.list)-1:
-            dialog = InputDialog(('header',language["add_new_wired_profile"]),7,30)
-            
-            exitcode,name = dialog.run(ui,self.parent)
-            if exitcode == 0:
-                wired.CreateWiredNetworkProfile(name,False)
-                self.set_list(wired.GetWiredProfileList())
-                self.rebuild_combobox()
-            self.set_focus(prev_focus)
-        else:
-            wired.ReadWiredNetworkProfile(self.get_selected_profile())
+        key = ComboBox.keypress(self,size,key)
+        if key == ' ':
+            if self.get_focus()[1] == len(self.list)-1:
+                dialog = InputDialog(('header',language["add_new_wired_profile"]),7,30)
+                exitcode,name = dialog.run(ui,self.parent)
+                if exitcode == 0:
+                    name = name.strip()
+                    if not name:
+                        error(ui,self.parent,'Invalid profile name')
+                        self.set_focus(prev_focus)
+                        return key
+
+                    wired.CreateWiredNetworkProfile(name,False)
+                    self.set_list(wired.GetWiredProfileList())
+                    self.rebuild_combobox()
+                self.set_focus(prev_focus)
+            else:
+                wired.ReadWiredNetworkProfile(self.get_selected_profile())
         if key == 'delete':
             if len(self.theList) == 1:
                 error(self.ui,self.parent,language["no_delete_last_profile"])
@@ -455,10 +469,7 @@ class AdHocDialog(Dialog2):
 
         l = [self.essid_edit,self.ip_edit,self.channel_edit,blank,
                 self.use_ics_chkb,self.use_encrypt_chkb,self.key_edit]
-        #for line in text:
-        #    l.append( urwid.Text( line,align=align))
         body = urwid.ListBox(l)
-        #body = urwid.AttrWrap(body, 'body')
 
         header = ('header',language['create_adhoc_network'])
         Dialog2.__init__(self, header, 15, 50, body)
@@ -480,12 +491,11 @@ class AdHocDialog(Dialog2):
             self.view.keypress( size, k )
     def on_exit(self,exitcode):
         data = ( self.essid_edit.get_edit_text(),
-                 self.ip_edit.get_edit_text(),
+                 self.ip_edit.get_edit_text().strip(),
                  self.channel_edit.get_edit_text(),
                  self.use_ics_chkb.get_state(),
                  self.use_encrypt_chkb.get_state(),
                  self.key_edit.get_edit_text())
-
         return exitcode, data
 
 ########################################
@@ -510,11 +520,14 @@ class appGUI():
         self.list_header=urwid.AttrWrap(urwid.Text(gen_list_header()),'listbar')
         self.wlessH=NSelListBox([urwid.Text("Wireless Network(s)"),self.list_header])
 
+        # Init this earlier to make update_status happy
+        self.update_tag = None
+
         # FIXME: This should be two variables
         self.focusloc = [1,0]
 
         # These are empty to make sure that things go my way.
-        wiredL,wlessL = [],[]# = gen_network_list()
+        wiredL,wlessL = [],[]
 
         self.frame = None
         self.diag = None
@@ -540,7 +553,7 @@ class appGUI():
         self.primaryCols = OptCols(keys,self.handle_keys)
         self.time_label = \
                   urwid.AttrWrap(urwid.Text(strftime('%H:%M:%S')), 'timebar')
-        self.status_label = urwid.AttrWrap(urwid.Text('blah'),'important')
+        self.status_label = urwid.AttrWrap(urwid.Text(''),'important')
         self.footer2 = urwid.Columns([self.status_label,('fixed', 8, self.time_label)])
         self.footerList = urwid.Pile([self.primaryCols,self.footer2])
 
@@ -565,17 +578,19 @@ class appGUI():
 
         self.update_status()
 
+        #self.max_wait = ui.max_wait
+
     def doScan(self, sync=False):
         self.scanning = True
         wireless.Scan(False)
 
     def init_other_optcols(self):
         # The "tabbed" preferences dialog
-        self.prefCols = OptCols( [ ('meta enter','OK'),
-                                   ('meta [','Tab Left',),
-                                   ('meta ]','Tab Right'),
+        self.prefCols = OptCols( [ ('f10','OK'),
+                                   ('page up','Tab Left',),
+                                   ('page down', 'Tab Right'),
                                    ('esc','Cancel') ], self.handle_keys)
-        self.confCols = OptCols( [ ('meta enter','OK'),
+        self.confCols = OptCols( [ ('f10','OK'),
                                    ('esc','Cancel') ],self.handle_keys)
 
     # Does what it says it does
@@ -694,7 +709,7 @@ class appGUI():
         if self.connecting: 
             if not self.conn_status:
                 self.conn_status = True
-                gobject.idle_add(self.set_connecting_status,fast)
+                gobject.timeout_add(250,self.set_connecting_status,fast)
             return True
         else:
             if check_for_wired(wired.GetWiredIP(''),self.set_status):
@@ -756,6 +771,7 @@ class appGUI():
             self.tcount+=1
             toAppend=self.twirl[self.tcount % 4]
         self.status_label.set_text(text+' '+toAppend)
+        self.update_ui()
         return True
 
     # Make sure the screen is still working by providing a pretty counter.
@@ -764,10 +780,9 @@ class appGUI():
     #@wrap_exceptions
     def update_time(self):
         self.time_label.set_text(strftime('%H:%M:%S'))
+        self.update_ui()
         return True
 
-    # Yeah, I'm copying code.  Anything wrong with that?
-    #@wrap_exceptions
     def dbus_scan_finished(self):
         # I'm pretty sure that I'll need this later.
         #if not self.connecting:
@@ -775,8 +790,6 @@ class appGUI():
         self.unlock_screen()
         self.scanning = False
 
-    # Same, same, same, same, same, same
-    #@wrap_exceptions
     def dbus_scan_started(self):
         self.scanning = True
         if self.diag_type == 'conf':
@@ -890,7 +903,7 @@ class appGUI():
                 if  k == 'esc' or k == 'q' or k == 'Q':
                     self.restore_primary()
                     break
-                if k == 'meta enter':
+                if k == 'f10':
                     self.diag.save_settings()
                     self.restore_primary()
                     break
@@ -898,34 +911,37 @@ class appGUI():
                 self.size = ui.get_cols_rows()
                 continue
 
+    def call_update_ui(self,source,cb_condition):
+        self.update_ui(True)
+        return True
+
     # Redraw the screen
     @wrap_exceptions
-    def update_ui(self):
-        #self.update_status()
-        canvas = self.frame.render( (self.size),True )
-        ###  GRRRRRRRRRRRRRRRRRRRRR           ->^^^^
-        # It looks like if I want to get the statusbar to update itself
-        # continuously, I would have to use overlay the canvasses and redirect
-        # the input.  I'll try to get that working at a later time, if people
-        # want that "feature".
-        #canvaso = urwid.CanvasOverlay(self.dialog.render( (80,20),True),canvas,0,1)
-        # If the screen is turned off for some reason, don't even try to do the
-        # rest of the stuff.
+    def update_ui(self,from_key=False):
         if not ui._started:
             return False
+        canvas = self.frame.render( (self.size),True )
+
+        # Update the screen
         ui.draw_screen((self.size),canvas)
-        keys = ui.get_input()
-        self.handle_keys(keys)
-            
-        return True
+        # Get the input data
+        input_data = ui.get_input_nonblocking()
+        max_wait = input_data[0]
+        keys = input_data[1]
+
+        # Resolve any "alarms" in the waiting
+        if self.update_tag != None:
+            gobject.source_remove(self.update_tag)
+        if from_key:
+            max_wait = 20
+            self.update_tag = gobject.timeout_add(max_wait, \
+                    self.update_ui,True)
+            self.handle_keys(keys)
+        return False
 
     def connect(self, nettype, networkid, networkentry=None):
         """ Initiates the connection process in the daemon. """
         if nettype == "wireless":
-            #if not self.check_encryption_valid(networkid,
-            #                                   networkentry.advanced_dialog):
-            #    self.edit_advanced(None, None, nettype, networkid, networkentry)
-            #    return False
             wireless.ConnectWireless(networkid)
         elif nettype == "wired":
             wired.ConnectWired()
@@ -937,18 +953,11 @@ class appGUI():
 
 def main():
     global ui, dlogger
-    # We are _not_ python.
+    # We are not python.
     misc.RenameProcess('wicd-curses')
 
-    # Import the screen based on whatever the user picked.
-    # The raw_display will have some features that may be useful to users
-    # later
-    if options.screen == 'raw':
-        import urwid.raw_display
-        ui = urwid.raw_display.Screen()
-    elif options.screen == 'curses':
-        import urwid.curses_display
-        ui = urwid.curses_display.Screen()
+    import urwid.raw_display
+    ui = urwid.raw_display.Screen()
 
     #if options.debug:
     #    dlogger = logging.getLogger("Debug")
@@ -1001,17 +1010,21 @@ def run():
     # I've left this commented out many times.
     bus.add_signal_receiver(app.update_netlist, 'StatusChanged',
                             'org.wicd.daemon')
-    # Update what the interface looks like as an idle function
-    gobject.idle_add(app.update_ui)
     # Update the connection status on the bottom every 1.5 s.
     gobject.timeout_add(2000,app.update_status)
     # This will make sure that it is updated on the second.
     gobject.timeout_add(500,app.update_time)
+
+    app.update_ui()
+    # Get input file descriptors and add callbacks to the ui-updating function
+    fds = ui.get_input_descriptors()
+    for fd in fds:
+        gobject.io_add_watch(fd, gobject.IO_IN,app.call_update_ui)
     loop.run()
 
 # Mostly borrowed from gui.py
 def setup_dbus(force=True):
-    global bus, daemon, wireless, wired, DBUS_AVAIL
+    global bus, daemon, wireless, wired
     try:
         dbusmanager.connect_to_dbus()
     except DBusException:
@@ -1025,8 +1038,6 @@ def setup_dbus(force=True):
     daemon = dbus_ifaces['daemon']
     wireless = dbus_ifaces['wireless']
     wired = dbus_ifaces['wired']
-    DBUS_AVAIL = True
-    
 
     netentry_curses.dbus_init(dbus_ifaces)
     return True
@@ -1045,14 +1056,7 @@ if __name__ == '__main__':
             sys.exit(1)
         else:
             raise
-    parser.set_defaults(screen='raw',debug=False)
-    parser.add_option("-r", "--raw-screen",action="store_const",const='raw'
-            ,dest='screen',help="use urwid's raw screen controller (default)")
-    parser.add_option("-c", "--curses-screen",action="store_const",const='curses',dest='screen',help="use urwid's curses screen controller")
-    parser.add_option("-d", "--debug",action="store_true"
-            ,dest='debug',help="enable logging of wicd-curses (currently does nothing)")
+    #parser.add_option("-d", "--debug",action="store_true"
+    #        ,dest='debug',help="enable logging of wicd-curses (currently does nothing)")
     (options,args) = parser.parse_args()
     main()
-    # Make sure that the terminal does not try to overwrite the last line of
-    # the program, so that everything looks pretty.
-    #print ""

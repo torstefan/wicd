@@ -26,7 +26,7 @@ import subprocess
 
 # Be sure to keep this updated!
 # VERSIONNUMBER
-VERSION_NUM = '1.6.2.2'
+VERSION_NUM = '1.7.0b3'
 # REVISION_NUM is automatically updated
 REVISION_NUM = 'unknown'
 CURSES_REVNO = 'uimod'
@@ -56,11 +56,16 @@ class configure(Command):
         ('share=', None, 'set the share directory'),
         ('etc=', None, 'set the etc directory'),
         ('scripts=', None, 'set the global scripts directory'),
+        ('pixmaps=', None, 'set the pixmaps directory'),
         ('images=', None, 'set the image directory'),
         ('encryption=', None, 'set the encryption template directory'),
         ('bin=', None, 'set the bin directory'),
         ('sbin=', None, 'set the sbin directory'),
         ('backends=', None, 'set the backend storage directory'),
+        ('daemon=', None, 'set the daemon directory'),
+        ('curses=', None, 'set the curses UI directory'),
+        ('gtk=', None, 'set the GTK UI directory'),
+        ('cli=', None, 'set the CLI directory'),
         ('networks=', None, 'set the encryption configuration directory'),
         ('log=', None, 'set the log directory'),
         ('resume=', None, 'set the directory the resume from suspend script is stored in'),
@@ -92,12 +97,15 @@ class configure(Command):
 
         # Configure switches
         ('no-install-init', None, "do not install the init file"),
-        ('no-install-man', None, 'do not install the man file'),
+        ('no-install-man', None, 'do not install the man files'),
+        ('no-install-i18n-man', None, 'do not install the translated man files'),
         ('no-install-kde', None, 'do not install the kde autostart file'),
         ('no-install-acpi', None, 'do not install the suspend.d and resume.d acpi scripts'),
         ('no-install-pmutils', None, 'do not install the pm-utils hooks'),
         ('no-install-docs', None, 'do not install the auxiliary documentation'),
         ('no-install-ncurses', None, 'do not install the ncurses client'),
+        ('no-install-cli', None, 'do not install the command line executable'),
+        ('no-install-gtk', None, 'do not install the gtk client'),
         ('no-use-notifications', None, 'do not ever allow the use of libnotify notifications')
         ]
         
@@ -107,11 +115,16 @@ class configure(Command):
         self.etc = '/etc/wicd/'
         self.scripts = self.etc + "scripts/"
         self.icons = '/usr/share/icons/hicolor/'
-        self.images = '/usr/share/pixmaps/wicd/'
+        self.pixmaps = '/usr/share/pixmaps/'
+        self.images = self.pixmaps + 'wicd/'
         self.encryption = self.etc + 'encryption/templates/'
         self.bin = '/usr/bin/'
         self.sbin = '/usr/sbin/'
-        self.backends = self.lib + 'backends'
+        self.daemon = self.share + 'daemon'
+        self.backends = self.share + 'backends'
+        self.curses = self.share + 'curses'
+        self.gtk = self.share + 'gtk'
+        self.cli = self.share + 'cli'
         self.varlib = '/var/lib/wicd/'
         self.networks = self.varlib + 'configurations/'
         self.log = '/var/log/wicd/'
@@ -129,11 +142,14 @@ class configure(Command):
         
         self.no_install_init = False
         self.no_install_man = False
+        self.no_install_i18n_man = False
         self.no_install_kde = False
         self.no_install_acpi = False
         self.no_install_pmutils = False
         self.no_install_docs = False
+        self.no_install_gtk = False
         self.no_install_ncurses = False
+        self.no_install_cli = False
         self.no_use_notifications = False
 
         # Determine the default init file location on several different distros
@@ -234,12 +250,14 @@ class configure(Command):
         elif self.distro in ['redhat','centos','fedora']:
             self.init = '/etc/rc.d/init.d/'
             self.initfile = 'init/redhat/wicd'
+            self.pidfile = '/var/run/wicd.pid'
         elif self.distro in ['slackware','slamd64','bluewhite64']:
             self.init = '/etc/rc.d/'
             self.initfile = 'init/slackware/rc.wicd'
             self.docdir = '/usr/doc/wicd-%s' % VERSION_NUM
             self.mandir = '/usr/man/'
             self.no_install_acpi = True
+            self.wicdgroup = "netdev"
         elif self.distro in ['debian']:
             self.wicdgroup = "netdev"
             self.loggroup = "adm"
@@ -319,6 +337,10 @@ class configure(Command):
                 original_name = os.path.join('in',item)
                 item_in = open(original_name, 'r')
                 final_name = item[:-3].replace('=','/')
+                parent_dir = os.path.dirname(final_name)
+                if parent_dir and not os.path.exists(parent_dir):
+                    print '(mkdir %s)'%parent_dir,
+                    os.makedirs(parent_dir)
                 print final_name
                 item_out = open(final_name, 'w')
                 for line in item_in.readlines():
@@ -458,53 +480,74 @@ message. It is probably because you haven't run python setup.py
 configure yet or you are running it for the first time.'''
 
 data = []
+py_modules=['wicd.networking','wicd.misc','wicd.wnettools',
+           'wicd.wpath','wicd.dbusmanager',
+           'wicd.logfile','wicd.backend','wicd.configmanager',
+           'wicd.translations']
 
 try:
     print "Using init file",(wpath.init, wpath.initfile)
     data = [
     (wpath.dbus, ['other/wicd.conf']),
-    (wpath.desktop, ['other/wicd.desktop']),
     (wpath.log, []), 
-    (wpath.etc, []),
-    (wpath.icons + 'scalable/apps/', ['icons/scalable/wicd-client.svg']),
-    (wpath.icons + '192x192/apps/', ['icons/192px/wicd-client.png']),
-    (wpath.icons + '128x128/apps/', ['icons/128px/wicd-client.png']),
-    (wpath.icons + '96x96/apps/', ['icons/96px/wicd-client.png']),
-    (wpath.icons + '72x72/apps/', ['icons/72px/wicd-client.png']),
-    (wpath.icons + '64x64/apps/', ['icons/64px/wicd-client.png']),
-    (wpath.icons + '48x48/apps/', ['icons/48px/wicd-client.png']),
-    (wpath.icons + '36x36/apps/', ['icons/36px/wicd-client.png']),
-    (wpath.icons + '32x32/apps/', ['icons/32px/wicd-client.png']),
-    (wpath.icons + '24x24/apps/', ['icons/24px/wicd-client.png']),
-    (wpath.icons + '22x22/apps/', ['icons/22px/wicd-client.png']),
-    (wpath.icons + '16x16/apps/', ['icons/16px/wicd-client.png']),
-    (wpath.images, [('images/' + b) for b in os.listdir('images') if not b.startswith('.')]),
+    (wpath.etc, ['other/dhclient.conf.template.default']),
     (wpath.encryption, [('encryption/templates/' + b) for b in 
                         os.listdir('encryption/templates') if not b.startswith('.')]),
     (wpath.networks, []),
-    (wpath.bin, ['scripts/wicd-client', ]), 
-    (wpath.sbin,  ['scripts/wicd', ]),  
-    (wpath.share, ['data/wicd.glade', ]),
-    (wpath.lib, ['wicd/wicd-client.py', 'wicd/monitor.py',
-                 'wicd/wicd-daemon.py', 'wicd/configscript.py',
+    (wpath.sbin,  ['scripts/wicd']),  
+    (wpath.daemon, ['wicd/monitor.py', 'wicd/wicd-daemon.py',
                  'wicd/suspend.py', 'wicd/autoconnect.py']), 
     (wpath.backends, ['wicd/backends/be-external.py', 'wicd/backends/be-ioctl.py']),
-    (wpath.autostart, ['other/wicd-tray.desktop', ]),
     (wpath.scripts, []),
     (wpath.predisconnectscripts, []),
     (wpath.postdisconnectscripts, []),
     (wpath.preconnectscripts, []),
     (wpath.postconnectscripts, []),
     ]
+    if not wpath.no_install_gtk:
+        data.append((wpath.desktop, ['other/wicd.desktop']))
+        data.append((wpath.bin, ['scripts/wicd-client']))
+        data.append((wpath.bin, ['scripts/wicd-gtk']))
+        data.append((wpath.gtk, ['gtk/wicd-client.py', 'gtk/netentry.py', 'gtk/prefs.py',
+                                 'gtk/gui.py', 'gtk/guiutil.py', 'data/wicd.glade',
+                                 'gtk/configscript.py']))
+        data.append((wpath.autostart, ['other/wicd-tray.desktop']))
+        if not wpath.no_install_man:
+            data.append((wpath.mandir + 'man1/', [ 'man/wicd-client.1' ]))
+        data.append((wpath.icons + 'scalable/apps/', ['icons/scalable/wicd-gtk.svg']))
+        data.append((wpath.icons + '192x192/apps/', ['icons/192px/wicd-gtk.png']))
+        data.append((wpath.icons + '128x128/apps/', ['icons/128px/wicd-gtk.png']))
+        data.append((wpath.icons + '96x96/apps/', ['icons/96px/wicd-gtk.png']))
+        data.append((wpath.icons + '72x72/apps/', ['icons/72px/wicd-gtk.png']))
+        data.append((wpath.icons + '64x64/apps/', ['icons/64px/wicd-gtk.png']))
+        data.append((wpath.icons + '48x48/apps/', ['icons/48px/wicd-gtk.png']))
+        data.append((wpath.icons + '36x36/apps/', ['icons/36px/wicd-gtk.png']))
+        data.append((wpath.icons + '32x32/apps/', ['icons/32px/wicd-gtk.png']))
+        data.append((wpath.icons + '24x24/apps/', ['icons/24px/wicd-gtk.png']))
+        data.append((wpath.icons + '22x22/apps/', ['icons/22px/wicd-gtk.png']))
+        data.append((wpath.icons + '16x16/apps/', ['icons/16px/wicd-gtk.png']))
+        data.append((wpath.images, [('images/' + b) for b in os.listdir('images') if not b.startswith('.')]))
+        data.append((wpath.pixmaps, ['other/wicd-gtk.xpm']))
     if not wpath.no_install_ncurses:
-        data.append((wpath.lib, ['curses/curses_misc.py']))
-        data.append((wpath.lib, ['curses/prefs_curses.py']))
-        data.append((wpath.lib, ['curses/wicd-curses.py']))
-        data.append((wpath.lib, ['curses/netentry_curses.py']))
-        data.append((wpath.lib, ['curses/configscript_curses.py']))
+        data.append((wpath.curses, ['curses/curses_misc.py']))
+        data.append((wpath.curses, ['curses/prefs_curses.py']))
+        data.append((wpath.curses, ['curses/wicd-curses.py']))
+        data.append((wpath.curses, ['curses/netentry_curses.py']))
+        data.append((wpath.curses, ['curses/configscript_curses.py']))
         data.append((wpath.bin, ['scripts/wicd-curses'])) 
         if not wpath.no_install_man:
             data.append(( wpath.mandir + 'man8/', ['man/wicd-curses.8'])) 
+        if not wpath.no_install_man and not wpath.no_install_i18n_man:
+            data.append(( wpath.mandir + 'nl/man8/', ['man/nl/wicd-curses.8'])) 
+        if not wpath.no_install_docs:
+            data.append(( wpath.docdir, ['curses/README.curses'])) 
+    if not wpath.no_install_cli:
+        data.append((wpath.cli, ['cli/wicd-cli.py']))
+        data.append((wpath.bin, ['scripts/wicd-cli'])) 
+        if not wpath.no_install_man:
+            data.append(( wpath.mandir + 'man8/', ['man/wicd-cli.8'])) 
+        if not wpath.no_install_docs:
+            data.append(( wpath.docdir, ['cli/README.cli'])) 
     piddir = os.path.dirname(wpath.pidfile)
     if not piddir.endswith('/'):
         piddir += '/'
@@ -513,7 +556,8 @@ try:
                                      'README', 'CHANGES', ]))
         data.append((wpath.varlib, ['other/WHEREAREMYFILES']))
     if not wpath.no_install_kde:
-        data.append((wpath.kdedir, ['other/wicd-tray.desktop']))
+        if not wpath.no_install_gtk:
+            data.append((wpath.kdedir, ['other/wicd-tray.desktop']))
     if not wpath.no_install_init:
         data.append((wpath.init, [ wpath.initfile ]))
     if not wpath.no_install_man:
@@ -522,11 +566,18 @@ try:
         data.append((wpath.mandir + 'man5/', [ 'man/wicd-wired-settings.conf.5' ]))
         data.append((wpath.mandir + 'man5/', [ 'man/wicd-wireless-settings.conf.5' ]))
         data.append((wpath.mandir + 'man1/', [ 'man/wicd-client.1' ]))
+    if not wpath.no_install_man and not wpath.no_install_i18n_man:
+        # Dutch translations of the man
+        data.append((wpath.mandir + 'nl/man8/', [ 'man/nl/wicd.8' ]))
+        data.append((wpath.mandir + 'nl/man5/', [ 'man/nl/wicd-manager-settings.conf.5' ]))
+        data.append((wpath.mandir + 'nl/man5/', [ 'man/nl/wicd-wired-settings.conf.5' ]))
+        data.append((wpath.mandir + 'nl/man5/', [ 'man/nl/wicd-wireless-settings.conf.5' ]))
+        data.append((wpath.mandir + 'nl/man1/', [ 'man/nl/wicd-client.1' ]))
     if not wpath.no_install_acpi:
         data.append((wpath.resume, ['other/80-wicd-connect.sh' ]))
         data.append((wpath.suspend, ['other/50-wicd-suspend.sh' ]))
     if not wpath.no_install_pmutils:
-        data.append((wpath.pmutils, ['other/55wicd' ]))
+        data.append((wpath.pmutils, ['other/91wicd' ]))
     print 'Using pid path', os.path.basename(wpath.pidfile)
     print 'Language support for',
     for language in os.listdir('translations/'):
@@ -567,9 +618,6 @@ connect at startup to any preferred network within range.
       author_email="compwiz18@gmail.com, oreilldf@gmail.com, ampsaltis@gmail.com",
       url="http://wicd.net",
       license="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
-      py_modules=['wicd.networking','wicd.misc','wicd.gui','wicd.wnettools',
-                  'wicd.wpath','wicd.prefs','wicd.netentry','wicd.dbusmanager', 
-                  'wicd.logfile','wicd.backend','wicd.configmanager',
-                  'wicd.guiutil','wicd.translations'], 
+      py_modules=py_modules,
       data_files=data
       )

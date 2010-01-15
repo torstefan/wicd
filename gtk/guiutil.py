@@ -19,7 +19,7 @@
 import gtk
 import os.path
 
-import wpath
+import wicd.wpath as wpath
 
 HAS_NOTIFY = True
 try:
@@ -130,10 +130,10 @@ class LabelEntry(gtk.HBox):
         gtk.HBox.__init__(self)
         self.entry = gtk.Entry()
         self.entry.set_size_request(200, -1)
-        self.label = SmallLabel()
+        self.label = LeftAlignedLabel()
         self.label.set_text(text)
         self.label.set_size_request(170, -1)
-        self.pack_start(self.label, fill=False, expand=False)
+        self.pack_start(self.label, fill=True, expand=True)
         self.pack_start(self.entry, fill=False, expand=False)
         self.label.show()
         self.entry.show()

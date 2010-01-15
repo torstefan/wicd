@@ -1,5 +1,5 @@
 .\" First revision was r203
-.TH WICD-CURSES "8" "April 2009" "wicd-curses-%CURSES_REVNO%"
+.TH WICD-CURSES "8" "December 2009" "wicd-curses-%CURSES_REVNO%"
 .SH NAME
 .B wicd-curses
 \- curses-based wicd(8) controller
@@ -9,17 +9,6 @@ wicd-curses is a curses-based network controller that uses the Wired/Wireless In
 It is designed to imitate the GTK-based wicd-client(1) as much as possible, and uses the Urwid (http://excess.org/urwid) console widget library to vastly simplify development.
 
 This man page only documents the current status of wicd-curses.  This may/may not be the most up-to-date document.
-.SH "ARGUMENTS"
-.TP
-.BR "\-r" , " \-\-raw\-screen"
-Use Urwid's raw console display.  This is the default, and has several
-advantages over the faster curses display, inculding fully functional unicode 
-and internationalization support.
-.TP
-.BR "\-c" , " \-\-curses\-screen"
-Use Urwid's curses display.  This may be faster than the default raw
-display, but it lacks proper unicode support.  This is fine to use if your
-language of choice only uses Latin characters.
 .SH CONTROLS
 All of these are case sensitive.
 .TP
@@ -60,8 +49,6 @@ Delete the selected wired network profile (from the wired network combo box at t
 .TP
 .BR F2
 Rename the selected wired network profile (from the wired network combo box at the top)
-.\".PP
-.\"The following are not implemented yet:
 .TP
 .BR S
 .\"Bring up the script selector for the selected network (requires superuser privileges)
@@ -75,13 +62,6 @@ Raise the Ad-Hoc network creation dialog
 .I ~/.wicd/WHEREAREMYFILES
 Reminder that your network configuration files are not here ;-)
 .PP
-These following are not used yet:
-.TP
-.I %LIB%colors.py
-Tentative location of the system color schemes
-.TP
-.I ~/.wicd/colors.py
-Custom color schemes.
 .SH "SEE ALSO"
 .BR wicd-client (1),
 .BR wicd (8)
