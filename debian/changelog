@@ -1,4 +1,4 @@
-wicd (1.7.0~b3-2) UNRELEASED; urgency=low
+wicd (1.7.0-1) UNRELEASED; urgency=low
 
   * debian/patches/:
     - 14-fix_wicd-cli_dbus.patch backported from upstream rev531,
