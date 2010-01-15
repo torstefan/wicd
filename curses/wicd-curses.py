@@ -551,10 +551,8 @@ class appGUI():
                ]
 
         self.primaryCols = OptCols(keys,self.handle_keys)
-        self.time_label = \
-                  urwid.AttrWrap(urwid.Text(strftime('%H:%M:%S')), 'timebar')
         self.status_label = urwid.AttrWrap(urwid.Text(''),'important')
-        self.footer2 = urwid.Columns([self.status_label,('fixed', 8, self.time_label)])
+        self.footer2 = urwid.Columns([self.status_label])
         self.footerList = urwid.Pile([self.primaryCols,self.footer2])
 
         self.frame = urwid.Frame(self.thePile,
@@ -774,15 +772,6 @@ class appGUI():
         self.update_ui()
         return True
 
-    # Make sure the screen is still working by providing a pretty counter.
-    # Not necessary in the end, but I will be using footer1 for stuff in
-    # the long run, so I might as well put something there.
-    #@wrap_exceptions
-    def update_time(self):
-        self.time_label.set_text(strftime('%H:%M:%S'))
-        self.update_ui()
-        return True
-
     def dbus_scan_finished(self):
         # I'm pretty sure that I'll need this later.
         #if not self.connecting:
@@ -911,32 +900,27 @@ class appGUI():
                 self.size = ui.get_cols_rows()
                 continue
 
-    def call_update_ui(self,source,cb_condition):
-        self.update_ui(True)
-        return True
-
+    def call_update_ui(self,source,cb_condition):           
+        self.update_ui(True)                                
+        return True                                         
+                
     # Redraw the screen
     @wrap_exceptions
     def update_ui(self,from_key=False):
         if not ui._started:
             return False
-        canvas = self.frame.render( (self.size),True )
+
+        input_data = ui.get_input_nonblocking()
+        # Resolve any "alarms" in the waiting
+        self.handle_keys(input_data[1])
 
         # Update the screen
+        canvas = self.frame.render( (self.size),True )
         ui.draw_screen((self.size),canvas)
         # Get the input data
-        input_data = ui.get_input_nonblocking()
-        max_wait = input_data[0]
-        keys = input_data[1]
-
-        # Resolve any "alarms" in the waiting
         if self.update_tag != None:
             gobject.source_remove(self.update_tag)
-        if from_key:
-            max_wait = 20
-            self.update_tag = gobject.timeout_add(max_wait, \
-                    self.update_ui,True)
-            self.handle_keys(keys)
+        #if from_key:
         return False
 
     def connect(self, nettype, networkid, networkentry=None):
@@ -982,7 +966,6 @@ def main():
         ('editnfc','brown','default','bold'),
         ('tab active','dark green','light gray'),
         ('infobar','light gray','dark blue'),
-        ('timebar','dark gray','default'),
         ('listbar','light blue','default'),
         # Simple colors around text
         ('green','dark green','default'),
@@ -1010,16 +993,14 @@ def run():
     # I've left this commented out many times.
     bus.add_signal_receiver(app.update_netlist, 'StatusChanged',
                             'org.wicd.daemon')
-    # Update the connection status on the bottom every 1.5 s.
+    # Update the connection status on the bottom every 2 s.
     gobject.timeout_add(2000,app.update_status)
-    # This will make sure that it is updated on the second.
-    gobject.timeout_add(500,app.update_time)
 
-    app.update_ui()
     # Get input file descriptors and add callbacks to the ui-updating function
     fds = ui.get_input_descriptors()
     for fd in fds:
         gobject.io_add_watch(fd, gobject.IO_IN,app.call_update_ui)
+    app.update_ui()
     loop.run()
 
 # Mostly borrowed from gui.py
@@ -1028,11 +1009,7 @@ def setup_dbus(force=True):
     try:
         dbusmanager.connect_to_dbus()
     except DBusException:
-        # I may need to be a little more verbose here.
-        # Suggestions as to what should go here, please?
         print >> sys.stderr, language['cannot_connect_to_daemon']
-        #raise
-        # return False # <- Will need soon.
     bus = dbusmanager.get_bus()
     dbus_ifaces = dbusmanager.get_dbus_ifaces()
     daemon = dbus_ifaces['daemon']
