@@ -20,8 +20,10 @@ wicd (1.7.0-1) UNRELEASED; urgency=low
       + 10-order_scripts_directories.patch
       + 12-fix_wrong_PYTHONPATHs.patch
       + 13-fix_codesplit_remnants.patch
+  * debian/rules:
+    - remove .empty_on_purpose files from the binary packages
 
- -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 10:52:12 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 15 Jan 2010 11:11:44 +0100
 
 wicd (1.7.0~b3-1) experimental; urgency=low
 
