@@ -31,7 +31,7 @@ override_dh_auto_clean:
 	done
 
 override_dh_auto_install:
-	python setup.py install --root=$(CURDIR)/debian/tmp
+	python setup.py install --root=$(CURDIR)/debian/tmp --install-layout=deb
 	
 	find $(CURDIR)/debian/tmp -name "*.png" -exec chmod 644 {} \;
 	find $(CURDIR)/debian/tmp/etc/wicd/ -type f -exec chmod 644 {} \;
