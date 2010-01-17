@@ -46,8 +46,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  lsb-base (>= 3.2-13),
  psmisc,
  iputils-ping | inetutils-ping,
- wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client,
  python-wicd (= ${source:Version})
+Recommends: wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client,
 Suggests: pm-utils
 Conflicts: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)

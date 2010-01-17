@@ -3,8 +3,11 @@ wicd (1.7.0-2) UNRELEASED; urgency=low
   * debian/rules:
     - pass --install-layout=deb to python setup.py install
       (Closes: #565536)
+  * debian/control:
+    - break circular dependency, make wicd-daemon only Recommend the
+      clients. (Closes: #565608)
 
- -- David Paleino <dapal@debian.org>  Sat, 16 Jan 2010 21:57:55 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 17 Jan 2010 12:38:01 +0100
 
 wicd (1.7.0-1) unstable; urgency=low
 
