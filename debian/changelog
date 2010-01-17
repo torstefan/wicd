@@ -1,3 +1,12 @@
+wicd (1.7.0-3) UNRELEASED; urgency=low
+
+  * Remove .pyo and .pyc files upon package removal (Closes: #565637)
+    - debian/wicd-daemon.postrm updated
+    - debian/wicd-cli.postrm, debian/wicd-curses.postrm,
+      debian/wicd-gtk.postrm added
+
+ -- David Paleino <dapal@debian.org>  Sun, 17 Jan 2010 17:32:06 +0100
+
 wicd (1.7.0-2) unstable; urgency=low
 
   * debian/rules:
