@@ -43,7 +43,7 @@ override_dh_auto_install:
 
 override_dh_installinit:
 	dh_pysupport -i
-	dh_installinit -i --name=wicd
+	dh_installinit -i --name=wicd --restart-after-upgrade
 
 %:
 	dh --with quilt $@
