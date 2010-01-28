@@ -6,6 +6,8 @@ wicd (1.7.0-3) UNRELEASED; urgency=low
       debian/wicd-gtk.postrm added
   * debian/control:
     - removed trailing comma in wicd-daemon Recommends
+  * debian/wicd-daemon.postinst: handle upgrades from versions
+    < 1.7.0~b3-1 (Closes: #566023)
   * debian/wicd-daemon.wicd.init: correctly handle the exit code for
     the "status" command (Closes: #567070)
 
