@@ -10,8 +10,11 @@ wicd (1.7.0-3) UNRELEASED; urgency=low
     < 1.7.0~b3-1 (Closes: #566023)
   * debian/wicd-daemon.wicd.init: correctly handle the exit code for
     the "status" command (Closes: #567070)
+  * debian/patches/:
+    - 03-fix_typo_wicd-cli.patch added, fixes typo preventing
+      wicd-cli from working at all (Closes: #567665)
 
- -- David Paleino <dapal@debian.org>  Thu, 28 Jan 2010 16:37:32 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 30 Jan 2010 18:05:37 +0100
 
 wicd (1.7.0-2) unstable; urgency=low
 
