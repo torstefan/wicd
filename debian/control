@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: David Paleino <dapal@debian.org>
 Build-Depends: debhelper (>= 7.0.50~), python, quilt (>= 0.46-7~)
 Build-Depends-Indep: python-support, po-debconf
-Standards-Version: 3.8.3
+Standards-Version: 3.8.4
 Homepage: http://wicd.sourceforge.net/
 Vcs-Browser: http://git.debian.org/?p=collab-maint/wicd.git
 Vcs-Git: git://git.debian.org/collab-maint/wicd.git
