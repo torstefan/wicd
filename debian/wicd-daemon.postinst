@@ -22,13 +22,11 @@ set -e
 
 case "$1" in
     configure)
-        # This is needed for upgrades from < 1.7.0~b3-1, since in some
-        # installations wicd happens to have files in /u/*/python*/*-packages/,
-        # and this might conflict with different python-support versions.
+        # This is needed for some upgrade paths, since in some installations
+        # wicd happens to have files in /u/*/python*/*-packages/, and this
+        # makes it non-working.
         # This should be better handled but, hey, it should work.
-        [ -n "$2" ] && \
-            dpkg --compare-versions $2 lt 1.7.0~b3-1 && \
-            rm -rf /usr/*/python*/*-packages/wicd
+        rm -rf /usr/*/python*/*-packages/wicd
 
     	if [ ! $(getent group netdev) ]; then
     		addgroup --quiet --system netdev
