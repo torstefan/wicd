@@ -2,7 +2,7 @@ Source: wicd
 Section: net
 Priority: optional
 Maintainer: David Paleino <dapal@debian.org>
-Build-Depends: debhelper (>= 7.0.50~), python, quilt (>= 0.46-7~)
+Build-Depends: debhelper (>= 7.2.3~), python, quilt (>= 0.46-7~)
 Build-Depends-Indep: python-support, po-debconf
 Standards-Version: 3.8.4
 Homepage: http://wicd.sourceforge.net/

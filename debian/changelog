@@ -1,3 +1,13 @@
+wicd (1.7.0-4) UNRELEASED; urgency=low
+
+  * debian/bug-control added, let's add more info to the bugreports!
+  * debian/control:
+    - debhelper dependency bumped to >= 7.2.3~, to use dh_bugfiles
+  * debian/rules:
+    - make dh_bugfiles act on all packages
+
+ -- David Paleino <dapal@debian.org>  Thu, 18 Feb 2010 13:20:14 +0100
+
 wicd (1.7.0-3) unstable; urgency=low
 
   * Remove .pyo and .pyc files upon package removal (Closes: #565637)
