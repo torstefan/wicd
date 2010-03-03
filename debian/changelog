@@ -1,5 +1,7 @@
-wicd (1.7.0-4) UNRELEASED; urgency=low
+wicd (1.7.0+ds1-1) UNRELEASED; urgency=low
 
+  * New repacked tarball, contains translations .po files
+    (Closes: #572352)
   * debian/bug-control added, let's add more info to the bugreports!
   * debian/control:
     - debhelper dependency bumped to >= 7.2.3~, to use dh_bugfiles
@@ -8,7 +10,7 @@ wicd (1.7.0-4) UNRELEASED; urgency=low
     - add get-orig-source target, to build a package containing the
       .po files
 
- -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 21:58:51 +0100
+ -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 22:36:10 +0100
 
 wicd (1.7.0-3) unstable; urgency=low
 
