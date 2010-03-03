@@ -12,3 +12,4 @@
 19-dhcpcd_dont_handle_link-local.patch
 20-use_iniparse.patch
 21-fix_ESSID_setting.patch
+22-fix_deprecation.patch

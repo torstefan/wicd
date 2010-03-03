@@ -16,8 +16,10 @@ wicd (1.7.0+ds1-1) UNRELEASED; urgency=low
     - 21-fix_ESSID_setting.patch added, use correct command to set
       ESSID's (useful when a network is named "off" or "any")
       (Closes: #571100)
+    - 22-fix_deprecation.patch added, fixes some deprecated usage of
+      gtk.Statusbar (Closes: #571314)
 
- -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 23:36:52 +0100
+ -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 23:54:45 +0100
 
 wicd (1.7.0-3) unstable; urgency=low
 
