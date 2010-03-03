@@ -5,6 +5,7 @@ wicd (1.7.0+ds1-1) UNRELEASED; urgency=low
   * debian/bug-control added, let's add more info to the bugreports!
   * debian/control:
     - debhelper dependency bumped to >= 7.2.3~, to use dh_bugfiles
+    - added dependency on python-iniparse to wicd-daemon
   * debian/rules:
     - make dh_bugfiles act on all packages
     - add get-orig-source target, to build a package containing the
@@ -13,7 +14,7 @@ wicd (1.7.0+ds1-1) UNRELEASED; urgency=low
     - 20-use_iniparse.patch added, uses python-iniparse instead of
       standard library's ConfigParser (Closes: #568326)
 
- -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 23:22:36 +0100
+ -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 23:24:22 +0100
 
 wicd (1.7.0-3) unstable; urgency=low
 
