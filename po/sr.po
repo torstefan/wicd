@@ -1,0 +1,377 @@
+# Translations for Serbian (sr)
+# Translator ID 10
+# /translator/edit/10/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Повежи се"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Мрежна маска"
+
+msgid "Gateway"
+msgstr "Мрежни излаз"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Користи статички IP"
+
+msgid "Use Static DNS"
+msgstr "Користи статички DNS"
+
+msgid "Use Encryption"
+msgstr "Користи шифровање"
+
+msgid "Advanced Settings"
+msgstr "Напредне поставке"
+
+msgid "Wired Network"
+msgstr "Жична мрежа"
+
+msgid "Automatically connect to this network"
+msgstr "Аутоматски се повежи на ову мрежу"
+
+msgid "Secured"
+msgstr "Обезбеђена"
+
+msgid "Unsecured"
+msgstr "Необезбеђена"
+
+msgid "Channel"
+msgstr "Канал"
+
+msgid "Preferences"
+msgstr "Подешавања"
+
+msgid "WPA Supplicant Driver"
+msgstr "Драјвер WPA омогућивача"
+
+msgid "Wireless Interface"
+msgstr "Бежични интерфејс"
+
+msgid "Wired Interface"
+msgstr "Жични интерфејс"
+
+msgid "Always show wired interface"
+msgstr "Увек прикажи жични интерфејс"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Сам обнови повезивање при пуцању везе"
+
+msgid "Hidden Network"
+msgstr "Скривена мрежа"
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID скривене мреже"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Повезан са $A na $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Повезан са жичном мрежом (IP: $A)"
+
+msgid "Not connected"
+msgstr "Неповезан"
+
+msgid "No wireless networks found."
+msgstr "Нису нађене бежичне мреже"
+
+msgid "Key"
+msgstr "Кључ"
+
+msgid "Username"
+msgstr "Корисничко име"
+
+msgid "Password"
+msgstr "Лозинка"
+
+msgid "Anonymous Identity"
+msgstr "Анонимни идентитет"
+
+msgid "Identity"
+msgstr "Идентитет"
+
+msgid "Authentication"
+msgstr "Аутентификација"
+
+msgid "Path to PAC File"
+msgstr "Путања до PAC фајла"
+
+msgid "Choose from the networks below:"
+msgstr "Изаберите мреже испод:"
+
+msgid "Putting interface down..."
+msgstr "Обарам интерфејс..."
+
+msgid "Resetting IP address..."
+msgstr "Ресетујем IP адресу..."
+
+msgid "Putting interface up..."
+msgstr "Подижем интерфејс..."
+
+msgid "Removing old connection..."
+msgstr "Уклањам стару везу..."
+
+msgid "Generating PSK..."
+msgstr "Генеришем PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Правим фајл WPA подешавања..."
+
+msgid "Flushing the routing table..."
+msgstr "Празним табелу рутирања..."
+
+msgid "Configuring wireless interface..."
+msgstr "Подешавам бежични интерфејс..."
+
+msgid "Setting broadcast address..."
+msgstr "Постављам адресу емитовања..."
+
+msgid "Setting static DNS servers..."
+msgstr "Постављам статичке DNS сервере..."
+
+msgid "Setting static IP addresses..."
+msgstr "Постављам статичку IP адресу..."
+
+msgid "Obtaining IP address..."
+msgstr "Узимам IP адресу..."
+
+msgid "Done connecting..."
+msgstr "Завршено повезивање..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Да бисте се повезали са жичном мрежом, морате направити мрежни профил. Да бисте направили мрежни профил, унесите име које описује ову мрежу и кликните на Додај."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd-у је потребан приступ мрежним картама рачунара."
+
+msgid "Run script before connect"
+msgstr "Покрени скрипту пре повезивања"
+
+msgid "Run script after connect"
+msgstr "Покрени скрипту након повезивања"
+
+msgid "Scripts"
+msgstr "Скрипте"
+
+msgid "Enable debug mode"
+msgstr "Укључи режим за исправљање грешака"
+
+msgid "Use global DNS servers"
+msgstr "Користи опште DNS сервере"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Користи подразумевани профил за жично самоповезивање"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Питај за профил при жичном самоповезивању"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Користи последње коришћени профил при жичном самоповезивању"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Активирај дељење интернет везе"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Користи шифровање (само WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Користи децибеле као меру јачине сигнала"
+
+msgid "Wired connection detected"
+msgstr "Откривена је жична веза"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Привремено прекини да приказујеш искачући прозор самоповезивања"
+
+msgid "General Settings"
+msgstr "Опште поставке"
+
+msgid "External Programs"
+msgstr "Спољашњи програми"
+
+msgid "DHCP Client"
+msgstr "DHCP клијент"
+
+msgid "Wired Link Detection"
+msgstr "Откривање жичне везе"
+
+msgid "Route Table Flushing"
+msgstr "Пражњење табеле рутирања"
+
+msgid "Automatic (recommended)"
+msgstr "аутоматско (препоручено)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Ова мрежа захтева да се укључи шифровање."
+
+msgid "Required encryption information is missing."
+msgstr "Недостаје потребна информација о шифровању."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Користи ове поставке за све мреже које имају овај ESSID"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Изабери или направи жични профил за повезивање"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Неуспешно повезивање: не могу да добијем IP адресу"
+
+msgid "Connection Cancelled"
+msgstr "Отказано повезивање"
+
+msgid "Connection Failed: Bad password"
+msgstr "Неуспешно повезивање: лоша лозинка"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Укључен је прекидач за убијање бежичне везе"
+
+msgid "Scanning networks... stand by..."
+msgstr "Претражујем мреже... сачекајте..."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Подешавам поставке за жични профил „$A“"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Подешавам поставке за бежичну мрежу „$A“ ($B)"
+
+msgid "Scan"
+msgstr "Претражи"
+
+msgid "Always switch to wired connection when available"
+msgstr "Увек пређи на жичну везу ако је доступна"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Поставке жичног самоповезивања"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Требало би готово увек да користите wext као драјвер WPA омогућивача"
+
+msgid "Debugging"
+msgstr "Отклањање грешака"
+
+msgid "WPA Supplicant"
+msgstr "WPA омогућивач"
+
+msgid "Automatic Reconnection"
+msgstr "Аутоматско обнављање везе"
+
+msgid "Global DNS servers"
+msgstr "Општи DNS сервери"
+
+msgid "Network Interfaces"
+msgstr "Мрежни интерфејси"
+
+msgid "Connecting to daemon..."
+msgstr "Повезујем се са даемоном"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Не могу да се повежем са даемоном. Покушавам да га покренем аутоматски..."
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Не могу да се повежем са D-BUS интерфејсом wicd-а. Проверите поруке о грешкама у његовом дневнику."
+
+msgid "Wicd Curses Interface"
+msgstr "Curses интерфејс Wicd-а"
+
+msgid "Terminated by user"
+msgstr "Прекинуо корисник"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "Грешка D-Bus-a! Ово је вероватно изазвано прекидом рада wicd даемона док је wicd-curses радио. Покрените поново даемона а затим и wicd-curses."
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "ОДСТУПАЊЕ! Молимо вас, пријавите ово програмеру и пријавите грешку са подацима о грешци наведеним испод:"
+
+msgid "Brought to you by:"
+msgstr "Омогућили су вам:"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "Да би се избегле разне компликације, wicd-curses не подржава директно уређивање скрипти. Међутим, можете их уређивати ручно. Прво, (као root) отворите „$A“ фајл подешавања и погледајте одељак под називом $B. У овом случају то је:"
+
+msgid "Add a new profile"
+msgstr "Додај нови профил"
+
+msgid "Add a new wired profile"
+msgstr "Додај нови жични профил"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "wicd-curses не подржава брисање последњег жичног профила. Покушајте са преименовањем (F2)"
+
+msgid "Rename wired profile"
+msgstr "Преименуј жични профил"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Изабери ESSID скривене мреже"
+
+msgid "Press ESC to cancel"
+msgstr "Притисните Ескејп за отказивање"
+
+msgid "Press F8 or Q to quit."
+msgstr "Притисните F8 или Q за напуштање."
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "Можете бежичне мреже подешавати тражењем \"[<ESSID>]\" поља у фајлу са подешавањима."
+
+msgid "Once there, you can adjust (or add) the \"beforescript\", \"afterscript\", and \"disconnectscript\" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."
+msgstr "Када сте ту, можете подешавати (или додавати) променљиве у „предскрипти“, „постскрипти“ и „скрипти искључивања“ да бисте мењали скрипте пред повезивање, након повезивања и искључивања. Знајте да овде наводите пуну путању до скрипти - не садржај саме скрипте. Мораћете да додате/уредите садржај скрипте одвојено. Проучите упутство wicd-а за више информација."
+
+msgid "Wired Networks"
+msgstr "Жичне мреже"
+
+msgid "Wireless Networks"
+msgstr "Бежичне мреже"
+
+msgid "About Wicd"
+msgstr "О Wicd-у"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "За детаљнију помоћ, погледајте wicd-curses(8) man страну."
+
+msgid "All controls are case sensitive"
+msgstr "Све котроле су осетљиве на величину слова"
+
+msgid "Display this help dialog"
+msgstr "Приказује овај дијалог помоћи"
+
+msgid "Connect to selected network"
+msgstr "Повезује се са изабраном мрежом"
+
+msgid "Disconnect from all networks"
+msgstr "Искључује се са свих мрежа"
+
+msgid "Stop a network connection in progress"
+msgstr "Зауставља мрежно повезивање које је у току"
+
+msgid "Refresh network list"
+msgstr "Освежи листу мрежа"
+
+msgid "Preferences dialog"
+msgstr "Дијалог подешавања"
+
+msgid "Scan for hidden networks"
+msgstr "Потражи скривене мреже"
+
+msgid "Select scripts"
+msgstr "Изаберите скрипте"
+
+msgid "Set up Ad-hoc network"
+msgstr "Постави ад-хок мрежу"
+
+msgid "Configure Selected Network"
+msgstr "Подеси изабрану мрежу"
+
+msgid "use urwid's raw screen controller"
+msgstr "користи urwid-ов сирови контролер екрана"
+
+msgid "OK"
+msgstr "У реду"
+
+msgid "Cancel"
+msgstr "Откажи"

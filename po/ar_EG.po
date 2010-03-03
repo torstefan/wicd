@@ -1,0 +1,478 @@
+# Translations for Arabic (ar_EG)
+# Translator ID 19
+# /translator/edit/19/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "اتصل"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "قناع الشبكة"
+
+msgid "Gateway"
+msgstr "البوابة"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "استخدم IP ثابت"
+
+msgid "Use Static DNS"
+msgstr "استخدم DNS ثابت"
+
+msgid "Use Encryption"
+msgstr "استخدم التعمية"
+
+msgid "Advanced Settings"
+msgstr "إعدادات متقدمة"
+
+msgid "Wired Network"
+msgstr "شبكة سلكية"
+
+msgid "Automatically connect to this network"
+msgstr "اتصل آليا بهذه الشبكة"
+
+msgid "Secured"
+msgstr "مؤمّنة"
+
+msgid "Unsecured"
+msgstr "غير مؤمّنة"
+
+msgid "Channel"
+msgstr "القناة"
+
+msgid "Preferences"
+msgstr "تفضيلات"
+
+msgid "WPA Supplicant Driver"
+msgstr "تعريف داعم WPA"
+
+msgid "Wireless Interface"
+msgstr "الواجهة اللاسلكية"
+
+msgid "Wired Interface"
+msgstr "الواجهة السلكية"
+
+msgid "Always show wired interface"
+msgstr "أظهر الواجهة السلكية دائما"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "أعد الاتصال آليا عند قطعه"
+
+msgid "Hidden Network"
+msgstr "شبكة مخفية"
+
+msgid "Hidden Network ESSID"
+msgstr "اسم الشبكة الخفية"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "متصل بـ$A بجودة $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "متصل بشبكة سلكية (IP: $A)"
+
+msgid "Not connected"
+msgstr "غير متصل"
+
+msgid "No wireless networks found."
+msgstr "لا توجد شبكات لاسلكية."
+
+msgid "Key"
+msgstr "المفتاح"
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "Password"
+msgstr "كلمة السر"
+
+msgid "Anonymous Identity"
+msgstr "هوية مجهولة"
+
+msgid "Identity"
+msgstr "الهوية"
+
+msgid "Authentication"
+msgstr "الاستيثاق"
+
+msgid "Path to PAC File"
+msgstr "مسار ملف PAC"
+
+msgid "Choose from the networks below:"
+msgstr "اختر من الشبكات الآتية:"
+
+msgid "Putting interface down..."
+msgstr "يغلق الواجهة..."
+
+msgid "Resetting IP address..."
+msgstr "يُصَفِّر عنوان IP..."
+
+msgid "Putting interface up..."
+msgstr "يشغّل الواجهة..."
+
+msgid "Removing old connection..."
+msgstr "يزيل الاتصال القديم..."
+
+msgid "Generating PSK..."
+msgstr "يولّد PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "يولّد ملف ضبط WPA..."
+
+msgid "Flushing the routing table..."
+msgstr "يشذب جدول التسيير..."
+
+msgid "Configuring wireless interface..."
+msgstr "يضبط الواجهة اللاسلكية..."
+
+msgid "Setting broadcast address..."
+msgstr "يُعِدّ عنوان البث..."
+
+msgid "Setting static DNS servers..."
+msgstr "يُعِدّ خواديم DNS الثابتة..."
+
+msgid "Setting static IP addresses..."
+msgstr "يُعِدّ عناوين IP الثابتة..."
+
+msgid "Obtaining IP address..."
+msgstr "يحصل على عنوان IP..."
+
+msgid "Done connecting..."
+msgstr "تم الاتصال..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "لتتصل بشبكة، عليك أولا أن تنشئ ضبطا لها. لتنشئ ضبطا لشبكة، اكتب اسما يصفها، ثم اضغط على الزر أضف."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "يحتاج Wicd إلى الوصول لبطاقات الشبكة."
+
+msgid "Run script before connect"
+msgstr "شغل مخطوطة قبل الاتصال"
+
+msgid "Run script after connect"
+msgstr "شغل مخطوطة بعد الاتصال"
+
+msgid "Scripts"
+msgstr "مخطوطات"
+
+msgid "Enable debug mode"
+msgstr "مكن وضع كشف العلل"
+
+msgid "Use global DNS servers"
+msgstr "استخدم خواديم DNS العامة"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "استخدم الضبط المبدئي عند الاتصال آليا بشبكة سلكية"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "اسألني عن ضبط عند الاتصال آليا بشبكة سلكية"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "استخدم آخر ضبط تم استخدامه عند الاتصال الآلي بشبكة سلكية"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "مكن مشاركة اتصال إنترنت"
+
+msgid "Use Encryption (WEP only)"
+msgstr "استخدم التعمية (WEP فقط)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "استخدم dBm لقياس قوة الإشارة"
+
+msgid "Wired connection detected"
+msgstr "تم اكتشاف اتصال سلكي"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "توقف عن إظهار انبثاقات الاتصال آليا مؤقتا"
+
+msgid "General Settings"
+msgstr "إعدادات عامة"
+
+msgid "External Programs"
+msgstr "برامج خارجية"
+
+msgid "DHCP Client"
+msgstr "عميل DHCP"
+
+msgid "Wired Link Detection"
+msgstr "اكتشاف الوصلة السلكية"
+
+msgid "Route Table Flushing"
+msgstr "تشذيب جدول التسيير"
+
+msgid "Automatic (recommended)"
+msgstr "آليا (منصوح به)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "تتطلب هذه الشبكة تمكين التعمية."
+
+msgid "Required encryption information is missing."
+msgstr "معلومات التعمية المتطلبة غير متوفرة."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "استخدم هذه الإعدادات لكل الشبكات التي تحمل هذا الاسم"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "انتق أو أنشئ ضبط شبكة سلكية للاتصال بها"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "فشل الاتصل: عاجز عن جلب عنوان IP"
+
+msgid "Connection Cancelled"
+msgstr "أُلغي الاتصال"
+
+msgid "Connection Failed: Bad password"
+msgstr "فشل الاتصال: كلمة السر غير صحيحة"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "مبدّل الاتصال اللاسلكي معطل"
+
+msgid "Scanning networks... stand by..."
+msgstr "يجري البحث عن شبكات...انتظر..."
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "يضبط تفضيلات الشبكة اللاسلكية \"$A\" ($B)"
+
+msgid "Scan"
+msgstr "ابحث"
+
+msgid "Always switch to wired connection when available"
+msgstr "انتقل دائماً للشبكة السلكية عندما تكون متاحة"
+
+msgid "Wired Autoconnect Settings"
+msgstr "إعدادات الاتصال آليا بالشبكة السلكية"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "عليك أن تستخدم wext دائما كتعريف داعم WPA"
+
+msgid "Debugging"
+msgstr "كشف العلل"
+
+msgid "WPA Supplicant"
+msgstr "داعم WPA"
+
+msgid "Automatic Reconnection"
+msgstr "إعادة الاتصال آلياً"
+
+msgid "Global DNS servers"
+msgstr "خوادم DNS العامة"
+
+msgid "Network Interfaces"
+msgstr "الواجهات الشبكية"
+
+msgid "Connecting to daemon..."
+msgstr "يتّصل بالناظر..."
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "عاجز عن الاتصال بالناظر، ستتم محاولة تشغيله..."
+
+msgid "Terminated by user"
+msgstr "تم الإنهاء عن طريق المستخدم"
+
+msgid "Brought to you by:"
+msgstr "كتبه"
+
+msgid "Preferences dialog"
+msgstr "نافذة التفضيلات"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "فشل الاتصال: لم يتم تلقي أي عروض DHCP."
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "لتحصل على مساعدة مفصلة، راجع صفحة المساعدة wicd-curses(8)"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "فشل الاتصال بواجهة DBus لناظر wicd. \" + \"يعني هذا غالبا أن هناك مشكلة في بدء الناظر. \" + \"راجع سجل wicd للمزيد من المعلومات:"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "عاجز عن الاتصال بواجهة DBus الخاصة بـwicd. راجع سجل wicd لتقرأ رسائل الخطأ."
+
+msgid "Disconnect from all networks"
+msgstr "افصل الاتصال بجميع الشبكات"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "أي تغييرات تطرأ على الطرف الخلفي لن تسري إلا بعد إعادة تشغيل الناظر."
+
+msgid "Stop a network connection in progress"
+msgstr "أوقف اتصالا شبكيا جاريا"
+
+msgid "Connecting"
+msgstr "يتصل"
+
+msgid "Wired Networks"
+msgstr "الشبكات السلكية"
+
+msgid "Display this help dialog"
+msgstr "اعرض نافذة المساعدة هذه"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "لتفادي أي مضاعفات، لا يدعم wicd-curses تحرير المخطوطات مباشرة. بيد أن ذلك لا يمنعك من تحرير المخطوطات يدويا، وذلك على النحو الآتي: أولا، افتح ملف الضبط \"$A\" كمستخدم الجزر، وابحث عن القسم المسمى بـ$B المعني. وهو في هذه الحالة"
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "يمكنك أيضا ضبط الشبكات اللاسلكية عن طريق تغيير الحقل \"[<ESSID>]\" في ملف الضبط."
+
+msgid "Once there, you can adjust (or add) the \"beforescript\", \"afterscript\", and \"disconnectscript\" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."
+msgstr "عند وصولك لهذه النقطة، يمكنك تعديل (أو إضافة) المخطوطات التي تريد تشغيل قبل الاتصال، أو أثناء الاتصال، أوعند فصل الاتصال حسب حاجتك. لاحظ أنك عليك كتابة المسار الكامل للمخطوطات، وليس محتويات تلك المخطوطات ذاتها. سيكون عليك اضافة أو تعديل تلك المحتويات في عملية منفصلة. راجع دليل مساعدة wicd للمزيد من المعلومات."
+
+msgid "You must enter your password to configure scripts"
+msgstr "يجب أن تدخل كلمة السر لتتمكن من تعديل المخطوطات"
+
+msgid "Refresh network list"
+msgstr "حدّث قائمة الشبكات"
+
+msgid "Press ESC to cancel"
+msgstr "اضغط ESC للإلغاء"
+
+msgid "Scanning"
+msgstr "يبحث"
+
+msgid "Select Hidden Network ESSID"
+msgstr "انتق اسم الشبكة المخفية"
+
+msgid "Add a new wired profile"
+msgstr "أضف ضبط شبكة سلكية جديد"
+
+msgid "Configure Selected Network"
+msgstr "اضبط الشبكة المنتقاة"
+
+msgid "Validating authentication..."
+msgstr "يستوثق..."
+
+msgid "Wireless Networks"
+msgstr "الشبكات اللاسلكية"
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "يضبط تفضيلات ضبط الشبكة السلكية \"$A\""
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "استوثق من استخدام تعريفات madwifi أو atheros"
+
+msgid "Properties"
+msgstr "خصائص"
+
+msgid "Setting encryption info"
+msgstr "يعيّن معلومات التعمية"
+
+msgid "About Wicd"
+msgstr "حول Wicd"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Set up Ad-hoc network"
+msgstr "أنشئ شبكة مخصصة"
+
+msgid "Select scripts"
+msgstr "انتق مخطوطات"
+
+msgid "Invalid address in $A entry."
+msgstr "العنوان في المدخلة $A غير صالح"
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "عاجز عن إيجاد برنامج sudo الرسومي. لا يمكن تشغيل محرر المخطوطات. سيكون عليك تحرير المخطوطات مباشرة في ملف الضبط."
+
+msgid "Wicd Curses Interface"
+msgstr "واجهة Wicd Curses"
+
+msgid "DNS domain"
+msgstr "نطاق DNS"
+
+msgid "Cancel"
+msgstr "الغِ"
+
+msgid "Backend"
+msgstr "الطرف الخلفي"
+
+msgid "All controls are case sensitive"
+msgstr "جميع الأزرار حساسة لحالة الأحرف"
+
+msgid "Wicd daemon unreachable"
+msgstr "عاجز عن الوصول لناظر wicd"
+
+msgid "ESSID"
+msgstr "اسم الشبكة"
+
+msgid "Search domain"
+msgstr "نطاق البحث"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "فشل DBus! حدث هذا غالبا لأن ناظر wicd قد توقف أثناء عمل wicd-curses. رجاءً أعد تشغيل الناظر ثم أعد تشغيل wicd-curses."
+
+msgid "Add a new profile"
+msgstr "أضف ضبطا جديدا"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "أنشئ شبكة مخصصة"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "لم يتم تمكين DNS العام في التفضيلات"
+
+msgid "Connect to selected network"
+msgstr "اتصل بالشبكة المنتقاة"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "لا يدعم wicd-curses حذف آخر ضبط شبكة سلكية. جرب إعادة تسميته ('F2')"
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "خلل! رجاءً أبلغ عن هذا للمشرف على البرنامج وأرفق الآتي ببلاغك"
+
+msgid "DNS server"
+msgstr "خادوم DNS"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "تم إغلاق ناظر wicd. لن تعمل الواجهة بصورة سليمة إلى أن تتم إعادة تشغيله."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "للاتصال بشبكة سلكية، عليك أن تنشئ ضبط شبكة. لتنشئ ضبطا لشبكة، أدخل اسما يصفها ثم اضغط على الزر أضف."
+
+msgid "Rename wired profile"
+msgstr "أعد تسمية ضبط الشبكة السلكية"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "ناظر wicd غير متوفر، ولذلك لن يتم إكمال طلبك"
+
+msgid "Scan for hidden networks"
+msgstr "ابحث عن شبكات مخفية"
+
+msgid "use urwid's raw screen controller"
+msgstr "استخدم متحكم شاشة urwid الخام"
+
+msgid "Press F8 or Q to quit."
+msgstr "اضغط F8 أو Q للإنهاء"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "استخدم الضبط المبدئي (ذو أسبقية على أي مبدئيات سابقة)"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "فشل الاتصال : لم يستطع من الاتصال بنقطة الوصول"
+
+msgid "Establishing connection..."
+msgstr "جاري الاتصال"
+
+msgid "Connection established"
+msgstr "تم الاتصال"
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr ""
+"لم يستطع مخاطبة مخدم Wicd بناء على رفض الوصول.\r\n"
+"خطأ من DBus . الرجاء التأكد من ان المستخدم في مجموعة $A ."
+
+msgid "Disconnecting active connections..."
+msgstr "فصل الاتصالات الفعالى..."
+
+msgid "Notifications"
+msgstr "إشعار"
+
+msgid "Disconnected"
+msgstr "قطع الاتصال"
+
+msgid "Display notifications about connection status"
+msgstr "اظهار إشعار حول حالة الاتصال"
+
+msgid "Invalid IP address entered."
+msgstr "عنوان IP غير صحيح."

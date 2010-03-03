@@ -1,0 +1,371 @@
+# Translations for Lithuanian (lt)
+# Translator ID 46
+# /translator/edit/46/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Prisijungti"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Tinklo kaukė"
+
+msgid "Gateway"
+msgstr "Vartai"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Naudoti statinius IP"
+
+msgid "Use Static DNS"
+msgstr "Naudoti dinaminius IP"
+
+msgid "Use Encryption"
+msgstr "Naudoti šifravimą"
+
+msgid "Advanced Settings"
+msgstr "Išplėsti nustatimai"
+
+msgid "Wired Network"
+msgstr "Laidinis tinklas"
+
+msgid "Automatically connect to this network"
+msgstr "Automatiškai prisijungti prie šio tinklo"
+
+msgid "Secured"
+msgstr "Saugus"
+
+msgid "Unsecured"
+msgstr "Nesaugus"
+
+msgid "Channel"
+msgstr "Kanalas"
+
+msgid "Preferences"
+msgstr "Nustatymai"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant tvarkyklė"
+
+msgid "Wireless Interface"
+msgstr "Bevielė sąsaja"
+
+msgid "Wired Interface"
+msgstr "Laidinė sąsaja"
+
+msgid "Always show wired interface"
+msgstr "Visada rodyti laidinę sąsają"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automatiškai prisijungti iš naujo kai ryšys nutrūksta"
+
+msgid "Hidden Network"
+msgstr "Paslėptas tinklas"
+
+msgid "Hidden Network ESSID"
+msgstr "Paslėptas tinklo ESSID"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Prisijungta prie $A  $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Prisijungta prie laidinio tinklo (IP: $A)"
+
+msgid "Not connected"
+msgstr "Neprisijungta"
+
+msgid "No wireless networks found."
+msgstr "Nerasta bevielių tinklų"
+
+msgid "Key"
+msgstr "Raktas"
+
+msgid "Username"
+msgstr "Vartotojo vardas"
+
+msgid "Password"
+msgstr "Slaptažodis"
+
+msgid "Anonymous Identity"
+msgstr "Anoniminė tapatybė"
+
+msgid "Identity"
+msgstr "Tapatybė"
+
+msgid "Authentication"
+msgstr "Atpažinimas"
+
+msgid "Path to PAC File"
+msgstr "Kelias iki PAC failo"
+
+msgid "Choose from the networks below:"
+msgstr "Pasirinkite iš apačioje esančių tinklų:"
+
+msgid "Putting interface down..."
+msgstr "Išjungiama sąsaja..."
+
+msgid "Resetting IP address..."
+msgstr "Atstatomas IP adresas..."
+
+msgid "Putting interface up..."
+msgstr "Įjungiama sąsaja..."
+
+msgid "Removing old connection..."
+msgstr "Šalinami seni prisijungimai..."
+
+msgid "Generating PSK..."
+msgstr "Generuojamas PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Generuojamas WPA konfiguracijos failas..."
+
+msgid "Flushing the routing table..."
+msgstr "Užpildoma maršrutų lentelė..."
+
+msgid "Configuring wireless interface..."
+msgstr "Konfiguruojama  bevielė sąsaja..."
+
+msgid "Setting broadcast address..."
+msgstr "Nustatomas transliavimo adresas..."
+
+msgid "Setting static DNS servers..."
+msgstr "Nustatomi statiniai DNS serveriai..."
+
+msgid "Setting static IP addresses..."
+msgstr "Nustatomi statiniai IP adresai"
+
+msgid "Obtaining IP address..."
+msgstr "Gaunamas IP adresas..."
+
+msgid "Done connecting..."
+msgstr "Baigta jungtis..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Norėdami prisijungti prie laidinio tinklo, jūs turite sukurti tinklo profilį. Kad sukurti tinklo profilį, įveskite pavadinimą kuris apibūdina šį tinklą ir spauskite Pridėti."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd reikia prieiti prie jūsų kompiuterio tinklo kortos"
+
+msgid "Run script before connect"
+msgstr "Paleisti script'ą prieš prisijungiant"
+
+msgid "Run script after connect"
+msgstr "Paleisti script'ą po prisijungimo"
+
+msgid "Scripts"
+msgstr "Script'ai"
+
+msgid "Enable debug mode"
+msgstr "Įjungti derinimo režimą"
+
+msgid "Use global DNS servers"
+msgstr "Naudoti visuotinius DNS serverius"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Naudoti numatytą profilį laidiniams automatiniams prisijungimams"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Klausti profilio laidiniams automatiniams prisijungimams"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Naudoti paskutinį profilį laidiniams automatiniams prisijungimams"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktyvuoti Interneto dalinimąsi"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Naudoti Šifravimą (tik WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Naudoti dBm matuojant singalo stiprį"
+
+msgid "Wired connection detected"
+msgstr "Laidinis prisijungimas aptiktas"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Laikinai nerodyti automatinio prisijungimo langų"
+
+msgid "General Settings"
+msgstr "Bendri nustatymai"
+
+msgid "External Programs"
+msgstr "Išorinės programos"
+
+msgid "DHCP Client"
+msgstr "DHCP klientas"
+
+msgid "Wired Link Detection"
+msgstr "Aptikta laidinė jungtis"
+
+msgid "Route Table Flushing"
+msgstr "Maršrutų lentelės užpildymas"
+
+msgid "Automatic (recommended)"
+msgstr "Automatinis (rekomenduojamas)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Šis tinklas reikalauja įjungto šifravimo"
+
+msgid "Required encryption information is missing."
+msgstr "Trūksta reikalingos šifravimo informacijos"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Naudoti šiuos nustatymus visiems tinklams kurie dalinasi šį essid"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Pasirinkite ar sukurkite laidinį profilį kuriuo jungsitės"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Prisijungimas nepavyko: Negalima gauti IP adreso"
+
+msgid "Connection Cancelled"
+msgstr "Prisijungimas nutrauktas"
+
+msgid "Connection Failed: Bad password"
+msgstr "Prisijungimas nepavyko: Blogas slaptažodis"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Bevielio ryšio išjungimo mygtukas įjungtas"
+
+msgid "Preferences dialog"
+msgstr "Nustatymų dialogas"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Neprisijungta: Negauta DHCP pasiūlymų."
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Detalesnę informaciją žiūrėkite: wicd-curses(8) man puslapiuose"
+
+msgid "Disconnect from all networks"
+msgstr "Atsijungti nuo visų tinklų"
+
+msgid "Refresh network list"
+msgstr "Atnaujinti tinklų sąrašą"
+
+msgid "Press ESC to cancel"
+msgstr "Spausk ESC kad atšaukti"
+
+msgid "Scanning"
+msgstr "Skenuojama"
+
+msgid "Connecting"
+msgstr "Jungiamasi"
+
+msgid "Wicd daemon unreachable"
+msgstr "Wicd servisas nepasiekiamas"
+
+msgid "Connect to selected network"
+msgstr "Prisijungti prie pasirinkto tinklo"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Laidinio automatinio prisijungimo nustatymai"
+
+msgid "Network Interfaces"
+msgstr "Tinklo įrenginiai"
+
+msgid "Scan"
+msgstr "Skenuoti"
+
+msgid "Display this help dialog"
+msgstr "Rodyti šį palalbos pranešimą"
+
+msgid "WPA Supplicant"
+msgstr "WPA Supplicant"
+
+msgid "Scanning networks... stand by..."
+msgstr "Skenuojami tinklai. Palaukite..."
+
+msgid "Select Hidden Network ESSID"
+msgstr "Pasirinkti paslėptą tinklo ESSID"
+
+msgid "Invalid IP address entered."
+msgstr "Įvestas neteisingas IP adresas."
+
+msgid "Connecting to daemon..."
+msgstr "Jungiamasi prie demono..."
+
+msgid "Add a new wired profile"
+msgstr "Pridėti naują laidinį profilį"
+
+msgid "Configure Selected Network"
+msgstr "Konfigūruoti pasirinktą tinklą"
+
+msgid "Validating authentication..."
+msgstr "Tinkrinama autentifikacija..."
+
+msgid "Wireless Networks"
+msgstr "Bevieliai tinklai"
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Konfigūruojami laidinio profilio \"$A\" nustatymai"
+
+msgid "Properties"
+msgstr "Savybės"
+
+msgid "Establishing connection..."
+msgstr "Užmezgamas ryšys..."
+
+msgid "About Wicd"
+msgstr "Apie Wicd"
+
+msgid "OK"
+msgstr "Gerai"
+
+msgid "Set up Ad-hoc network"
+msgstr "Sukurti ad-hoc tinklą"
+
+msgid "Connection established"
+msgstr "Ryšys užmegztas"
+
+msgid "Wicd Curses Interface"
+msgstr "Wicd Curses sąsaja"
+
+msgid "Wired Networks"
+msgstr "Laidiniai tinklai"
+
+msgid "Global DNS servers"
+msgstr "Pasauliniai DNS serveriai"
+
+msgid "DNS domain"
+msgstr "DNS domenas"
+
+msgid "Cancel"
+msgstr "Atšaukti"
+
+msgid "Terminated by user"
+msgstr "Nutraukta vartotojo"
+
+msgid "Add a new profile"
+msgstr "Pridėti naują profilį"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Sukurti ad-hoc tinklą"
+
+msgid "DNS server"
+msgstr "DNS serveris"
+
+msgid "Disconnected"
+msgstr "Atsijungta"
+
+msgid "Debugging"
+msgstr "Derinimas"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "Jūsų užklausa negali būti įvykdyta, nes wicd demonas yra nepasiekiamas."
+
+msgid "Scan for hidden networks"
+msgstr "Ieškoti paslėptų tinklų"
+
+msgid "Automatic Reconnection"
+msgstr "Automatinis prisijungimas iš naujo"
+
+msgid "Press F8 or Q to quit."
+msgstr "Norėdami išeiti paspauskite F8 arba Q."

@@ -1,0 +1,44 @@
+# Translations for Telugu (te)
+# Translator ID 12
+# /translator/edit/12/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "అనుసంధానించు"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "DNS"
+msgstr "www.google.com"
+
+msgid "Advanced Settings"
+msgstr "ఉన్నత అమరికలు"
+
+msgid "Preferences"
+msgstr "అభిరుచులు"
+
+msgid "Not connected"
+msgstr "అనుసంధానం లేదు"
+
+msgid "Key"
+msgstr "TLAMCHEVI"
+
+msgid "Username"
+msgstr "వాడుకరిపేరు"
+
+msgid "Password"
+msgstr "సంకేతపదం"
+
+msgid "Identity"
+msgstr "గుర్తింపు"
+
+msgid "Obtaining IP address..."
+msgstr "IP చిరునామా తెస్తున్నాం..."
+
+msgid "Done connecting..."
+msgstr "పూర్తయ్యింది అనుసంధానిస్తున్నాం..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "home"

@@ -1,0 +1,531 @@
+# Translations for French (fr_CA)
+# Translator ID 64
+# /translator/edit/64/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Resetting IP address..."
+msgstr "Reconfiguration de l'adresse IP..."
+
+msgid "Preferences dialog"
+msgstr "Préférences"
+
+msgid "Run pre-disconnect script"
+msgstr "Exécuter un script avant la déconnexion"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Échec de la connexion: Aucun bail DHCP reçu."
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Pour une aide plus détaillée, consulter le page 'man' de Wicd-curses(8)."
+
+msgid "Connection Failed: Bad password"
+msgstr "Échec de la connexion: Mot de passe erroné"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr ""
+"Incapable de se connecter à l'interface DBus du service Wicd. Cela veut certainement dire qu'il y a un problème avec le démarrage du service. \r\n"
+"Vérifiez les journaux de Wicd pour plus d'informations."
+
+msgid "Always show wired interface"
+msgstr "Toujours afficher l'interface câblée"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Impossible de se connecter à l'interface DBus de Wicd. Vérifier le journal de Wicd pour les messages d'erreur."
+
+msgid "Path to PAC File"
+msgstr "Chemin du fichier PAC"
+
+msgid "Display this help dialog"
+msgstr "Affiche ce dialogue d'aide"
+
+msgid "Disconnect from all networks"
+msgstr "Se déconnecter de tous les réseaux"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "Les changements de configuration du \"backend\" ne seront effectifs qu'au redémarrage du service."
+
+msgid "Stop a network connection in progress"
+msgstr "Arrêter une connexion réseau en cours"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Échec de la connexion: Impossible d'obtenir une adresse IP."
+
+msgid "Always switch to wired connection when available"
+msgstr "Toujours permuter sur connexion câblée lorsque celle-ci est disponible"
+
+msgid "WPA Supplicant"
+msgstr "WPA Supplicant"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "Pour éviter divers problèmes, Wicd-curses ne permet pas d'éditer les scripts directement. Cependant, il est possible de les modifier manuellement. En tant que super utilisateur, ouvrez le fichier de configuration \"$A\", et trouvez la section intitulée $B en question. Dans ce cas, c'est:"
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "Il vous est également possible de configurer les réseaux sans fil en cherchant le champ \"[<ESSID>]\" dans le fichier de configuration."
+
+msgid "Once there, you can adjust (or add) the \"beforescript\", \"afterscript\", and \"disconnectscript\" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."
+msgstr "Ensuite, vous pouvez modifier (ou ajouter) les variables \"beforescript\", \"afterscript\" et \"disconnectscript\" au besoin, pour modifier les scripts d'avant connexion, d'après connexion et de déconnexion respectivement. Notez que vous devez spécifier le chemin de fichier complet des scripts, et non leur contenu. Référez-vous à la page 'man' de Wicd pour plus d'information."
+
+msgid "You must enter your password to configure scripts"
+msgstr "Vous devez entrer votre mot de passe pour configurer les scripts"
+
+msgid "Not connected"
+msgstr "Non connecté"
+
+msgid "Connection Cancelled"
+msgstr "Connexion annulée"
+
+msgid "Scanning networks... stand by..."
+msgstr "Recherche des réseaux en cours... Veuillez patienter..."
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Demander le profil à utiliser lors de la connexion automatique au réseau câblé"
+
+msgid "Use Static DNS"
+msgstr "Utiliser un DNS statique"
+
+msgid "Setting broadcast address..."
+msgstr "Configuration de l'adresse de diffusion..."
+
+msgid "Refresh network list"
+msgstr "Actualiser la liste des réseaux"
+
+msgid "Unsecured"
+msgstr "Non-sécurisé"
+
+msgid "Search domain"
+msgstr "Recherche du domaine"
+
+msgid "Press ESC to cancel"
+msgstr "Appuyez sur Echap pour annuler"
+
+msgid "Scanning"
+msgstr "Recherche en cours"
+
+msgid "Flushing the routing table..."
+msgstr "Purge de la table de routage..."
+
+msgid "Brought to you by:"
+msgstr "Présenté par:"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "Échec de la connexion: Impossible de contacter le point d'accès sans fil."
+
+msgid "Select Hidden Network ESSID"
+msgstr "Sélectionner un réseau à ESSID caché"
+
+msgid "External Programs"
+msgstr "Programmes externes"
+
+msgid "Connect"
+msgstr "Se connecter"
+
+msgid "Use global DNS servers"
+msgstr "Utiliser les serveurs DNS globaux"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Ce réseau requiert l'activation du chiffrement."
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Utiliser le dernier profil lors de la connexion automatique du réseau câblé."
+
+msgid "Preferences"
+msgstr "Préférences"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "La plupart du temps, il faut utiliser wext comme pilote WPA supplicant"
+
+msgid "Connecting"
+msgstr "Connexion en cours"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Désactiver temporairement les alertes de connexion automatique"
+
+msgid "Connecting to daemon..."
+msgstr "Connexion au service"
+
+msgid "Automatically connect to this network"
+msgstr "Se connecter automatiquement à ce réseau"
+
+msgid "Add a new wired profile"
+msgstr "Ajouter un nouveau profil câblé"
+
+msgid "DHCP Client"
+msgstr "Client DHCP"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Utiliser dBm pour mesurer la puissance du signal"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Utiliser ces options pour tous les réseaux partageant cet ESSID"
+
+msgid "ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the \"$A\" group."
+msgstr "ERREUR: Wicd-curses s'est vu refusé l'accès au service Wicd: Vérifiez que votre utilisateur est dans le groupe \"$A\"."
+
+msgid "Configure Selected Network"
+msgstr "Configurer le réseau sélectionné"
+
+msgid "Validating authentication..."
+msgstr "Authentification en cours..."
+
+msgid "Removing old connection..."
+msgstr "Suppression de l'ancienne connexion..."
+
+msgid "Key"
+msgstr "Clé"
+
+msgid "Wireless Networks"
+msgstr "Réseaux sans fil"
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Configuration des préférences pour le profil câblé \"$A\""
+
+msgid "No wireless networks found."
+msgstr "Aucun réseau sans fil détecté."
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "Cochez si vous utilisez des pilotes \"madwifi/atheros\""
+
+msgid "Properties"
+msgstr "Propriétés"
+
+msgid "Establishing connection..."
+msgstr "Connexion en cours..."
+
+msgid "Setting encryption info"
+msgstr "Application des informations de chiffrage"
+
+msgid "About Wicd"
+msgstr "À propos de Wicd"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Set up Ad-hoc network"
+msgstr "Créer un réseau Ad-Hoc"
+
+msgid "Connection established"
+msgstr "Connexion établie"
+
+msgid "Select scripts"
+msgstr "Sélectionner les scripts"
+
+msgid "Invalid address in $A entry."
+msgstr "Adresse invalide dans l'entrée $A"
+
+msgid "Configuring wireless interface..."
+msgstr "Configuration de l'interface sans fil..."
+
+msgid "Generating PSK..."
+msgstr "Génération de la clé PSK"
+
+msgid "Enable debug mode"
+msgstr "Activation du mode débogage"
+
+msgid "Hidden Network"
+msgstr "Réseau caché"
+
+msgid "Anonymous Identity"
+msgstr "Identité Anonyme"
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr "Impossible de contacter le service Wicd car DBus à généré une erreur d'accès refusé. Vérifiez votre configuration de DBus."
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Connecté au réseau câblé (IP: $A)"
+
+msgid "Wireless Interface"
+msgstr "Interface sans fil"
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "Impossible de trouver un programme sudo graphique. L'éditeur de script n'a pas pu être lancé. Vous devrez éditer les scripts directement dans votre fichier de configuration."
+
+msgid "Wicd Curses Interface"
+msgstr "Interface Curses de Wicd"
+
+msgid "Wired Networks"
+msgstr "Réseaux Câblés"
+
+msgid "Use Encryption"
+msgstr "Utiliser le chiffrement"
+
+msgid "Verifying access point association..."
+msgstr "Vérification de l'association du point d'accès..."
+
+msgid "Global DNS servers"
+msgstr "Serveurs DNS globaux"
+
+msgid "DNS domain"
+msgstr "Domaine DNS"
+
+msgid "Done connecting..."
+msgstr "Connexion effectuée..."
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Impossible de se connecter au daemon, tentative de le démarrer automatiquement..."
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Putting interface up..."
+msgstr "Démarrage de l'interface..."
+
+msgid "Gateway"
+msgstr "Passerelle"
+
+msgid "Backend"
+msgstr "Backend"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "Échec de Dbus! Ceci est probablement causé par l'arrêt du service Wicd alors que Wicd-curses était actif. Veuillez redémarrer le service puis Wicd-curses."
+
+msgid "Terminated by user"
+msgstr "Terminé par l'utilisateur"
+
+msgid "Disconnecting active connections..."
+msgstr "Fermeture des connexions actives..."
+
+msgid "Wired Link Detection"
+msgstr "Détection du lien cablé"
+
+msgid "Add a new profile"
+msgstr "Ajouter un nouveau profil"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Activer le partage de la connexion internet"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Créer un réseau Ad-Hoc"
+
+msgid "All controls are case sensitive"
+msgstr "Tous les champs sont sensibles à la casse"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "Le DNS global n'a pas été activé dans les préférences générales."
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Advanced Settings"
+msgstr "Paramètres avancés"
+
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+msgid "Automatic (recommended)"
+msgstr "Automatique(recommandé)"
+
+msgid "Wired connection detected"
+msgstr "Connexion câblée détectée"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Netmask"
+msgstr "Masque de sous-réseau"
+
+msgid "Choose from the networks below:"
+msgstr "Choisissez parmis les réseaux suivants:"
+
+msgid "Connect to selected network"
+msgstr "Se connecter au réseau sélectionné"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Sélectionner ou créer un profil câblé pour s'y connecter."
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "Wicd-curses ne supporte pas la suppression du  dernier profil câblé. Essayez de le renommer ('F2')"
+
+msgid "General Settings"
+msgstr "Paramètres généraux"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Connecté à $A - $B (IP:$C)"
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "EXCEPTION! Veuillez reporter ceci au mainteneur du programme et créer un rapport de bug avec la trace suivante :"
+
+msgid "DNS server"
+msgstr "Serveur DNS"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Configuration des préférences pour le réseau sans fil \"$A\" ($B)"
+
+msgid "Disconnected"
+msgstr "Déconnecté"
+
+msgid "Obtaining IP address..."
+msgstr "Obtention de l'adresse IP..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Pour se connecter à un réseau câblé, vous devez créer un profil réseau. Pour créer un profil réseau, tapez un nom le décrivant, et appuyez sur Ajouter."
+
+msgid "Required encryption information is missing."
+msgstr "De l'information de chiffrement requise est manquante."
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "Le service Wicd n'est plus actif. L'interface graphique ne marchera pas correctement tant que le service n'est pas redémarré."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "Pour se connecter à un réseau filaire, il faut créer un profil réseau. Pour créer un profile réseau, indiquer le nom qui décrit votre réseau, puis cliquer sur Ajouter."
+
+msgid "Setting static DNS servers..."
+msgstr "Configuration des serveurs DNS statiques..."
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Reconnecter automatiquement en cas de perte de connexion"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Utiliser le chiffrement (WEP uniquement)"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Paramètres de connexion automatique au réseau cablé"
+
+msgid "Run script before connect"
+msgstr "Exécuter le script avant la connexion"
+
+msgid "Debugging"
+msgstr "Débogage"
+
+msgid "Network Interfaces"
+msgstr "Interfaces réseau"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Utiliser le profil par défaut lors de la connexion automatique du réseau câblé"
+
+msgid "Scan"
+msgstr "Analyse"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Generating WPA configuration file..."
+msgstr "Génération du fichier de configuration WPA"
+
+msgid "WPA Supplicant Driver"
+msgstr "Pilote WPA Supplicant"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd doit accéder aux cartes réseau de votre ordinateur."
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Interrupteur du sans fil activé."
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID du réseau caché"
+
+msgid "Secured"
+msgstr "Sécurisé"
+
+msgid "Putting interface down..."
+msgstr "Arrêt de l'interface..."
+
+msgid "Authentication"
+msgstr "Authentification"
+
+msgid "Run script after connect"
+msgstr "Exécuter un script après la connexion"
+
+msgid "Wicd daemon unreachable"
+msgstr "Service Wicd inaccessible"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "Rename wired profile"
+msgstr "Renommer le profil câblé"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "Le service Wicd n'est pas disponible, votre requête ne peut être complétée."
+
+msgid "Run post-disconnect script"
+msgstr "Exécuter un script après la déconnexion"
+
+msgid "Setting static IP addresses..."
+msgstr "Activation des adresses IP statiques"
+
+msgid "Scan for hidden networks"
+msgstr "Rechercher des réseau cachés"
+
+msgid "Use Static IPs"
+msgstr "Utiliser des adresses IP statiques"
+
+msgid "use urwid's raw screen controller"
+msgstr "Utiliser la console Urwid"
+
+msgid "Route Table Flushing"
+msgstr "Purge de la table de routage"
+
+msgid "Scripts"
+msgstr "Scripts"
+
+msgid "Display notifications about connection status"
+msgstr "Afficher les notifications concernant le status de connexion"
+
+msgid "Identity"
+msgstr "Identité"
+
+msgid "Automatic Reconnection"
+msgstr "Reconnexion automatique"
+
+msgid "Wired Interface"
+msgstr "Interface câblée"
+
+msgid "Press F8 or Q to quit."
+msgstr "Appuyez sur F8 ou Q pour quitter."
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Utiliser comme profil par défaut (Écrase le profil par défaut précédent)"
+
+msgid "Wired Network"
+msgstr "Réseau câblé"
+
+msgid ""
+"$A\r\n"
+"$B\r\n"
+"$C\r\n"
+"$D\r\n"
+"$E KB/s\r\n"
+"$F KB/s"
+msgstr "$A $B $C $D $E KB/s $F KB/s"
+
+msgid ""
+"$A\r\n"
+"$B KB/s\r\n"
+"$C KB/s"
+msgstr "$A $B KB/s $C KB/s"
+
+msgid "Suspend script"
+msgstr "Suspendre le script"
+
+msgid "Invalid IP address entered."
+msgstr "Adresse IP saisie invalide."
+
+msgid ""
+"Wired\r\n"
+"IP:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Ip câblée: Rx: Tx"
+
+msgid "Resume script"
+msgstr "Terminer le script"
+
+msgid "Ping static gateways after connecting to verify association"
+msgstr "Après la connexion, test des passerelles statiques afin de vérifier l'association"
+
+msgid ""
+"Wireless\r\n"
+"SSID:\r\n"
+"Speed:\r\n"
+"IP:\r\n"
+"Strength:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "SSID sans fil: Vitesse: IP: Puissance: Rx: Tx:"

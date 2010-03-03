@@ -1,0 +1,494 @@
+# Translations for Czech (cs)
+# Translator ID 22
+# /translator/edit/22/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Připojit"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Maska sítě"
+
+msgid "Gateway"
+msgstr "Brána"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Použít statickou IP adresu"
+
+msgid "Use Static DNS"
+msgstr "Použít statické DNS"
+
+msgid "Use Encryption"
+msgstr "Použít šifrování"
+
+msgid "Advanced Settings"
+msgstr "Pokročilá nastavení"
+
+msgid "Wired Network"
+msgstr "Drátová síť"
+
+msgid "Automatically connect to this network"
+msgstr "Automaticky se připojit k této síti"
+
+msgid "Secured"
+msgstr "Zabezpečeno"
+
+msgid "Unsecured"
+msgstr "Nezabezpečeno"
+
+msgid "Channel"
+msgstr "Kanál"
+
+msgid "Preferences"
+msgstr "Vlastnosti"
+
+msgid "WPA Supplicant Driver"
+msgstr "Ovladač pro WPA Supplicant"
+
+msgid "Wireless Interface"
+msgstr "Bezdrátové zařízení"
+
+msgid "Wired Interface"
+msgstr "Drátové zařízení"
+
+msgid "Always show wired interface"
+msgstr "Vždy zobrazovat drátové zařízení"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automaticky se znovu připojit po pádu spojení"
+
+msgid "Hidden Network"
+msgstr "Skrytá síť"
+
+msgid "Hidden Network ESSID"
+msgstr "ESSID skryté bezdrátové sítě"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Připojeno k $A přes $B (s IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Připojeno drátovou sítí (s IP: $A)"
+
+msgid "Not connected"
+msgstr "Nepřipojeno"
+
+msgid "No wireless networks found."
+msgstr "Nebyly nalezeny žádné bezdrátové sítě."
+
+msgid "Key"
+msgstr "Klíč"
+
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Anonymous Identity"
+msgstr "Anonymní identita"
+
+msgid "Identity"
+msgstr "Identita"
+
+msgid "Authentication"
+msgstr "Autentizace"
+
+msgid "Path to PAC File"
+msgstr "Cesta k PAC souboru"
+
+msgid "Choose from the networks below:"
+msgstr "Vyberte ze sítí zobrazených níže:"
+
+msgid "Putting interface down..."
+msgstr "Vypínám zařízení..."
+
+msgid "Resetting IP address..."
+msgstr "Znovunačítám IP adresu..."
+
+msgid "Putting interface up..."
+msgstr "Zapínám zařízení..."
+
+msgid "Removing old connection..."
+msgstr "Odstraňuji staré spojení..."
+
+msgid "Generating PSK..."
+msgstr "Generuji PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Generuji soubor s nastavením WPA..."
+
+msgid "Flushing the routing table..."
+msgstr "Vyprazdňuji směrovací tabulku..."
+
+msgid "Configuring wireless interface..."
+msgstr "Nastavuji bezdrátové zařízení..."
+
+msgid "Setting broadcast address..."
+msgstr "Nastavuji adresu broadcastu..."
+
+msgid "Setting static DNS servers..."
+msgstr "Nastavuji statické DNS servery..."
+
+msgid "Setting static IP addresses..."
+msgstr "Nastavuji statickou IP adresu..."
+
+msgid "Obtaining IP address..."
+msgstr "Získávám IP adresu..."
+
+msgid "Done connecting..."
+msgstr "Připojení dokončeno..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "K připojení k drátové síti musíte vytvořit síťový profil. K jeho vytvoření zadejte jméno a popis sítě a stiskněte Přidat."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd potřebuje přístup k vaší síťové kartě."
+
+msgid "Run script before connect"
+msgstr "Spustit skript před připojením"
+
+msgid "Run script after connect"
+msgstr "Spustit skript po připojení"
+
+msgid "Scripts"
+msgstr "Skripty"
+
+msgid "Enable debug mode"
+msgstr "Povolit ladící režim"
+
+msgid "Use global DNS servers"
+msgstr "Použít globální DNS servery"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Při automatickém připojení k drátové síti použít výchozí profil"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Zeptat se na profil při automatickém připojení k drátové síti"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Při automatickém připojení k drátové síti použít naposledy použitý profil"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktivovat sdílení internetového připojení"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Použít šifrování (pouze WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Pro sílu signálu používat dBm jednotky"
+
+msgid "Wired connection detected"
+msgstr "Nalezena drátová síť"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Dočasné potlačení zobrazování upozornění na automatické připojení"
+
+msgid "General Settings"
+msgstr "Obecná nastavení"
+
+msgid "External Programs"
+msgstr "Externí programy"
+
+msgid "DHCP Client"
+msgstr "DHCP klient"
+
+msgid "Wired Link Detection"
+msgstr "Hledání drátové sítě"
+
+msgid "Route Table Flushing"
+msgstr "Vyprázdnění směrovací tabulky"
+
+msgid "Automatic (recommended)"
+msgstr "Automaticky (doporučeno)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Tato síť vyžaduje zapnuté šifrování."
+
+msgid "Required encryption information is missing."
+msgstr "Chybí požadované informace o šifrování sítě"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Použít tato nastavení pro všechny sítě používající tuto ESSID"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Vytvořit nebo vybrat drátový profil pro připojení"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Spojení selhalo: není možné získat IP adresu"
+
+msgid "Connection Cancelled"
+msgstr "Spojení zrušeno"
+
+msgid "Connection Failed: Bad password"
+msgstr "Spojení selhalo: nesprávné heslo"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Funkce rychlého odpojení od bezdrátové sítě zapnuta"
+
+msgid "Scanning networks... stand by..."
+msgstr "Prohledávám sítě... prosím vyčkejte..."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Nastavení možností po drátový profil \"$A\""
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Nastavení možností po bezdrátovou síť \"$A\" ($B)"
+
+msgid "Scan"
+msgstr "Hledat"
+
+msgid "Always switch to wired connection when available"
+msgstr "Vždy přepnout na drátové připojení, je-li dostupné"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Vlastnosti automatického drátového připojení"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Měl byste vždy používat wext jako WPA supplicant driver"
+
+msgid "Debugging"
+msgstr "Ladění"
+
+msgid "WPA Supplicant"
+msgstr "WPA Supplicant"
+
+msgid "Automatic Reconnection"
+msgstr "Automatické obnovení připojení"
+
+msgid "Global DNS servers"
+msgstr "Globální DNS servery"
+
+msgid "Network Interfaces"
+msgstr "Síťová rozhraní"
+
+msgid "Connecting to daemon..."
+msgstr "Připojování k démonu..."
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Nemůžu se připojit k démonu, zkouším ho automaticky nastartovat..."
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Nemůžu se připojit k wicd D-Bus rozhraní. Zkontrolujte chyby ve wicd logu."
+
+msgid "Wicd Curses Interface"
+msgstr "Wicd Curses Rozhraní"
+
+msgid "Terminated by user"
+msgstr "Ukončeno uživatelem"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "Chyba DBusu! To může být způsobeno zastavením wicd daemona při běhu wicd-curses. Prosím, restartujte daemona a poté wicd-curses."
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "VYJÍMKA! Prosím, nahlaste toto vývojářům a k hlášení o chybě připojte backtrace vypsaný níže:"
+
+msgid "Brought to you by:"
+msgstr "Přenesený k vám přes:"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "Kvůli komplikacím wicd-curses nepodporuje přímou editaci skriptů, můžete je však editovat ručně. Nejprve (jako root) otevřete konfigurační soubor \"$A\" a vyhledejte sekci nazvanou $B. V tomto případě to je:"
+
+msgid "Add a new profile"
+msgstr "Přidat nový profil"
+
+msgid "Add a new wired profile"
+msgstr "Přidat nový drátový profil"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "wicd-curses nepodporují mazání posledního drátového profilu. Zkuste ho přejmenovat ('F2')"
+
+msgid "Rename wired profile"
+msgstr "Přejmenuj drátový profil"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Vybrat ESSID skryté sítě"
+
+msgid "Press ESC to cancel"
+msgstr "Stiskněte ESC pro zrušení"
+
+msgid "Press F8 or Q to quit."
+msgstr "Stiskni F8 nebo Q pro ukončení."
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "Můžete také konfigurovat bezdrátové sítě vyhledáním \"[<ESSID>]\" políčka v konfiguračním souboru."
+
+msgid "Once there, you can adjust (or add) the \"beforescript\", \"afterscript\", and \"disconnectscript\" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."
+msgstr "Zde můžete změnit nebo přidat proměnné \"beforescript\", \"afterscript\" a \"disconnectscript\". Zadáváte plnou cestu ke skriptu, nikoli jeho obsah. Pro více informací se podívejte do manuálových stránek."
+
+msgid "Wired Networks"
+msgstr "Drátová připojení"
+
+msgid "Wireless Networks"
+msgstr "Bezdrátová připojení"
+
+msgid "About Wicd"
+msgstr "O Wicd"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Detailnější nápovědu najdete v man stránce wicd-curses(8)."
+
+msgid "All controls are case sensitive"
+msgstr "Všechna nastavení rozlišují velikost písmen"
+
+msgid "Display this help dialog"
+msgstr "Zobraz tuto nápovědu"
+
+msgid "Connect to selected network"
+msgstr "Připojení k vybrané síti"
+
+msgid "Disconnect from all networks"
+msgstr "Odpojit od všech sítí"
+
+msgid "Stop a network connection in progress"
+msgstr "Zastavit připojování k síti"
+
+msgid "Refresh network list"
+msgstr "Obnovit seznam sítí"
+
+msgid "Preferences dialog"
+msgstr "Nastavení"
+
+msgid "Scan for hidden networks"
+msgstr "Vyhledat skryté sítě"
+
+msgid "Select scripts"
+msgstr "Vyber skripty"
+
+msgid "Set up Ad-hoc network"
+msgstr "Nastaveni Ad-hoc sítě"
+
+msgid "Configure Selected Network"
+msgstr "Nastavení vybrané sítě"
+
+msgid "use urwid's raw screen controller"
+msgstr "použít urwid's raw screen controller"
+
+msgid "OK"
+msgstr "Potvrdit"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Připojení selhalo: DHCP server neodpověděl."
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "Nemohu se připojit k DBbus rozhraní wicd, pravděpodobně nastal problém se spouštěním daemona. Pro více informací se podívejte do wicd logu."
+
+msgid "You must enter your password to configure scripts"
+msgstr "Musíte vložit Vaše heslo pro nastavení skriptů"
+
+msgid "Scanning"
+msgstr "Prohledávám"
+
+msgid "Connecting"
+msgstr "Připojuji"
+
+msgid "Validating authentication..."
+msgstr "Ověřuji přihlášení..."
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "Zkontrolujte, zda používáte ovladače madwifi/atheros"
+
+msgid "Properties"
+msgstr "Vlastnosti"
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "Nemohu nalézt grafický sudo program. Editor skriptů nemohl být spuštěn. Budete muset upravit skripty manuálně."
+
+msgid "DNS domain"
+msgstr "DNS doména"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Vytvořit Ad-Hoc síť"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "Globální DNS nebyly povoleny v Nastavení."
+
+msgid "DNS server"
+msgstr "DNS server"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "Wicd daemon byl vypnut. Grafický program nebude fungovat správně, dokud daemona nerestartujete."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "Pro připojení k drátové síti musíte vytvořit Síťový profil. Pro vytvoření síťového profilu napište jméno, které ho popisuje a stiskněte Přidat"
+
+msgid "Wicd daemon unreachable"
+msgstr "Wicd daemon nedostupný"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "Wicd daemon je nedostupný, takže Váš požadavek nemůže být splněn"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Použijte jako výchozí profil (přepíše všechny předchozí výchozí profily)"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "Změny se projeví až po restartu démona."
+
+msgid "Search domain"
+msgstr "Hledat doménu"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "Chyba spojení: Nemohu kontaktovat bezdrátový přístupový bod."
+
+msgid "Establishing connection..."
+msgstr "Navazuji spojení..."
+
+msgid "Connection established"
+msgstr "Spojení navázáno"
+
+msgid "Invalid address in $A entry."
+msgstr "Špatná adresa v $A záznamu."
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr "Nemohu zkontaktovat wicd daemona kvůli odepření přístupu z DBusu. Prosím, zkontrolujte, zda je váš uživatel ve skupině $A."
+
+msgid "Verifying access point association..."
+msgstr "Ověřuji asociace access pointu..."
+
+msgid "Notifications"
+msgstr "Upozornění"
+
+msgid "Disconnected"
+msgstr "Odpojeno"
+
+msgid "Display notifications about connection status"
+msgstr "Zobrazit upozornění o stavu spojení"
+
+msgid "Invalid IP address entered."
+msgstr "Zadaná neplatná IP adresa."
+
+msgid "Disconnecting active connections..."
+msgstr "Odpojuji aktivní připojení..."
+
+msgid "Suspend script"
+msgstr "Pozastavit skript"
+
+msgid "ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the \"$A\" group."
+msgstr "CHYBA: wicd-curses byl odmítnut přístup k wicd daemonu: zkontrolujte, že patříte do skupiny \"$A\"."
+
+msgid "Setting encryption info"
+msgstr "Nastavuji šifrovací informace"
+
+msgid "Backend"
+msgstr "Backend"
+
+msgid "Resume script"
+msgstr "Obnovit skript"
+
+msgid "Run post-disconnect script"
+msgstr "Spustit skript po odpojení"
+
+msgid "Run pre-disconnect script"
+msgstr "Spustit skript před odpojením"

@@ -1,0 +1,529 @@
+# Translations for Estonian (et)
+# Translator ID 33
+# /translator/edit/33/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Ühenda"
+
+msgid "IP"
+msgstr "IP aadress"
+
+msgid "Netmask"
+msgstr "Võrgumask"
+
+msgid "Gateway"
+msgstr "Võrgulüüs"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Staatilise IP aadressi kasutamine"
+
+msgid "Use Static DNS"
+msgstr "Staatilise nimeserveri kasutamine"
+
+msgid "Use Encryption"
+msgstr "Krüpteerimise kasutamine"
+
+msgid "Advanced Settings"
+msgstr "Laiendatud seaded"
+
+msgid "Wired Network"
+msgstr "Juhtmega võrk"
+
+msgid "Automatically connect to this network"
+msgstr "Automaatselt luuakse ühendus selle võrguga"
+
+msgid "Secured"
+msgstr "Turvaline võrk"
+
+msgid "Unsecured"
+msgstr "Ebaturvaline võrk"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Preferences"
+msgstr "Eelistused"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA komponendi juhtprogramm"
+
+msgid "Wireless Interface"
+msgstr "Traadita võrguliides"
+
+msgid "Wired Interface"
+msgstr "Juhtmega võrguliides"
+
+msgid "Always show wired interface"
+msgstr "Juhtmega võrgu liidest näidatakse alati"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Ühenduse katkemisel loo uus ühendus automaatselt"
+
+msgid "Hidden Network"
+msgstr "Varjatud võrk"
+
+msgid "Hidden Network ESSID"
+msgstr "Varjatud võrgu ESSID"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Ühendus võrguga $A loodud, signaali tugevus $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Ühendus juhtmega võrguga loodud (IP: $A)"
+
+msgid "Not connected"
+msgstr "Ühendus puudub"
+
+msgid "No wireless networks found."
+msgstr "Ühtegi traadita võrku ei leitud."
+
+msgid "Key"
+msgstr "Võti"
+
+msgid "Username"
+msgstr "Kasutajanimi"
+
+msgid "Password"
+msgstr "Parool"
+
+msgid "Anonymous Identity"
+msgstr "Anonüümne identiteet"
+
+msgid "Identity"
+msgstr "Identiteet"
+
+msgid "Authentication"
+msgstr "Autentimine"
+
+msgid "Path to PAC File"
+msgstr "PAC faili asukoht"
+
+msgid "Choose from the networks below:"
+msgstr "Vali üks järgnevatest võrkudest:"
+
+msgid "Putting interface down..."
+msgstr "Võrguliidese väljalülitamine..."
+
+msgid "Resetting IP address..."
+msgstr "IP-aadressi nullimine..."
+
+msgid "Putting interface up..."
+msgstr "Võrguliidese sisselülitamine..."
+
+msgid "Removing old connection..."
+msgstr "Vana võrguühenduse andmete kustutamine..."
+
+msgid "Generating PSK..."
+msgstr "PSK genereerimine..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA konfiguratsioonifaili loomine..."
+
+msgid "Flushing the routing table..."
+msgstr "Ruutimistabeli puhastamine..."
+
+msgid "Configuring wireless interface..."
+msgstr "Traadita võrguliidese seadistamine..."
+
+msgid "Setting broadcast address..."
+msgstr "Leviaadressi seadistamine..."
+
+msgid "Setting static DNS servers..."
+msgstr "Staatiliste nimeserverite seadistamine..."
+
+msgid "Setting static IP addresses..."
+msgstr "Staatiliste IP aadresside määramine..."
+
+msgid "Obtaining IP address..."
+msgstr "IP aadressi hankimine..."
+
+msgid "Done connecting..."
+msgstr "Ühendatud..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Juhtmega võrguühenduse loomiseks tuleb luua võrguprofiil. Selleks kirjuta nimi,  mis seda võrku kirjeldab, ning vajuta Lisa."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd vajab ligipääsu sinu arvuti võrgukaartidele."
+
+msgid "Run script before connect"
+msgstr "Käivita skript enne ühenduse loomist"
+
+msgid "Run script after connect"
+msgstr "Käivita skript pärast ühenduse loomist"
+
+msgid "Scripts"
+msgstr "Skriptid"
+
+msgid "Enable debug mode"
+msgstr "Silumisrežiimi lubamine"
+
+msgid "Use global DNS servers"
+msgstr "Globaalsete nimeserverite kasutamine"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Kasuta automaatseks juhtmega võrguühenduse loomiseks vaikimisi profiili"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Automaatse juhtmega võrguühenduse loomisel küsitakse profiili"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Kasuta automaatseks juhtmega võrguühenduse loomiseks viimati kasutatud profiili."
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Jagatud internetiühenduse aktiveerimine"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Krüpteeringu kasutamine (ainult WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "dBm kasutamine signaali tugevuse mõõtühikuna"
+
+msgid "Wired connection detected"
+msgstr "Juhtmega ühendus tuvastatud"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Ajutine automaatühenduse hüpikakna kuvamise keelamine"
+
+msgid "General Settings"
+msgstr "Üldised seaded"
+
+msgid "External Programs"
+msgstr "Välised programmid"
+
+msgid "DHCP Client"
+msgstr "DHCP klient"
+
+msgid "Wired Link Detection"
+msgstr "Juhtmega ühenduse tuvastamine"
+
+msgid "Route Table Flushing"
+msgstr "Ruutimistabeli puhastamine"
+
+msgid "Automatic (recommended)"
+msgstr "Automaatne (soovitav)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Selle võrgu puhul peab olema krüpteerimine lubatud."
+
+msgid "Required encryption information is missing."
+msgstr "Nõutud krüpteerimisinfo puudub."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Kasuta selliseid seadeid kõikide võrkude jaoks, mis jagavad sama essid"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Vali või loo juhtmega võrguühenduse jaoks profiil"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Ühendumine nurjus: ei saadud IP-aadressi"
+
+msgid "Connection Cancelled"
+msgstr "Ühenduse loomine katkestati"
+
+msgid "Connection Failed: Bad password"
+msgstr "Ühendumine nurjus: vale parool"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Traadita ühenduse väljalülitamine lubatud"
+
+msgid "Add a new profile"
+msgstr "Uue profiili lisamine"
+
+msgid "Press ESC to cancel"
+msgstr "Katkestamiseks vajuta ESC klahvile"
+
+msgid "Preferences dialog"
+msgstr "Eelistuste dialoog"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Ühendumine nurjus: ei saadud DHCP-pakkumisi."
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Üksikasjalikumat abiinfot vaadake wicd-curses(8) man lehelt."
+
+msgid "Run pre-disconnect script"
+msgstr "Käivita pre-disconnect skript"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "wicd deemoni DBus liidesega ei saadud ühendust. Tavaliselt tähendab see seda, et deemoni käivitamisega oli probleeme. Uuri wicd logi edasise info saamiseks."
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Ei suutnud wicd deemoni DBus liidesega ühenduda. Uuri wicd logist veateateid."
+
+msgid "Display this help dialog"
+msgstr "Näita abidialoogi"
+
+msgid "Disconnect from all networks"
+msgstr "Katkesta kõik loodud ühendused"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "Sinu taustaprogrammi muudatused ei jõustu enne kui deemon on taaskäivitatud."
+
+msgid "Stop a network connection in progress"
+msgstr "Peata võrguga ühenduse loomine"
+
+msgid "Always switch to wired connection when available"
+msgstr "Lülita alati juhtmega ühenduse peale kui see on saadaval."
+
+msgid "WPA Supplicant"
+msgstr "WPA Supplicant"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "Vältimaks erinevaid probleeme, ei toeta wicd-curses otsest skriptide muutmist. Siiski on neid võimalik muuta käsitsi. Selleks ava juurkasutajana (root) konfiguratsioonifail \"$A\" ja otsi failist lõiku, mille pealkirjaks on \"$B\". Käesoleval juhul on see:"
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "Traadita võrke on sul võimalik seadistada ka otsides konfiguratsioonifailist \"[<ESSID>]\" välja."
+
+msgid "Once there, you can adjust (or add) the \"beforescript\", \"afterscript\", and \"disconnectscript\" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."
+msgstr "Seal olles on sul võimalik vajadusel muuta  (või lisada) \"beforescript\", \"afterscript\" ja \"disconnectscript\" muutujaid, et  vastavaid preconnect, postconnect ja  disconnect skripte muuta. Pea silmas, et määratlema pead skripti absoluutse asukoha, mitte skripti sisu. Skripti sisu muutmine või sinna millegi lisamine toimub eraldi. Lisainfo saamiseks loe wicd man lehekülgi."
+
+msgid "You must enter your password to configure scripts"
+msgstr "Skriptide muutmiseks pead sisestama oma parooli"
+
+msgid "Scanning networks... stand by..."
+msgstr "Võrkude otsimine... Palun oota..."
+
+msgid "Refresh network list"
+msgstr "Võrgunimekirja värskendamine"
+
+msgid "Suspend script"
+msgstr "Skripti peatamine"
+
+msgid "Search domain"
+msgstr "Otsi domeeni"
+
+msgid "Scanning"
+msgstr "Võrkude otsimine"
+
+msgid "Brought to you by:"
+msgstr "WICD tõid Teieni:"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "Ühenduse loomine ebaõnnestus: tugijaamaga ei saadud kontakti "
+
+msgid "Select Hidden Network ESSID"
+msgstr "Peidetud võrgu ESSID valimine"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Sa peaksid peaaegu alati kasutama wext-i WPA komponendi jaoks"
+
+msgid "Connecting"
+msgstr "Ühenduse loomine"
+
+msgid "Connecting to daemon..."
+msgstr "Ühenduse loomine deemoniga..."
+
+msgid "Add a new wired profile"
+msgstr "Uue juhtmega võrgu profiili loomine"
+
+msgid "ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the \"$A\" group."
+msgstr "Viga: wixd-curses ei saa ühendust wicd deemoniga. Palun kontrolli, kas sinu kasutaja on \"$A\" grupis."
+
+msgid "Configure Selected Network"
+msgstr "Valitud võrgu seadistamine"
+
+msgid "Validating authentication..."
+msgstr "Autentimise kontrollimine..."
+
+msgid "Wireless Networks"
+msgstr "Traadita võrgud"
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Juhtmega võrgu profiili \"$A\" eelistuste seadistamine"
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "Kontrolli, kas kasutusel on madwifi/atheros draiverid"
+
+msgid "Properties"
+msgstr "Omadused"
+
+msgid "Establishing connection..."
+msgstr "Ühenduse loomine..."
+
+msgid "Setting encryption info"
+msgstr "Krüpteerimisinfo seadistamine"
+
+msgid "About Wicd"
+msgstr "Teave Wicd kohta"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Set up Ad-hoc network"
+msgstr "Ad-hoc võrgu seadistamine"
+
+msgid "Connection established"
+msgstr "Ühendus loodud"
+
+msgid "Select scripts"
+msgstr "Skriptide valimine"
+
+msgid "Invalid address in $A entry."
+msgstr "Vigane aadress $A kirjes."
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr "wicd deemoniga ei saa ühendust kuna ligipääs DBus-ile on takistatud. Palun kontrolli, kas sinu kasutaja on $A grupis."
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "Graafilist sudo programmi ei leitud ning samuti ei suudetud käivitada skriptide redigeerijat. Sa pead skripte konfiguratsioonifailist muutma."
+
+msgid "Wicd Curses Interface"
+msgstr "Wicd Curses kasutajaliides"
+
+msgid "Wired Networks"
+msgstr "Juhtmega võrgud"
+
+msgid "Verifying access point association..."
+msgstr "Tugijaamaga ühenduse kontrollimine..."
+
+msgid "Global DNS servers"
+msgstr "Globaalsed nimeserverid"
+
+msgid "DNS domain"
+msgstr "DNS domeen"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Deemoniga ei saanud ühendust, proovin seda automaatselt käivitada..."
+
+msgid "Cancel"
+msgstr "Katkesta"
+
+msgid "Backend"
+msgstr "Taustaprogramm"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "DBus viga, mis on tõenäoliselt põhjustatud sellest, et wicd deemon peatus sel ajal kui wicd-curses veel töötas. Palun käivita wicd ning seejärel käivita uuesti wicd-curses."
+
+msgid "Terminated by user"
+msgstr "Katkestatud kasutaja poolt"
+
+msgid "Disconnecting active connections..."
+msgstr "Loodud ühenduste katkestamine..."
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Ad-hoc võrgu loomine"
+
+msgid "All controls are case sensitive"
+msgstr "Kõik sisestatud märgid on tõstutundlikud"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "Globaalsed nimeserverid ei ole üldistes seadetes lubatud."
+
+msgid "Notifications"
+msgstr "Teated"
+
+msgid "Connect to selected network"
+msgstr "Ühenduse loomine valitud võrguga"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "wicd-curses ei toeta viimase traadiga ühenduse profiili kustutamist. Proovi seda klahvi F2 abil ümber nimetada."
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "Erand! Palun teata sellest arendajale ja registreeri viga koos järgneva tagasijälitusega:"
+
+msgid "DNS server"
+msgstr "Nimeserver"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Traadita võrgu \"$A\" ($B) seadistuste muutmine"
+
+msgid "Disconnected"
+msgstr "Ühendus katkestatud"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "wicd deemon on seiskunud. Kasutajaliides ei tööta korralikult kuni wicd on uuesti käivitatud."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "Juhtmega võrguühenduse loomiseks tuleb luua võrguprofiil. Selleks kirjuta nimi,  mis seda võrku kirjeldab, ning vajuta Lisa."
+
+msgid "Wired Autoconnect Settings"
+msgstr "Juhtmega võrgu automaatühenduse seadistamine"
+
+msgid "Debugging"
+msgstr "Vigade otsimine"
+
+msgid "Network Interfaces"
+msgstr "Võrguliidesed"
+
+msgid "Scan"
+msgstr "Otsi"
+
+msgid "Wicd daemon unreachable"
+msgstr "WiCD deemon ei ole kättesaadav"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "Rename wired profile"
+msgstr "Juhtmega profiili ümbernimetamine"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "wicd deemon ei ole saadaval, seega ei saa sinu soovi täita"
+
+msgid "Resume script"
+msgstr "Peatatud skripti jätkamine"
+
+msgid "Run post-disconnect script"
+msgstr "Skripti post-disconnect käivitamine"
+
+msgid "Scan for hidden networks"
+msgstr "Peidetud võrkude otsimine"
+
+msgid "use urwid's raw screen controller"
+msgstr "kasuta urwid toorest ekraanihaldurit"
+
+msgid "Display notifications about connection status"
+msgstr "Näita ühenduse oleku teateid"
+
+msgid "Automatic Reconnection"
+msgstr "Automaatne ühenduse taasloomine"
+
+msgid "Press F8 or Q to quit."
+msgstr "Väljumiseks vajuta F8 või Q"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Kasuta vaikimisi profiilina (kirjutab eelmise vaikimisi profiili üle)"
+
+msgid ""
+"$A\r\n"
+"$B KB/s\r\n"
+"$C KB/s"
+msgstr "$A $B KB/s $C KB/s"
+
+msgid "Invalid IP address entered."
+msgstr "Sisestatud IP aadress on vigane"
+
+msgid ""
+"$A\r\n"
+"$B\r\n"
+"$C\r\n"
+"$D\r\n"
+"$E KB/s\r\n"
+"$F KB/s"
+msgstr "$A $B $C $D $E KB/s $F KB/s"
+
+msgid ""
+"Wired\r\n"
+"IP:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Juhtmega IP: RX: TX:"
+
+msgid "Ping static gateways after connecting to verify association"
+msgstr "Pingi lüüsi peale ühenduse loomist"
+
+msgid ""
+"Wireless\r\n"
+"SSID:\r\n"
+"Speed:\r\n"
+"IP:\r\n"
+"Strength:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Võrgu SSID: Kiirus: IP: Tugevus: RX: TX:"

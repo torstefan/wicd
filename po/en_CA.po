@@ -1,0 +1,14 @@
+# Translations for English (en_CA)
+# Translator ID 68
+# /translator/edit/68/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly using your configuration file."
+
+msgid "Putting interface down..."
+msgstr "Closing interface..."
+
+msgid "Run script after connect"
+msgstr "Run script after connecting"

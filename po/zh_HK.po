@@ -1,0 +1,185 @@
+# Translations for Chinese (Hong Kong) (zh_HK)
+# Translator ID 16
+# /translator/edit/16/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "連接"
+
+msgid "IP"
+msgstr "IP地址"
+
+msgid "Netmask"
+msgstr "網路遮罩"
+
+msgid "Gateway"
+msgstr "閘道器"
+
+msgid "DNS"
+msgstr "名稱伺服器"
+
+msgid "Use Static IPs"
+msgstr "使用靜態IP地址"
+
+msgid "Use Static DNS"
+msgstr "使用靜態DNS"
+
+msgid "Use Encryption"
+msgstr "使用加密"
+
+msgid "Advanced Settings"
+msgstr "進階設定"
+
+msgid "Wired Network"
+msgstr "有線網絡"
+
+msgid "Automatically connect to this network"
+msgstr "自動連接這個網絡"
+
+msgid "Secured"
+msgstr "安全的"
+
+msgid "Unsecured"
+msgstr "不安全的"
+
+msgid "Channel"
+msgstr "頻道"
+
+msgid "Preferences"
+msgstr "喜好"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant 驅動程式"
+
+msgid "Wireless Interface"
+msgstr "無線網路介面"
+
+msgid "Wired Interface"
+msgstr "有線網路介面"
+
+msgid "Always show wired interface"
+msgstr "總是顯示有線網路介面"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "當連線中斷時,自動重新連接"
+
+msgid "Hidden Network"
+msgstr "隱藏的網路"
+
+msgid "Hidden Network ESSID"
+msgstr "隱藏的網路ESSID"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "已經連接到$A 在 $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "已經連接到有線網絡(IP: $A)"
+
+msgid "Not connected"
+msgstr "未連接"
+
+msgid "No wireless networks found."
+msgstr "找不到無線網絡."
+
+msgid "Key"
+msgstr "密鑰"
+
+msgid "Username"
+msgstr "用戶名"
+
+msgid "Password"
+msgstr "密碼"
+
+msgid "Anonymous Identity"
+msgstr "匿名的身份"
+
+msgid "Identity"
+msgstr "身份"
+
+msgid "Authentication"
+msgstr "驗證"
+
+msgid "Path to PAC File"
+msgstr "PAC檔案的路徑"
+
+msgid "Choose from the networks below:"
+msgstr "請選擇以下網絡:"
+
+msgid "Putting interface down..."
+msgstr "正在關閉網路介面..."
+
+msgid "Resetting IP address..."
+msgstr "正在重新設置IP地址..."
+
+msgid "Putting interface up..."
+msgstr "正在開啟網路介面..."
+
+msgid "Removing old connection..."
+msgstr "移除舊連接中..."
+
+msgid "Generating PSK..."
+msgstr "產生PSK中..."
+
+msgid "Generating WPA configuration file..."
+msgstr "正在產生WPA設定檔..."
+
+msgid "Flushing the routing table..."
+msgstr "正在路由表"
+
+msgid "Configuring wireless interface..."
+msgstr "正在設定無線網路介面..."
+
+msgid "Setting broadcast address..."
+msgstr "正在設置廣播位址..."
+
+msgid "Setting static DNS servers..."
+msgstr "正在設置靜態DNS伺服器..."
+
+msgid "Setting static IP addresses..."
+msgstr "設置靜態IP地址中..."
+
+msgid "Obtaining IP address..."
+msgstr "獲取IP地址中..."
+
+msgid "Done connecting..."
+msgstr "完成連接中..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "為了要連上有線網路,你必須創造一個新的網路設定檔,鍵入一個描述網路的名字，然後按下Add."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd要存取您的電腦網路卡."
+
+msgid "Run script before connect"
+msgstr "連接前先執行腳本"
+
+msgid "Run script after connect"
+msgstr "連接後再執行腳本"
+
+msgid "Scripts"
+msgstr "腳本"
+
+msgid "Enable debug mode"
+msgstr "啟用除錯模式"
+
+msgid "Use global DNS servers"
+msgstr "使用全球DNS伺服器"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "有線自動連接時,使用預設的設定檔"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "有線自動連接時,提示設定檔"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "有線自動連接時,使用最近用過的設定檔"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "啟用網際網路連接分享"
+
+msgid "Use Encryption (WEP only)"
+msgstr "使用加密(僅WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "使用dBm度量訊號強度"

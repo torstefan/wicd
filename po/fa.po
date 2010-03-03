@@ -1,0 +1,59 @@
+# Translations for Farsi (fa)
+# Translator ID 35
+# /translator/edit/35/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "اتصال"
+
+msgid "IP"
+msgstr "شماره آی‌پی"
+
+msgid "Netmask"
+msgstr "ماسک شبکه"
+
+msgid "Gateway"
+msgstr "دروازه"
+
+msgid "DNS"
+msgstr "سرویس‌دهنده نام دامنه"
+
+msgid "Use Static IPs"
+msgstr "آی‌پی ثابت"
+
+msgid "Use Static DNS"
+msgstr "سرورنام دامنه ثابت"
+
+msgid "Use Encryption"
+msgstr "استفاده از رمزگذاری"
+
+msgid "Advanced Settings"
+msgstr "تنظیمات پیشرفته"
+
+msgid "Wired Network"
+msgstr "شبکه کابلی"
+
+msgid "Automatically connect to this network"
+msgstr "اتصال خودکار به این شبکه"
+
+msgid "Secured"
+msgstr "امن‌شده"
+
+msgid "Unsecured"
+msgstr "امن‌ناشده"
+
+msgid "Channel"
+msgstr "کانال"
+
+msgid "Preferences"
+msgstr "ترجیحات"
+
+msgid "Key"
+msgstr "کلید"
+
+msgid "Username"
+msgstr "شناسه کاربری"
+
+msgid "Password"
+msgstr "رمز عبور"

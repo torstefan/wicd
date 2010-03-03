@@ -1,0 +1,40 @@
+# Translations for French (fr_FR)
+# Translator ID 65
+# /translator/edit/65/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Resetting IP address..."
+msgstr "Reconfiguration de l'adresse IP..."
+
+msgid "Preferences dialog"
+msgstr "Préférences :"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Connexion échouée : aucun bail DHCP reçu."
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Pour une aide plus détaillée, consulter le manuel de référence wicd-curses(8)"
+
+msgid "Connection Failed: Bad password"
+msgstr "Échec de la connexion : mot de passe erroné"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr ""
+"Impossible de connecter le démon Wicd à l'interface DBus. Cela veut certainement dire qu'il y a un problème avec le démarrage du démon. \r\n"
+"Vérifiez les journaux de wicd pour plus d'informations."
+
+msgid "Always show wired interface"
+msgstr "Toujours afficher l'interface filaire"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Impossible de se connecter à l'interface D-Bus de wicd. Inspecter le journal pour obtenir les messages d'erreur"
+
+msgid "Path to PAC File"
+msgstr "Chemin vers le fichier PAC"
+
+msgid "Always switch to wired connection when available"
+msgstr "Toujours sélectionner une connexion filaire quand cela est possible"
+
+msgid "Verifying access point association..."
+msgstr "Vérification de l'association au point d'accès..."

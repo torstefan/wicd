@@ -1,0 +1,54 @@
+# Translations for Bulgarian (bg)
+# Translator ID 20
+# /translator/edit/20/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Свържи"
+
+msgid "IP"
+msgstr "Мрежов адрес"
+
+msgid "Netmask"
+msgstr "Мрежова маска"
+
+msgid "Use Static IPs"
+msgstr "Използвай статичен мрежов адрес"
+
+msgid "Use Static DNS"
+msgstr "Използвай статичен DNS"
+
+msgid "Use Encryption"
+msgstr "Използвай криптиране"
+
+msgid "Resetting IP address..."
+msgstr "Занули IP адресите"
+
+msgid "Preferences dialog"
+msgstr "Прозорес с настройки"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Неуспешна връзка: няма връзка с DHCP сървър"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "За повече информация вижте документацията"
+
+msgid "Connection Failed: Bad password"
+msgstr "Свързването неуспешно: грешна парола"
+
+msgid "Invalid IP address entered."
+msgstr "Въведен грешен IP адрес."
+
+msgid "Connecting"
+msgstr "Свързване"
+
+msgid ""
+"Wireless\r\n"
+"SSID:\r\n"
+"Speed:\r\n"
+"IP:\r\n"
+"Strength:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Име на мрежата: Скорост: IP: Сигнал: Получени: Изпратени"

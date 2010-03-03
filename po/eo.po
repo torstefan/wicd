@@ -1,0 +1,182 @@
+# Translations for Esperanto (eo)
+# Translator ID 26
+# /translator/edit/26/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Konekti"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Retmasko"
+
+msgid "Gateway"
+msgstr "Kluzo"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Uzi fiksitan IP-adreson"
+
+msgid "Use Static DNS"
+msgstr "Uzi fiksitan DNS-on"
+
+msgid "Use Encryption"
+msgstr "Uzi ĉifradon"
+
+msgid "Advanced Settings"
+msgstr "Specialaj agordoj"
+
+msgid "Wired Network"
+msgstr "Drata reto"
+
+msgid "Automatically connect to this network"
+msgstr "Aŭtomate enkonekti tiun reton"
+
+msgid "Secured"
+msgstr "Sekurigita"
+
+msgid "Unsecured"
+msgstr "Nesekurigita"
+
+msgid "Channel"
+msgstr "Kanalo"
+
+msgid "Preferences"
+msgstr "Agordoj"
+
+msgid "Wireless Interface"
+msgstr "Sendrata interfaco"
+
+msgid "Wired Interface"
+msgstr "Drata interfaco"
+
+msgid "Always show wired interface"
+msgstr "Ĉiam montri dratan interfacon"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Aŭtomate rekonekti post perdo de konekto"
+
+msgid "Hidden Network"
+msgstr "Kaŝita reto"
+
+msgid "Hidden Network ESSID"
+msgstr "Kaŝita reto ESSID"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Konekti en $A je $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Konekti en sendrata reto (IP: $A)"
+
+msgid "Not connected"
+msgstr "Nekonektita"
+
+msgid "No wireless networks found."
+msgstr "Sendrata reto netrovita"
+
+msgid "Key"
+msgstr "Ŝlosilo"
+
+msgid "Username"
+msgstr "Uzantnomo"
+
+msgid "Password"
+msgstr "Pasvorto"
+
+msgid "Anonymous Identity"
+msgstr "Anonima idento"
+
+msgid "Identity"
+msgstr "Idento"
+
+msgid "Authentication"
+msgstr "Aŭtentokontrolo"
+
+msgid "Path to PAC File"
+msgstr "Vojo je PAS dosiero"
+
+msgid "Choose from the networks below:"
+msgstr "Elekti el retoj sube:"
+
+msgid "Resetting IP address..."
+msgstr "Rekomencado de IP adresojn..."
+
+msgid "Removing old connection..."
+msgstr "Forigado de malnovan konekton..."
+
+msgid "Generating PSK..."
+msgstr "Generado de PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Generado de WPA agordan dosieron"
+
+msgid "Configuring wireless interface..."
+msgstr "Agordado de sendratan interfacon..."
+
+msgid "Setting broadcast address..."
+msgstr "Agordado de elsendajn adresojn..."
+
+msgid "Setting static DNS servers..."
+msgstr "Agordado de statikaj DNS serviloj..."
+
+msgid "Setting static IP addresses..."
+msgstr "Agordado de statikaj IP adresoj..."
+
+msgid "Obtaining IP address..."
+msgstr "Akirado de IP adresoj..."
+
+msgid "Done connecting..."
+msgstr "Bone konektita..."
+
+msgid "Run script before connect"
+msgstr "Lanĉu skripton antaŭ konekto"
+
+msgid "Run script after connect"
+msgstr "Lanĉu skripton post konekto"
+
+msgid "Scripts"
+msgstr "Skriptoj"
+
+msgid "Enable debug mode"
+msgstr "Ŝalti sencimigan reĝinon"
+
+msgid "Use global DNS servers"
+msgstr "Uzi globalajn DNS servilojn"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktivigi kunhavadon de interreta konekto"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Uzi ĉifradon (nur WEP)"
+
+msgid "Wired connection detected"
+msgstr "Drata konekto detektita:"
+
+msgid "General Settings"
+msgstr "Ĝeneralaj agordoj"
+
+msgid "External Programs"
+msgstr "Eksteraj programaroj"
+
+msgid "DHCP Client"
+msgstr "DHCP kliento"
+
+msgid "Automatic (recommended)"
+msgstr "Aŭtomate (rekomendata)"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Elekti aŭ krei dratan profilon por konektado"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Konekto fiaskis: Neebla akiri IP adresojn"
+
+msgid "Connection Cancelled"
+msgstr "Konekto rezignita"
+
+msgid "Connection Failed: Bad password"
+msgstr "Konekto fiaskis: Malbona pasvorto"

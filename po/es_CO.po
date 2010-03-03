@@ -1,0 +1,8 @@
+# Translations for Spanish (es_CO)
+# Translator ID 79
+# /translator/edit/79/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "my problem"
