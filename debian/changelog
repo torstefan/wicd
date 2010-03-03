@@ -5,8 +5,10 @@ wicd (1.7.0-4) UNRELEASED; urgency=low
     - debhelper dependency bumped to >= 7.2.3~, to use dh_bugfiles
   * debian/rules:
     - make dh_bugfiles act on all packages
+    - add get-orig-source target, to build a package containing the
+      .po files
 
- -- David Paleino <dapal@debian.org>  Thu, 18 Feb 2010 13:20:14 +0100
+ -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 21:58:51 +0100
 
 wicd (1.7.0-3) unstable; urgency=low
 

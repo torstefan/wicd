@@ -4,6 +4,8 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+CURVER := $(shell dpkg-parsechangelog | grep ^Version | cut -d\  -f2 | sed -e "s/\(\+.*\)\|\(\-.*\)//")
+
 override_dh_auto_configure:
 	python setup.py configure \
 		--no-install-acpi \
@@ -50,3 +52,13 @@ override_dh_bugfiles:
 
 %:
 	dh --with quilt $@
+
+get-orig-source:
+	uscan --force-download --download-version $(CURVER) --destdir . --rename
+	tar xvf wicd_$(CURVER).orig.tar.bz2
+	( cd wicd-$(CURVER)/ ; \
+	patch -p1 < ../debian/patches/xx-get_translations.patch ; \
+	python setup.py get_translations ; \
+	rm -rf vcsinfo.pyc )
+	tar jcf wicd_$(CURVER)+ds1.orig.tar.bz2 wicd-$(CURVER)/
+	rm -rf wicd_$(CURVER).orig.tar.bz2 wicd-$(CURVER)/
