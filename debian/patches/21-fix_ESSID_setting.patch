@@ -16,7 +16,7 @@ Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=571100
 -        cmd = ['iwconfig', self.iface, 'essid', essid]
 -        if self.verbose: print str(cmd)
 -        misc.Run(cmd)
-+        self.SetESSID(essid)
++        self.SetEssid(essid)
          base = "iwconfig %s" % self.iface
          if channel and str(channel).isdigit():
              cmd = "%s channel %s" % (base, str(channel))
