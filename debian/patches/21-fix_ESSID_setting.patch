@@ -1,0 +1,22 @@
+From: David Paleino <dapal@debian.org>
+Subject: use the correct ESSID-setting command...
+Forwarded: no
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=571100
+
+---
+ wicd/wnettools.py |    4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+--- wicd.orig/wicd/wnettools.py
++++ wicd/wicd/wnettools.py
+@@ -1097,9 +1097,7 @@ class BaseWirelessInterface(BaseInterfac
+         bssid -- bssid of the network
+ 
+         """
+-        cmd = ['iwconfig', self.iface, 'essid', essid]
+-        if self.verbose: print str(cmd)
+-        misc.Run(cmd)
++        self.SetESSID(essid)
+         base = "iwconfig %s" % self.iface
+         if channel and str(channel).isdigit():
+             cmd = "%s channel %s" % (base, str(channel))

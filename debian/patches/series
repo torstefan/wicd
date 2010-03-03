@@ -11,3 +11,4 @@
 18-dont_run_unexpected_files_in_scripts.patch
 19-dhcpcd_dont_handle_link-local.patch
 20-use_iniparse.patch
+21-fix_ESSID_setting.patch

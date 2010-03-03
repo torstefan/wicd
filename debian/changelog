@@ -13,8 +13,11 @@ wicd (1.7.0+ds1-1) UNRELEASED; urgency=low
   * debian/patches/:
     - 20-use_iniparse.patch added, uses python-iniparse instead of
       standard library's ConfigParser (Closes: #568326)
+    - 21-fix_ESSID_setting.patch added, use correct command to set
+      ESSID's (useful when a network is named "off" or "any")
+      (Closes: #571100)
 
- -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 23:24:22 +0100
+ -- David Paleino <dapal@debian.org>  Wed, 03 Mar 2010 23:36:52 +0100
 
 wicd (1.7.0-3) unstable; urgency=low
 
