@@ -1,0 +1,410 @@
+# Translations for Chinese (Taiwan) (zh_TW)
+# Translator ID 17
+# /translator/edit/17/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "連接"
+
+msgid "IP"
+msgstr "IP地址"
+
+msgid "Netmask"
+msgstr "網路遮罩"
+
+msgid "Gateway"
+msgstr "閘道器"
+
+msgid "DNS"
+msgstr "名稱伺服器"
+
+msgid "Use Static IPs"
+msgstr "使用靜態IP地址"
+
+msgid "Use Static DNS"
+msgstr "使用靜態DNS"
+
+msgid "Use Encryption"
+msgstr "使用加密"
+
+msgid "Advanced Settings"
+msgstr "進階設定"
+
+msgid "Wired Network"
+msgstr "有線網絡"
+
+msgid "Automatically connect to this network"
+msgstr "自動連接這個網絡"
+
+msgid "Secured"
+msgstr "安全的"
+
+msgid "Unsecured"
+msgstr "不安全的"
+
+msgid "Channel"
+msgstr "頻道"
+
+msgid "Preferences"
+msgstr "喜好設定"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant 驅動程式"
+
+msgid "Wireless Interface"
+msgstr "無線網路介面"
+
+msgid "Wired Interface"
+msgstr "有線網路介面"
+
+msgid "Always show wired interface"
+msgstr "總是顯示有線網路介面"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "當連線中斷時,自動重新連接"
+
+msgid "Hidden Network"
+msgstr "隱藏的網路"
+
+msgid "Hidden Network ESSID"
+msgstr "隱藏的網路ESSID"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "已經連接到$A 在 $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "已連接到有線網絡(IP: $A)"
+
+msgid "Not connected"
+msgstr "未連接"
+
+msgid "No wireless networks found."
+msgstr "找不到無線網絡"
+
+msgid "Key"
+msgstr "密鑰"
+
+msgid "Username"
+msgstr "用戶名"
+
+msgid "Password"
+msgstr "密碼"
+
+msgid "Anonymous Identity"
+msgstr "匿名的身份"
+
+msgid "Identity"
+msgstr "身份"
+
+msgid "Authentication"
+msgstr "驗證"
+
+msgid "Path to PAC File"
+msgstr "PAC檔案的路徑"
+
+msgid "Choose from the networks below:"
+msgstr "請選擇以下網絡:"
+
+msgid "Putting interface down..."
+msgstr "正在關閉網路介面..."
+
+msgid "Resetting IP address..."
+msgstr "正在重新設置IP地址..."
+
+msgid "Putting interface up..."
+msgstr "正在開啟網路介面..."
+
+msgid "Removing old connection..."
+msgstr "移除舊連接中..."
+
+msgid "Generating PSK..."
+msgstr "產生PSK中..."
+
+msgid "Generating WPA configuration file..."
+msgstr "正在產生WPA設定檔..."
+
+msgid "Flushing the routing table..."
+msgstr "正在路由表"
+
+msgid "Configuring wireless interface..."
+msgstr "正在設定無線網路介面..."
+
+msgid "Setting broadcast address..."
+msgstr "正在設置廣播位址..."
+
+msgid "Setting static DNS servers..."
+msgstr "正在設置靜態DNS伺服器..."
+
+msgid "Setting static IP addresses..."
+msgstr "正在設置靜態IP地址..."
+
+msgid "Obtaining IP address..."
+msgstr "獲取IP地址中..."
+
+msgid "Done connecting..."
+msgstr "完成連接中..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "為了要連上有線網路,你必須創造一個新的網路設定檔,鍵入一個描述網路的名字，然後按下Add."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd要存取您的電腦網路卡."
+
+msgid "Run script before connect"
+msgstr "連接前先執行腳本"
+
+msgid "Run script after connect"
+msgstr "連接後再執行腳本"
+
+msgid "Scripts"
+msgstr "腳本"
+
+msgid "Enable debug mode"
+msgstr "啟用除錯模式"
+
+msgid "Use global DNS servers"
+msgstr "使用全球DNS伺服器"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "有線自動連接時,使用預設的設定檔"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "有線自動連接時,提示設定檔"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "有線自動連接時,使用最近用過的設定檔"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "啟用網際網路連接分享"
+
+msgid "Use Encryption (WEP only)"
+msgstr "使用加密(僅WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "使用dBm度量訊號強度"
+
+msgid "This network requires encryption to be enabled."
+msgstr "此網路需要加密才能連結。"
+
+msgid "Preferences dialog"
+msgstr "偏好選單:"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "暫時停止顯示自動重新連結通知:"
+
+msgid "Wireless Networks"
+msgstr "無線網路:"
+
+msgid "About Wicd"
+msgstr "關於 Wicd:"
+
+msgid "OK"
+msgstr "確定"
+
+msgid "Connect to selected network"
+msgstr "連接到選擇網路:"
+
+msgid "General Settings"
+msgstr "一般設定:"
+
+msgid "DNS server"
+msgstr "DNS 伺服器:"
+
+msgid "Scan"
+msgstr "掃描:"
+
+msgid "Rename wired profile"
+msgstr "重新命名設定:"
+
+msgid "Scan for hidden networks"
+msgstr "掃描隱藏網路:"
+
+msgid "Route Table Flushing"
+msgstr "更新路由表:"
+
+msgid "Automatic Reconnection"
+msgstr "自動重新連接:"
+
+msgid "Press F8 or Q to quit."
+msgstr "按 F8 或 Q 離開。"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "作為預設選項 (覆蓋前次設定):"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "連接失敗: 未收到 DHCP 封包"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "要了解更多資訊，請參考 wicd-curses (8) 手冊"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "wicd 伺服軟體未執行，無法完成您的指令。"
+
+msgid "Connection Failed: Bad password"
+msgstr "連接失敗: 密碼錯誤:"
+
+msgid "Run pre-disconnect script"
+msgstr "執行 pre-disconnect script"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "無法連接 wicd daemon 的 DBus 介面。通常是無法正常啟動  daemon。請檢查 wicd 記錄檔以得到更多資訊"
+
+msgid "Display this help dialog"
+msgstr "顯示求助對話框"
+
+msgid "Disconnect from all networks"
+msgstr "將所有的網路斷線"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "更改後端設定必需在重啟 daemon 之後才會生效"
+
+msgid "Stop a network connection in progress"
+msgstr "停止網路連線"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "連線失敗： 無法取得 IP 位址"
+
+msgid "Always switch to wired connection when available"
+msgstr "有線網路可以用時切換成有線網路"
+
+msgid "Connection Cancelled"
+msgstr "取消連線"
+
+msgid "Scanning networks... stand by..."
+msgstr "掃描網路中...請稍後..."
+
+msgid "Refresh network list"
+msgstr "更新網路列表"
+
+msgid "Search domain"
+msgstr "搜尋網域"
+
+msgid "Press ESC to cancel"
+msgstr "按下 ESC 以取消"
+
+msgid "Scanning"
+msgstr "掃描中"
+
+msgid "External Programs"
+msgstr "外部程式"
+
+msgid "Connecting"
+msgstr "嘗試連線"
+
+msgid "Connecting to daemon..."
+msgstr "連線至 daemon..."
+
+msgid "Add a new wired profile"
+msgstr "新增一個有線設定檔"
+
+msgid "DHCP Client"
+msgstr "DHCP 客戶端"
+
+msgid "Configure Selected Network"
+msgstr "設定所選取的網路"
+
+msgid "Validating authentication..."
+msgstr "驗証認証資訊中..."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "進行 \"$A\" 設定檔的偏好設定"
+
+msgid "Properties"
+msgstr "特性"
+
+msgid "Establishing connection..."
+msgstr "建立連線中"
+
+msgid "Setting encryption info"
+msgstr "設定加密資訊"
+
+msgid "Set up Ad-hoc network"
+msgstr "設定 Ad-hoc 網路"
+
+msgid "Connection established"
+msgstr "已建立連線"
+
+msgid "Select scripts"
+msgstr "選擇 scripts"
+
+msgid "Invalid address in $A entry."
+msgstr "在 $A 項目中有無法使用的位址"
+
+msgid "Wired Networks"
+msgstr "有線網路"
+
+msgid "Global DNS servers"
+msgstr "全域 DNS 主機"
+
+msgid "DNS domain"
+msgstr "DNS 網域"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "無法連接 daemon。嘗試自動啟動它..."
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Backend"
+msgstr "後端"
+
+msgid "Terminated by user"
+msgstr "操作被使用者中止"
+
+msgid "Disconnecting active connections..."
+msgstr "正在中斷使用中的連線"
+
+msgid "Wired Link Detection"
+msgstr "有線連線偵測"
+
+msgid "Add a new profile"
+msgstr "新增設定檔"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "建立 Ad-Hoc 網路"
+
+msgid "All controls are case sensitive"
+msgstr "所有的控制項皆為大小寫有別"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "全域 DNS 並沒有在一般偏好設定中啟用"
+
+msgid "Automatic (recommended)"
+msgstr "自動 (建議值)"
+
+msgid "Wired connection detected"
+msgstr "偵測到有線網路"
+
+msgid "Notifications"
+msgstr "通知"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "選取或建立一個有線網路設定檔以供使用"
+
+msgid "Disconnected"
+msgstr "斷線"
+
+msgid "Required encryption information is missing."
+msgstr "缺乏所需的加密資訊"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "Wicd daemon 已被關閉。只有重新啟動 daemon 才能讓使用者介面正常運作"
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "要連線到有線網路，您必需建立一個網路設定檔。要建立網路設定檔，請鍵入描述此網路的名稱，然後按下 Add"
+
+msgid "Wired Autoconnect Settings"
+msgstr "有線網路自動連線設定"
+
+msgid "Debugging"
+msgstr "除錯中"
+
+msgid "Network Interfaces"
+msgstr "網路介面"
+
+msgid "Wicd daemon unreachable"
+msgstr "無法連接 Wicd daemon"
+
+msgid "Display notifications about connection status"
+msgstr "顯示連線狀態通知"

@@ -1,0 +1,44 @@
+# Translations for Malayalam (ml)
+# Translator ID 1
+# /translator/edit/1/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "ബന്ധിപ്പിയ്ക്കുക"
+
+msgid "IP"
+msgstr "വിലാസം"
+
+msgid "Netmask"
+msgstr "നെറ്റ്‌മാസ്ക്"
+
+msgid "Gateway"
+msgstr "ഗേറ്റ്‌വേ"
+
+msgid "DNS"
+msgstr "ഡിഎന്‍എസ്"
+
+msgid "Advanced Settings"
+msgstr "സങ്കീര്‍ണ്ണമായ ക്രമീകരണങ്ങള്‍"
+
+msgid "Secured"
+msgstr "സുരക്ഷിതം"
+
+msgid "Unsecured"
+msgstr "സുരക്ഷിതമല്ലാത്ത"
+
+msgid "Channel"
+msgstr "ചാനല്‍"
+
+msgid "Preferences"
+msgstr "മുന്‍ഗണനകള്‍"
+
+msgid "Username"
+msgstr "ഉപയോക്താവിന്റെ പേരു്"
+
+msgid "Password"
+msgstr "അടയാളവാക്കു്"
+
+msgid "Authentication"
+msgstr "തിരിച്ചറിയല്‍"

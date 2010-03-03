@@ -1,0 +1,510 @@
+# Translations for Japanese (ja)
+# Translator ID 43
+# /translator/edit/43/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "接続する"
+
+msgid "IP"
+msgstr "IPアドレス"
+
+msgid "Netmask"
+msgstr "ネットマスク"
+
+msgid "Gateway"
+msgstr "ゲートウェイ"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "固定IPを使用する"
+
+msgid "Use Static DNS"
+msgstr "スタティック DNS を使用する"
+
+msgid "Use Encryption"
+msgstr "暗号化を使用する"
+
+msgid "Advanced Settings"
+msgstr "詳細設定"
+
+msgid "Wired Network"
+msgstr "有線ネットワーク"
+
+msgid "Channel"
+msgstr "チャンネル"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "有線ネットワークに接続中 （IP: $A)"
+
+msgid "Not connected"
+msgstr "接続していません"
+
+msgid "No wireless networks found."
+msgstr "無線ネットワークが見つかりません。"
+
+msgid "Username"
+msgstr "ユーザ名"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Putting interface down..."
+msgstr "インターフェイスを無効にしています……"
+
+msgid "Resetting IP address..."
+msgstr "IP アドレスを再設定しています……"
+
+msgid "Putting interface up..."
+msgstr "インターフェイスを有効にしています……"
+
+msgid "Removing old connection..."
+msgstr "以前の接続を削除しています……"
+
+msgid "Generating PSK..."
+msgstr "PSKキーを生成しています……"
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA 設定ファイルを生成しています……"
+
+msgid "Flushing the routing table..."
+msgstr "ルーティングテーブルを消去しています……"
+
+msgid "Configuring wireless interface..."
+msgstr "無線インターフェイスを設定しています……"
+
+msgid "Setting broadcast address..."
+msgstr "ブロードキャストアドレスを設定しています……"
+
+msgid "Setting static DNS servers..."
+msgstr "スタティック DNS サーバを設定しています……"
+
+msgid "Setting static IP addresses..."
+msgstr "スタティック IP アドレスを設定しています……"
+
+msgid "Obtaining IP address..."
+msgstr "IP アドレスを取得しています……"
+
+msgid "Done connecting..."
+msgstr "接続しました……"
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "有線ネットワークに接続するには、ネットワークプロファイルを作成する必要があります。ネットワークプロファイルを作成するには、このネットワークの名前を入力し、追加ボタンを押してください。"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd はコンピュータのネットワークカードにアクセスする必要があります。"
+
+msgid "Run script before connect"
+msgstr "接続前にスクリプトを実行"
+
+msgid "Run script after connect"
+msgstr "接続後にスクリプトを実行する"
+
+msgid "Scripts"
+msgstr "スクリプト"
+
+msgid "Enable debug mode"
+msgstr "デバッグモードを有効化"
+
+msgid "Brought to you by:"
+msgstr "貢献してくれた方々:"
+
+msgid "Wired Networks"
+msgstr "有線ネットワーク"
+
+msgid "Wireless Networks"
+msgstr "ワイヤレスネットワーク"
+
+msgid "OK"
+msgstr "はい"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Always show wired interface"
+msgstr "常に有線インタフェースを表示する"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "wicdのD-Busインタフェースに接続できませんでした。wicdログのエラーメッセージをチェックしてください。"
+
+msgid "Path to PAC File"
+msgstr "PACファイルへのパス"
+
+msgid "Display this help dialog"
+msgstr "ヘルプダイアログを表示する"
+
+msgid "Disconnect from all networks"
+msgstr "全てのネットワークから切断する"
+
+msgid "Connection Cancelled"
+msgstr "接続がキャンセルされました。"
+
+msgid "Connecting"
+msgstr "接続中"
+
+msgid "DNS domain"
+msgstr "DNSドメイン"
+
+msgid "DNS server"
+msgstr "DNSサーバ"
+
+msgid "Preferences dialog"
+msgstr "設定ダイアログ"
+
+msgid "Connection Failed: Bad password"
+msgstr "接続に失敗しました：パスワードが誤っています。"
+
+msgid "Scanning"
+msgstr "スキャン"
+
+msgid "Disconnected"
+msgstr "切断されました"
+
+msgid "Route Table Flushing"
+msgstr "ルーティングテーブルの消去"
+
+msgid "Wired Interface"
+msgstr "有線インターフェース"
+
+msgid "Scan for hidden networks"
+msgstr "隠れたネットワークをスキャンしています"
+
+msgid "use urwid's raw screen controller"
+msgstr "urwid'sのロースクリーン制御を使う"
+
+msgid "Unsecured"
+msgstr "安全ではない"
+
+msgid "Scan"
+msgstr "スキャン"
+
+msgid "Secured"
+msgstr "安全である"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr ""
+"wicd デーモンのDBusインターフェースに接続できませんでした。\r\n"
+"デーモンが開始されていない場合に\r\n"
+"より詳細な情報を得るためにwicdデーモンのログを確認してください。"
+
+msgid "Stop a network connection in progress"
+msgstr "接続中にネットワークが停止しました"
+
+msgid "Wicd daemon unreachable"
+msgstr "Wicd デーモンに接続できません"
+
+msgid "You must enter your password to configure scripts"
+msgstr "スクリプトを書くにはパスワードを入れなければなりません"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "有線への自動接続プロファイルを開始する"
+
+msgid "Search domain"
+msgstr "ドメインを探しています"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "接続に失敗しました：無線アクセスポイントに接続できませんでした。"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "WPAサプリカントドライバーとしてwextを使用してください"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "一時的に自動接続の表示をやめる"
+
+msgid "Establishing connection..."
+msgstr "接続中……"
+
+msgid "Connection established"
+msgstr "接続しました"
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr ""
+"DBusからの接続拒否エラーのため、Wicdデーモンは通知できませんでした。\r\n"
+"DBus設定を確認してみてください。"
+
+msgid "Global DNS servers"
+msgstr "グローバルDNSサーバ"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "デーモンに起動できませんでした。自動的に起動を試みます。"
+
+msgid "Backend"
+msgstr "バックエンド"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr ""
+"DBusエラーが起こりました！\r\n"
+"wicdデーモンが停止しているか、wicd-cursesが起動しています。デーモンとwicd-cursesも再起動してください。"
+
+msgid "Terminated by user"
+msgstr "ユーザによって切断されました"
+
+msgid "Disconnecting active connections..."
+msgstr "接続中の通信を切断する"
+
+msgid "Wired Link Detection"
+msgstr "有線接続が見つかりました"
+
+msgid "Add a new profile"
+msgstr "新しい設定を追加する"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "インターネット接続の共有を開始する"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Ad-Hockネットワークを構成する"
+
+msgid "All controls are case sensitive"
+msgstr "大文字小文字は区別されます"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "一般設定でグローバルDNSが有効になっていません。"
+
+msgid "Automatic (recommended)"
+msgstr "自動（再接続）"
+
+msgid "Wired connection detected"
+msgstr "有線接続が見つかりました"
+
+msgid "Notifications"
+msgstr "通知"
+
+msgid "Choose from the networks below:"
+msgstr "下のネットワーク一覧から選択して下さい："
+
+msgid "Connect to selected network"
+msgstr "選択したネットワークに接続する"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "wicd-cursesは、最後に接続した有線接続を削除できません。('F2')の名前を変更してください"
+
+msgid "General Settings"
+msgstr "一般設定"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "$Bから$Aに接続する(IP:$C)"
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr ""
+"例外が起こりました！\r\n"
+"下のバックトレースをバグ情報をして作者へ送付ください。"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "無線ネットワーク\"$A\" ($B)を設定中"
+
+msgid "Required encryption information is missing."
+msgstr "要求された暗号化情報が見つかりません。"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "wicdデーモンはシャットダウンしています。再起動するまで、このUI設定は機能しません。"
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"有線接続に接続するためには、ネットワークプロファイルを作成する必要があります。\r\n"
+"ネットワークプロファイルを作成するためには、設定名、ネットワークアドレスを入力し、追加ボタンを押します。"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "接続が切れたら再接続する"
+
+msgid "Use Encryption (WEP only)"
+msgstr "暗号化を有効にする（WEPキーのみ）"
+
+msgid "Wired Autoconnect Settings"
+msgstr "自動的接続する有線接続の設定"
+
+msgid "Network Interfaces"
+msgstr "ネットワークインターフェース"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "有線への自動接続の設定を初期のプロファイルとして使用する"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPAサプリカントドライバ"
+
+msgid "Hidden Network ESSID"
+msgstr "隠されたネットワークのESSID"
+
+msgid "Authentication"
+msgstr "認証"
+
+msgid "Rename wired profile"
+msgstr "有線プロファイルの名前を変更する"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "wicdデーモンは有効でなかったため、処理を完了できませんでした。"
+
+msgid "Display notifications about connection status"
+msgstr "接続状態の通知を表示する"
+
+msgid "Identity"
+msgstr "アイデンティティ"
+
+msgid "Automatic Reconnection"
+msgstr "自動再接続"
+
+msgid "Press F8 or Q to quit."
+msgstr "F8キーかQキーを押して閉じる。"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "初期プロファイルとして使用する（以前の初期値を上書きします）"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "接続に失敗しました：DHCPサーバからの応答がありません。"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "詳細なヘルプを確認してください。wicd-curses(8)のマニュアルを参照してください。"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "デーモンを再起動するまで、変更は有効になりません。"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "接続に失敗しました：IPアドレスを取得できません"
+
+msgid "Always switch to wired connection when available"
+msgstr "利用できる場合は、有線接続へ常に切り替える"
+
+msgid "WPA Supplicant"
+msgstr "WPAのサプリカント"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr ""
+"さまざまな問題を回避するために、wicd-cursesからは、スクリプトディレクトリを直接編集することをサポートしていません。しかし、手動で直接編集することは可能です。\r\n"
+"はじめに、（root管理者ユーザとして）\"$A\"の設定ファイルを開きます。問題となっている$Bの名前のついたところを見てください。"
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "無線ネットワークを設定を行うには、設定ファイル中の\"[<ESSID>]\"の欄を設定してください。"
+
+msgid "Scanning networks... stand by..."
+msgstr "ネットワークを調べています……待機しています……"
+
+msgid "Refresh network list"
+msgstr "ネットワークの一覧を更新"
+
+msgid "Press ESC to cancel"
+msgstr "キャンセルするにはESCキー押してください"
+
+msgid "Select Hidden Network ESSID"
+msgstr "隠されたESSIDのネットワークを選択してください。"
+
+msgid "External Programs"
+msgstr "外部プログラム"
+
+msgid "Use global DNS servers"
+msgstr "グローバルDNSサーバを使用する"
+
+msgid "This network requires encryption to be enabled."
+msgstr "このネットワークは、暗号化が有効になっていることが必要です。"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "最後に使用した有線に自動で接続するプロファイルを利用する"
+
+msgid "Preferences"
+msgstr "設定"
+
+msgid "Connecting to daemon..."
+msgstr "デーモンに接続しています……"
+
+msgid "Automatically connect to this network"
+msgstr "このネットワークに自動的に接続する"
+
+msgid "Add a new wired profile"
+msgstr "新しい有線接続を追加する"
+
+msgid "DHCP Client"
+msgstr "DHCPクライアント"
+
+msgid "Use dBm to measure signal strength"
+msgstr "信号値にdBmを使用する"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "このessidがついている全てのネットワークでこの設定を使用する"
+
+msgid "Configure Selected Network"
+msgstr "選択されたネットワークを設定する"
+
+msgid "Validating authentication..."
+msgstr "認証情報を検証中……"
+
+msgid "Key"
+msgstr "キー"
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "\"$A\"の有線プロファイル設定を構成中"
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "madwifi/atherosドライバーを利用する際はチェックしてください"
+
+msgid "Properties"
+msgstr "プロパティ"
+
+msgid "Setting encryption info"
+msgstr "暗号化の設定"
+
+msgid "About Wicd"
+msgstr "Wicdについて"
+
+msgid "Set up Ad-hoc network"
+msgstr "アドホックネットワークを設定する"
+
+msgid "Select scripts"
+msgstr "スクリプトを選択する"
+
+msgid "Invalid address in $A entry."
+msgstr "$Aの設定に誤ったアドレスがあります"
+
+msgid "Hidden Network"
+msgstr "隠されたネットワーク"
+
+msgid "Anonymous Identity"
+msgstr "匿名設定"
+
+msgid "Wireless Interface"
+msgstr "無線インターフェース"
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "GUIのsudoプログラムを見つけられませんでした。スクリプトエディターは起動できません。直接設定ファイルを編集してください。"
+
+msgid "Wicd Curses Interface"
+msgstr "wicd の表示インターフェース"
+
+msgid "Verifying access point association..."
+msgstr "アクセスポイントとの関連付けを確認しています……"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "接続するためには、有線接続を選択するか、作成してください。"
+
+msgid "Debugging"
+msgstr "デバッグ"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "Run post-disconnect script"
+msgstr "切断後にスクリプトを実行する"
+
+msgid "ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the \"$A\" group."
+msgstr "エラー：wicdデーモンはwicd-cursesの接続を拒否しました。あなたのユーザ名が\"$A\"グループに所属しているかどうか確認してください。"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "無線インターフェースが無効"
+
+msgid "Run pre-disconnect script"
+msgstr "切断前にスクリプトを実行する"
+
+msgid "Once there, you can adjust (or add) the \"beforescript\", \"afterscript\", and \"disconnectscript\" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."
+msgstr ""
+"必要であれば、\"beforescript\", \"afterscript\", および \"disconnectscript\" の変数を変更または追加することができます。これらは接続前、接続後、および切断時に実行するスクリプトを変更する変数です。\r\n"
+"これらの変数には実際のスクリプトの中身ではなく、スクリプトへのフルパスを記述するように注意してください。\r\n"
+"これらのスクリプトは別々に追加・編集する必要があります。詳しい情報は wicd のマニュアルを参照してください。"
+
+msgid "Suspend script"
+msgstr "スクリプトの実行を一旦停止する"
+
+msgid "Resume script"
+msgstr "スクリプトの実行を再開する"
+
+msgid "Invalid IP address entered."
+msgstr "入力されたIPアドレスは無効です。"

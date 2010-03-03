@@ -1,0 +1,103 @@
+# Translations for Indonesian (id)
+# Translator ID 41
+# /translator/edit/41/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Hubungkan"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Netmask"
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Pergunakan IP Statik"
+
+msgid "Use Static DNS"
+msgstr "Pergunakan DNS Statik"
+
+msgid "Use Encryption"
+msgstr "Pergunakan Enkripsi"
+
+msgid "Advanced Settings"
+msgstr "Pengaturan Tingkat Lanjut"
+
+msgid "Wired Network"
+msgstr "Jaringan Kabel"
+
+msgid "Automatically connect to this network"
+msgstr "Otomatis terhubung dengan jaringan ini"
+
+msgid "Secured"
+msgstr "Telah Aman"
+
+msgid "Unsecured"
+msgstr "Tidak Aman"
+
+msgid "Channel"
+msgstr "Channel"
+
+msgid "Preferences"
+msgstr "Pengaturan"
+
+msgid "WPA Supplicant Driver"
+msgstr ""
+"WAP Supplicant Driver\r\n"
+"madwifi 0.9.4"
+
+msgid "Wireless Interface"
+msgstr "Wireless Interface"
+
+msgid "Wired Interface"
+msgstr "Interface yang terhubung"
+
+msgid "Always show wired interface"
+msgstr "Selalu tunjukan interface yang telah terhubung"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Otomatid hubungkan kembali saat hubungan terputus"
+
+msgid "Hidden Network"
+msgstr "Jaringan Tersembunyi"
+
+msgid "Hidden Network ESSID"
+msgstr "Kode ESSID Jaringan Tersembunyi"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Hubungkan ke $A melalui $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Telah terhubung ke jaringan kabel (IP:$A)"
+
+msgid "Not connected"
+msgstr "Tidak Tehubung"
+
+msgid "No wireless networks found."
+msgstr "Tidak ada kartu jaringan yang ditemukan"
+
+msgid "Key"
+msgstr "Key"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Anonymous Identity"
+msgstr "Identitas Anonim"
+
+msgid "Identity"
+msgstr "Identitas"
+
+msgid "DNS server"
+msgstr "1"

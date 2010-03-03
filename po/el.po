@@ -1,0 +1,465 @@
+# Translations for Greek (el)
+# Translator ID 25
+# /translator/edit/25/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Σύνδεση"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Μάσκα Δικτύου"
+
+msgid "Gateway"
+msgstr "Πύλη"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Χρήση στατικών διευθύνσεων IP"
+
+msgid "Use Static DNS"
+msgstr "χρήση στατικών DNS"
+
+msgid "Use Encryption"
+msgstr "Χρήση κρυπτογράφησης"
+
+msgid "Advanced Settings"
+msgstr "Προχωρημένες ρυθμίσεις"
+
+msgid "Wired Network"
+msgstr "Ενσύρματο δίκτυο"
+
+msgid "Automatically connect to this network"
+msgstr "Αυτόματη σύνδεση στο δίκτυο"
+
+msgid "Secured"
+msgstr "Ασφαλής"
+
+msgid "Unsecured"
+msgstr "Ανασφαλής"
+
+msgid "Channel"
+msgstr "Κανάλι"
+
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+msgid "WPA Supplicant Driver"
+msgstr "Οδηγός WPA"
+
+msgid "Wireless Interface"
+msgstr "Ασύρματη διεπαφή"
+
+msgid "Wired Interface"
+msgstr "Ενσύρματη συσκευή"
+
+msgid "Always show wired interface"
+msgstr "Προβολή πάντα των ενσύρματων συσκευών"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Αυτόματη επανασύνδεση κατά την αποσύνδεση"
+
+msgid "Hidden Network"
+msgstr "Κρυφό δίκτυο"
+
+msgid "Hidden Network ESSID"
+msgstr "Κρυφό ESSID δικτύου"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Συνδεδεμένο στο $A με $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Συνδεδεμένο με το ενσύρματο δίκτυο (IP: $A)"
+
+msgid "Not connected"
+msgstr "Αποσυνδεμένο"
+
+msgid "No wireless networks found."
+msgstr "Δεν βρέθηκαν ασύρματα δίκτυα."
+
+msgid "Key"
+msgstr "Κλειδί"
+
+msgid "Username"
+msgstr "Όνομα"
+
+msgid "Password"
+msgstr "Κωδικός"
+
+msgid "Anonymous Identity"
+msgstr "Ανώνυμη ταυτότητα"
+
+msgid "Identity"
+msgstr "Ταυτότητα"
+
+msgid "Authentication"
+msgstr "Πιστοποίηση"
+
+msgid "Path to PAC File"
+msgstr "Διαδρομή για το  αρχείο PAC"
+
+msgid "Choose from the networks below:"
+msgstr "Επιλέξτε από τα δίκτυα:"
+
+msgid "Putting interface down..."
+msgstr "Απενεργοποίηση κάρτας δικτύου"
+
+msgid "Resetting IP address..."
+msgstr "Επανάκτηση Διεύθυνσης IP..."
+
+msgid "Putting interface up..."
+msgstr "Ενεργοποίηση διεπαφής..."
+
+msgid "Removing old connection..."
+msgstr "Αφαίρεση παλιάς σύνδεσης..."
+
+msgid "Generating PSK..."
+msgstr "Δημιουργία PSK..."
+
+msgid "Generating WPA configuration file..."
+msgstr "Δημιουργία αρχείου ρύθμισης WPA..."
+
+msgid "Flushing the routing table..."
+msgstr "Καθάρισμα πινάκα δρομολόγησης..."
+
+msgid "Configuring wireless interface..."
+msgstr "Ρύθμιση ασύρματης διεπαφής..."
+
+msgid "Setting broadcast address..."
+msgstr "Ρύθμιση διεύθυνσης εκπομπής..."
+
+msgid "Setting static DNS servers..."
+msgstr "Ρύθμιση στατικού διακομιστή DNS..."
+
+msgid "Setting static IP addresses..."
+msgstr "Ρύθμιση στατικής διεύθυνσης IP..."
+
+msgid "Obtaining IP address..."
+msgstr "Ανάκτηση διεύθυνσης IP..."
+
+msgid "Done connecting..."
+msgstr "Η σύνδεση ολοκληρώθηκε..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Για μια ενσύρματη σύνδεση, απαιτείται ένα προφίλ δικτύου. Για τη δημιουργία προφίλ, πληκτρολογήστε ένα όνομα και επιλέξτε Προσθήκη..."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Το WICD χρειάζεται πρόσβαση στις κάρτες δικτύου του Η/Υ σας."
+
+msgid "Run script before connect"
+msgstr "Εκτέλεση σεναρίου πριν τη σύνδεση"
+
+msgid "Run script after connect"
+msgstr "Εκτέλεση σεναρίου μετά τη σύνδεση"
+
+msgid "Scripts"
+msgstr "Σενάρια"
+
+msgid "Enable debug mode"
+msgstr "Ενεργοποίηση λειτουργίας αποσφαλμάτωσης"
+
+msgid "Use global DNS servers"
+msgstr "Χρήση κύριων Διακομιστών Ονομάτων"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Χρήση προεπιλεγμένου προφίλ σε ενσύρματο δίκτυο"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Ζητηση προφιλ ενσυρματου δικτυου"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Χρήση τελευταίου χρησιμοποιημένου προφίλ σε επανασύνδεση"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Ενεργοποίηση κοινόχρηστης σύνδεσης Internet"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Χρήση κρυπτογράφησης (μόνο WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Χρήση dBm για μέτρηση ισχύος σήματος"
+
+msgid "Wired connection detected"
+msgstr "Βρέθηκε ενσύρματη σύνδεση"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Διακοπή εμφάνισης μηνύματος επανασύνδεσης"
+
+msgid "General Settings"
+msgstr "Γενικές Ρυθμίσεις"
+
+msgid "External Programs"
+msgstr "Εξωτερικά Προγράμματα"
+
+msgid "DHCP Client"
+msgstr "Πελάτης DHCP"
+
+msgid "Wired Link Detection"
+msgstr "Ανίχνευση ενσύρματου δικτύου"
+
+msgid "Route Table Flushing"
+msgstr "Σβήσιμο πίνακα δρομολόγησης:"
+
+msgid "Automatic (recommended)"
+msgstr "Αυτόματο (προτείνεται)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Το δίκτυο απαιτεί ενεργοποιημένη κρυπτογράφηση."
+
+msgid "Required encryption information is missing."
+msgstr "Η απαιτούμενη πληροφορία κρυπτογράφησης δεν υπάρχει."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Χρήση αυτών των ρυθμίσεων για όλα τα δίκτυα που μοιράζονται το essid"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Επιλέξτε ή δημιουργήστε προφίλ για την ενσύρματη σύνδεση με"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Αποτυχία σύνδεσης: Αδυναμία ανάκτησης IP διεύθυνσης"
+
+msgid "Connection Cancelled"
+msgstr "Ακύρωση Σύνδεσης"
+
+msgid "Connection Failed: Bad password"
+msgstr "Αποτυχία Σύνδεσης: Λάθος κωδικός"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Ενεργοποίηση του διακόπτη wifi"
+
+msgid "Preferences dialog"
+msgstr "Διάλογος προτιμήσεων"
+
+msgid "Display this help dialog"
+msgstr "Προβολή του διαλόγου βοήθειας"
+
+msgid "Disconnect from all networks"
+msgstr "Αποσύνδεση από όλα τα δίκτυα"
+
+msgid "Scanning networks... stand by..."
+msgstr "Σάρωση δικτύων...αναμείνατε..."
+
+msgid "Refresh network list"
+msgstr "Ανανέωση λίστας δικτύων"
+
+msgid "Search domain"
+msgstr "Αναζήτηση τομέα"
+
+msgid "Press ESC to cancel"
+msgstr "Πατήστε Esc για ακύρωση"
+
+msgid "Scanning"
+msgstr "Σάρωση"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Επιλογή κρυφού δικτύου ESSID"
+
+msgid "Connecting"
+msgstr "Σύνδεση"
+
+msgid "Connecting to daemon..."
+msgstr "Σύνδεση στο δαίμονα..."
+
+msgid "Configure Selected Network"
+msgstr "Ρύθμιση επιλεγμένου δικτύου"
+
+msgid "Validating authentication..."
+msgstr "Έλεγχος εξουσιοδότησης..."
+
+msgid "Wireless Networks"
+msgstr "Ασύρματα δίκτυα"
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "Έλεγχος για χρήση οδηγών madwifi/atheros"
+
+msgid "Properties"
+msgstr "Ιδιότητες"
+
+msgid "About Wicd"
+msgstr "Σχετικά με την εφαρμογή Wicd"
+
+msgid "OK"
+msgstr "Εντάξει"
+
+msgid "Select scripts"
+msgstr "Επιλογή σεναρίων"
+
+msgid "Wired Networks"
+msgstr "Ενσύρματα δίκτυα"
+
+msgid "Global DNS servers"
+msgstr "Κύριοι Διακομιστές Ονομάτων"
+
+msgid "DNS domain"
+msgstr "Όνομα DNS"
+
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+msgid "Terminated by user"
+msgstr "Τερματισμός από το χρήστη"
+
+msgid "Add a new profile"
+msgstr "Προσθήκη νέου προφίλ"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Δημιουργία Ad-Hoc δικτύου"
+
+msgid "Connect to selected network"
+msgstr "Σύνδεση στο επιλεγμένο δίκτυο"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Ρυθμίσεις ενσύρματης αυτόματης σύνδεσης"
+
+msgid "Debugging"
+msgstr "Αποσφαλμάτωση"
+
+msgid "Network Interfaces"
+msgstr "Διεπαφές δικτύου"
+
+msgid "Scan"
+msgstr "Σάρωση"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "Rename wired profile"
+msgstr "Μετονομασία ενσύρματου προφίλ"
+
+msgid "Scan for hidden networks"
+msgstr "Σάρωση για κρυφά δίκτυα"
+
+msgid "Automatic Reconnection"
+msgstr "Αυτόματη επανασύνδεση"
+
+msgid "Press F8 or Q to quit."
+msgstr "Επιλέξτε F8 ή Q για έξοδο"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Χρήση ως προεπιλεγμένου προφίλ (αντικαθιστά τα προηγούμενα)"
+
+msgid "DNS server"
+msgstr "Εξυπηρετητής DNS:"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "Ο δαίμονας του wicd δεν είναι διαθέσιμος, συνεπώς το αίτημά σας δεν μπορεί να ολοκληρωθεί:"
+
+msgid "Always switch to wired connection when available"
+msgstr "Πάντα σύνδεση με το ενσύρματο δίκτυο αν υπάρχει"
+
+msgid "Verifying access point association..."
+msgstr "Επιβεβαίωση συσχέτισης με το Σημείο Πρόσβασης"
+
+msgid "Stop a network connection in progress"
+msgstr "Σταματήστε την σύνδεση που βρίσκεται σε εξέλιξη"
+
+msgid "You must enter your password to configure scripts"
+msgstr "Πρέπει να βάλετε τον κωδικό σας για να επεξεργαστείτε τις εντολές"
+
+msgid "Notifications"
+msgstr "Υπενθυμίσεις"
+
+msgid "Display notifications about connection status"
+msgstr "Προβολή υπενθυμίσεων σχετικά με την κατάσταση σύνδεσης"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "Σφλαμα σύνδεσης: Η σύνδεση με τον ασύρματο σταθμό απέτυχε."
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Θα πρέπει σχεδόν πάντα να χρησιμοποιείτε το wext για συνδέσεις WPA "
+
+msgid "Add a new wired profile"
+msgstr "Προσθήκη νέου προφίλ για ενσύρματο δίκτυο"
+
+msgid "Establishing connection..."
+msgstr "Προσπάθεια σύνδεσης σε εξέλιξη..."
+
+msgid "Connection established"
+msgstr "Η σύνδεση ολοκληρώθηκε"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Δεν είναι δυνατή η σύνδεση με την υπηρεσία, γίνεται προσπάθεια αυτόματης εκκίνησης..."
+
+msgid "Disconnecting active connections..."
+msgstr "Αποσυνδέονται οι ενεργές συνδέσεις"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "Ο κύριος διακομηστής DNS δεν έχει ενεργοποιηθεί στις γενικές προτιμήσεις"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "To wicd-curses δεν υποστηρίζει την διαγραφή του τελευταίου ενσύρματου δικτύου. Δοκιμάστε να το μετονομάσετε ('F2')"
+
+msgid "Disconnected"
+msgstr "Αποσυνδεμένο."
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "Ο δαίμονας του wicd τερματίστηκε. Το γραφικό περιβάλλον δεν θα λειτουργεί σωστά εάν δεν επανεκκινηθεί ο δαίμονας."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr ""
+"Για να συνδεθείτε σε ένα ενσύρματο δίκτυο θα πρέπει να δημιουργήσετε ένα προφίλ δικτύου.\r\n"
+"Για την δημιουργία προφίλ, εισάγετε ένα όνομα και πιέστε Προσθήκη."
+
+msgid "Wicd daemon unreachable"
+msgstr "Η σύνδεση με τον δαίμονα του wicd είναι ανέφικτη."
+
+msgid "Run pre-disconnect script"
+msgstr "Εκτέλεση του αρχείου δέσμης προ-αποσύνδεσης."
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr ""
+"Για πιο λεπτομερή βοήθεια, συμβουλευτείτε το αρχείο βοήθειας wicd-curses.\r\n"
+"Από κονσόλα, δώστε man wicd-curses"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Αποτυχία σύνδεσης με το D-Bus. Δείτε το αρχείο καταγραφής σφαλμάτων του wicd."
+
+msgid "Suspend script"
+msgstr "Διακοπή εκτέλεσης  αρχείου δέσμης"
+
+msgid "Invalid IP address entered."
+msgstr "Εισήχθη άκυρη διεύθυνση IP."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Ρύθμιση προτιμήσεων για το ενσύρματο δίκτυο \"$A\""
+
+msgid "Set up Ad-hoc network"
+msgstr "Ρύθμιση δικτύου Ad-hoc"
+
+msgid "Invalid address in $A entry."
+msgstr "Άκυρη διεύθυνση στην καταχώρηση $A"
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr "Η σύνδεση με τον δαίμονα του Wicd είναι αδύνατη, εξ' αιτίας απαγόρευσης πρόσβασης από το DBus. Επιβαιβεώστε ότι ο χρήστης ανήκει στην ομάδα $A"
+
+msgid "Wicd Curses Interface"
+msgstr "Διεπαφή Wicd Curses"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Ρύθμιση προτιμήσεων για το ασύρματο δίκτυο \"$A\" ($B)"
+
+msgid "Resume script"
+msgstr "Συνέχιση εκτέλεσης αρχείου δέσμης"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Η σύνδεση απέτυχε: Η αυτόματη απόδοση διεύθυνσης IP απέτυχε."
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "Η σύνδεση με τον δαίμονα του wicd απέτυχε. Αυτό συνήθως συμβαίνει όταν είναι αδύνατη η εκκίνηση του δαίμονα. Ελέγξτε τα αρχεία καταγραφής του wicd για περισσότερες λεμπομέρειες"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "Για να ενεργοποιηθούν οι αλλαγές, πρέπει να επανεκκινηθεί ο δαίμονας του wicd."
+
+msgid "Brought to you by:"
+msgstr "Προσφορά από:"
+
+msgid "Setting encryption info"
+msgstr "Ρύθμιση πληροφοριών κρυπτογράφησης"
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "Δεν είναι δυνατή η εύρεση γραφικού περιβάλλοντος για το πρόγραμμα sudo. Ο διορθωτής αρχείου δέσμης δεν μπορεί να ξεκινήσει. Πρέπει να διορθώσετε τα αρχεία δέσμης κατευθείαν στο αρχείο ρυθμίσεων."

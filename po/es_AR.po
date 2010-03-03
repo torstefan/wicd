@@ -1,0 +1,23 @@
+# Translations for Spanish (es_AR)
+# Translator ID 66
+# /translator/edit/66/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Resetting IP address..."
+msgstr "Reseteando dirección IP"
+
+msgid "Preferences dialog"
+msgstr "Diálogo de preferencias"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "La conección falló: no se han recibido ofertas DHCP"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Para una ayuda mas detallada, consulte el manual de wicd-curses"
+
+msgid "Connection Failed: Bad password"
+msgstr "La conección falló: Password incorrecto"
+
+msgid "Always show wired interface"
+msgstr "Siempre mostrar las conexiones cableadas"

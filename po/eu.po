@@ -1,0 +1,233 @@
+# Translations for Basque (eu)
+# Translator ID 34
+# /translator/edit/34/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Konektatu"
+
+msgid "IP"
+msgstr "IPa"
+
+msgid "Netmask"
+msgstr "Azpisarearen maskara"
+
+msgid "Gateway"
+msgstr "Pasabidea"
+
+msgid "DNS"
+msgstr "DNSa"
+
+msgid "Use Static IPs"
+msgstr "IP estatikoak erabili"
+
+msgid "Use Static DNS"
+msgstr "DNS estatikoak erabili"
+
+msgid "Use Encryption"
+msgstr "Enkriptazioa erabili"
+
+msgid "Advanced Settings"
+msgstr "Ezarpen aurreratuak"
+
+msgid "Wired Network"
+msgstr "Kabledun konexioa"
+
+msgid "Automatically connect to this network"
+msgstr "Automatikoki konektatu sare honetara"
+
+msgid "Secured"
+msgstr "Segurtatua"
+
+msgid "Unsecured"
+msgstr "Ez segurtatua"
+
+msgid "Channel"
+msgstr "Kanala"
+
+msgid "Preferences"
+msgstr "Hobespenak"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA eskatzen duen driverra"
+
+msgid "Wireless Interface"
+msgstr "Haririk gabekoen interfazea"
+
+msgid "Wired Interface"
+msgstr "Haridun interfazea"
+
+msgid "Always show wired interface"
+msgstr "Haridun interfazea beti erakutsi"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automatikoki birkonekatatu konexioa galtzean"
+
+msgid "Hidden Network"
+msgstr "Sarea ezkutatu"
+
+msgid "Hidden Network ESSID"
+msgstr "Sarearen ESSID ezkutatua"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "$A-tik $B-%ra konektatua (IP:$C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Haridun sarera konektatua (IP:$A)"
+
+msgid "Not connected"
+msgstr "Konektatu gabe"
+
+msgid "No wireless networks found."
+msgstr "Ez da sare haririk gabeko sarerik aurkiu"
+
+msgid "Key"
+msgstr "Gakoa"
+
+msgid "Username"
+msgstr "Erabiltzaile-izena"
+
+msgid "Password"
+msgstr "Pasahitza"
+
+msgid "Anonymous Identity"
+msgstr "Identitate anonimoa"
+
+msgid "Identity"
+msgstr "Identitatea"
+
+msgid "Authentication"
+msgstr "Baimentzea"
+
+msgid "Path to PAC File"
+msgstr "PAC fitxategiaren helbidea"
+
+msgid "Choose from the networks below:"
+msgstr "Aukeratu ondorengo sareetako bat:"
+
+msgid "Putting interface down..."
+msgstr "Interfazea deskonektatzen..."
+
+msgid "Resetting IP address..."
+msgstr "IP helbidea berrezartzen"
+
+msgid "Putting interface up..."
+msgstr "Interfazea konektatzen..."
+
+msgid "Removing old connection..."
+msgstr "Konexio zaharrak ezabatzen..."
+
+msgid "Generating PSK..."
+msgstr "PSK sortzen..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA konfigurazio fitxategia sortzen..."
+
+msgid "Flushing the routing table..."
+msgstr "Bide taula liberatzen..."
+
+msgid "Configuring wireless interface..."
+msgstr "Hari gabeko interfazea konfiguratzen..."
+
+msgid "Setting broadcast address..."
+msgstr "Broadcast helbidea ezartzen"
+
+msgid "Setting static DNS servers..."
+msgstr "DNS zerbitzari estatikoak ..."
+
+msgid "Setting static IP addresses..."
+msgstr "IP helbide estatikoak ezartzen..."
+
+msgid "Obtaining IP address..."
+msgstr "IP helbidea lortzen..."
+
+msgid "Done connecting..."
+msgstr "Konexioa egiten..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Haridun sare batera konektatzeko, sare profila sortu behar duzu. Sare profila sortzeko, idatzi sarea deskribatzen duen izena eta sakatu Gehitu."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd-k zure ordenagailuaren sare-txarteletara atzitu behar du"
+
+msgid "Run script before connect"
+msgstr "Scripta sarera konektatu aurretik exekutatu"
+
+msgid "Run script after connect"
+msgstr "Scripta sarera konektatu ondoren exekutatu"
+
+msgid "Scripts"
+msgstr "Scriptak"
+
+msgid "Enable debug mode"
+msgstr "Debug modua aktibatu"
+
+msgid "Use global DNS servers"
+msgstr "Erabili DNS zerbitzari globala"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Haridun sarera konektatzean profil lehenetsia erabili"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Haridun sarera konektatzean galdetu erabili beharreko profilaz"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Haridun sarera konektatzean erabili azkena erabilitako profila"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Aktibatu internet konexio konpartitua"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Enkriptazioa erabili(WEP bakarrik)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Erabili dBm seinalearen indarra neurtzeko"
+
+msgid "Wired connection detected"
+msgstr "Haridun sarea detektatu da"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Denbora batez ez erakutsi autokonexio pop-upik"
+
+msgid "General Settings"
+msgstr "Ezarpen orokorrak"
+
+msgid "External Programs"
+msgstr "Kanpoko programak"
+
+msgid "DHCP Client"
+msgstr "DCHP bezeroa"
+
+msgid "Wired Link Detection"
+msgstr "Haridun sarera lotura detektatu da"
+
+msgid "Route Table Flushing"
+msgstr "Bide taula garbitzen"
+
+msgid "Automatic (recommended)"
+msgstr "Automatikoa (gomendatua)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Sare honek enkriptazioa aktibatuta egotea eskatzen du."
+
+msgid "Required encryption information is missing."
+msgstr "Beharrezko enkriptazio informazioa ez dago."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Ezarpen hauek erabili essid hau elkarbanatzen duten konexio guztientzat."
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Haridun sare baterako profila sortu edo aukeratu"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Konexioak huts egin du: Ezin da IP helbidea lortu"
+
+msgid "Connection Cancelled"
+msgstr "Konexioa ezeztatua"
+
+msgid "Connection Failed: Bad password"
+msgstr "Ezin izan da konektatu: pasahitza ez da egokia"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Wireless kill Switch aktibatua"

@@ -1,0 +1,26 @@
+# Translations for Spanish (Nicaragua) (es_NI)
+# Translator ID 31
+# /translator/edit/31/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "máscara"
+
+msgid "Gateway"
+msgstr "puerta de acceso"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "us IPs est"
+
+msgid "Use Static DNS"
+msgstr "Usar DNS estático"

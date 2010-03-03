@@ -1,0 +1,317 @@
+# Translations for Georgian (ka)
+# Translator ID 44
+# /translator/edit/44/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Байланыс орнату"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Желі маскасы"
+
+msgid "Gateway"
+msgstr "Шлюз"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Тұрақты IP қолдану"
+
+msgid "Use Static DNS"
+msgstr "Тұрақты DNS қолдану"
+
+msgid "Use Encryption"
+msgstr "Шифрлеуді қолдану"
+
+msgid "Advanced Settings"
+msgstr "Кеңейтілген баптаулар"
+
+msgid "Wired Network"
+msgstr "Сымды байланыс"
+
+msgid "Automatically connect to this network"
+msgstr "Осы желіге автоматты түрде қосылу"
+
+msgid "Secured"
+msgstr "Қорғалған"
+
+msgid "Unsecured"
+msgstr "Қорғалмаған"
+
+msgid "Channel"
+msgstr "Канал"
+
+msgid "Preferences"
+msgstr "Баптаулар"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant драйвері"
+
+msgid "Wireless Interface"
+msgstr "Сымсыз желі интерфейсі"
+
+msgid "Wired Interface"
+msgstr "Сымды желі интерфейсі"
+
+msgid "Always show wired interface"
+msgstr "Сымды желі интерфейсін әрқашан көрсету"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Байланыс жоғалса, автоматты түрде қосылу"
+
+msgid "Hidden Network"
+msgstr "Жасырын желі"
+
+msgid "Hidden Network ESSID"
+msgstr "Жасырын желі аты (ESSID)"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Қазір $A қосулы тұр, ол $B орналасқан (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Сымды желіге қосулы тұр (IP: $A)"
+
+msgid "Not connected"
+msgstr "Байланыс жоқ"
+
+msgid "No wireless networks found."
+msgstr "Сымсыз желілер табылмады."
+
+msgid "Key"
+msgstr "Кілт"
+
+msgid "Username"
+msgstr "Пайдаланушы аты"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Anonymous Identity"
+msgstr "Анонимды идетификация"
+
+msgid "Identity"
+msgstr "Идентификация"
+
+msgid "Authentication"
+msgstr "Шындылықты тексеру"
+
+msgid "Path to PAC File"
+msgstr "PAC-файлға дейінгі жол"
+
+msgid "Choose from the networks below:"
+msgstr "Көрсетілген желілердің арасынан таңдаңыз:"
+
+msgid "Putting interface down..."
+msgstr "Интерфейсті сөндіру..."
+
+msgid "Resetting IP address..."
+msgstr "IP адрестерін тастау..."
+
+msgid "Putting interface up..."
+msgstr "Интерфейсті қосу..."
+
+msgid "Removing old connection..."
+msgstr "Ескі байланысты өшіру..."
+
+msgid "Generating PSK..."
+msgstr "PSK құру..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA баптаулар файлын құру..."
+
+msgid "Flushing the routing table..."
+msgstr "Бағдарлау кестесін тазарту..."
+
+msgid "Configuring wireless interface..."
+msgstr "Сымсыз желі интерфейсін баптау..."
+
+msgid "Setting broadcast address..."
+msgstr "Кеңтаралым адресін орнату..."
+
+msgid "Setting static DNS servers..."
+msgstr "Тұрақты DNS серверлерін орнату..."
+
+msgid "Setting static IP addresses..."
+msgstr "Тұрақты IP адрестерін орнату..."
+
+msgid "Obtaining IP address..."
+msgstr "IP адресін алу..."
+
+msgid "Done connecting..."
+msgstr "Қосылу аяқталуда..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Сымды желіге қосулы үшін желі профилін жасауыңыз керек. Желі профилін құру үшін оның атын енгізіп, \"Қосу\" батырмасын басыңыз."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd үшін компьютеріңіздің желілік карталарына рұқсат керек."
+
+msgid "Run script before connect"
+msgstr "Қосылуға дейін скриптті орындау"
+
+msgid "Run script after connect"
+msgstr "Қосылудан кейін скриптті орындау"
+
+msgid "Scripts"
+msgstr "Скрипттер"
+
+msgid "Enable debug mode"
+msgstr "Жөндеу режимін қосу"
+
+msgid "Use global DNS servers"
+msgstr "Глобалды DNS серверлерін қолдану"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Сымды желіге автоматты түрде қосылғанда негізгі профильді қолдану"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Сымды желіге автоматты түрде қосылғанда профильді сұрау"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Сымды желіге автоматты түрде қосылғанда соңғы қолданған профильді қолдану"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Интернетке байланысын таратуды қосу"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Шифрлеуді қолдану (тек WEP үшін)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Сигналдың деңгейін анықтау үшін dBm қолдану"
+
+msgid "Wired connection detected"
+msgstr "Сымды желі табылды"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Автоматты түрде қосу туралы хабарламаларын уақытша сөндіру"
+
+msgid "General Settings"
+msgstr "Жалпы баптаулар"
+
+msgid "External Programs"
+msgstr "Сыртқы бағдарламалар"
+
+msgid "DHCP Client"
+msgstr "DHCP клиент"
+
+msgid "Wired Link Detection"
+msgstr "Сымды желін анықтау"
+
+msgid "Route Table Flushing"
+msgstr "Бағдарлау кестесін тазарту"
+
+msgid "Automatic (recommended)"
+msgstr "Автоматты түрде (ұсынылады)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Бұл желі қосылған шифрлеуді талап етеді."
+
+msgid "Required encryption information is missing."
+msgstr "Керек шифрлеу ақпараты жоқ."
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Бұл ESSID-ті қолданатын барлық желілер үшін осы баптауларды қолдану"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Сымды желі профилін таңдаңыз не жаңасын құрыңыз, келесімен байланыс жасау үшін:"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Байланыс орнату қатесі: IP адресін алу мүмкін емес"
+
+msgid "Connection Cancelled"
+msgstr "Байланыс орнату тоқтатылды"
+
+msgid "Connection Failed: Bad password"
+msgstr "Байланыс орнату қатесі: Пароль қате"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Сымсыз желі Kill Switch қосулы тұр"
+
+msgid "Scanning networks... stand by..."
+msgstr "Желілер ізделуде... күте тұрыңыз..."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "\"$A\" сымды желі профайлын баптау"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "\"$A\" ($B) сымсыз желін баптау"
+
+msgid "Scan"
+msgstr "Іздеу"
+
+msgid "Always switch to wired connection when available"
+msgstr "Бар болса, әрқашан сымды желіге қосылуды таңдау"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Сымды желіге автоматты түрде қосылуды баптау"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Сізге көбінесе WPA supplicant драйвері ретінде wext қолдану керек"
+
+msgid "Debugging"
+msgstr "Жөндеу"
+
+msgid "WPA Supplicant"
+msgstr "WPA Supplicant"
+
+msgid "Automatic Reconnection"
+msgstr "Автоматты түрде қайта қосылу"
+
+msgid "Global DNS servers"
+msgstr "Глобалды DNS серверлер"
+
+msgid "Network Interfaces"
+msgstr "Желілік интерфейстер"
+
+msgid "Connecting to daemon..."
+msgstr "Қызметке қосылу..."
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Қызметке қосылу мүмкін емес, оны автоматты түрде жіберіп көреміз..."
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Wicd бағдарламасының D-Bus интерфейсіне қосылу мүмкін емес. Wicd бағдарламасының лог файлын қателер туралы хабарламаларға тексеріңіз."
+
+msgid "Wicd Curses Interface"
+msgstr "Wicd-ң curses-интерфейс і"
+
+msgid "Terminated by user"
+msgstr "Пайдаланушы тоқтатты"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "DBus қатесі! Көбінесе бұл wicd қызметін wicd-curses қосулы тұрғанда сөндіруден пайда болады. Алдымен қызметті, одан кейін wicd-curses қайта қосыңыз."
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "ЕРЕКШЕ жағдай! Ол туралы келесі ақпаратты қоса өндірушілерге хабарласыңыз:"
+
+msgid "Brought to you by:"
+msgstr "Сізге ұсынған:"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "Оңайлату үшін wicd-curses скриптерді тура түзетуді қолдамайды. Сін оларды қолмен түзете аласыз. Біріншіден, (root атынан), \"$A\" баптаулар файлын ашыңыз да, $B деп аталатын секцияны табыңыз. Осы жағдай үшін ол келесі:"
+
+msgid "Add a new profile"
+msgstr "Жаңа профильді қосу"
+
+msgid "Add a new wired profile"
+msgstr "Жаңа сымды байланыс профилін қосу"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "wicd-curses соңғы қосылған сымды байланыс профилін өшіруді қолдамайды. Оның орнына атын ауыстырып көріңіз('F2' басу арқылы)"
+
+msgid "Rename wired profile"
+msgstr "Сымды байланыс профильдің атын ауыстыру"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Жасырын желі атын (ESSID) таңдау"
+
+msgid "Press ESC to cancel"
+msgstr "Бас тарту үшін ESC басыңыз"
+
+msgid "Press F8 or Q to quit."
+msgstr "Шығу үшін F8 не Q басыңыз"

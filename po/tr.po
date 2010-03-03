@@ -1,0 +1,523 @@
+# Translations for Turkish (tr)
+# Translator ID 13
+# /translator/edit/13/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Bağlan"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Net maskesi"
+
+msgid "Gateway"
+msgstr "Ağ geçidi"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Sabit IP kullan"
+
+msgid "Use Static DNS"
+msgstr "Sabit DNS kullan"
+
+msgid "Use Encryption"
+msgstr "Şifreleme Kullan"
+
+msgid "Advanced Settings"
+msgstr "Gelişmiş Ayarlar"
+
+msgid "Wired Network"
+msgstr "Kablolu Ağ"
+
+msgid "Automatically connect to this network"
+msgstr "Bu ağa kendiliğinden bağlan"
+
+msgid "Secured"
+msgstr "Güvenlikli"
+
+msgid "Unsecured"
+msgstr "Güvenliksiz"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Preferences"
+msgstr "Tercihler"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA Supplicant Sürücüsü"
+
+msgid "Wireless Interface"
+msgstr "Kablosuz Arabirim"
+
+msgid "Wired Interface"
+msgstr "Kablolu Arabirim"
+
+msgid "Always show wired interface"
+msgstr "Kablolu arabirimi her zaman göster"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Bağlantı koparsa derhâl yeniden bağlan"
+
+msgid "Hidden Network"
+msgstr "Gizli Ağ"
+
+msgid "Hidden Network ESSID"
+msgstr "Gizli Ağ İsmi (ESSID)"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "$A ağına $B nitelikle (IP: $C) olarak bağlanıldı"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "(IP: $A) adresiyle kablolu ağa bağlanıldı"
+
+msgid "Not connected"
+msgstr "Bağlanılmadı"
+
+msgid "No wireless networks found."
+msgstr "Bir kablosuz ağ bulunamadı."
+
+msgid "Key"
+msgstr "Anahtar"
+
+msgid "Username"
+msgstr "Kullanıcı ismi"
+
+msgid "Password"
+msgstr "Parola"
+
+msgid "Anonymous Identity"
+msgstr "İsimsiz Kimlik"
+
+msgid "Identity"
+msgstr "Kimlik"
+
+msgid "Authentication"
+msgstr "Kimlik Denetimi"
+
+msgid "Path to PAC File"
+msgstr "PAC dosya yolu"
+
+msgid "Choose from the networks below:"
+msgstr "Aşağıdaki ağlardan birini seçin:"
+
+msgid "Putting interface down..."
+msgstr "Arabirim kapatılıyor..."
+
+msgid "Resetting IP address..."
+msgstr "IP adresi yenileniyor..."
+
+msgid "Putting interface up..."
+msgstr "Arabirim açılıyor..."
+
+msgid "Removing old connection..."
+msgstr "Eski bağlantı siliniyor..."
+
+msgid "Generating PSK..."
+msgstr "PSK oluşturuluyor..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA yapılandırma dosyası oluşturuluyor..."
+
+msgid "Flushing the routing table..."
+msgstr "Yönlendirme tablosu tazeleniyor..."
+
+msgid "Configuring wireless interface..."
+msgstr "Kablosuz arabirim yapılandırılıyor..."
+
+msgid "Setting broadcast address..."
+msgstr "Broadcast adresi ayarlanıyor..."
+
+msgid "Setting static DNS servers..."
+msgstr "Statik DNS sunucuları ayarlanıyor..."
+
+msgid "Setting static IP addresses..."
+msgstr "Statik IP adresleri ayarlanıyor..."
+
+msgid "Obtaining IP address..."
+msgstr "IP adresi ediniliyor..."
+
+msgid "Done connecting..."
+msgstr "Bağlantı tamamlandı..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Kablolu bir ağa bağlanmak için bir ağ profili oluşturmalısınız. Bir ağ profili oluşturmak için bu ağı tanımlayan bir isim yazın ve Ekle'ye tıklayın."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd'in bilgisayarınızdaki ağ kartlarını ulaşması gerekir."
+
+msgid "Run script before connect"
+msgstr "Bağlanmadan önce betik çalıştır"
+
+msgid "Run script after connect"
+msgstr "Bağlantıdan sonra betik çalıştır"
+
+msgid "Scripts"
+msgstr "Betikler"
+
+msgid "Enable debug mode"
+msgstr "Hata takip kipini etkinleştir"
+
+msgid "Use global DNS servers"
+msgstr "Genel DNS sunucularını kullan"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Kablolu otomatik bağlantıda öntanımlı profili kullan"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Kablolu otomatik bağlantı için profil seçeyim"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Kablolu otomatik bağlantıda son profili kullan"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "İnternet bağlantı paylaşımını etkinleştir"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Şifreleme kullan (Yalnızca WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Sinyal gücünü dBm ile ölç"
+
+msgid "Wired connection detected"
+msgstr "Kablolu bağlantı algılandı"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Otomatik bağlantı penceresini görüntülemeyi geçici olarak durdur"
+
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+msgid "External Programs"
+msgstr "Harici Programlar"
+
+msgid "DHCP Client"
+msgstr "DHCP İstemci"
+
+msgid "Wired Link Detection"
+msgstr "Kablolu Ağ Algılandı"
+
+msgid "Route Table Flushing"
+msgstr "Yol Çizelgesi Temizleniyor"
+
+msgid "Automatic (recommended)"
+msgstr "Otomatik (Önerilir)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Bu ağ veri şifrelemesinin etkinleştirilmesine gerek duyuyor."
+
+msgid "Required encryption information is missing."
+msgstr "Gereken şifreleme bilgisi kayıp"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Bu ESSID'yi kullanan tüm ağlarda bu ayarları kullan"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Bağlanmak istenilen kablolu profili oluştur ya da seç"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Bağlantı Başarısız: IP Adresi Alınamadı"
+
+msgid "Connection Cancelled"
+msgstr "Bağlantı İptal Edildi"
+
+msgid "Connection Failed: Bad password"
+msgstr "Bağlantı Hatası: Hatalı Parola"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Kablosuz Sonlandırma Anahtarı Etkinleştirildi"
+
+msgid "Scanning networks... stand by..."
+msgstr "Ağlar taranıyor... Bekleyiniz...."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Kablolu Profil için tercihler ayarlanıyor \"$A\""
+
+msgid "Run pre-disconnect script"
+msgstr "Bağlanma öncesi betiği çalıştır"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Bağlantı yapılamadı: DHCP teklifi gelmedi."
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Daha ayrıntılı yardım için, wicd-curses(8) MAN sayfasına bakın."
+
+msgid "Disconnect from all networks"
+msgstr "Tüm ağlarla bağlantıyı kes"
+
+msgid "Always switch to wired connection when available"
+msgstr "Varsa, her zaman kablolu bağlantıyı tercih et"
+
+msgid "You must enter your password to configure scripts"
+msgstr "Betikleri değiştirmek için parola gerekmektedir"
+
+msgid "Refresh network list"
+msgstr "Ağ listesini tazele"
+
+msgid "Press ESC to cancel"
+msgstr "İptal için ESC'ye basın"
+
+msgid "Scanning"
+msgstr "Taranıyor"
+
+msgid "Connecting"
+msgstr "Bağlanıyor"
+
+msgid "Configure Selected Network"
+msgstr "Seçilen Ağı Düzenle"
+
+msgid "Wireless Networks"
+msgstr "Kablosuz Ağlar"
+
+msgid "About Wicd"
+msgstr "Wicd hakında"
+
+msgid "OK"
+msgstr "Tamam"
+
+msgid "Wired Networks"
+msgstr "Kablolu ağlar"
+
+msgid "Preferences dialog"
+msgstr "Seçenekler penceresi"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Wicd'nin D-Bus arayüzüne bağlanılamıyor. Wicd kayıtlarındaki hata iletilerini deneyleriniz."
+
+msgid "Display this help dialog"
+msgstr "Yardımı göster"
+
+msgid "Stop a network connection in progress"
+msgstr "İşlemdeki bir ağ bağlantısını sonlandır"
+
+msgid "Select Hidden Network ESSID"
+msgstr "Gizli Ağ ESSID'lerini seçin"
+
+msgid "Properties"
+msgstr "Özellikler"
+
+msgid "DNS domain"
+msgstr "DNS alan adı"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Terminated by user"
+msgstr "Kullanıcı tarafından sonlandırıldı"
+
+msgid "Add a new profile"
+msgstr "Yeni bir profil ekle"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "Add a new wired profile"
+msgstr "Yeni kablolu bağlantı oluştur"
+
+msgid "Verifying access point association..."
+msgstr "Erişim noktasıyla iletişim doğrulanıyor..."
+
+msgid "Global DNS servers"
+msgstr "Genel DNS sunucuları"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "Ayarlar menüsünde genel DNS kullanımı etkin değil"
+
+msgid "Wicd daemon unreachable"
+msgstr "Wicd servisi kullanılamıyor"
+
+msgid "Search domain"
+msgstr "Alan adı ara"
+
+msgid "Invalid IP address entered."
+msgstr "Geçersiz IP adresi girildi."
+
+msgid "Validating authentication..."
+msgstr "Kimlik doğrulama..."
+
+msgid "Establishing connection..."
+msgstr "Bağlantı sağlanıyor..."
+
+msgid "Set up Ad-hoc network"
+msgstr "Ad-hoc ağ ayarları"
+
+msgid "Connection established"
+msgstr "Bağlantı kuruldu"
+
+msgid "Select scripts"
+msgstr "Betik seç"
+
+msgid "Disconnecting active connections..."
+msgstr "Etkin bağlantılar kesiliyor..."
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Bir Ad-Hoc Ağ Oluştur"
+
+msgid "Notifications"
+msgstr "Uyarılar"
+
+msgid "Connect to selected network"
+msgstr "Seçili ağa bağlan"
+
+msgid "DNS server"
+msgstr "DNS sunucu"
+
+msgid "Disconnected"
+msgstr "Bağlantı koptu"
+
+msgid "Network Interfaces"
+msgstr "Ağ Arayüzleri"
+
+msgid "Scan"
+msgstr "Tara"
+
+msgid "Scan for hidden networks"
+msgstr "Gizli ağları tara"
+
+msgid "Automatic Reconnection"
+msgstr "Otomatikman tekrar bağlan"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "Wicd servisinin DBus arayüzüne bağlanılamıyor. Bunun genel anlamı, servis başlatılırken bir problem oluştuğudur. Daha fazla bilgi için Wicd kayıtlarını denetleyiniz."
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "Alt yapınızda yapılan değişiklikler, servis yeniden başlatılana kadar geçerli olmayacak."
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "Çeşitli karışıklıkları önlemek için wicd-curses betikleri, doğrudan değiştirmeyi desteklemiyor. Ancak elle değiştirme yapabilirsiniz. Öncelikle (root olarak), \"$A\" ayar dosyasını açın ve sorun olan $B ile etiketlenmiş bölümü bulun. Bu durumda bu etiket:"
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "Kablosuz ağları ayar dosyasındaki \"[<ESSID>]\" bölümüne bakarak da ayarlayabilirsiniz."
+
+msgid "WPA Supplicant"
+msgstr "WPA Supplicant"
+
+msgid ""
+"$A\r\n"
+"$B KB/s\r\n"
+"$C KB/s"
+msgstr "$A $B KB/s $C KB/s "
+
+msgid "Suspend script"
+msgstr "Kodu askıya al"
+
+msgid "Brought to you by:"
+msgstr "Şuradan getirilmiş:"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "Bağlantı hatası: Kablosuz erişim noktasıyla iletişilemedi."
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Mümkün mertebe her zaman WPA supplicant sürücü olarak wext kullan"
+
+msgid "Connecting to daemon..."
+msgstr "Sihirbaza bağlanılıyor..."
+
+msgid "ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the \"$A\" group."
+msgstr "HATA: Wicd-curses Wicd sihirbazına erişemedi: Lütfen kullanıcınızın \"$A\" grubunda olduğunu doğrulayınız."
+
+msgid ""
+"$A\r\n"
+"$B\r\n"
+"$C\r\n"
+"$D\r\n"
+"$E KB/s\r\n"
+"$F KB/s"
+msgstr "$A $B $C $D $E KB/s $F KB/s"
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "Kullanılması için madwifi/atheros sürücülerini yokla"
+
+msgid "Setting encryption info"
+msgstr "Şifreleme bilgisi ayarı"
+
+msgid "Invalid address in $A entry."
+msgstr "$A girdisinde geçersiz adres"
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr "DBus'tan gelen erişim reddi hatası yüzünden Wicd sihirbazıyla iletişim sağlanılamıyor. Lütfen kullanıcınızın $A grubunda olduğunu denetleyin."
+
+msgid "Wicd Curses Interface"
+msgstr "Wicd Curses arabirimi"
+
+msgid ""
+"Wired\r\n"
+"IP:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Kablolu IP: RX: TX:"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Sihirbaza bağlanılamadı, otomatik başlatma deneniyor..."
+
+msgid "Backend"
+msgstr "Arka uç"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "Dbus sekte verdi! Muhtemelen wicd-curses çalışırken wicd sihirbazının durmasına neden oldu. Lütfen Wicd-curses'i yeniden başlattıktan sonra sihirbazı da yeniden başlatın."
+
+msgid "All controls are case sensitive"
+msgstr "Tüm denetimler küçük harfe duyarlı"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "Wicd-curses son kablolu bağlantıyı silmeyi desteklemiyor. Yeniden isimlendirin ('F2')"
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "Hoppala! Sürekli soruna neden olan bu durumu lütfen açıklamasıyla birlikte rapor edin:"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "\"$A\" ($B) kablosuz ağı tercihinize göre yapılandırılıyor"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "Wicd sihirbazı kapatıldı. Usulüne uygun başlatılana kadar bu pencere işlevini gerçekleştiremeyecek."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "Kablosuz bir ağa bağlanmak için ilk önce kablosuz bir ağ profili oluşturmalısınız. Bunun için ağı açıklayan bir isim yazın ve Ekle düğmesine basın."
+
+msgid "Wired Autoconnect Settings"
+msgstr "Kendiliğinden kabloluya bağlanma ayarları"
+
+msgid "Debugging"
+msgstr "Ayıklanıyor"
+
+msgid "Rename wired profile"
+msgstr "Kablolu arayüzünü yeniden isimlendir"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "Wicd sihirbazı kullanılmaz halde ve bu yüzden istekleriniz tamamlanamıyor"
+
+msgid "Resume script"
+msgstr "Kodu sürdür"
+
+msgid "Run post-disconnect script"
+msgstr "Kopma mesajı kodunu çalıştır"
+
+msgid "use urwid's raw screen controller"
+msgstr "Urwid'in temel ekran denetimlerini kullan"
+
+msgid "Display notifications about connection status"
+msgstr "Bağlantı durumuyla ilgili bilgilendirmeyi göster"
+
+msgid "Ping static gateways after connecting to verify association"
+msgstr "Ortaklık doğrulama bağlantısının ardından sabit ağ geçitlerine ping at"
+
+msgid "Press F8 or Q to quit."
+msgstr "Çıkmak için F8 ya da Q'ya basınız"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Varsayılan olarak kullan (Önceki varsayılanın üzerine)"
+
+msgid ""
+"Wireless\r\n"
+"SSID:\r\n"
+"Speed:\r\n"
+"IP:\r\n"
+"Strength:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Kablosuz SSID: Hız: IP: Kalite: RX: TX:"

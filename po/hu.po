@@ -1,0 +1,528 @@
+# Translations for Hungarian (hu)
+# Translator ID 40
+# /translator/edit/40/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Configure Selected Network"
+msgstr "Kiválasztott hálózat beállítása"
+
+msgid "Add a new wired profile"
+msgstr "Új vezetékes profil hozzáadása"
+
+msgid "Connecting to daemon..."
+msgstr "kapcsolódás a daemonhoz..."
+
+msgid "Select Hidden Network ESSID"
+msgstr "Rejtett hálózati EESID kiválasztása"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "Kapcsolódás sikertelen: a vezeték nélküli elérési pont elérhetetlen."
+
+msgid "Search domain"
+msgstr "Tartomány keresése"
+
+msgid "Refresh network list"
+msgstr "Hálózati lista frissítése"
+
+msgid "Scanning networks... stand by..."
+msgstr "Hálózatok keresése...várjon..."
+
+msgid "You must enter your password to configure scripts"
+msgstr "Adja meg jelszavát a szkiptek beállításához"
+
+msgid "WPA Supplicant"
+msgstr "WPA igénylő"
+
+msgid "Run pre-disconnect script"
+msgstr "Leválasztás előtti szkript futtatása"
+
+msgid "Connect"
+msgstr "Csatlakozás"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Hálózati maszk"
+
+msgid "Gateway"
+msgstr "Átjáró"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Statikus IP használata"
+
+msgid "Use Static DNS"
+msgstr "Statikus DNS használata"
+
+msgid "Use Encryption"
+msgstr "Titkosítás használata"
+
+msgid "Advanced Settings"
+msgstr "Haladó beállítások"
+
+msgid "Wired Network"
+msgstr "Vezetékes hálózat"
+
+msgid "Automatically connect to this network"
+msgstr "Automatikus kapcsolódás ehhez a hálózathoz"
+
+msgid "Secured"
+msgstr "Biztonságos"
+
+msgid "Unsecured"
+msgstr "Nem biztonságos"
+
+msgid "Channel"
+msgstr "Csatorna"
+
+msgid "Preferences"
+msgstr "Beállítások"
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA kompatibilis meghajtó"
+
+msgid "Wireless Interface"
+msgstr "Vezeték nélküli adapter"
+
+msgid "Wired Interface"
+msgstr "Vezetékes adapter"
+
+msgid "Always show wired interface"
+msgstr "Vezetékes adapter állandó kijelzése"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automatikus újracsatlakozás a kapcsolat megszakadásakor"
+
+msgid "Hidden Network"
+msgstr "Rejtett hálózat"
+
+msgid "Hidden Network ESSID"
+msgstr "Rejtett hálózat ESSID"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Kapcsolat létrejött $A-val $B (IP: $C)"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Vezetékes kapcsolat létrejött (IP: $A)"
+
+msgid "Not connected"
+msgstr "Nincs csatlakoztatva"
+
+msgid "No wireless networks found."
+msgstr "Nincs elérhető vezeték nélküli hálózat."
+
+msgid "Key"
+msgstr "Kulcs"
+
+msgid "Username"
+msgstr "Felhasználónév"
+
+msgid "Password"
+msgstr "Jelszó"
+
+msgid "Anonymous Identity"
+msgstr "Anonymous azonosító"
+
+msgid "Identity"
+msgstr "Azonosítás"
+
+msgid "Authentication"
+msgstr "Hitelesítés"
+
+msgid "Path to PAC File"
+msgstr "Elérési út a PAC állományhoz"
+
+msgid "Choose from the networks below:"
+msgstr "Válasszon az alábbi hálózatokból:"
+
+msgid "Putting interface down..."
+msgstr "Adapter lekapcsolása..."
+
+msgid "Resetting IP address..."
+msgstr "IP cím visszaállítása..."
+
+msgid "Putting interface up..."
+msgstr "Adapter bekapcsolása..."
+
+msgid "Removing old connection..."
+msgstr "Régi kapcsolat eltávolítása..."
+
+msgid "Generating PSK..."
+msgstr "PSK előállítása..."
+
+msgid "Generating WPA configuration file..."
+msgstr "WPA beállítás állomány előállítása..."
+
+msgid "Flushing the routing table..."
+msgstr "Routing tábla ürítése..."
+
+msgid "Configuring wireless interface..."
+msgstr "Vezeték nélküli hálózat beállítása..."
+
+msgid "Setting broadcast address..."
+msgstr "Broadcast cím beállítása..."
+
+msgid "Setting static DNS servers..."
+msgstr "Statikus DNS szerver beállítása..."
+
+msgid "Setting static IP addresses..."
+msgstr "Statikus IP cím beállítása..."
+
+msgid "Obtaining IP address..."
+msgstr "IP cím kérése..."
+
+msgid "Done connecting..."
+msgstr "Kapcsolat létrejött..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "A vezetékes hálózati kapcsolathoz profilt kell létrehozni. Hálózati profil létrehozásához adjon meg egy nevet és nyomja meg a hozzáadás gombot."
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd-nek el kell érni a számítógép hálózati kártyáit."
+
+msgid "Run script before connect"
+msgstr "Szcript futtatása csatlakozás előtt"
+
+msgid "Run script after connect"
+msgstr "Parancsfájl futtatása csatlakozás után"
+
+msgid "Scripts"
+msgstr "Parancsfájlok"
+
+msgid "Enable debug mode"
+msgstr "Hibakeresés engedélyezése"
+
+msgid "Use global DNS servers"
+msgstr "Globális DNS szerverek használata"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Alapértelmezett profil használata vezetékes újrakapcsolódásnál"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Profil választás vezetékes újrakapcsolódásnál"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "A legutolsó profil használata vezetékes újrakapcsolódásnál"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "Internet kapcsolat-megosztás aktiválása"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Titkosítás használata (csak WEP)"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Jelerősség dBm alapján"
+
+msgid "Wired connection detected"
+msgstr "Vezetékes kapcsolat érzékelve"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Automatikus csatlakozás megjelítésének átmeneti felfüggesztése"
+
+msgid "General Settings"
+msgstr "Általános beállítások"
+
+msgid "External Programs"
+msgstr "Külső programok"
+
+msgid "DHCP Client"
+msgstr "DHCP kliens"
+
+msgid "Wired Link Detection"
+msgstr "Vezetékes kapcsolat észlelése"
+
+msgid "Route Table Flushing"
+msgstr "Route tábla ürítése"
+
+msgid "Automatic (recommended)"
+msgstr "Automatikus (javasolt)"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Ehhez a hálózathoz engedélyezni kell a titkosítást"
+
+msgid "Required encryption information is missing."
+msgstr "A szükséges titkosítási információ hiányzik"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Használd ezt a beállítást minden hálózaton, amelynek ugyanez az essid-je"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Vezetékes profil választása vagy létrehozása a kapcsolódáshoz"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Sikertelen kapcsolódás: nem sikerült IP címet kapni"
+
+msgid "Connection Cancelled"
+msgstr "Kapcsolódás megszakítva"
+
+msgid "Connection Failed: Bad password"
+msgstr "A kapcsolódás sikertelen: rossz a jelszó"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "A vezeték nélküli tiltó gomb be van kapcsolva"
+
+msgid "Network Interfaces"
+msgstr "Hálózati csatolók"
+
+msgid "Rename wired profile"
+msgstr "Vezetékes profil átnevezése"
+
+msgid "Scan for hidden networks"
+msgstr "Rejtett hálózatok keresése"
+
+msgid "Automatic Reconnection"
+msgstr "Automatikus újracsatlakozás"
+
+msgid "Press F8 or Q to quit."
+msgstr "Kilépéshez nyomja meg az F8-at vagy a Q-t ."
+
+msgid "Preferences dialog"
+msgstr "Beállítások"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "A kapcsolódás sikertelen: nem érkezett DHCP ajánlat"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Részletesebb segítségért nézz utána a wicd-curses(8) man-ban"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "Nem sikerült kapcsolódni a wicd daemon DBus interface-hez.\" + \"Ez általában daemon indítási hiba.\"+\"További információért ellenőrizd a wicd log-ot"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Nem sikerült kapcsolódni a wicd daemon DBus interface-hez.Ellenőrizd a hibaüzeneteket a wicd log-ban"
+
+msgid "Disconnect from all networks"
+msgstr "Leválás az összes hálózatról"
+
+msgid "Stop a network connection in progress"
+msgstr "Kapcsolat megszüntetése folyamatban"
+
+msgid "Always switch to wired connection when available"
+msgstr "Vezetékes kapcsolat használata amikor elérhető"
+
+msgid "Press ESC to cancel"
+msgstr "Nyomj ESC-t a megszakításhoz"
+
+msgid "Scanning"
+msgstr "Keresés"
+
+msgid "Connecting"
+msgstr "Kapcsolódás"
+
+msgid "Wired Networks"
+msgstr "Vezetékes hálózatok"
+
+msgid "DNS domain"
+msgstr "DNS tartomány"
+
+msgid "Wicd daemon unreachable"
+msgstr "Wicd daemon nem elérhető"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Csaknem mindig használnia kell a wext-et WPA igényő meghajtóként"
+
+msgid "Display this help dialog"
+msgstr "Ennek a súgónak a megjelenítése"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "A valtozasokhoz újra kell inditani a daemon-t."
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr ""
+"A komplikaciok elkerulese erdekeben a wicd-curses nem tamogatja, hogy kozvetlenul szerkesszuk a szkriptet. Kezzel azonban modosithatoak: \r\n"
+"Eloszor (root-kent), nyist meg a \"$A\" konfiguracios allomanyt es keresd a bekezdest, amely $B-vel van jelezve. Ebben az esetben ez a kovetkezo:"
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "A WiFi halozat bealitasahoz keresd az \"[<ESSID>]\" mezot a konfiguracios fajlban."
+
+msgid "Validating authentication..."
+msgstr "Kapcsolat ellenőrzése...."
+
+msgid "Wireless Networks"
+msgstr "Vezeték Nélküli Hálózatok"
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "Ellenőrizze hogy madwifi/atheros eszközkezelőket használ-e"
+
+msgid "Properties"
+msgstr "Beállítások"
+
+msgid "Establishing connection..."
+msgstr "A kapcsolat felépítése..."
+
+msgid "Setting encryption info"
+msgstr "Titkosítási info beállítása"
+
+msgid "About Wicd"
+msgstr "A Wicd-ről "
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Set up Ad-hoc network"
+msgstr "Ad-hoc hálózat beállítása"
+
+msgid "Connection established"
+msgstr "A kapcsolat létrejött"
+
+msgid "Select scripts"
+msgstr "Szkriptek kiválasztása"
+
+msgid "Invalid address in $A entry."
+msgstr "Érvénytelen cím a $A bejegyzésnél."
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr "A kapcsolódás a Wicd daemonhoz sikertelen, mert a DBus megtagadta a hozzáférést. Ellenőrizze, hogy a felhasználó a $A csoport tagja-e."
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "Egy grafikus sudo program sem található. A szkript szerkesztő így nem indítható. A szkripteket közvetlenül a konfigurációs fájlban kell majd szerkeszteni."
+
+msgid "Wicd Curses Interface"
+msgstr "Wicd Curses kezelőfelület"
+
+msgid "Verifying access point association..."
+msgstr "Hozzáférési pont hozzárendelés ellenőrzése..."
+
+msgid "Global DNS servers"
+msgstr "Globális DNS kiszolgálók"
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Csatalkozás a daemonhoz nem sikerült, automatikus indítási próba... "
+
+msgid "Cancel"
+msgstr "Mégsem"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "DBus hiba! Ezt valószínűleg a wicd daemon leállása okozta, miközben a wicd-curses felület futott. Indítsa újra a daemont, utána pedig magát a wicd-cursest."
+
+msgid "Terminated by user"
+msgstr "Felhasználó által megszakítva"
+
+msgid "Disconnecting active connections..."
+msgstr "Aktív kapcsolatok bontása..."
+
+msgid "Add a new profile"
+msgstr "Új profil hozzáadása"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Ad-hoc hálózat készítése"
+
+msgid "All controls are case sensitive"
+msgstr "Minden vezérlés nagybetű érzékeny"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "Globális DNS nem került engedélyezésre az általános beállításokban."
+
+msgid "Notifications"
+msgstr "Jelzések"
+
+msgid "Connect to selected network"
+msgstr "Kapcsolódás a kiválasztott hálózathoz"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "A wicd-curses nem támogatja az utolsó vezetékes profilt. Próbálja meg átnevezni.('F2')"
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "KIVÉTEL HIBA! Kérem jelentse ezt a hibát a fejlesztőnek, és töltsön ki egy hibajelentést ezzel az alábbi hibavisszakövetési jelentéssel"
+
+msgid "DNS server"
+msgstr "DNS kiszolgáló"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Tulajdonságok beállítása a vezeték nélküli hálózathoz \"$A\" ($B)"
+
+msgid "Disconnected"
+msgstr "Leválasztva"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "A wicd daemon leállt. A kezelőfelület a következő újraindításig nem tud működni."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "A hálózatra való csatlakozáshoz egy profilt kell készítenie. A hálózati profil létrehozásához pedig adjon meg egy nevet, és nyomjon egy Hozzáad gombot..."
+
+msgid "Wired Autoconnect Settings"
+msgstr "Vezetékes automatikus kapcslódási beállítások"
+
+msgid "Debugging"
+msgstr "Hibakeresés"
+
+msgid "Scan"
+msgstr "Keresés"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "A wicd daemon elérhetetlen, a kérése nem befejezhető."
+
+msgid "use urwid's raw screen controller"
+msgstr "A urwid raw képernyő vezérlőjének alkalmazása"
+
+msgid "Display notifications about connection status"
+msgstr "Jelzés megjelenítése a kapcsolat állapotáról"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Alkalmazd mint alapértelmezett profilt (felülír minden más korábbi alapértelmezettet)"
+
+msgid "Suspend script"
+msgstr "Script felfüggesztése"
+
+msgid "Invalid IP address entered."
+msgstr "Érvénytelen IP címet adott meg."
+
+msgid "ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the \"$A\" group."
+msgstr "HIBA: a wicd-curses nem fér hozzá a wicd daemonhoz: ellenőrizze, hogy a felhasználója tagja-a a \"$A\" csoportnak."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "A \"$A\" vezetékes profil tulajdonságainak beállítása"
+
+msgid "Resume script"
+msgstr "Script folytatása"
+
+msgid "Run post-disconnect script"
+msgstr "Szétkapcsolás utáni script futtatása"
+
+msgid ""
+"$A\r\n"
+"$B KB/s\r\n"
+"$C KB/s"
+msgstr "$A $B KB/s $C KB/s"
+
+msgid "Brought to you by:"
+msgstr "Hozzád juttatta:"
+
+msgid ""
+"$A\r\n"
+"$B\r\n"
+"$C\r\n"
+"$D\r\n"
+"$E KB/s\r\n"
+"$F KB/s"
+msgstr "$A $B $C $D $E KB/s $F KB/s"
+
+msgid ""
+"Wired\r\n"
+"IP:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Vezetékes IP: RX: TX:"
+
+msgid "Backend"
+msgstr "Háttér-hálózat"
+
+msgid "Ping static gateways after connecting to verify association"
+msgstr "A statikus átjárók pingelése, miután csatlakozott a tanúsítvány-kibocstóhoz"
+
+msgid ""
+"Wireless\r\n"
+"SSID:\r\n"
+"Speed:\r\n"
+"IP:\r\n"
+"Strength:\r\n"
+"RX:\r\n"
+"TX:"
+msgstr "Vezeték nélküli SSID: Sebesség: IP: Biztonság: RX: TX:"

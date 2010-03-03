@@ -1,0 +1,494 @@
+# Translations for German (de_DE)
+# Translator ID 54
+# /translator/edit/54/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Resetting IP address..."
+msgstr "IP-Adresse wird zurückgesetzt..."
+
+msgid "Preferences dialog"
+msgstr "Voreinstellungen:"
+
+msgid "Connection Failed: No DHCP offers received."
+msgstr "Verbindung fehlgeschlagen: Keine DHCP-Adresse erhalten"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Verwenden Sie die wicd-courses (8) man Seite für ausführlichere Hilfe."
+
+msgid "Connection Failed: Bad password"
+msgstr "Verbindung fehlgeschlagen: Falsches Passwort"
+
+msgid "Unable to connect to wicd daemon DBus interface. This typically means there was a problem starting the daemon. Check the wicd log for more information."
+msgstr "Kein Verbindung zum wicd Daemon DBus Interface. \" + \"In der Regel gab es ein Problem den Daemon zu starten. \" +\" Überprüfen Sie das wicd Log für weitere Informationen:"
+
+msgid "Always show wired interface"
+msgstr "Kabelgebundenes Netzwerk immer anzeigen"
+
+msgid "Could not connect to wicd's D-Bus interface. Check the wicd log for error messages."
+msgstr "Konnte nicht mit dem wicd D-Bus Interface verbinden. Überprüfen Sie das wicd Log auf Fehlermeldungen."
+
+msgid "Path to PAC File"
+msgstr "Pfad zur PAC-Datei:"
+
+msgid "Disconnect from all networks"
+msgstr "Trenne die Verbindung zu allen Netzwerken"
+
+msgid "Changes to your backend won't occur until the daemon is restarted."
+msgstr "Die Änderungen werden erst aktiv, wenn der Daemon neu gestartet worden ist."
+
+msgid "Stop a network connection in progress"
+msgstr "Eine Netzwerkverbindung wird getrennt:"
+
+msgid "Always switch to wired connection when available"
+msgstr "Wechsel immer zur kabelgebundenen Verbindung, wenn verfügbar."
+
+msgid "Connecting"
+msgstr "Verbinde:"
+
+msgid "Wired Networks"
+msgstr "Kabelgebundene Netzwerke:"
+
+msgid "Display this help dialog"
+msgstr "Zeige diesen Hilfe-Dialog"
+
+msgid "Connection Failed: Unable to Get IP Address"
+msgstr "Verbindung fehlgeschlagen: Kann keine IP-Adresse beziehen"
+
+msgid "Connection Cancelled"
+msgstr "Verbindung getrennt"
+
+msgid "Scanning networks... stand by..."
+msgstr "Suche nach Netzwerken... etwas Geduld bitte..."
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Setting broadcast address..."
+msgstr "Setze Boradcast-Adresse"
+
+msgid "Refresh network list"
+msgstr "Netzwerkliste neu laden"
+
+msgid "Press ESC to cancel"
+msgstr "Zum Abbrechen ESC drücken"
+
+msgid "Scanning"
+msgstr "Suche"
+
+msgid "External Programs"
+msgstr "Externe Programme"
+
+msgid "Connect"
+msgstr "Verbinde"
+
+msgid "Use global DNS servers"
+msgstr "Nutze globale DNS-Server"
+
+msgid "This network requires encryption to be enabled."
+msgstr "Für dieses Netzwerk muss die Verschlüsselung aktiviert sein"
+
+msgid "Preferences"
+msgstr "Einstellungen"
+
+msgid "Connecting to daemon..."
+msgstr "Verbinde mit Dienst..."
+
+msgid "Add a new wired profile"
+msgstr "Neues Kabel-Profil hinzufügen"
+
+msgid "DHCP Client"
+msgstr "DHCP-Client"
+
+msgid "Configure Selected Network"
+msgstr "Konfiguriere ausgewähltes Netzwerk"
+
+msgid "Key"
+msgstr "Schlüssel"
+
+msgid "Wireless Networks"
+msgstr "Kabellose Netzwerke"
+
+msgid "About Wicd"
+msgstr "Über Wicd"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Hidden Network"
+msgstr "Versteckte Netzwerke"
+
+msgid "Use Encryption"
+msgstr "Nutze Verschlüsselung"
+
+msgid "DNS domain"
+msgstr "DNS Domain"
+
+msgid "DNS server"
+msgstr "DNS-Server"
+
+msgid "Disconnected"
+msgstr "Verbindung getrennt"
+
+msgid "Use Encryption (WEP only)"
+msgstr "Nutze Verschlüsselung (nur WEP)"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+msgid "Run script after connect"
+msgstr "Führe Script nach dem Verbinden aus"
+
+msgid "Wicd daemon unreachable"
+msgstr "Wicd Dienst antwortet nicht"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "ESSID"
+msgstr "ESSID"
+
+msgid "Scripts"
+msgstr "Skripte"
+
+msgid "Identity"
+msgstr "Identität"
+
+msgid "Disconnecting active connections..."
+msgstr "Trenne aktive Verbindungen..."
+
+msgid "Run pre-disconnect script"
+msgstr "Starte Skript vor der Verbindungstrennung"
+
+msgid "WPA Supplicant"
+msgstr "WPA-Supplicant"
+
+msgid "To avoid various complications, wicd-curses does not support directly editing the scripts.  However, you can edit them manually.  First, (as root)\", open the \"$A\" config file, and look for the section labeled by the $B in question.  In this case, this is:"
+msgstr "Um verschiedene Probleme auszuschließen, erlaubt wicd nicht das direkte Ändern der Skripte. Trotzdem können Sie sie von Hand ändern. Öffnen Sie dazu (als Root) die Datei \"$A\" und schauen Sie nach dem Bereich unter $B. In diesem Fall ist das:"
+
+msgid "You can also configure the wireless networks by looking for the \"[<ESSID>]\" field in the config file."
+msgstr "Sie können Ihre Drahtlosnetzwerke auch im Bereich hinter \"[<ESSID>]\" konfigurieren."
+
+msgid "You must enter your password to configure scripts"
+msgstr "Sie müssen Ihr Passwort eingeben um die Skripte zu ändern"
+
+msgid "Not connected"
+msgstr "Nicht verbunden"
+
+msgid "Use Static DNS"
+msgstr "Verwende statische DNS"
+
+msgid "Unsecured"
+msgstr "Ungesichert"
+
+msgid "Search domain"
+msgstr "Suche Domain"
+
+msgid "Connection failed: Could not contact the wireless access point."
+msgstr "Verbindung gescheitert. Konnte das Funknetzwerk nicht finden."
+
+msgid "Select Hidden Network ESSID"
+msgstr "Wähle versteckte Netzwerk ESSID"
+
+msgid "Use last used profile on wired autoconnect"
+msgstr "Nutze das zuletzt verwendete Profil bei automatischer Netzwerkverbindung"
+
+msgid "Automatically connect to this network"
+msgstr "Verbinde automatisch mit diesem Netzwerk"
+
+msgid "Use dBm to measure signal strength"
+msgstr "Signalstärke in dBm messen"
+
+msgid "Use these settings for all networks sharing this essid"
+msgstr "Nutze diese Einstellungen für alle Netzwerke, die diese ESSID verwenden"
+
+msgid "ERROR: wicd-curses was denied access to the wicd daemon: please check that your user is in the \"$A\" group."
+msgstr "Fehler! Wicd-curses wurde der Zugriff auf den Wicd-Daemon nicht gestattet. Bitte versichern sie sich, dass ihr Benutzer in der Gruppe $A ist."
+
+msgid "Validating authentication..."
+msgstr "Überprüfe Authentifizierung..."
+
+msgid "Removing old connection..."
+msgstr "Entferne alte Verbindung..."
+
+msgid "Configuring preferences for wired profile \"$A\""
+msgstr "Erstelle Einstellungen für das Kabelnetzwerk \"$A\" "
+
+msgid "No wireless networks found."
+msgstr "Kein Funknetzwerk gefunden!"
+
+msgid "Check if using madwifi/atheros drivers"
+msgstr "Prüfen Sie, ob Madwifi oder Atheros Treiber verwendet werden!"
+
+msgid "Properties"
+msgstr "Eigenschaften"
+
+msgid "Establishing connection..."
+msgstr "Stelle Verbindung her..."
+
+msgid "Setting encryption info"
+msgstr "Verschlüsselungsinformationen einstellen"
+
+msgid "Set up Ad-hoc network"
+msgstr "Ad-hoc-Netzwerk einrichten"
+
+msgid "Connection established"
+msgstr "Verbindung hergestellt"
+
+msgid "Select scripts"
+msgstr "Skripte auswählen"
+
+msgid "Invalid address in $A entry."
+msgstr "Ungültige Adresse im Eintrag $A"
+
+msgid "Configuring wireless interface..."
+msgstr "Konfiguriere WLAN-Gerät..."
+
+msgid "Generating PSK..."
+msgstr "Erstelle PSK..."
+
+msgid "Enable debug mode"
+msgstr "Schalte Debug-Modus ein"
+
+msgid "Anonymous Identity"
+msgstr "Anonyme Identität"
+
+msgid "Connected to wired network (IP: $A)"
+msgstr "Verbunden mit Kabelnetzwerk (IP: $A)"
+
+msgid "Wireless Interface"
+msgstr "WLAN-Gerät"
+
+msgid "Could not find a graphical sudo program.  The script editor could not be launched.  You'll have to edit scripts directly your configuration file."
+msgstr "Konnte kein grafisches sudo-Programm finden. Der Skript-Editor konnte nicht gestartet werden. Sie müssen das Skript direkt in der Konfigurationsdatei ändern."
+
+msgid "Verifying access point association..."
+msgstr "Überprüfe Verbindung zum Zugangspunkt..."
+
+msgid "Global DNS servers"
+msgstr "Globale DNS-Server"
+
+msgid "Done connecting..."
+msgstr "Verbindung erfolgreich..."
+
+msgid "Can't connect to the daemon, trying to start it automatically..."
+msgstr "Kann nicht mit dem Dienst verbinden. versuche den automatischen Start..."
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Putting interface up..."
+msgstr "Starte das Gerät..."
+
+msgid "Terminated by user"
+msgstr "Vom Nutzer abgebrochen"
+
+msgid "Add a new profile"
+msgstr "Neues Profil hinzufügen"
+
+msgid "Create an Ad-Hoc Network"
+msgstr "Erstelle ein Ad-Hoc-Netzwerk"
+
+msgid "Global DNS has not been enabled in general preferences."
+msgstr "Globale DNS wurde in den Einstellungen noch nicht freigeschaltet"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Advanced Settings"
+msgstr "Erweiterte Einstellungen"
+
+msgid "Username"
+msgstr "Benutzername"
+
+msgid "Automatic (recommended)"
+msgstr "Automatisch (empfohlen)"
+
+msgid "Wired connection detected"
+msgstr "Kabelverbindung gefunden"
+
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+msgid "Choose from the networks below:"
+msgstr "Wählen Sie eines der folgenden Netzwerke aus:"
+
+msgid "Connect to selected network"
+msgstr "Verbinde mit dem ausgewählten Netzwerk"
+
+msgid "Select or create a wired profile to connect with"
+msgstr "Kabelnetzwerk auswählen, mit dem eine Verbindung hergestellt werden soll."
+
+msgid "General Settings"
+msgstr "Allgemeine Einstellungen"
+
+msgid "Connected to $A at $B (IP: $C)"
+msgstr "Verbunden mit $A unter $B (IP: $C)"
+
+msgid "EXCEPTION! Please report this to the maintainer and file a bug report with the backtrace below:"
+msgstr "Ausnahmefehler! Bitte melden Sie das Problem an den Programmierer!"
+
+msgid "Configuring preferences for wireless network \"$A\" ($B)"
+msgstr "Einstellungen festlegen für das Funknetzwerk \"$A\" ($B)"
+
+msgid "Obtaining IP address..."
+msgstr "Warte auf IP-Adresse..."
+
+msgid "To connect to a wired network, you must create a network profile.  To create a network profile, type a name that describes this network, and press Add."
+msgstr "Um mit einem Kabelnetzwerk Verbindung aufzunehmen, müssen Sie ein Netzwerkprofil erstellen.  Geben Sie eine Bezeichnung für das Netzwerk ein und klicken Sie auf \"Add\"."
+
+msgid "Required encryption information is missing."
+msgstr "Die benötigte Verschlüsselungs-Information fehlt!"
+
+msgid "The wicd daemon has shut down. The UI will not function properly until it is restarted."
+msgstr "Der Wicd-Dienst ist abgeschaltet. Sie müssen den Dienst neu starten, damit er wieder funktioniert."
+
+msgid "To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add."
+msgstr "Um mit einem Kabelnetzwerk Verbindung aufzunehmen, müssen Sie ein Netzwerkprofil anlegen. Geben Sie eine Bezeichnung ein und Klicken Sie auf \"Hinzufügen\"."
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Automatische Neuverbindung bei Abbruch"
+
+msgid "Wired Autoconnect Settings"
+msgstr "Einstellungen für automatische Verbindung bei Kabelnetzwerk"
+
+msgid "Run script before connect"
+msgstr "Starte Skript vor der Verbindung"
+
+msgid "Debugging"
+msgstr "Fehlersuche"
+
+msgid "Network Interfaces"
+msgstr "Netzwerkgeräte"
+
+msgid "Use default profile on wired autoconnect"
+msgstr "Voreingestelltes Profil bei Kabelverbindung wählen"
+
+msgid "Scan"
+msgstr "Suche"
+
+msgid "Generating WPA configuration file..."
+msgstr "Erstelle die WPA-Konfigurationsdatei..."
+
+msgid "WPA Supplicant Driver"
+msgstr "WPA-Supplikant-Treiber"
+
+msgid "Wicd needs to access your computer's network cards."
+msgstr "Wicd muss auf die Netzwerkkarten Ihres Computers zugreifen"
+
+msgid "Wireless Kill Switch Enabled"
+msgstr "Funkverbindung abschalten - Schalter aktiv"
+
+msgid "Hidden Network ESSID"
+msgstr "Versteckte Netzwerk-ESSID"
+
+msgid "Secured"
+msgstr "Gesichert"
+
+msgid "Putting interface down..."
+msgstr "Schalte Gerät ab..."
+
+msgid "Rename wired profile"
+msgstr "Profil für Kabelnetzwerk umbenennen"
+
+msgid "The wicd daemon is unavailable, so your request cannot be completed"
+msgstr "Der Wicd-Dienst ist nicht verfügbar, Ihre Anfrage kann nicht abgeschlossen werden"
+
+msgid "Setting static IP addresses..."
+msgstr "Setze statische IP-Adresse..."
+
+msgid "Scan for hidden networks"
+msgstr "Suche nach versteckten Netzwerken"
+
+msgid "Use Static IPs"
+msgstr "Verwende statische IPs"
+
+msgid "Automatic Reconnection"
+msgstr "Automatische Neuverbindung"
+
+msgid "Wired Interface"
+msgstr "Netzwerkkarte"
+
+msgid "Press F8 or Q to quit."
+msgstr "Drücken Sie zum Beenden F8 oder Q "
+
+msgid "Wired Network"
+msgstr "Kabelgebundenes Netzwerk"
+
+msgid "wicd-curses does not support deleting the last wired profile.  Try renaming it ('F2')"
+msgstr "Wicd-curses unterstützt das Löschen des letzten kabelgebundenen Netzwerkprofils nicht. Versuchen Sie es umzubenennen ('F2')"
+
+msgid "All controls are case sensitive"
+msgstr "Alle Einstellungen berücksichtigen Groß- und Kleinschreibung"
+
+msgid "Flushing the routing table..."
+msgstr "Leere die Routing-Tabelle..."
+
+msgid "Brought to you by:"
+msgstr "Zur Verfügung gestellt von:"
+
+msgid "You should almost always use wext as the WPA supplicant driver"
+msgstr "Sie sollten in der Regel wext als Treiber für den WPA-Supplikanten verwenden"
+
+msgid "Stop Showing Autoconnect pop-up temporarily"
+msgstr "Vorübergehend das Pop-Up für automatische Verbindung nicht anzeigen"
+
+msgid "Unable to contact the Wicd daemon due to an access denied error from DBus. Please check that your user is in the $A group."
+msgstr "Konnte den Wicd-Daemon nicht ansprechen, da DBus einen \"Zugriff verweigert\"-Fehler ausgibt. Bitte versichern sie sich, dass ihr Benutzer in der Gruppe $A ist."
+
+msgid "Setting static DNS servers..."
+msgstr "Stelle statische DNS-Server ein..."
+
+msgid "Display notifications about connection status"
+msgstr "Benachrichtigungen über den Verbindungsstatus anzeigen"
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Als Standardprofil verwenden (überschreibt jede vorherige Standardeinstellung)"
+
+msgid "Suspend script"
+msgstr "Unterbreche Skript"
+
+msgid "Invalid IP address entered."
+msgstr "Ungültige IP-Adresse eingegeben."
+
+msgid "Resume script"
+msgstr "Skript fortsetzen"
+
+msgid "Run post-disconnect script"
+msgstr "Starte \"Nach-Trennungs\"-Skript"
+
+msgid "Once there, you can adjust (or add) the \"beforescript\", \"afterscript\", and \"disconnectscript\" variables as needed, to change the preconnect, postconnect, and disconnect scripts respectively.  Note that you will be specifying the full path to the scripts - not the actual script contents.  You will need to add/edit the script contents separately.  Refer to the wicd manual page for more information."
+msgstr "Dort können Sie die Skripte erstellen oder anpassen, die vor und nach Verbindungsaufbau sowie bei Verbindungsabbruch ausgeführt werden sollen. Tragen Sie dazu den vollständigen Pfad zu den Skripten (nicht den eigentlichen Skriptinhalt - den müssen sie separat in die entsprechenden Dateien eintragen) in die entsprechenden Felder. Schauen Sie in das wicd-Handbuch für mehr Informationen."
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "DBus failure! This is most likely caused by the wicd daemon stopping while wicd-curses is running. Please restart the daemon, and then restart wicd-curses."
+msgstr "Verbindung mit DBus fehlgeschlagen! Sehr wahrscheinlich wurde der Wicd-Daemon gestoppt, während Wicd-curses noch läuft. Starten Sie bitte zunächst den Daemon und dann Wicd-curses neu."
+
+msgid "Wired Link Detection"
+msgstr "kabelgebundene Netzwerkerkennung"
+
+msgid "Activate Internet Connection Sharing"
+msgstr "aktiviere Internetverbindungsfreigabe"
+
+msgid "Netmask"
+msgstr "Netzmaske"
+
+msgid "Wicd Curses Interface"
+msgstr "Wicd Text-Oberfläche"
+
+msgid "use urwid's raw screen controller"
+msgstr "Benutze urwid's direkte Bildschirm Steuerung "
+
+msgid "Route Table Flushing"
+msgstr "Route Tabelle löschen"
+
+msgid "Prompt for profile on wired autoconnect"
+msgstr "Nach Profil für automatische kabelgebundene Verbindung fragen"
+
+msgid "Backend"
+msgstr "Backend"

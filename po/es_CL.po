@@ -1,0 +1,167 @@
+# Translations for Spanish (Colombia) (es_CL)
+# Translator ID 28
+# /translator/edit/28/
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Netmask"
+msgstr "Mascara de Subred"
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Use Static IPs"
+msgstr "Usar IPs estaticas"
+
+msgid "Use Static DNS"
+msgstr "Usar DNS estatica"
+
+msgid "Use Encryption"
+msgstr "Usar encripcion"
+
+msgid "Advanced Settings"
+msgstr "Configuracion Avanzada"
+
+msgid "Wired Network"
+msgstr "Red Cableada"
+
+msgid "Automatically connect to this network"
+msgstr "Conectar automaticamente a esta red"
+
+msgid "Secured"
+msgstr "Segura"
+
+msgid "Unsecured"
+msgstr "Insegura"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Preferences"
+msgstr "Preferencias"
+
+msgid "Wireless Interface"
+msgstr "Interfaz Inalambrica"
+
+msgid "Wired Interface"
+msgstr "Interfaz Cableada"
+
+msgid "Always show wired interface"
+msgstr "Siempre mostrar interfaces cableadas"
+
+msgid "Automatically reconnect on connection loss"
+msgstr "Reconectar automaticamente cuando se pierda la conexion"
+
+msgid "Hidden Network"
+msgstr "Red Oculta"
+
+msgid "Hidden Network ESSID"
+msgstr "SSID de la Red Oculta"
+
+msgid "Not connected"
+msgstr "No Conectado"
+
+msgid "No wireless networks found."
+msgstr "No se han encontrado redes"
+
+msgid "Key"
+msgstr "Clave"
+
+msgid "Username"
+msgstr "Usuario"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Anonymous Identity"
+msgstr "Identidad Anonima"
+
+msgid "Identity"
+msgstr "Identidad"
+
+msgid "Authentication"
+msgstr "Autenticacion"
+
+msgid "Path to PAC File"
+msgstr "Ruta al archivo PAC"
+
+msgid "Choose from the networks below:"
+msgstr "Escoja de entre las redes:"
+
+msgid "Putting interface down..."
+msgstr "Desconectando de la interfaz"
+
+msgid "Resetting IP address..."
+msgstr "Reseteando la direccion IP"
+
+msgid "Putting interface up..."
+msgstr "Conectando a la interfaz"
+
+msgid "Removing old connection..."
+msgstr "Removiendo la conexion antigua"
+
+msgid "Generating PSK..."
+msgstr "Generando PSK"
+
+msgid "Generating WPA configuration file..."
+msgstr "Generando el archivo de configuracion WPA"
+
+msgid "Configuring wireless interface..."
+msgstr "Configurando la interfaz inalambrica"
+
+msgid "For more detailed help, consult the wicd-curses(8) man page."
+msgstr "Para ayuda más detallada, consulte la página del manual wicd-curses(8)"
+
+msgid "Connection Failed: Bad password"
+msgstr "Error al conectar: Contraseña incorrecta:"
+
+msgid "Disconnect from all networks"
+msgstr "Desconectar de todas las redes."
+
+msgid "Stop a network connection in progress"
+msgstr "Detener una conexión en proceso:"
+
+msgid "Always switch to wired connection when available"
+msgstr "Siempre cambiar a la conexión cableada cuando esté disponible."
+
+msgid "You must enter your password to configure scripts"
+msgstr "Debe ingresar su contraseña para configurar scripts:"
+
+msgid "Connection Cancelled"
+msgstr "Conexión cancelada:"
+
+msgid "Connecting"
+msgstr "Conectando:"
+
+msgid "Wired Networks"
+msgstr "Redes cableadas"
+
+msgid "DNS domain"
+msgstr "Dominio DNS:"
+
+msgid "DNS server"
+msgstr "Servidor DNS"
+
+msgid "Scan for hidden networks"
+msgstr "Buscar redes ocultas:"
+
+msgid "Scripts"
+msgstr "Scripts:"
+
+msgid "Automatic Reconnection"
+msgstr "Reconexión automática"
+
+msgid "Press F8 or Q to quit."
+msgstr "Presione F8 o Q para salir."
+
+msgid "Use as default profile (overwrites any previous default)"
+msgstr "Usar como perfil predeterminado (se sobreescribirá cualquier perfil predeterminado anterior):"
