@@ -1,3 +1,11 @@
+wicd (1.7.0+ds1-2) UNRELEASED; urgency=low
+
+  * Fix RC bug: daemon doesn't start anymore because copy.deepcopy()
+    fails with the iniparse object, coming from 20-use_iniparse.patch.
+    Bug 568326 reopened. (Closes: #572599)
+
+ -- David Paleino <dapal@debian.org>  Fri, 05 Mar 2010 08:26:02 +0100
+
 wicd (1.7.0+ds1-1) unstable; urgency=low
 
   * New repacked tarball, contains translations .po files
