@@ -61,10 +61,7 @@ Description: wired and wireless network manager - daemon
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
     custom schemes;
-  * wireless-tools compatibility;
-  * tray icon showing network activity and signal strength;
-  * lack of GNOME dependencies (although it does require GTK+), making it
-    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+  * wireless-tools compatibility.
  .
  This package contains the daemon needed to run Wicd.
 
@@ -88,12 +85,12 @@ Description: wired and wireless network manager - GTK+ client
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
     custom schemes;
-  * wireless-tools compatibility;
-  * tray icon showing network activity and signal strength;
-  * lack of GNOME dependencies (although it does require GTK+), making it
-    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+  * wireless-tools compatibility.
  .
- This package provides the GTK+ client
+ This package provides the GTK+ client, which has no GNOME dependencies,
+ making it easy to use in Xfce, Fluxbox, Openbox, Enlightenment, ...
+ It also supports a tray icon showing network activity and signal
+ strength.
 
 Package: wicd-curses
 Architecture: all
@@ -113,12 +110,10 @@ Description: wired and wireless network manager - Curses client
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
     custom schemes;
-  * wireless-tools compatibility;
-  * tray icon showing network activity and signal strength;
-  * lack of GNOME dependencies (although it does require GTK+), making it
-    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+  * wireless-tools compatibility.
  .
- This package provides the Curses/Urwid client
+ This package provides the Curses/Urwid client, which is the client
+ of choice in environments without X server.
 
 Package: wicd-cli
 Architecture: all
@@ -137,10 +132,7 @@ Description: wired and wireless network manager - scriptable cli client
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
     custom schemes;
-  * wireless-tools compatibility;
-  * tray icon showing network activity and signal strength;
-  * lack of GNOME dependencies (although it does require GTK+), making it
-    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+  * wireless-tools compatibility.
  .
  This package provides a scriptable console client.
 
@@ -159,10 +151,6 @@ Description: wired and wireless network manager - Python module
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
     custom schemes;
-  * wireless-tools compatibility;
-  * tray icon showing network activity and signal strength;
-  * lack of GNOME dependencies (although it does require GTK+), making it
-    easy to use in Xfce, Fluxbox, Openbox, Enlightenment, etc.
+  * wireless-tools compatibility.
  .
- This package provides the Python module.
-
+ This package provides the Python module used by Wicd.
