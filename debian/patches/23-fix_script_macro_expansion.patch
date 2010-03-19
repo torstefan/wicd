@@ -1,0 +1,30 @@
+From: Andrew Psaltis <ampsaltis@gmail.com>
+Subject: fixed bug in script macro expansion
+Origin: upstream, http://bazaar.launchpad.net/~wicd-devel/wicd/experimental/revision/553
+
+---
+ wicd/networking.py |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+--- wicd.orig/wicd/networking.py
++++ wicd/wicd/networking.py
+@@ -215,8 +215,8 @@ class Controller(object):
+         if self.pre_disconnect_script:
+             print 'Running pre-disconnect script'
+             misc.ExecuteScript(expand_script_macros(self.pre_disconnect_script,
+-                                                    'pre-disconnection', (mac,
+-                                                                          name)),
++                                                    'pre-disconnection',
++                                                    mac, name),
+                                self.debug)
+         iface.ReleaseDHCP()
+         iface.SetAddress('0.0.0.0')
+@@ -229,7 +229,7 @@ class Controller(object):
+             print 'Running post-disconnect script'
+             misc.ExecuteScript(expand_script_macros(self.post_disconnect_script,
+                                                     'post-disconnection',
+-                                                   (mac, name)),
++                                                    mac, name),
+                                self.debug)
+         
+     def ReleaseDHCP(self):

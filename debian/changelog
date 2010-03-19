@@ -2,8 +2,11 @@ wicd (1.7.0+ds1-3) UNRELEASED; urgency=low
 
   * debian/control:
     - fixed package descriptions (Closes: #574152)
+  * debian/patches/:
+    - 23-fix_script_macro_expansion.patch ported from upstream,
+      fixes bug in script macro expansion.
 
- -- David Paleino <dapal@debian.org>  Tue, 16 Mar 2010 20:16:01 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 19 Mar 2010 23:03:10 +0100
 
 wicd (1.7.0+ds1-2) unstable; urgency=low
 
