@@ -14,3 +14,4 @@
 21-fix_ESSID_setting.patch
 22-fix_deprecation.patch
 23-fix_script_macro_expansion.patch
+24-wait_for_DHCP_client.patch
