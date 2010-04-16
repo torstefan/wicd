@@ -1,0 +1,25 @@
+From: David Paleino <dapal@debian.org>
+Subject: upstream changed the client from dhcpcd to dhcpcd-bin. This patch
+ reverts it, so that defaults in /etc/default/dhcpcd are still observed.
+Bug-Debian: http://bugs.debian.org/578014
+Forwarded: no
+
+---
+ wicd/wnettools.py |    6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+--- wicd.orig/wicd/wnettools.py
++++ wicd/wicd/wnettools.py
+@@ -384,11 +384,7 @@ class BaseInterface(object):
+                 self.dhclient_needs_verbose = True
+             else:
+                 self.dhclient_needs_verbose = False
+-        debian_dhcpcd_cmd = self._find_program_path('dhcpcd-bin')
+-        if debian_dhcpcd_cmd:
+-            self.dhcpcd_cmd = debian_dhcpcd_cmd
+-        else:
+-            self.dhcpcd_cmd = self._find_program_path("dhcpcd")
++        self.dhcpcd_cmd = self._find_program_path("dhcpcd")
+         self.pump_cmd = self._find_program_path("pump")
+         self.udhcpc_cmd = self._find_program_path("udhcpc")
+         

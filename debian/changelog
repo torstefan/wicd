@@ -8,8 +8,12 @@ wicd (1.7.0+ds1-3) UNRELEASED; urgency=low
     - 24-wait_for_DHCP_client.patch added, waits for DHCP's client
       process to end, avoiding zombie processes. Thanks to Marin
       Ivanov for the patch! (Closes: #537195)
+    - 25-use_dhcpcd_also_in_Debian.patch added: upstream changed
+      the client from dhcpcd to dhcpcd-bin. This patch reverts it,
+      so that defaults in /etc/default/dhcpcd are still observed.
+      (Closes: #578014)
 
- -- David Paleino <dapal@debian.org>  Wed, 14 Apr 2010 08:04:03 +0200
+ -- David Paleino <dapal@debian.org>  Fri, 16 Apr 2010 20:06:51 +0200
 
 wicd (1.7.0+ds1-2) unstable; urgency=low
 
