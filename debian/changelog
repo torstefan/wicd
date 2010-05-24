@@ -14,8 +14,10 @@ wicd (1.7.0+ds1-3) UNRELEASED; urgency=low
       (Closes: #578014)
     - 26-support_etc-network_scripts.patch added, support /etc/network/
       hierarchy for connection scripts (Closes: #579497)
+    - 27-fix_resolv.conf_perms.patch added, make sure dhclient.conf has
+      0644 permissions (Closes: #582798)
 
- -- David Paleino <dapal@debian.org>  Mon, 24 May 2010 15:35:07 +0200
+ -- David Paleino <dapal@debian.org>  Mon, 24 May 2010 15:57:30 +0200
 
 wicd (1.7.0+ds1-2) unstable; urgency=low
 
