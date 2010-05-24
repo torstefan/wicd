@@ -18,9 +18,10 @@ wicd (1.7.0+ds1-3) UNRELEASED; urgency=low
       0644 permissions (Closes: #582798)
     - 28-announce_dhclient.conf.template.patch added, describe
       /etc/wicd/dhclient.conf.template in wicd(8) (Closes: #582817)
+    - 29-document_variables_passed_to_scripts.patch added (Closes: #570891)
   * debian/NEWS.Debian updated to announce /etc/wicd/dhclient.conf.template
 
- -- David Paleino <dapal@debian.org>  Mon, 24 May 2010 16:11:55 +0200
+ -- David Paleino <dapal@debian.org>  Mon, 24 May 2010 17:59:20 +0200
 
 wicd (1.7.0+ds1-2) unstable; urgency=low
 

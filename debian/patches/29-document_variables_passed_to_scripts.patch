@@ -1,0 +1,24 @@
+From: David Paleino <dapal@debian.org>
+Subject: document what variables are passed to global scripts
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=570891
+Forwarded: no
+
+---
+ in/man=wicd.8.in |    6 ++++++
+ 1 file changed, 6 insertions(+)
+
+--- wicd.orig/in/man=wicd.8.in
++++ wicd/in/man=wicd.8.in
+@@ -138,6 +138,12 @@ when the specified event is preformed up
+ or to any network. Please note that pre/post disconnect scripts may be
+ executed multiple times on already-disconnected interfaces.
+ .br
++The scripts will be passed different parameters, depending if Wicd is
++acting on a wired or a wireless network. In the former case, "wired
++wired wired" will be passed (three times, just for compatibility with
++the wireless case). If Wicd is acting on a wireless network, it will
++pass "wireless ESSID BSSID" to the script.
++.br
+ Available directories are:
+ .br
+ %SCRIPTS%predisconnect
