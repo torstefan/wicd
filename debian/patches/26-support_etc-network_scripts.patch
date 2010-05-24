@@ -1,0 +1,75 @@
+From: David Paleino <dapal@debian.org>
+Subject: support /etc/network/ hierarchy for connection scripts
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=579497
+Forwarded: no
+
+---
+ wicd/networking.py |   22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+--- wicd.orig/wicd/networking.py
++++ wicd/wicd/networking.py
+@@ -210,6 +210,8 @@ class Controller(object):
+             mac = 'X'
+         if name in (None, ''):
+             name = 'X'
++        misc.ExecuteScripts('/etc/network/if-down.d/', self.debug,
++                            extra_parameters=(nettype, name, mac))
+         misc.ExecuteScripts(wpath.predisconnectscripts, self.debug,
+                            extra_parameters=(nettype, name, mac))
+         if self.pre_disconnect_script:
+@@ -223,6 +225,8 @@ class Controller(object):
+         iface.FlushRoutes()
+         iface.Down()
+         iface.Up()
++        misc.ExecuteScripts('/etc/network/if-post-down.d/', self.debug,
++                            extra_parameters=(nettype, name, mac))
+         misc.ExecuteScripts(wpath.postdisconnectscripts, self.debug,
+                             extra_parameters=(nettype, name, mac))
+         if self.post_disconnect_script:
+@@ -840,6 +844,11 @@ class WirelessConnectThread(ConnectThrea
+         self.is_connecting = True
+         
+         # Run pre-connection script.
++        self.run_global_scripts_if_needed('/etc/network/if-pre-up.d/',
++                                          extra_parameters=('wireless',
++                                                    self.network['essid'],
++                                                    self.network['bssid'])
++                                         )
+         self.run_global_scripts_if_needed(wpath.preconnectscripts,
+                                           extra_parameters=('wireless',
+                                                     self.network['essid'],
+@@ -889,6 +898,11 @@ class WirelessConnectThread(ConnectThrea
+         self.verify_association(wiface)
+         
+         # Run post-connection script.
++        self.run_global_scripts_if_needed('/etc/network/if-up.d/',
++                                          extra_parameters=('wireless',
++                                                    self.network['essid'],
++                                                    self.network['bssid'])
++                                         )
+         self.run_global_scripts_if_needed(wpath.postconnectscripts,
+                                           extra_parameters=('wireless',
+                                                     self.network['essid'],
+@@ -1098,6 +1112,10 @@ class WiredConnectThread(ConnectThread):
+         self.is_connecting = True
+ 
+         # Run pre-connection script.
++        self.run_global_scripts_if_needed('/etc/network/if-pre-up.d/',
++                                          extra_parameters=('wired', 'wired',
++                                                            self.network['profilename'])
++                                          )
+         self.run_global_scripts_if_needed(wpath.preconnectscripts,
+                                           extra_parameters=('wired', 'wired',
+                                                             self.network['profilename'])
+@@ -1120,6 +1138,10 @@ class WiredConnectThread(ConnectThread):
+         self.set_dns_addresses(liface)
+         
+         # Run post-connection script.
++        self.run_global_scripts_if_needed('/etc/network/if-up.d/',
++                                          extra_parameters=('wired', 'wired',
++                                                self.network['profilename'])
++                                         )
+         self.run_global_scripts_if_needed(wpath.postconnectscripts,
+                                           extra_parameters=('wired', 'wired',
+                                                 self.network['profilename'])
