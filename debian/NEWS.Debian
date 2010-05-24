@@ -1,3 +1,18 @@
+wicd (1.7.0+ds1-3) unstable; urgency=low
+
+    From version 1.7, wicd uses /etc/wicd/dhclient.conf.template as
+    its configuration file for dhclient(1), if you chose it as DHCP
+    client.
+
+    Before connecting, this will copied to /etc/dhclient.conf, after
+    a backup of the original file has been made. The backup would be
+    restored after the connection terminates.
+    
+    For more information about how to use this file, refer to
+    dhclient.conf(5).
+
+ -- David Paleino <dapal@debian.org>  Mon, 24 May 2010 16:09:33 +0200
+
 wicd (1.5.9-1) unstable; urgency=low
 
     From this version onwards, the wicd-client GUI will be available 
