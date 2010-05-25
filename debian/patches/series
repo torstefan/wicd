@@ -20,3 +20,4 @@
 27-fix_resolv.conf_perms.patch
 28-announce_dhclient.conf.template.patch
 29-document_variables_passed_to_scripts.patch
+30-make_connection_info_selectable.patch
