@@ -1,4 +1,4 @@
-wicd (1.7.0+ds1-4) UNRELEASED; urgency=high
+wicd (1.7.0+ds1-4) unstable; urgency=high
 
   * Urgency high because of RC #582980
   * debian/patches:
@@ -6,7 +6,7 @@ wicd (1.7.0+ds1-4) UNRELEASED; urgency=high
       again with dhcpcd. Thanks to Brad Jorsch (Closes: #582980)
     - 30-make_connection_info_selectable.patch added (Closes: #571579)
 
- -- David Paleino <dapal@debian.org>  Tue, 25 May 2010 19:18:23 +0200
+ -- David Paleino <dapal@debian.org>  Tue, 25 May 2010 19:20:33 +0200
 
 wicd (1.7.0+ds1-3) unstable; urgency=low
 
