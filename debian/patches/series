@@ -16,7 +16,7 @@
 23-fix_script_macro_expansion.patch
 24-wait_for_DHCP_client.patch
 25-use_dhcpcd_also_in_Debian.patch
-26-support_etc-network_scripts.patch
+#26-support_etc-network_scripts.patch
 27-fix_resolv.conf_perms.patch
 28-announce_dhclient.conf.template.patch
 29-document_variables_passed_to_scripts.patch
