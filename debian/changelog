@@ -1,10 +1,10 @@
-wicd (1.7.0+ds1-5) UNRELEASED; urgency=low
+wicd (1.7.0+ds1-5) unstable; urgency=medium
 
   * debian/patches/series:
     - 26-support_etc-network_scripts.patch disabled, needs more proper
       support (reopen #579497)
 
- -- David Paleino <dapal@debian.org>  Fri, 28 May 2010 18:44:42 +0200
+ -- David Paleino <dapal@debian.org>  Sat, 29 May 2010 09:17:32 +0200
 
 wicd (1.7.0+ds1-4) unstable; urgency=high
 
