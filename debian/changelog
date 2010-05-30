@@ -1,3 +1,11 @@
+wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
+
+  * debian/patches/:
+    - 26-support_etc-network_scripts.patch refreshed, /etc/network/
+      scripts should now be properly supported (Closes: #579497)
+
+ -- David Paleino <dapal@debian.org>  Sun, 30 May 2010 20:24:29 +0200
+
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
   * debian/patches/series:
