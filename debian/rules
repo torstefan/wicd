@@ -51,7 +51,7 @@ override_dh_bugfiles:
 	dh_bugfiles -A
 
 %:
-	dh --with quilt $@
+	dh $@
 
 get-orig-source:
 	uscan --force-download --download-version $(CURVER) --destdir . --rename

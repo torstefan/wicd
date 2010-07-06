@@ -6,8 +6,10 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
   * debian/control:
     - removed depedency on python-iniparse from wicd-daemon
     - removed Build-Depends on quilt
+  * debian/rules:
+    - don't use "--with quilt" anymore
 
- -- David Paleino <dapal@debian.org>  Tue, 06 Jul 2010 08:41:02 +0200
+ -- David Paleino <dapal@debian.org>  Tue, 06 Jul 2010 08:41:22 +0200
 
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
