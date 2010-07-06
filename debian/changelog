@@ -5,8 +5,9 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
       scripts should now be properly supported (Closes: #579497)
   * debian/control:
     - removed depedency on python-iniparse from wicd-daemon
+    - removed Build-Depends on quilt
 
- -- David Paleino <dapal@debian.org>  Tue, 15 Jun 2010 11:54:26 +0200
+ -- David Paleino <dapal@debian.org>  Tue, 06 Jul 2010 08:41:02 +0200
 
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
