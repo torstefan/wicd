@@ -21,3 +21,4 @@
 28-announce_dhclient.conf.template.patch
 29-document_variables_passed_to_scripts.patch
 30-make_connection_info_selectable.patch
+31-dont_crash_on_notification_exceptions.patch
