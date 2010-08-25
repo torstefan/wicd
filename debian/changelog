@@ -10,8 +10,10 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
     - removed Build-Depends on quilt
   * debian/rules:
     - don't use "--with quilt" anymore
+  * debian/po/pt_BR.po added: debconf translation for Brazilian
+    Portuguese, thanks to Adriano Rafael Gomes (Closes: #594266)
 
- -- David Paleino <dapal@debian.org>  Sat, 17 Jul 2010 16:54:52 +0200
+ -- David Paleino <dapal@debian.org>  Wed, 25 Aug 2010 08:01:09 +0200
 
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
