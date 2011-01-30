@@ -15,8 +15,10 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
     - don't use "--with quilt" anymore
   * debian/po/pt_BR.po added: debconf translation for Brazilian
     Portuguese, thanks to Adriano Rafael Gomes (Closes: #594266)
+  * debian/wicd-daemon.config: don't ask if all users are already
+    in the netdev group (Closes: #588078)
 
- -- David Paleino <dapal@debian.org>  Sun, 30 Jan 2011 20:36:00 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 30 Jan 2011 20:44:45 +0100
 
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
