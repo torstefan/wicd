@@ -18,8 +18,10 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
   * debian/wicd-daemon.config: don't ask if all users are already
     in the netdev group (Closes: #588078)
   * debian/wicd-cli.8: explain -w/--save and -m/--name (Closes: #583586)
+  * debian/wicd-daemon.wicd.init, export $PATH, makes the daemon work
+    in a clean environment. Thanks to Peter Palfrader (Closes: #604810)
 
- -- David Paleino <dapal@debian.org>  Sun, 30 Jan 2011 21:07:22 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 30 Jan 2011 21:18:50 +0100
 
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
