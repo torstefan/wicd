@@ -18,7 +18,7 @@ Description: wired and wireless network manager - metapackage
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
- wide variety of settings.
+  * wide variety of settings;
   * ability to connect to (and maintain profiles for) both wired and
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
@@ -56,7 +56,7 @@ Description: wired and wireless network manager - daemon
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
- wide variety of settings.
+  * wide variety of settings;
   * ability to connect to (and maintain profiles for) both wired and
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
@@ -80,7 +80,7 @@ Description: wired and wireless network manager - GTK+ client
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
- wide variety of settings.
+  * wide variety of settings;
   * ability to connect to (and maintain profiles for) both wired and
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
@@ -105,7 +105,7 @@ Description: wired and wireless network manager - Curses client
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
- wide variety of settings.
+  * wide variety of settings;
   * ability to connect to (and maintain profiles for) both wired and
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
@@ -127,7 +127,7 @@ Description: wired and wireless network manager - scriptable cli client
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
- wide variety of settings.
+  * wide variety of settings;
   * ability to connect to (and maintain profiles for) both wired and
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
@@ -146,7 +146,7 @@ Description: wired and wireless network manager - Python module
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
- wide variety of settings.
+  * wide variety of settings;
   * ability to connect to (and maintain profiles for) both wired and
     wireless networks;
   * support for many encryption schemes, including WEP, WPA, WPA2 and
