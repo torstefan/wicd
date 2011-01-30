@@ -5,6 +5,7 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
       scripts should now be properly supported (Closes: #579497)
     - 31-dont_crash_on_notification_exceptions.patch added
       (Closes: #569755)
+    - 32-prefer_gksu.patch added (Closes: #575403)
   * debian/control:
     - removed depedency on python-iniparse from wicd-daemon
     - removed Build-Depends on quilt
@@ -15,7 +16,7 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
   * debian/po/pt_BR.po added: debconf translation for Brazilian
     Portuguese, thanks to Adriano Rafael Gomes (Closes: #594266)
 
- -- David Paleino <dapal@debian.org>  Sun, 30 Jan 2011 20:16:19 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 30 Jan 2011 20:36:00 +0100
 
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
