@@ -23,3 +23,4 @@
 30-make_connection_info_selectable.patch
 31-dont_crash_on_notification_exceptions.patch
 32-prefer_gksu.patch
+33-deepcopy_python27_fixes.patch
