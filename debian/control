@@ -51,7 +51,7 @@ Depends: ${misc:Depends}, ${python:Depends},
  python-wicd (= ${source:Version})
 Recommends: wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
 Suggests: pm-utils
-Conflicts: wicd (<= 1.6.2.2-4)
+Breaks: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - daemon
  Wicd is a general-purpose network configuration server which aims
@@ -75,7 +75,7 @@ Depends: ${misc:Depends}, ${python:Depends},
 Recommends: gksu | kdesu | ktsuss | sudo,
  python-notify
 Provides: wicd-client
-Conflicts: wicd (<= 1.6.2.2-4)
+Breaks: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - GTK+ client
  Wicd is a general-purpose network configuration server which aims
@@ -100,7 +100,7 @@ Depends: ${misc:Depends}, ${python:Depends},
  wicd-daemon (= ${source:Version})
 Recommends: sudo
 Provides: wicd-client
-Conflicts: wicd (<= 1.6.2.2-4)
+Breaks: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
 Description: wired and wireless network manager - Curses client
  Wicd is a general-purpose network configuration server which aims
@@ -122,7 +122,7 @@ Depends: ${misc:Depends}, ${python:Depends},
  wicd-daemon (= ${source:Version})
 Recommends: sudo
 Provides: wicd-client
-Conflicts: wicd (<< 1.7.0~a3)
+Breaks: wicd (<< 1.7.0~a3)
 Replaces: wicd (<< 1.7.0~a3)
 Description: wired and wireless network manager - scriptable cli client
  Wicd is a general-purpose network configuration server which aims
@@ -141,7 +141,7 @@ Package: python-wicd
 Architecture: all
 Section: python
 Depends: ${misc:Depends}, ${python:Depends}
-Conflicts: wicd (<< 1.7.0~a3)
+Breaks: wicd (<< 1.7.0~a3)
 Replaces: wicd (<< 1.7.0~a3)
 Description: wired and wireless network manager - Python module
  Wicd is a general-purpose network configuration server which aims
