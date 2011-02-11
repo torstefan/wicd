@@ -25,3 +25,4 @@
 32-prefer_gksu.patch
 33-deepcopy_python27_fixes.patch
 34-dont_save_useless_config.patch
+35-restrict_netmode_characters.patch
