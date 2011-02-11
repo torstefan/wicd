@@ -2,8 +2,9 @@ Source: wicd
 Section: net
 Priority: optional
 Maintainer: David Paleino <dapal@debian.org>
-Build-Depends: debhelper (>= 7.2.3~), python
-Build-Depends-Indep: python-support, po-debconf
+Build-Depends: debhelper (>= 7.2.3~)
+ , python-support
+Build-Depends-Indep: po-debconf
 Standards-Version: 3.9.1
 Homepage: http://wicd.sourceforge.net/
 Vcs-Browser: http://git.debian.org/?p=collab-maint/wicd.git
