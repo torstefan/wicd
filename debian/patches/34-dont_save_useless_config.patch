@@ -1,0 +1,25 @@
+From: David Paleino <dapal@debian.org>
+Subject: don't store variables inside configfile
+Forwarded: no
+
+---
+ wicd/wicd-daemon.py |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+--- wicd.orig/wicd/wicd-daemon.py
++++ wicd/wicd/wicd-daemon.py
+@@ -1260,9 +1260,11 @@ class WirelessDaemon(dbus.service.Object
+             self.config.add_section(essid_key)
+ 
+         for x in cur_network:
+-            self.config.set(bssid_key, x, cur_network[x])
+-            if cur_network.get("use_settings_globally", False):
+-                self.config.set(essid_key, x, cur_network[x])
++            # There's no reason to save these two to a configfile...
++            if x not in ['quality', 'strength', 'bitrates']:
++                self.config.set(bssid_key, x, cur_network[x])
++                if cur_network.get("use_settings_globally", False):
++                    self.config.set(essid_key, x, cur_network[x])
+ 
+         write_script_ent(bssid_key, "beforescript")
+         write_script_ent(bssid_key, "afterscript")

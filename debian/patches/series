@@ -24,3 +24,4 @@
 31-dont_crash_on_notification_exceptions.patch
 32-prefer_gksu.patch
 33-deepcopy_python27_fixes.patch
+34-dont_save_useless_config.patch
