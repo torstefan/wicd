@@ -12,9 +12,9 @@ Vcs-Git: git://git.debian.org/collab-maint/wicd.git
 
 Package: wicd
 Architecture: all
-Depends: ${misc:Depends},
- wicd-daemon (= ${source:Version}),
- wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
+Depends: ${misc:Depends}
+ , wicd-daemon (= ${source:Version})
+ , wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
 Description: wired and wireless network manager - metapackage
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
@@ -34,21 +34,23 @@ Description: wired and wireless network manager - metapackage
 
 Package: wicd-daemon
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends},
- python-dbus,
- python-gobject,
-# python-iniparse,
- dbus,
- wpasupplicant,
- wireless-tools,
- dhcpcd | dhcp3-client | pump | udhcpc,
- net-tools | ethtool,
- net-tools | iproute,
- adduser,
- lsb-base (>= 3.2-13),
- psmisc,
- iputils-ping | inetutils-ping,
- python-wicd (= ${source:Version})
+Depends:
+ ${misc:Depends}
+ , ${python:Depends}
+ , python-dbus
+ , python-gobject
+# , python-iniparse
+ , dbus
+ , wpasupplicant
+ , wireless-tools
+ , dhcpcd | dhcp3-client | pump | udhcpc
+ , net-tools | ethtool
+ , net-tools | iproute
+ , adduser
+ , lsb-base (>= 3.2-13)
+ , psmisc
+ , iputils-ping | inetutils-ping
+ , python-wicd (= ${source:Version})
 Recommends: wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
 Suggests: pm-utils
 Breaks: wicd (<= 1.6.2.2-4)
@@ -68,12 +70,15 @@ Description: wired and wireless network manager - daemon
 
 Package: wicd-gtk
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends},
- python-gtk2,
- python-glade2,
- wicd-daemon (= ${source:Version})
-Recommends: gksu | kdesu | ktsuss | sudo,
- python-notify
+Depends:
+ ${misc:Depends}
+ , ${python:Depends}
+ , python-gtk2
+ , python-glade2
+ , wicd-daemon (= ${source:Version})
+Recommends:
+ gksu | kdesu | ktsuss | sudo
+ , python-notify
 Provides: wicd-client
 Breaks: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
@@ -95,9 +100,11 @@ Description: wired and wireless network manager - GTK+ client
 
 Package: wicd-curses
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends},
- python-urwid,
- wicd-daemon (= ${source:Version})
+Depends:
+ ${misc:Depends}
+ , ${python:Depends}
+ , python-urwid
+ , wicd-daemon (= ${source:Version})
 Recommends: sudo
 Provides: wicd-client
 Breaks: wicd (<= 1.6.2.2-4)
@@ -118,8 +125,10 @@ Description: wired and wireless network manager - Curses client
 
 Package: wicd-cli
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends},
- wicd-daemon (= ${source:Version})
+Depends:
+ ${misc:Depends}
+ , ${python:Depends}
+ , wicd-daemon (= ${source:Version})
 Recommends: sudo
 Provides: wicd-client
 Breaks: wicd (<< 1.7.0~a3)
@@ -140,7 +149,9 @@ Description: wired and wireless network manager - scriptable cli client
 Package: python-wicd
 Architecture: all
 Section: python
-Depends: ${misc:Depends}, ${python:Depends}
+Depends:
+ ${misc:Depends}
+ , ${python:Depends}
 Breaks: wicd (<< 1.7.0~a3)
 Replaces: wicd (<< 1.7.0~a3)
 Description: wired and wireless network manager - Python module
