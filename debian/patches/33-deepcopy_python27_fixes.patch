@@ -79,10 +79,10 @@ Forwarded: yes
 -        for sname in p.sections():
 +        # Make an instance with only these sections
 +        p = ConfigManager("", self.debug, self.mrk_ws)
-+        p.config_gile = self.config_file
++        p.config_file = self.config_file
 +        for sname in in_this_file:
 +            p.add_section(sname)
-+            for (iname, value) in self.items(name):
++            for (iname, value) in self.items(sname):
 +                p.set(sname, iname, value)
              p.remove_option(sname, '_filename_')
          p._write_one()
