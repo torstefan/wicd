@@ -4,7 +4,7 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
     - 26-support_etc-network_scripts.patch refreshed, /etc/network/
       scripts should now be properly supported (Closes: #579497)
     - 31-dont_crash_on_notification_exceptions.patch added
-      (Closes: #569755)
+      (Closes: #569755, #587303)
     - 32-prefer_gksu.patch added (Closes: #575403)
     - 33-deepcopy_python27_fixes.patch backported from Ubuntu,
       thanks to Matthieu Baerts (LP: #602825)
