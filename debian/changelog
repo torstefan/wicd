@@ -19,6 +19,7 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
     - removed Build-Depends on quilt
     - fixed typo in long description, thanks to Martin Eberhard Schauer
       (Closes: #611567)
+    - bump Standards-Version to 3.9.1, no changes needed
   * debian/rules:
     - don't use "--with quilt" anymore
   * debian/po/pt_BR.po added: debconf translation for Brazilian
@@ -30,7 +31,7 @@ wicd (1.7.0+ds1-6) UNRELEASED; urgency=low
     in a clean environment. Thanks to Peter Palfrader (Closes: #604810)
   * debian/wicd-curses.postrm: redirect stderr (Closes: #605338)
 
- -- David Paleino <dapal@debian.org>  Fri, 11 Feb 2011 21:03:37 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 11 Feb 2011 21:39:08 +0100
 
 wicd (1.7.0+ds1-5) unstable; urgency=medium
 
