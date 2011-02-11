@@ -14,9 +14,9 @@ Forwarded: no
          if name in (None, ''):
              name = 'X'
 +        os.putenv("MODE", "stop")
-+        os.putenv("VERBOSITY", int(self.debug))
-+        os.putenv("IFACE", iface)
-+        os.putenv("LOGICAL", iface)
++        os.putenv("VERBOSITY", str(int(self.debug)))
++        os.putenv("IFACE", iface.iface)
++        os.putenv("LOGICAL", iface.iface)
 +        os.putenv("PHASE", "pre-down")
 +        misc.ExecuteScripts('/etc/network/if-down.d/', self.debug)
          misc.ExecuteScripts(wpath.predisconnectscripts, self.debug,
@@ -36,9 +36,9 @@ Forwarded: no
          
          # Run pre-connection script.
 +        os.putenv("MODE", "start")
-+        os.putenv("VERBOSITY", int(self.debug))
-+        os.putenv("IFACE", wiface)
-+        os.putenv("LOGICAL", wiface)
++        os.putenv("VERBOSITY", str(int(self.debug)))
++        os.putenv("IFACE", wiface.iface)
++        os.putenv("LOGICAL", wiface.iface)
 +        os.putenv("PHASE", "pre-up")
 +        self.run_global_scripts_if_needed('/etc/network/if-pre-up.d/')
          self.run_global_scripts_if_needed(wpath.preconnectscripts,
@@ -58,9 +58,9 @@ Forwarded: no
  
          # Run pre-connection script.
 +        os.putenv("MODE", "start")
-+        os.putenv("VERBOSITY", int(self.debug))
-+        os.putenv("IFACE", liface)
-+        os.putenv("LOGICAL", liface)
++        os.putenv("VERBOSITY", str(int(self.debug)))
++        os.putenv("IFACE", liface.iface)
++        os.putenv("LOGICAL", liface.iface)
 +        os.putenv("PHASE", "pre-up")
 +        self.run_global_scripts_if_needed('/etc/network/if-pre-up.d/')
          self.run_global_scripts_if_needed(wpath.preconnectscripts,
