@@ -13,7 +13,7 @@ Forwarded: no
  wireless (and wired) connection daemon front-end.
  
  Arguments:
-+\t-t\t--tray\Run the wicd tray icon only.
++\t-t\t--tray\tRun the wicd tray icon only.
  \t-n\t--no-tray\tRun wicd without the tray icon.
  \t-h\t--help\t\tPrint this help information.
  \t-a\t--no-animate\tRun the tray without network traffic tray animations.
