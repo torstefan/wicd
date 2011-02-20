@@ -1,3 +1,10 @@
+wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
+
+  * Implement a -t/--tray switch to only run the wicd tray icon
+    (36-implement_tray-only.patch) (Closes: #583684)
+
+ -- David Paleino <dapal@debian.org>  Sun, 20 Feb 2011 21:34:33 +0100
+
 wicd (1.7.0+ds1-6) unstable; urgency=low
 
   * debian/patches/:
