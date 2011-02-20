@@ -3,8 +3,9 @@ Subject: implement a -t/--tray switch to only run the tray icon
 Forwarded: no
 
 ---
- gtk/wicd-client.py |   18 ++++++++++++------
- 1 file changed, 12 insertions(+), 6 deletions(-)
+ gtk/wicd-client.py      |   18 ++++++++++++------
+ other/wicd-tray.desktop |    2 +-
+ 2 files changed, 13 insertions(+), 7 deletions(-)
 
 --- wicd.orig/gtk/wicd-client.py
 +++ wicd/gtk/wicd-client.py
@@ -57,3 +58,13 @@ Forwarded: no
  
      # Check to see if wired profile chooser was called before icon
      # was launched (typically happens on startup or daemon restart).
+--- wicd.orig/other/wicd-tray.desktop
++++ wicd/other/wicd-tray.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Categories=Application;Network;
+-Exec=wicd-gtk
++Exec=wicd-gtk --tray
+ GenericName=Network Manager
+ Icon=wicd-gtk
+ Icon[en_US]=wicd-gtk
