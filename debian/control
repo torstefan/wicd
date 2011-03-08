@@ -136,7 +136,7 @@ Recommends: sudo
 Provides: wicd-client
 Breaks: wicd (<< 1.7.0~a3)
 Replaces: wicd (<< 1.7.0~a3)
-Description: wired and wireless network manager - scriptable cli client
+Description: wired and wireless network manager - scriptable console client
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
  Its features include:
