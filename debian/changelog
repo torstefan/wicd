@@ -5,8 +5,10 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
   * Replace "cli" with "console" (to avoid the usage of "CLI", which is used
     by Mono applications) in wicd-cli's short description
     (Closes: #617328)
+  * Add Danish debconf translation, thanks to Joe Dalton
+    (Closes: #621364)
 
- -- David Paleino <dapal@debian.org>  Tue, 08 Mar 2011 08:41:04 +0100
+ -- David Paleino <dapal@debian.org>  Wed, 06 Apr 2011 23:10:08 +0200
 
 wicd (1.7.0+ds1-6) unstable; urgency=low
 
