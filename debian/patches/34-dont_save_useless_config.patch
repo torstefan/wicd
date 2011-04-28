@@ -3,23 +3,71 @@ Subject: don't store variables inside configfile
 Forwarded: no
 
 ---
- wicd/wicd-daemon.py |    8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+ in/man=nl=wicd-wireless-settings.conf.5.in |    3 ---
+ in/man=wicd-wireless-settings.conf.5.in    |    4 ----
+ wicd/wicd-daemon.py                        |   13 ++++++-------
+ 3 files changed, 6 insertions(+), 14 deletions(-)
 
 --- wicd.orig/wicd/wicd-daemon.py
 +++ wicd/wicd/wicd-daemon.py
-@@ -1260,9 +1260,11 @@ class WirelessDaemon(dbus.service.Object
+@@ -1218,11 +1218,8 @@ class WirelessDaemon(dbus.service.Object
+         elif self.config.has_section(bssid_key):
+             section = bssid_key
+         else:
+-            cur_network["has_profile"] = False
+             return "500: Profile Not Found"
+ 
+-        cur_network["has_profile"] = True
+-
+         for x in self.config.options(section):
+             if not cur_network.has_key(x) or x.endswith("script"):
+                 cur_network[x] = misc.Noneify(self.config.get(section, x))
+@@ -1260,9 +1257,11 @@ class WirelessDaemon(dbus.service.Object
              self.config.add_section(essid_key)
  
          for x in cur_network:
 -            self.config.set(bssid_key, x, cur_network[x])
 -            if cur_network.get("use_settings_globally", False):
 -                self.config.set(essid_key, x, cur_network[x])
-+            # There's no reason to save these two to a configfile...
-+            if x not in ['quality', 'strength', 'bitrates']:
++            # There's no reason to save these to a configfile...
++            if x not in ['quality', 'strength', 'bitrates', 'has_profile']:
 +                self.config.set(bssid_key, x, cur_network[x])
 +                if cur_network.get("use_settings_globally", False):
 +                    self.config.set(essid_key, x, cur_network[x])
  
          write_script_ent(bssid_key, "beforescript")
          write_script_ent(bssid_key, "afterscript")
+@@ -1337,7 +1336,7 @@ class WirelessDaemon(dbus.service.Object
+             self.Scan(sync=True)
+ 
+         for x, network in enumerate(self.LastScan):
+-            if bool(network["has_profile"]):
++            if self.config.has_section(network['bssid']):
+                 if self.debug_mode:
+                     print network["essid"] + ' has profile'
+                 if bool(network.get('automatic')):
+--- wicd.orig/in/man=nl=wicd-wireless-settings.conf.5.in
++++ wicd/in/man=nl=wicd-wireless-settings.conf.5.in
+@@ -79,9 +79,6 @@ Dit verzekert je ervan dat je niet per o
+ .br
+ 1 = Gebruik globale instellingen
+ .TP
+-.BI "has_profile = " <True|False>
+-Deze parameter wordt alleen intern door Wicd gebruikt en heeft geen effect voor de gebruiker zover de gebruiker kan zien.
+-.TP
+ .BI "beforescript = " <None|willekeurig_script>
+ Dit definieert een script dat gestart moet worden voordat Wicd gaat verbinden.
+ Dit script moet een Bourne-compatibel script zijn en moet uitvoerbaar zijn.
+--- wicd.orig/in/man=wicd-wireless-settings.conf.5.in
++++ wicd/in/man=wicd-wireless-settings.conf.5.in
+@@ -83,10 +83,6 @@ of commercial routers in use with "links
+ .br
+ 1 = Use settings globally
+ .TP
+-.BI "has_profile = " <True|False>
+-This parameter is used internally by Wicd and has no effect as far as the 
+-user is concerned.
+-.TP
+ .BI "beforescript = " <None|arbitrary_script>
+ This defines a script to run before Wicd brings up the connection.
+ .br
