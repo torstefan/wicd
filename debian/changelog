@@ -8,7 +8,7 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
   * Add Danish debconf translation, thanks to Joe Dalton
     (Closes: #621364)
   * 34-dont_save_useless_config.patch: drop useless has_profile=False
-    sections (Closes: #612918, #629364)
+    sections and more (Closes: #612918, #629364)
 
  -- David Paleino <dapal@debian.org>  Thu, 28 Apr 2011 18:41:49 +0200
 
