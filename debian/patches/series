@@ -27,3 +27,4 @@
 34-dont_save_useless_config.patch
 35-restrict_netmode_characters.patch
 36-implement_tray-only.patch
+37-fix_suspend_scripts.patch
