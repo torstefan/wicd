@@ -1,7 +1,7 @@
 From: David Paleino <dapal@debian.org>
 Subject: fix suspend scripts
 Bug-Debian: http://bugs.debian.org/635444
-Forwarded: no
+Forwarded: http://bazaar.launchpad.net/~wicd-devel/wicd/experimental/revision/575
 
 ---
  in/other=50-wicd-suspend.sh.in |    2 +-

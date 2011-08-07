@@ -1,7 +1,7 @@
 From: Julien BLACHE <julien-externe.blache@edf.fr>
 Subject: restrict network mode to some characters only
 Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=550957
-Forwarded: no
+Forwarded: http://bazaar.launchpad.net/~wicd-devel/wicd/experimental/revision/574
 
 ---
  wicd/wnettools.py |    5 ++++-

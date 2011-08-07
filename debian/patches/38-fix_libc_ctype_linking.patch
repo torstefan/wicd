@@ -1,7 +1,7 @@
 From: David Paleino <dapal@debian.org>
 Subject: generalize libc linking using ctypes
 Bug-Debian: http://bugs.debian.org/636941
-Forwarded: no
+Forwarded: http://bazaar.launchpad.net/~wicd-devel/wicd/experimental/revision/572
 
 ---
  wicd/misc.py |    7 ++-----

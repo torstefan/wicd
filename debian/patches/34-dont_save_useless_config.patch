@@ -1,6 +1,6 @@
 From: David Paleino <dapal@debian.org>
 Subject: don't store variables inside configfile
-Forwarded: no
+Forwarded: http://bazaar.launchpad.net/~wicd-devel/wicd/experimental/revision/573
 
 ---
  gtk/gui.py                                 |   15 +------
