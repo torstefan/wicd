@@ -12,8 +12,10 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
   * Work-around adding non-existing users to debconf (Closes: #634051)
   * Fix suspend scripts, they had old paths (37-fix_suspend_scripts.patch)
     (Closes: #635444)
+  * Fix search for libc in wicd/misc.py (38-fix_libc_ctype_linking.patch)
+    (Closes: #636941)
 
- -- David Paleino <dapal@debian.org>  Tue, 26 Jul 2011 08:15:31 +0200
+ -- David Paleino <dapal@debian.org>  Sun, 07 Aug 2011 21:56:57 +0200
 
 wicd (1.7.0+ds1-6) unstable; urgency=low
 
