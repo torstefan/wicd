@@ -7,6 +7,8 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
     (Closes: #617328)
   * Add Danish debconf translation, thanks to Joe Dalton
     (Closes: #621364)
+  * Add Serbian debconf translation, thanks to Zlatan Todoric
+    (Closes: #635079, #635080)
   * 34-dont_save_useless_config.patch: drop useless has_profile=False
     sections and more (Closes: #612918, #629364)
   * Work-around adding non-existing users to debconf (Closes: #634051)
@@ -15,7 +17,7 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
   * Fix search for libc in wicd/misc.py (38-fix_libc_ctype_linking.patch)
     (Closes: #636941)
 
- -- David Paleino <dapal@debian.org>  Sun, 07 Aug 2011 21:56:57 +0200
+ -- David Paleino <dapal@debian.org>  Tue, 09 Aug 2011 19:55:04 +0200
 
 wicd (1.7.0+ds1-6) unstable; urgency=low
 
