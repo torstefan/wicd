@@ -29,3 +29,4 @@
 36-implement_tray-only.patch
 37-fix_suspend_scripts.patch
 38-fix_libc_ctype_linking.patch
+39-fix_channel_digit_parsing.patch
