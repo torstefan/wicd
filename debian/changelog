@@ -18,8 +18,10 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
     (Closes: #636941)
   * 39-fix_channel_digit_parsing.patch: support channels with more than
     2 digits (Closes: #640075)
+  * 40-checkbox_passwords.patch: add a checkbox to show/hide passwords
+    (Closes: #573096) (LP: #476982)
 
- -- David Paleino <dapal@debian.org>  Fri, 02 Sep 2011 08:11:17 +0200
+ -- David Paleino <dapal@debian.org>  Sat, 10 Sep 2011 08:15:21 +0200
 
 wicd (1.7.0+ds1-6) unstable; urgency=low
 
