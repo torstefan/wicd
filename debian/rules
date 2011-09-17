@@ -44,14 +44,20 @@ override_dh_auto_install:
 	-rm -rf $(CURDIR)/debian/tmp/var/run
 
 override_dh_installinit:
-	dh_pysupport -i
+	dh_python2 -v -i
+	dh_python2 -v -i /usr/share/wicd/
 	dh_installinit -i --name=wicd --restart-after-upgrade
 
 override_dh_bugfiles:
 	dh_bugfiles -A
 
+override_dh_python2:
+	dh_python2 -v
+	dh_python2 -v /usr/share/wicd/
+
 %:
-	dh $@
+	dh $@ \
+		--with python2
 
 get-orig-source:
 	uscan --force-download --download-version $(CURVER) --destdir . --rename
