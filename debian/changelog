@@ -1,6 +1,5 @@
 wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
 
-  * Package switched from pysupport to dh_python2
   * Standards-Version bump to 3.9.2, no changes needed
   * Updated debian/copyright to match latest DEP-5
   * Implement a -t/--tray switch to only run the wicd tray icon
