@@ -1,13 +1,11 @@
-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
 Upstream-Name: Wicd
 Upstream-Maintainer: Adam Blackburn <compwiz18@users.sourceforge.net>
  Dan O'Reilly <oreilldf@gmail.com>
-Upstream-Source: https://sourceforge.net/project/showfiles.php?group_id=194573
-Packaged-By: David Paleino <d.paleino@gmail.com>
-Packaged-Date: Thu, 11 Sep 2008 19:35:30 +0200
+Source: https://sourceforge.net/project/showfiles.php?group_id=194573
 
 Files: debian/*
-Copyright: © 2008, David Paleino <d.paleino@gmail.com>
+Copyright: © 2008-2011, David Paleino <d.paleino@gmail.com>
 License: GPL-2+
 
 Files: in/init=gentoo=wicd.in
