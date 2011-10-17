@@ -32,3 +32,4 @@
 39-fix_channel_digit_parsing.patch
 40-checkbox_passwords.patch
 41-add_new_templates.patch
+42-support_new_urwid.patch

@@ -23,8 +23,9 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
   * 40-checkbox_passwords.patch: add a checkbox to show/hide passwords
     (Closes: #573096) (LP: #476982)
   * 41-add_new_templates.patch: new encryption templates (Closes: #641531)
+  * 42-support_new_urwid.patch: support urwid 1.0.0 (Closes: #645681)
 
- -- David Paleino <dapal@debian.org>  Sat, 17 Sep 2011 08:37:07 +0200
+ -- David Paleino <dapal@debian.org>  Mon, 17 Oct 2011 22:15:15 +0200
 
 wicd (1.7.0+ds1-6) unstable; urgency=low
 
