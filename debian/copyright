@@ -1,8 +1,4 @@
 Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
-Upstream-Name: Wicd
-Upstream-Maintainer: Adam Blackburn <compwiz18@users.sourceforge.net>
- Dan O'Reilly <oreilldf@gmail.com>
-Source: https://sourceforge.net/project/showfiles.php?group_id=194573
 
 Files: debian/*
 Copyright: © 2008-2011, David Paleino <d.paleino@gmail.com>
@@ -39,6 +35,9 @@ Copyright: © 2007-2008, Dan O'Reilly <oreilldf@gmail.com>
 License: GPL-2+
 
 License: GPL-2+
+ On Debian systems the full text of the GNU General Public License can 
+ be found in the `/usr/share/common-licenses/GPL-2' file.
+
 License: GPL-2
  On Debian systems the full text of the GNU General Public License can 
  be found in the `/usr/share/common-licenses/GPL-2' file.
