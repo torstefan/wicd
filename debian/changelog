@@ -1,4 +1,4 @@
-wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
+wicd (1.7.0+ds1-7) unstable; urgency=low
 
   * Standards-Version bump to 3.9.2, no changes needed
   * Updated debian/copyright to match latest DEP-5
@@ -25,7 +25,7 @@ wicd (1.7.0+ds1-7) UNRELEASED; urgency=low
   * 41-add_new_templates.patch: new encryption templates (Closes: #641531)
   * 42-support_new_urwid.patch: support urwid 1.0.0 (Closes: #645681)
 
- -- David Paleino <dapal@debian.org>  Mon, 17 Oct 2011 22:15:15 +0200
+ -- David Paleino <dapal@debian.org>  Mon, 17 Oct 2011 22:18:06 +0200
 
 wicd (1.7.0+ds1-6) unstable; urgency=low
 
