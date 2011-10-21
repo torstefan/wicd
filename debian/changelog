@@ -2,8 +2,9 @@ wicd (1.7.0+ds1-8) UNRELEASED; urgency=low
 
   * Really fix debconf when non-existing users are involved
     (Closes: #634051)
+  * Switch package to dh_python2 from dh_pysupport
 
- -- David Paleino <dapal@debian.org>  Fri, 21 Oct 2011 22:35:15 +0200
+ -- David Paleino <dapal@debian.org>  Fri, 21 Oct 2011 22:42:14 +0200
 
 wicd (1.7.0+ds1-7) unstable; urgency=low
 
