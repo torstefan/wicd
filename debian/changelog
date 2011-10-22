@@ -1,3 +1,9 @@
+wicd (1.7.0+ds1-9) UNRELEASED; urgency=high
+
+  * Fix postinst: it breaks dh_python2's layout
+
+ -- David Paleino <dapal@debian.org>  Sat, 22 Oct 2011 11:24:52 +0200
+
 wicd (1.7.0+ds1-8) unstable; urgency=low
 
   * Really fix debconf when non-existing users are involved
