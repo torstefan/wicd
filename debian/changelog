@@ -2,8 +2,10 @@ wicd (1.7.0+ds1-10) UNRELEASED; urgency=low
 
   * Added Dutch Debconf translation, thanks to Jeroen Schot
     (Closes: #643640)
+  * Drop kdesu from wicd-gtk's Recommends: it is not anymore available
+    in Debian.
 
- -- David Paleino <dapal@debian.org>  Sat, 22 Oct 2011 20:39:05 +0200
+ -- David Paleino <dapal@debian.org>  Sat, 22 Oct 2011 22:19:39 +0200
 
 wicd (1.7.0+ds1-9) unstable; urgency=high
 
