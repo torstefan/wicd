@@ -1,3 +1,10 @@
+wicd (1.7.0+ds1-10) UNRELEASED; urgency=low
+
+  * Added Dutch Debconf translation, thanks to Jeroen Schot
+    (Closes: #643640)
+
+ -- David Paleino <dapal@debian.org>  Sat, 22 Oct 2011 20:39:05 +0200
+
 wicd (1.7.0+ds1-9) unstable; urgency=high
 
   * Fix postinst: it breaks dh_python2's layout
