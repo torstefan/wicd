@@ -4,8 +4,10 @@ wicd (1.7.0+ds1-10) UNRELEASED; urgency=low
     (Closes: #643640)
   * Drop kdesu from wicd-gtk's Recommends: it is not anymore available
     in Debian.
+  * Make wicd-daemon Pre-Depend on debconf (>= 1.5.34) to correctly
+    handle sr@latin translation (Closes: #647626)
 
- -- David Paleino <dapal@debian.org>  Sat, 22 Oct 2011 22:19:39 +0200
+ -- David Paleino <dapal@debian.org>  Fri, 04 Nov 2011 18:03:01 +0100
 
 wicd (1.7.0+ds1-9) unstable; urgency=high
 
