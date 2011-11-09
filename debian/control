@@ -80,7 +80,7 @@ Depends:
  , python-glade2
  , wicd-daemon (= ${source:Version})
 Recommends:
- gksu | ktsuss | sudo
+ gksu
  , python-notify
 Provides: wicd-client
 Breaks: wicd (<= 1.6.2.2-4)
