@@ -16,6 +16,10 @@ override_dh_auto_configure:
 		--loggroup=adm \
 		--logperms=0640
 
+override_dh_auto_build:
+	dh_auto_build
+	python setup.py compile_translations
+
 override_dh_auto_clean:
 	dh_auto_clean
 	-find . \( -name "*.pyc" -o -name "*.pyo" \) -delete
