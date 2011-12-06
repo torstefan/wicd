@@ -6,6 +6,11 @@ wicd (1.7.1~b3-1) UNRELEASED; urgency=low
       + 01-remove_unused_icons.patch
       + 26-support_etc-network_scripts.patch
       + 32-prefer_gksu.patch
+    - documented wicd-gtk's -t option (Closes: #648757)
+    - keep configuration files sorted (Closes: #568326)
+    - show correct ESSID in status bar (Closes: #535507, #647503)
+    - show correct ESSID when rescanning networks (Closes: #552254)
+    - redesigned l10n system (Closes: #572375)
   * Added Dutch Debconf translation, thanks to Jeroen Schot
     (Closes: #643640)
   * Drop kdesu, ktsuss and sudo from wicd-gtk's Recommends.
