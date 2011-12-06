@@ -4,20 +4,19 @@ It uses the current working tree to determine the revision.
 So don't edit it. :)
 """
 
-version_info = {'branch_nick': u'experimental',
- 'build_date': '2010-01-14 18:49:24 -1000',
+version_info = {'branch_nick': u'wicd',
+ 'build_date': '2011-12-05 18:30:10 +0100',
  'clean': None,
- 'date': '2010-01-14 18:47:12 -1000',
- 'revision_id': 'compwiz18@gmail.com-20100115044712-lhfble7l5wli4mua',
- 'revno': 552}
+ 'date': '2011-12-05 05:25:14 +0000',
+ 'revision_id': 'launchpad_translations_on_behalf_of_wicd-devel-20111205052514-46kstreoswwlo7nb',
+ 'revno': '655'}
 
 revisions = {}
 
 file_revisions = {}
 
 
-
 if __name__ == '__main__':
-    print 'revision: %(revno)d' % version_info
+    print 'revision: %(revno)s' % version_info
     print 'nick: %(branch_nick)s' % version_info
     print 'revision id: %(revision_id)s' % version_info

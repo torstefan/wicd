@@ -57,7 +57,7 @@ from wicd import wpath
 from wicd import networking
 from wicd import misc
 from wicd import wnettools
-from wicd.misc import noneToBlankString
+from wicd.misc import noneToBlankString, _status_dict
 from wicd.logfile import ManagedStdio
 from wicd.configmanager import ConfigManager
 
@@ -101,6 +101,7 @@ class WicdDaemon(dbus.service.Object):
         self.connection_info = [""]
         self.auto_connecting = False
         self.prefer_wired = False
+        self.show_never_connect = True
         self.dhcp_client = 0
         self.link_detect_tool = 0
         self.flush_tool = 0
@@ -566,6 +567,20 @@ class WicdDaemon(dbus.service.Object):
         self.prefer_wired = bool(value)
 
     @dbus.service.method('org.wicd.daemon')
+    def GetShowNeverConnect(self):
+        """ Returns True if show_never_connect is set
+
+        if True then the client will show networks marked as never connect
+        """
+        return self.show_never_connect
+
+    @dbus.service.method('org.wicd.daemon')
+    def SetShowNeverConnect(self, value):
+        """ Sets the how_never_connect state. """
+        self.config.set("Settings", "show_never_connect", bool(value), write=True)
+        self.show_never_connect = bool(value)
+
+    @dbus.service.method('org.wicd.daemon')
     def SetConnectionStatus(self, state, info):
         """ Sets the connection status.
 
@@ -689,55 +704,6 @@ class WicdDaemon(dbus.service.Object):
         """ Set the preferred sudo app. """
         self.sudo_app = sudo_app
         self.config.set("Settings", "sudo_app", sudo_app, write=True)
-
-    @dbus.service.method('org.wicd.daemon')
-    def WriteWindowSize(self, width, height, win_name):
-        """ Write the desired default window size.
-
-        win_name should be either 'main' or 'pref', and specifies
-        whether the size being given applies to the main GUI window
-        or the preferences dialog window.
-
-        """
-        if win_name:
-            height_str = '%s_height' % win_name
-            width_str = '%s_width' % win_name
-        # probably don't need the else, but the previous code
-        # had an else that caught everything
-        else:
-            height_str = "pref_height"
-            width_str = "pref_width"
-
-        self.config.set("Settings", width_str, width)
-        self.config.set("Settings", height_str, height)
-        self.config.write()
-
-    @dbus.service.method('org.wicd.daemon')
-    def ReadWindowSize(self, win_name):
-        """Returns a list containing the desired default window size
-
-        Attempts to read the default size from the config file,
-        and if that fails, returns a default of 605 x 400.
-
-        """
-        default_width, default_height = (-1, -1)
-        if win_name:
-            height_str = '%s_height' % win_name
-            width_str = '%s_width' % win_name
-        # probably don't need the else, but the previous code
-        # had an else that caught everything
-        else:
-            height_str = "pref_height"
-            width_str = "pref_width"
-
-        width = self.config.get("Settings", width_str, default=default_width)
-        height = self.config.get("Settings", height_str, default=default_height)
-        self.config.write()
-
-        size = []
-        size.append(int(width))
-        size.append(int(height))
-        return size
 
     def _wired_autoconnect(self, fresh=True):
         """ Attempts to autoconnect to a wired network. """
@@ -924,6 +890,8 @@ class WicdDaemon(dbus.service.Object):
         self.SetSudoApp(app_conf.get("Settings", "sudo_app", default=0))
         self.SetPreferWiredNetwork(app_conf.get("Settings", "prefer_wired", 
                                                 default=False))
+        self.SetShowNeverConnect(app_conf.get("Settings", "show_never_connect", 
+                                                default=True))
         app_conf.write()
 
         if os.path.isfile(wireless_conf):
@@ -948,12 +916,14 @@ class WicdDaemon(dbus.service.Object):
         os.chmod(app_conf.get_config(), 0600)
         os.chmod(wireless_conf, 0600)
         os.chmod(wired_conf, 0600)
+        os.chmod(dhclient_conf, 0644)
 
         # Make root own them
         print "chowning configuration files root:root..."
         os.chown(app_conf.get_config(), 0, 0)
         os.chown(wireless_conf, 0, 0)
         os.chown(wired_conf, 0, 0)
+        os.chown(dhclient_conf, 0, 0)
 
         print "Using wireless interface..." + self.GetWirelessInterface()
         print "Using wired interface..." + self.GetWiredInterface()
@@ -1071,6 +1041,16 @@ class WirelessDaemon(dbus.service.Object):
         """ Returns true if kill switch is pressed. """
         status = self.wifi.GetKillSwitchStatus()
         return status
+
+    @dbus.service.method('org.wicd.daemon.wireless')
+    def SwitchRfKill(self):
+        """ Switches the rfkill on/off for wireless cards. """
+        return self.wifi.SwitchRfKill()
+
+    @dbus.service.method('org.wicd.daemon.wireless')
+    def GetRfKillEnabled(self):
+        """ Returns true if rfkill switch is enabled. """
+        return self.wifi.GetRfKillStatus()
 
     @dbus.service.method('org.wicd.daemon.wireless')
     def GetWirelessProperty(self, networkid, property):
@@ -1196,11 +1176,20 @@ class WirelessDaemon(dbus.service.Object):
         return ip
 
     @dbus.service.method('org.wicd.daemon.wireless')
-    def CheckWirelessConnectingMessage(self):
-        """ Returns the wireless interface's status message. """
-        if not self.wifi.connecting_thread == None:
+    def CheckWirelessConnectingStatus(self):
+        """ Returns the wireless interface's status code. """
+        if self.wifi.connecting_thread:
             stat = self.wifi.connecting_thread.GetStatus()
             return stat
+        else:
+            return False
+
+    @dbus.service.method('org.wicd.daemon.wireless')
+    def CheckWirelessConnectingMessage(self):
+        """ Returns the wireless interface's status message. """
+        if self.wifi.connecting_thread:
+            stat = self.CheckWirelessConnectingStatus()
+            return _status_dict[stat]
         else:
             return False
 
@@ -1216,10 +1205,7 @@ class WirelessDaemon(dbus.service.Object):
         elif self.config.has_section(bssid_key):
             section = bssid_key
         else:
-            cur_network["has_profile"] = False
             return "500: Profile Not Found"
-
-        cur_network["has_profile"] = True
 
         for x in self.config.options(section):
             if not cur_network.has_key(x) or x.endswith("script"):
@@ -1258,9 +1244,11 @@ class WirelessDaemon(dbus.service.Object):
             self.config.add_section(essid_key)
 
         for x in cur_network:
-            self.config.set(bssid_key, x, cur_network[x])
-            if cur_network.get("use_settings_globally", False):
-                self.config.set(essid_key, x, cur_network[x])
+            # There's no reason to save these to a configfile...
+            if x not in ['quality', 'strength', 'bitrates', 'has_profile']:
+                self.config.set(bssid_key, x, cur_network[x])
+                if cur_network.get("use_settings_globally", False):
+                    self.config.set(essid_key, x, cur_network[x])
 
         write_script_ent(bssid_key, "beforescript")
         write_script_ent(bssid_key, "afterscript")
@@ -1335,10 +1323,16 @@ class WirelessDaemon(dbus.service.Object):
             self.Scan(sync=True)
 
         for x, network in enumerate(self.LastScan):
-            if bool(network["has_profile"]):
+            if self.config.has_section(network['bssid']):
                 if self.debug_mode:
                     print network["essid"] + ' has profile'
                 if bool(network.get('automatic')):
+                    try:
+                        if network.get('never'):
+                            print network["essid"],'marked never connect'
+                            continue
+                    except:
+                        print network["essid"],'has no never connect value'
                     print 'trying to automatically connect to...' + \
                           network["essid"]
                     self.ConnectWireless(x)
@@ -1387,10 +1381,18 @@ class WiredDaemon(dbus.service.Object):
             return False
 
     @dbus.service.method('org.wicd.daemon.wired')
+    def CheckWiredConnectingStatus(self):
+        """Returns the wired interface's status code. '"""
+        if self.wired.connecting_thread:
+            return self.wired.connecting_thread.GetStatus()
+        else:
+            return False
+
+    @dbus.service.method('org.wicd.daemon.wired')
     def CheckWiredConnectingMessage(self):
         """ Returns the wired interface's status message. """
         if self.wired.connecting_thread:
-            return self.wired.connecting_thread.GetStatus()
+            return _status_dict(self.CheckWiredConnectingStatus())
         else:
             return False
 
@@ -1702,6 +1704,7 @@ def main(argv):
         # wicd exploded
         if not os.path.exists(backup_location):
             shutil.copy2('/etc/resolv.conf', backup_location)
+            os.chmod(backup_location, 0644)
     except IOError:
         print 'error backing up resolv.conf'
 
@@ -1736,7 +1739,7 @@ def main(argv):
         if o in ('-n', '--no-poll'):
             no_poll = True
         if o in ('-k', '--kill'):
-	        kill = True	
+             kill = True
 
     if kill:
         try:
@@ -1748,6 +1751,7 @@ def main(argv):
         # restore resolv.conf on quit
         try:
             shutil.move(wpath.varlib + 'resolv.conf.orig', '/etc/resolv.conf')
+            os.chmod('/etc/resolv.conf', 0644)
         except IOError:
             print 'error restoring resolv.conf'
 
@@ -1802,7 +1806,7 @@ def main(argv):
     wicd_bus = dbus.service.BusName('org.wicd.daemon', bus=bus)
     daemon = WicdDaemon(wicd_bus, auto_connect=auto_connect)
     if not no_poll:
-        child_pid = Popen([misc.find_path("python"), "-O", 
+        child_pid = Popen([wpath.python, "-O", 
                           os.path.join(wpath.daemon, "monitor.py")],
                           shell=False, close_fds=True).pid
     atexit.register(on_exit, child_pid)

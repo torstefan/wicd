@@ -33,6 +33,8 @@ from commands import getoutput
 from itertools import repeat, chain, izip
 from pipes import quote
 
+from wicd.translations import _
+
 # wicd imports
 import wpath
 
@@ -69,6 +71,30 @@ _sudo_dict = {
     GKSUDO : "gksudo",
     KDESU : "kdesu",
     KTSUSS: "ktsuss",
+}
+
+_status_dict = {
+    'aborted': _('Connection Cancelled'),
+    'association_failed': _('Connection failed: Could not contact the wireless access point.'),
+    'bad_pass': _('Connection Failed: Bad password'),
+    'configuring_interface': _('Configuring wireless interface...'),
+    'dhcp_failed': _('Connection Failed: Unable to Get IP Address'),
+    'done': _('Done connecting...'),
+    'failed': _('Connection Failed.'),
+    'flushing_routing_table': _('Flushing the routing table...'),
+    'generating_psk': _('Generating PSK...'),
+    'generating_wpa_config': _('Generating WPA configuration file...'),
+    'interface_down': _('Putting interface down...'),
+    'interface_up': _('Putting interface up...'),
+    'no_dhcp_offers': _('Connection Failed: No DHCP offers received.'),
+    'resetting_ip_address': _('Resetting IP address...'),
+    'running_dhcp': _('Obtaining IP address...'),
+    'setting_broadcast_address': _('Setting broadcast address...'),
+    'setting_static_dns': _('Setting static DNS servers...'),
+    'setting_static_ip': _('Setting static IP addresses...'),
+    'success': _('Connection successful.'),
+    'validating_authentication': _('Validating authentication...'),
+    'verifying_association': _('Verifying access point association...'),
 }
 
 class WicdError(Exception):
@@ -144,14 +170,17 @@ def LaunchAndWait(cmd):
 
 def IsValidIP(ip):
     """ Make sure an entered IP is valid. """
-    if ip != None:
-        if ip.count('.') == 3:
-            ipNumbers = ip.split('.')
-            for number in ipNumbers:
-                if not number.isdigit() or int(number) > 255:
-                    return False
-            return ipNumbers
-    return False
+    if not ip: return False
+
+    ipNumbers = ip.split('.')
+    if len(ipNumbers) < 4:
+        return False
+
+    for number in ipNumbers:
+        if not number.isdigit() or int(number) > 255:
+            return False
+
+    return ipNumbers
 
 def PromptToStartDaemon():
     """ Prompt the user to start the daemon """
@@ -164,7 +193,7 @@ def PromptToStartDaemon():
     else:
         msg = '--caption'
     sudo_args = [sudo_prog, msg, 
-                 'Wicd needs to access your computer\'s network cards.',
+                 _("Wicd needs to access your computer's network cards."),
                  daemonloc]
     os.spawnvpe(os.P_WAIT, sudo_prog, sudo_args, os.environ)
     return True
@@ -186,6 +215,8 @@ def ExecuteScripts(scripts_dir, verbose=False, extra_parameters=()):
     if not os.path.exists(scripts_dir):
         return
     for obj in sorted(os.listdir(scripts_dir)):
+        if obj.startswith(".") or obj.endswith(("~", ".new", ".orig")):
+            continue
         obj = os.path.abspath(os.path.join(scripts_dir, obj))
         if os.path.isfile(obj) and os.access(obj, os.X_OK):
             ExecuteScript(os.path.abspath(obj), verbose=verbose,
@@ -255,7 +286,7 @@ def ParseEncryption(network):
                 if cur_val:
                     if cur_val[0] == 'SCAN':
                         #TODO should this be hardcoded?
-                        line = line.replace("$_SCAN", "0")
+                        line = line.replace("$_SCAN", "1")
                         config_file = ''.join([config_file, line])
                     else:
                         rep_val = network.get(cur_val[0].lower())
@@ -333,6 +364,7 @@ def _parse_enc_template(enctype):
     cur_type["fields"] = []
     cur_type['optional'] = []
     cur_type['required'] = []
+    cur_type['protected'] = []
     cur_type['name'] = ""
     for index, line in enumerate(f):
         if line.startswith("name") and not cur_type["name"]:
@@ -350,6 +382,13 @@ def _parse_enc_template(enctype):
             if not cur_type["optional"]:
                 # An error occured parsing the optional line.
                 print "Invalid 'optional' line found in template %s" % enctype
+                continue
+        elif line.startswith("protected"):
+            cur_type["protected"] = __parse_field_ent(parse_ent(line, "protected"),
+                                                    field_type="protected")
+            if not cur_type["protected"]:
+                # An error occured parsing the protected line.
+                print "Invalid 'protected' line found in template %s" % enctype
                 continue
         elif line.startswith("----"):
             # We're done.
@@ -399,16 +438,13 @@ def to_unicode(x):
     
 def RenameProcess(new_name):
     """ Renames the process calling the function to the given name. """
-    if sys.platform != 'linux2':
+    if 'linux' not in sys.platform:
         print 'Unsupported platform'
         return False
     try:
         import ctypes
-        is_64 = os.path.exists('/lib64/libc.so.6')
-        if is_64:
-            libc = ctypes.CDLL('/lib64/libc.so.6')
-        else:
-            libc = ctypes.CDLL('/lib/libc.so.6')
+        from ctypes.util import find_library
+        libc = ctypes.CDLL(find_library('c'))
         libc.prctl(15, new_name, 0, 0, 0)
         return True
     except:

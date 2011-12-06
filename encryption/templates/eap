@@ -3,6 +3,7 @@ author = Adam Blackburn
 version = 2
 require username *Username password *Password 
 optional pac_file *Path_To_PAC_File
+protected password *Password
 -----
 ctrl_interface=/var/run/wpa_supplicant
 network={
@@ -11,10 +12,10 @@ network={
 	proto=RSN WPA
 	pairwise=CCMP TKIP
 	group=CCMP TKIP
-	key-mgmt=WPA-EAP
+	key_mgmt=WPA-EAP
 	eap=FAST
 	identity="$_USERNAME"
 	password="$_PASSWORD"
 	phase1="fast_provisioning=1"
-	pac-file="$_PAC_FILE"
+	pac_file="$_PAC_FILE"
 }

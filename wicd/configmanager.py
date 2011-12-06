@@ -10,6 +10,7 @@ reusable for other purposes as well.
 #
 #   Copyright (C) 2008-2009 Adam Blackburn
 #   Copyright (C) 2008-2009 Dan O'Reilly
+#   Copyright (C) 2011      David Paleino
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 2 as
@@ -24,13 +25,24 @@ reusable for other purposes as well.
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import os, copy
+import sys, os
 
-from ConfigParser import RawConfigParser
+from ConfigParser import RawConfigParser, ParsingError
 
 from wicd.misc import Noneify, to_unicode
 
 from dbus import Int32
+
+def sanitize_config_file(path):
+    conf = open(path)
+    newconf = ''
+    for line in conf:
+        if '[' not in line or '=' not in line:
+            newconf += line
+    conf.close()
+    conf = open(path, 'w')
+    conf.write(newconf)
+    conf.close()
 
 class ConfigManager(RawConfigParser):
     """ A class that can be used to manage a given configuration file. """
@@ -39,8 +51,18 @@ class ConfigManager(RawConfigParser):
         self.config_file = path
         self.debug = debug
         self.mrk_ws = mark_whitespace
-        self.read(path)
-        
+        if path:
+            sanitize_config_file(path)
+        try:
+            self.read(path)
+        except ParsingError, e:
+            self.write()
+            try:
+                self.read(path)
+            except ParsingError, p:
+                print "Could not start wicd: %s" % p.message
+                sys.exit(1)
+
     def __repr__(self):
         return self.config_file
     
@@ -132,7 +154,7 @@ class ConfigManager(RawConfigParser):
         configfile = open(self.config_file, 'w')
         RawConfigParser.write(self, configfile)
         configfile.close()
-        
+    
     def remove_section(self, section):
         """ Wrapper around the ConfigParser.remove_section() method.
         
@@ -176,28 +198,35 @@ class ConfigManager(RawConfigParser):
 
 
     def _copy_section(self, name):
-        # Yes, deepcopy sucks, but it is robust to changes in both
-        # this class and RawConfigParser.
-        p = copy.deepcopy(self)
-        for sname in p.sections():
-            if sname != name:
-                p.remove_section(sname)
+        p = ConfigManager("", self.debug, self.mrk_ws)
+        p.add_section(name)
+        for (iname, value) in self.items(name):
+            p.set(name, iname, value)
+        # Store the filename this section was read from.
         p.config_file = p.get_option(name, '_filename_', p.config_file)
         p.remove_option(name, '_filename_')
         return p
 
     def write(self):
         """ Writes the loaded config file to disk. """
-        # Really don't like this deepcopy.
-        p = copy.deepcopy(self)
-        for sname in p.sections():
-            fname = p.get_option(sname, '_filename_')
+        in_this_file = []
+        for sname in sorted(self.sections()):
+            fname = self.get_option(sname, '_filename_')
             if fname and fname != self.config_file:
+                # Write sections from other files
                 section = self._copy_section(sname)
-                p.remove_section(sname)
                 section._write_one()
+            else:
+                # Save names of local sections
+                in_this_file.append(sname)
 
-        for sname in p.sections():
+        # Make an instance with only these sections
+        p = ConfigManager("", self.debug, self.mrk_ws)
+        p.config_file = self.config_file
+        for sname in in_this_file:
+            p.add_section(sname)
+            for (iname, value) in self.items(sname):
+                p.set(sname, iname, value)
             p.remove_option(sname, '_filename_')
         p._write_one()
 

@@ -29,21 +29,11 @@ run as the current user.
 import sys
 import os
 import gtk
-import ConfigParser
-import gtk.glade
 
 from wicd import wpath
-from wicd import translations
+from wicd.translations import _
 from wicd import dbusmanager
-
-_ = translations.get_gettext()
-
-language = {}
-language['configure_scripts'] = _("Configure Scripts")
-language['before_script'] = _("Pre-connection Script")
-language['after_script'] = _("Post-connection Script")
-language['pre_disconnect_script'] = _("Pre-disconnection Script")
-language['post_disconnect_script'] = _("Post-disconnection Script")
+from wicd.configmanager import ConfigManager
 
 dbus = dbusmanager.DBusManager()
 dbus.connect_to_dbus()
@@ -74,53 +64,30 @@ def blank_to_none(text):
     else:
         return str(text)
     
-def get_val(con, network, option, default="None"):
-    """ Returns the specified option for the given network.
-
-    Returns the value stored in the config file for the given option,
-    unless the option isn't stored yet, in which case the default value
-    provided is stored and then returned.
-    
-    Keyword arguments:
-    network -- The section to search.
-    option -- The option to search for.
-    deafult -- The default value to store/return if the option isn't found.
-    
-    """
-    if not con.has_option(network, option):
-        con.set(network, option, default)
-    return con.get(network, option)
-        
-
 def get_script_info(network, network_type):
     """ Read script info from disk and load it into the configuration dialog """
     info = {}
-    con = ConfigParser.ConfigParser()
     if network_type == "wired":
-        con.read(wired_conf)
+        con = ConfigManager(wired_conf)
         if con.has_section(network):
-            info["pre_entry"] = get_val(con, network, "beforescript")
-            info["post_entry"] = get_val(con, network, "afterscript")
-            info["pre_disconnect_entry"] = get_val(con, network, "predisconnectscript")
-            info["post_disconnect_entry"] = get_val(con, network, "postdisconnectscript")
+            info["pre_entry"] = con.get(network, "beforescript", None)
+            info["post_entry"] = con.get(network, "afterscript", None)
+            info["pre_disconnect_entry"] = con.get(network, "predisconnectscript", None)
+            info["post_disconnect_entry"] = con.get(network, "postdisconnectscript", None)
     else:
         bssid = wireless.GetWirelessProperty(int(network), "bssid")
-        con.read(wireless_conf)
+        con = ConfigManager(wireless_conf)
         if con.has_section(bssid):
-            info["pre_entry"] = get_val(con, bssid, "beforescript")
-            info["post_entry"] = get_val(con, bssid, "afterscript")
-            info["pre_disconnect_entry"] = get_val(con, bssid, "predisconnectscript")
-            info["post_disconnect_entry"] = get_val(con, bssid, "postdisconnectscript")
+            info["pre_entry"] = con.get(bssid, "beforescript", None)
+            info["post_entry"] = con.get(bssid, "afterscript", None)
+            info["pre_disconnect_entry"] = con.get(bssid, "predisconnectscript", None)
+            info["post_disconnect_entry"] = con.get(bssid, "postdisconnectscript", None)
     return info
 
 def write_scripts(network, network_type, script_info):
     """ Writes script info to disk and loads it into the daemon. """
-    con = ConfigParser.ConfigParser()
-
     if network_type == "wired":
-        con.read(wired_conf)
-        if not con.has_section(network):
-            con.add_section(network)
+        con = ConfigManager(wired_conf)
         con.set(network, "beforescript", script_info["pre_entry"])
         con.set(network, "afterscript", script_info["post_entry"])
         con.set(network, "predisconnectscript", script_info["pre_disconnect_entry"])
@@ -131,9 +98,7 @@ def write_scripts(network, network_type, script_info):
         wired.SaveWiredNetworkProfile(network)
     else:
         bssid = wireless.GetWirelessProperty(int(network), "bssid")
-        con.read(wireless_conf)
-        if not con.has_section(bssid):
-            con.add_section(bssid)
+        con = ConfigManager(wireless_conf)
         con.set(bssid, "beforescript", script_info["pre_entry"])
         con.set(bssid, "afterscript", script_info["post_entry"])
         con.set(bssid, "predisconnectscript", script_info["pre_disconnect_entry"])
@@ -155,21 +120,23 @@ def main (argv):
     
     script_info = get_script_info(network, network_type)
     
-    gladefile = wpath.gtk + "wicd.glade"
-    wTree = gtk.glade.XML(gladefile)
-    dialog = wTree.get_widget("configure_script_dialog")
-    wTree.get_widget("pre_label").set_label(language['before_script'] + ":")
-    wTree.get_widget("post_label").set_label(language['after_script'] + ":")
-    wTree.get_widget("pre_disconnect_label").set_label(language['pre_disconnect_script']
+    gladefile = os.path.join(wpath.gtk, "wicd.ui")
+    wTree = gtk.Builder()
+    wTree.set_translation_domain('wicd')
+    wTree.add_from_file(gladefile)
+    dialog = wTree.get_object("configure_script_dialog")
+    wTree.get_object("pre_label").set_label(_('Pre-connection Script') + ":")
+    wTree.get_object("post_label").set_label(_('Post-connection Script') + ":")
+    wTree.get_object("pre_disconnect_label").set_label(_('Pre-disconnection Script')
                                                    + ":")
-    wTree.get_widget("post_disconnect_label").set_label(language['post_disconnect_script']
+    wTree.get_object("post_disconnect_label").set_label(_('Post-disconnection Script')
                                                    + ":")
-    wTree.get_widget("window1").hide()
+    wTree.get_object("window1").hide()
     
-    pre_entry = wTree.get_widget("pre_entry")
-    post_entry = wTree.get_widget("post_entry")
-    pre_disconnect_entry = wTree.get_widget("pre_disconnect_entry")
-    post_disconnect_entry = wTree.get_widget("post_disconnect_entry")
+    pre_entry = wTree.get_object("pre_entry")
+    post_entry = wTree.get_object("post_entry")
+    pre_disconnect_entry = wTree.get_object("pre_disconnect_entry")
+    post_disconnect_entry = wTree.get_object("post_disconnect_entry")
     
     pre_entry.set_text(none_to_blank(script_info.get("pre_entry")))
     post_entry.set_text(none_to_blank(script_info.get("post_entry")))

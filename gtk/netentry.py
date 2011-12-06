@@ -9,6 +9,7 @@ contained within them.
 #   Copyright (C) 2008-2009 Adam Blackburn
 #   Copyright (C) 2008-2009 Dan O'Reilly
 #   Copyright (C) 2009      Andrew Psaltis
+#   Copyright (C) 2011      David Paleino
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 2 as
@@ -30,9 +31,9 @@ import wicd.misc as misc
 import wicd.wpath as wpath
 import wicd.dbusmanager as dbusmanager
 from wicd.misc import noneToString, stringToNone, noneToBlankString, to_bool
-from guiutil import error, LabelEntry, GreyLabel, LeftAlignedLabel, string_input
+from guiutil import error, LabelEntry, GreyLabel, LeftAlignedLabel, string_input, ProtectedLabelEntry
 
-from wicd.translations import language
+from wicd.translations import language, _
 
 # These get set when a NetworkEntry is instantiated.
 daemon = None
@@ -55,9 +56,9 @@ class AdvancedSettingsDialog(gtk.Dialog):
         """
         # if no network name was passed, just use Properties as the title
         if network_name:
-            title = '%s - %s' % (network_name, language['properties'])
+            title = '%s - %s' % (network_name, _('Properties'))
         else:
-            title = language['properties']	
+            title = _('Properties')
 
         gtk.Dialog.__init__(self, title=title,
                             flags=gtk.DIALOG_MODAL, buttons=(gtk.STOCK_CANCEL,
@@ -68,26 +69,25 @@ class AdvancedSettingsDialog(gtk.Dialog):
         self.set_default_size()
 
         self.connect('show', lambda *a, **k: self.set_default_size())
-        self.connect('hide', lambda *a, **k: self.write_size())
 
         # Set up the Advanced Settings Dialog.
-        self.txt_ip = LabelEntry(language['ip'])
+        self.txt_ip = LabelEntry(_('IP'))
         self.txt_ip.entry.connect('focus-out-event', self.set_defaults)
-        self.txt_netmask = LabelEntry(language['netmask'])
-        self.txt_gateway = LabelEntry(language['gateway'])
-        self.txt_search_dom = LabelEntry(language['search_domain'])
-        self.txt_domain = LabelEntry(language['dns_domain'])
-        self.txt_dns_1 = LabelEntry(language['dns'] + ' 1')
-        self.txt_dns_2 = LabelEntry(language['dns'] + ' 2')
-        self.txt_dns_3 = LabelEntry(language['dns'] + ' 3')
+        self.txt_netmask = LabelEntry(_('Netmask'))
+        self.txt_gateway = LabelEntry(_('Gateway'))
+        self.txt_search_dom = LabelEntry(_('Search domain'))
+        self.txt_domain = LabelEntry(_('DNS domain'))
+        self.txt_dns_1 = LabelEntry(_('DNS server') + ' 1')
+        self.txt_dns_2 = LabelEntry(_('DNS server') + ' 2')
+        self.txt_dns_3 = LabelEntry(_('DNS server') + ' 3')
         dhcp_hostname_hbox = gtk.HBox(False, 0)
         self.chkbox_use_dhcp_hostname = gtk.CheckButton()
         self.txt_dhcp_hostname = LabelEntry("DHCP Hostname")
         dhcp_hostname_hbox.pack_start(self.chkbox_use_dhcp_hostname, fill=False, expand=False)
         dhcp_hostname_hbox.pack_start(self.txt_dhcp_hostname)
-        self.chkbox_static_ip = gtk.CheckButton(language['use_static_ip'])
-        self.chkbox_static_dns = gtk.CheckButton(language['use_static_dns'])
-        self.chkbox_global_dns = gtk.CheckButton(language['use_global_dns'])
+        self.chkbox_static_ip = gtk.CheckButton(_('Use Static IPs'))
+        self.chkbox_static_dns = gtk.CheckButton(_('Use Static DNS'))
+        self.chkbox_global_dns = gtk.CheckButton(_('Use global DNS servers'))
         self.hbox_dns = gtk.HBox(False, 0)
         self.hbox_dns.pack_start(self.chkbox_static_dns)
         self.hbox_dns.pack_start(self.chkbox_global_dns)
@@ -99,7 +99,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
         script_image.set_padding(4, 0)
         #self.script_button.set_alignment(.5, .5)
         self.script_button.set_image(script_image)
-        self.script_button.set_label(language['scripts'])
+        self.script_button.set_label(_('Scripts'))
         
         self.button_hbox = gtk.HBox(False, 2)
         self.button_hbox.pack_start(self.script_button, fill=False, expand=False)
@@ -141,17 +141,13 @@ class AdvancedSettingsDialog(gtk.Dialog):
 
 
     def set_default_size(self):
-        width, height = daemon.ReadWindowSize('netprop')
-        if width > -1 and height > -1:
-            self.resize(int(width), int(height))
+        width, height = self.get_size()
+        s_height = gtk.gdk.screen_height()
+        if s_height < 768:
+            height = s_height * .75
         else:
-            width, height = self.get_size()
-            s_height = gtk.gdk.screen_height()
-            if s_height < 768:
-                height = s_height * .75 
-            else:
-                height = 600
-            self.resize(int(width), int(height))
+            height = 600
+        self.resize(int(width), int(height))
         
     def set_defaults(self, widget=None, event=None):
         """ Put some default values into entries to help the user out. """
@@ -168,7 +164,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
             if stringToNone(netmask.get_text()) is None:  # Make sure the netmask is blank
                 netmask.set_text('255.255.255.0')  # Fill in the most common one
         elif ipAddress != "":
-            error(None, language['invalid_ip_address'])
+            error(None, _('Invalid IP address entered.'))
 
     def reset_static_checkboxes(self):
         # Enable the right stuff
@@ -234,7 +230,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
         """ Set the DNS entries' sensitivity based on the Global checkbox. """
         global_dns_active = daemon.GetUseGlobalDNS()
         if not global_dns_active and self.chkbox_global_dns.get_active():
-            error(None, language['global_dns_not_enabled'])
+            error(None, _('Global DNS has not been enabled in general preferences.'))
             self.chkbox_global_dns.set_active(False)
         if daemon.GetUseGlobalDNS() and self.chkbox_static_dns.get_active():
             for w in [self.txt_dns_1, self.txt_dns_2, self.txt_dns_3, 
@@ -247,10 +243,6 @@ class AdvancedSettingsDialog(gtk.Dialog):
         self.destroy()
         del self
 
-    def write_size(self):
-        w, h = self.get_size()
-        daemon.WriteWindowSize(w, h, 'netprop')
-    
     def save_settings(self):
         """ Save settings common to wired and wireless settings dialogs. """
         if self.chkbox_static_ip.get_active():
@@ -291,7 +283,7 @@ class AdvancedSettingsDialog(gtk.Dialog):
 class WiredSettingsDialog(AdvancedSettingsDialog):
     def __init__(self, name):
         """ Build the wired settings dialog. """
-        AdvancedSettingsDialog.__init__(self, language['wired_network'])
+        AdvancedSettingsDialog.__init__(self, _('Wired Network'))
         self.des = self.connect("destroy", self.destroy_called)
         self.script_button.connect("clicked", self.edit_scripts)
         self.prof_name = name
@@ -305,10 +297,12 @@ class WiredSettingsDialog(AdvancedSettingsDialog):
         profile = self.prof_name
         cmdend = [os.path.join(wpath.gtk, "configscript.py"), profile, "wired"]
         if os.getuid() != 0:
-            cmdbase = misc.get_sudo_cmd(language['scripts_need_pass'],
+            cmdbase = misc.get_sudo_cmd(_('You must enter your password to configure scripts'),
                                         prog_num=daemon.GetSudoApp())
             if not cmdbase:
-                error(None, language["no_sudo_prog"]) 
+                error(None, _('Could not find a graphical sudo program. '\
+                              'The script editor could not be launched.  '\
+                              "You'll have to edit scripts directly your configuration file."))
                 return
             cmdbase.extend(cmdend)
             misc.LaunchAndWait(cmdbase)
@@ -359,15 +353,15 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
         # Set up encryption stuff
         self.networkID = networkID
         self.combo_encryption = gtk.combo_box_new_text()
-        self.chkbox_encryption = gtk.CheckButton(language['use_encryption'])
-        self.chkbox_global_settings = gtk.CheckButton(language['global_settings'])
+        self.chkbox_encryption = gtk.CheckButton(_('Use Encryption'))
+        self.chkbox_global_settings = gtk.CheckButton(_('Use these settings for all networks sharing this essid'))
         # Make the vbox to hold the encryption stuff.
         self.vbox_encrypt_info = gtk.VBox(False, 0)        
         self.toggle_encryption()
         self.chkbox_encryption.set_active(False)
         self.combo_encryption.set_sensitive(False)
         self.encrypt_types = misc.LoadEncryptionMethods()
-        
+ 
         information_button = gtk.Button(stock=gtk.STOCK_INFO)
         self.button_hbox.pack_start(information_button, False, False)
         information_button.connect('clicked', lambda *a, **k: WirelessInformationDialog(networkID, self))
@@ -411,10 +405,12 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
         cmdend = [os.path.join(wpath.gtk, "configscript.py"),
                                 str(self.networkID), "wireless"]
         if os.getuid() != 0:
-            cmdbase = misc.get_sudo_cmd(language['scripts_need_pass'],
+            cmdbase = misc.get_sudo_cmd(_('You must enter your password to configure scripts'),
                                         prog_num=daemon.GetSudoApp())
             if not cmdbase:
-                error(None, language["no_sudo_prog"]) 
+                error(None, _('Could not find a graphical sudo program. '\
+                              'The script editor could not be launched.  '\
+                              "You'll have to edit scripts directly your configuration file."))
                 return
             cmdbase.extend(cmdend)
             misc.LaunchAndWait(cmdbase)
@@ -487,7 +483,7 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
             for entry_info in encrypt_info.itervalues():
                 if entry_info[0].entry.get_text() == "" and \
                    entry_info[1] == 'required':
-                    error(self, "%s (%s)" % (language['encrypt_info_missing'], 
+                    error(self, "%s (%s)" % (_('Required encryption information is missing.'),
                                              entry_info[0].label.get_label())
                           )
                     return False
@@ -498,7 +494,7 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
         elif not self.chkbox_encryption.get_active() and \
              wireless.GetWirelessProperty(networkid, "encryption"):
             # Encrypt checkbox is off, but the network needs it.
-            error(self, language['enable_encryption'])
+            error(self, _('This network requires encryption to be enabled.'))
             return False
         else:
             print "no encryption specified..."
@@ -540,11 +536,13 @@ class WirelessSettingsDialog(AdvancedSettingsDialog):
         for type_ in ['required', 'optional']:
             fields = methods[ID][type_]
             for field in fields:
-                if language.has_key(field[1]):
-                    box = LabelEntry(language[field[1].lower().replace(' ','_')])
+                field_text = language[field[1].lower().replace(' ','_')]
+
+                if field in methods[ID]['protected']:
+                    box = ProtectedLabelEntry(field_text)
                 else:
-                    box = LabelEntry(field[1].replace('_',' '))
-                box.set_auto_hidden(True)
+                    box = LabelEntry(field_text)
+
                 self.vbox_encrypt_info.pack_start(box)
                 # Add the data to a dict, so that the information
                 # can be easily accessed by giving the name of the wanted
@@ -597,7 +595,7 @@ class NetworkEntry(gtk.HBox):
         self.advanced_image.set_from_stock(gtk.STOCK_EDIT, 4)
         self.advanced_image.set_padding(4, 0)
         self.advanced_button.set_alignment(.5, .5)
-        self.advanced_button.set_label(language['properties'])
+        self.advanced_button.set_label(_('Properties'))
         self.advanced_button.set_image(self.advanced_image)
         
         self.buttons_hbox.pack_start(self.connect_hbox, False, False)
@@ -628,14 +626,14 @@ class WiredNetworkEntry(NetworkEntry):
         self.connect_button.show()
 
         self.name_label.set_use_markup(True)
-        self.name_label.set_label("<b>" + language['wired_network'] + "</b>")
+        self.name_label.set_label("<b>" + _('Wired Network') + "</b>")
         
         self.is_full_gui = True
         
         self.button_add = gtk.Button(stock=gtk.STOCK_ADD)
         self.button_delete = gtk.Button(stock=gtk.STOCK_DELETE)
-        self.profile_help = gtk.Label(language['wired_network_instructions'])
-        self.chkbox_default_profile = gtk.CheckButton(language['default_wired'])
+        self.profile_help = gtk.Label(_('To connect to a wired network, you must create a network profile. To create a network profile, type a name that describes this network, and press Add.'))
+        self.chkbox_default_profile = gtk.CheckButton(_('Use as default profile (overwrites any previous default)'))
         self.combo_profile_names = gtk.combo_box_new_text() 
         
         # Format the profile help label.
@@ -816,7 +814,8 @@ class WirelessNetworkEntry(NetworkEntry):
         self.lbl_channel = GreyLabel()
         
         print "ESSID : " + self.essid
-        self.chkbox_autoconnect = gtk.CheckButton(language['automatic_connect'])
+        self.chkbox_autoconnect = gtk.CheckButton(_('Automatically connect to this network'))
+        self.chkbox_neverconnect = gtk.CheckButton(_('Never connect to this network'))
         
         self.set_signal_strength(wireless.GetWirelessProperty(networkID, 
                                                               'quality'),
@@ -837,14 +836,23 @@ class WirelessNetworkEntry(NetworkEntry):
         # Add the wireless network specific parts to the NetworkEntry
         # VBox objects.
         self.vbox_top.pack_start(self.chkbox_autoconnect, False, False)
+        self.vbox_top.pack_start(self.chkbox_neverconnect, False, False)
 
         if to_bool(self.format_entry(networkID, "automatic")):
             self.chkbox_autoconnect.set_active(True)
         else:
             self.chkbox_autoconnect.set_active(False)
         
+        if to_bool(self.format_entry(networkID, "never")):
+            self.chkbox_autoconnect.set_sensitive(False)
+            self.connect_button.set_sensitive(False)
+            self.chkbox_neverconnect.set_active(True)
+        else:
+            self.chkbox_neverconnect.set_active(False)
+
         # Connect signals.
-        self.chkbox_autoconnect.connect("toggled", self.update_autoconnect)      
+        self.chkbox_autoconnect.connect("toggled", self.update_autoconnect)
+        self.chkbox_neverconnect.connect("toggled", self.update_neverconnect)
         
         # Show everything
         self.show_all()
@@ -867,6 +875,18 @@ class WirelessNetworkEntry(NetworkEntry):
                                                   get_active()))
         wireless.SaveWirelessNetworkProperty(self.networkID, "automatic")
 
+    def update_neverconnect(self, widget=None):
+        """ Called when the neverconnect checkbox is toggled. """
+        wireless.SetWirelessProperty(self.networkID, "never",
+                        noneToString(self.chkbox_neverconnect.get_active()))
+        wireless.SaveWirelessNetworkProperty(self.networkID, "never")
+        if self.chkbox_neverconnect.get_active():
+            self.chkbox_autoconnect.set_sensitive(False)
+            self.connect_button.set_sensitive(False)
+        else:
+            self.chkbox_autoconnect.set_sensitive(True)
+            self.connect_button.set_sensitive(True)
+
     def destroy_called(self, *args):
         """ Clean up everything. """
         self.disconnect(self.wifides)
@@ -878,6 +898,8 @@ class WirelessNetworkEntry(NetworkEntry):
         
     def update_connect_button(self, state, apbssid):
         """ Update the connection/disconnect button for this entry. """
+        if to_bool(self.format_entry(self.networkID, "never")):
+            self.connect_button.set_sensitive(False)
         if not apbssid:
             apbssid = wireless.GetApBssid()
         if state == misc.WIRELESS and \
@@ -935,13 +957,13 @@ class WirelessNetworkEntry(NetworkEntry):
         if on and ttype:
             self.lbl_encryption.set_label(str(ttype))
         if on and not ttype: 
-            self.lbl_encryption.set_label(language['secured'])
+            self.lbl_encryption.set_label(_('Secured'))
         if not on:
-            self.lbl_encryption.set_label(language['unsecured'])
+            self.lbl_encryption.set_label(_('Unsecured'))
             
     def set_channel(self, channel):
         """ Set the channel value for the WirelessNetworkEntry. """
-        self.lbl_channel.set_label(language['channel'] + ' ' + str(channel))
+        self.lbl_channel.set_label(_('Channel') + ' ' + str(channel))
 
     def format_entry(self, networkid, label):
         """ Helper method for fetching/formatting wireless properties. """
@@ -1057,13 +1079,13 @@ class WirelessInformationDialog(gtk.Dialog):
         if on and ttype:
             self.lbl_encryption.set_label(str(ttype))
         if on and not ttype: 
-            self.lbl_encryption.set_label(language['secured'])
+            self.lbl_encryption.set_label(_('Secured'))
         if not on:
-            self.lbl_encryption.set_label(language['unsecured'])
+            self.lbl_encryption.set_label(_('Unsecured'))
 
     def set_channel(self, channel):
         """ Set the channel value for the WirelessNetworkEntry. """
-        self.lbl_channel.set_label(language['channel'] + ' ' + str(channel))
+        self.lbl_channel.set_label(_('Channel') + ' ' + str(channel))
 
     def set_mode(self, mode):
         """ Set the mode value for the WirelessNetworkEntry. """
