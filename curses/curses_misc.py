@@ -24,6 +24,8 @@ wicd-curses.
 
 import urwid
 
+from wicd.translations import _
+
 # Uses code that is towards the bottom
 def error(ui,parent,message):
     """Shows an error dialog (or something that resembles one)"""
@@ -478,7 +480,11 @@ class Dialog2(urwid.WidgetWrap):
                 while not keys:
                     keys = ui.get_input()
                 for k in keys:
-                    if urwid.is_mouse_event(k):
+                    if urwid.VERSION < (1, 0, 0):
+                        check_mouse_event = urwid.is_mouse_event
+                    else:
+                        check_mouse_event = urwid.util.is_mouse_event
+                    if check_mouse_event(k):
                         event, button, col, row = k
                         overlay.mouse_event( size,
                                 event, button, col, row,
@@ -518,7 +524,7 @@ class TextDialog(Dialog2):
             self.frame.set_focus('footer')
 
 class InputDialog(Dialog2):
-    def __init__(self, text, height, width,ok_name='OK',edit_text=''):
+    def __init__(self, text, height, width,ok_name=_('OK'),edit_text=''):
         self.edit = urwid.Edit(wrap='clip',edit_text=edit_text)
         body = urwid.ListBox([self.edit])
         body = urwid.AttrWrap(body, 'editbx','editfc')
@@ -526,7 +532,7 @@ class InputDialog(Dialog2):
         Dialog2.__init__(self, text, height, width, body)
        
         self.frame.set_focus('body')
-        self.add_buttons([(ok_name,0),('Cancel',-1)])
+        self.add_buttons([(ok_name,0),(_('Cancel'),-1)])
        
     def unhandled_key(self, size, k):
         if k in ('up','page up'):

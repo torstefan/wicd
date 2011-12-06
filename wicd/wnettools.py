@@ -45,12 +45,12 @@ from misc import find_path
 _re_mode = (re.I | re.M | re.S)
 essid_pattern = re.compile('.*ESSID:"?(.*?)"?\s*\n', _re_mode)
 ap_mac_pattern = re.compile('.*Address: (.*?)\n', _re_mode)
-channel_pattern = re.compile('.*Channel:?=? ?(\d\d?)', _re_mode)
+channel_pattern = re.compile('.*Channel:?=? ?(\d+)', _re_mode)
 strength_pattern = re.compile('.*Quality:?=? ?(\d+)\s*/?\s*(\d*)', _re_mode)
 altstrength_pattern = re.compile('.*Signal level:?=? ?(\d+)\s*/?\s*(\d*)', _re_mode)
 signaldbm_pattern = re.compile('.*Signal level:?=? ?(-\d\d*)', _re_mode)
 bitrates_pattern = re.compile('(\d+\s+\S+/s)', _re_mode)
-mode_pattern = re.compile('.*Mode:(.*?)\n', _re_mode)
+mode_pattern = re.compile('.*Mode:([A-Za-z-]*?)\n', _re_mode)
 freq_pattern = re.compile('.*Frequency:(.*?)\n', _re_mode)
 wep_pattern = re.compile('.*Encryption key:(.*?)\n', _re_mode)
 altwpa_pattern = re.compile('(wpa_ie)', _re_mode)
@@ -58,8 +58,10 @@ wpa1_pattern = re.compile('(WPA Version 1)', _re_mode)
 wpa2_pattern = re.compile('(WPA2)', _re_mode)
 
 #iwconfig-only regular expressions.
+ip_up = re.compile(r'flags=[0.9]*<([^>]*)>', re.S)
 ip_pattern = re.compile(r'inet [Aa]d?dr[^.]*:([^.]*\.[^.]*\.[^.]*\.[0-9]*)', re.S)
-bssid_pattern = re.compile('.*Access Point: (([0-9A-Z]{2}:){5}[0-9A-Z]{2})', _re_mode)
+ip_pattern1 = re.compile(r'inet ([^.]*\.[^.]*\.[^.]*\.[0-9]*)', re.S)
+bssid_pattern = re.compile('.*[(Access Point)|(Cell)]: (([0-9A-Z]{2}:){5}[0-9A-Z]{2})', _re_mode)
 bitrate_pattern = re.compile('.*Bit Rate[=:](.*?/s)', _re_mode)
 opmode_pattern = re.compile('.*Mode:(.*?) ', _re_mode)
 authmethods_pattern = re.compile('.*Authentication capabilities :\n(.*?)Current', _re_mode)
@@ -292,7 +294,7 @@ class BaseInterface(object):
                   'id' : misc.PUMP,
                 },
             "dhcpcd" : 
-                {'connect' : r"%(cmd)s %(iface)s -h %(hostname)s ",
+                {'connect' : r"%(cmd)s -h %(hostname)s --noipv4ll %(iface)s ",
                  'release' : r"%(cmd)s -k %(iface)s",
                  'id' : misc.DHCPCD,
                 },
@@ -325,6 +327,7 @@ class BaseInterface(object):
 
             output_conf.close()
             dhclient_template.close()
+            os.chmod(dhclient_conf_path, 0644)
 
         if not client_name or not cmd:
             print "WARNING: Failed to find a valid dhcp client!"
@@ -384,11 +387,7 @@ class BaseInterface(object):
                 self.dhclient_needs_verbose = True
             else:
                 self.dhclient_needs_verbose = False
-        debian_dhcpcd_cmd = self._find_program_path('dhcpcd-bin')
-        if debian_dhcpcd_cmd:
-            self.dhcpcd_cmd = debian_dhcpcd_cmd
-        else:
-            self.dhcpcd_cmd = self._find_program_path("dhcpcd")
+        self.dhcpcd_cmd = self._find_program_path("dhcpcd")
         self.pump_cmd = self._find_program_path("pump")
         self.udhcpc_cmd = self._find_program_path("udhcpc")
         
@@ -619,6 +618,7 @@ class BaseInterface(object):
         else:
             print "ERROR: no dhcp client found"
             ret = None
+        self.dhcp_object.wait()
         return ret
         
     @neediface(False)
@@ -726,8 +726,12 @@ class BaseInterface(object):
             output = self.GetIfconfig()
         else:
             output = ifconfig
-        return misc.RunRegex(ip_pattern, output)
-    
+        # check multiple ifconfig output styles
+        for pat in [ip_pattern, ip_pattern1]:
+            m = misc.RunRegex(pat, output)
+            if m: return m
+        return None
+
     @neediface(False)
     def VerifyAPAssociation(self, gateway):
         """ Verify assocation with an access point. 
@@ -736,7 +740,16 @@ class BaseInterface(object):
         trying to ping it.
         
         """
-        cmd = "ping -q -w 3 -c 1 %s" % gateway
+        if "iputils" in misc.Run(["ping", "-V"]):
+            cmd = "ping -q -w 3 -c 1 %s" % gateway
+        else:
+            # ping is from inetutils-ping (which doesn't support -w)
+            # or from some other package
+            #
+            # If there's no AP association, this will wait for
+            # timeout, while the above will wait (-w) 3 seconds at
+            # most.
+            cmd = "ping -q -c 1 %s" % gateway
         if self.verbose: print cmd
         return misc.LaunchAndWait(cmd)
 
@@ -766,6 +779,11 @@ class BaseInterface(object):
         lines = output.split('\n')
         if len(lines) < 5:
             return False
+        # check alternative ifconfig output style
+        m = misc.RunRegex(ip_up, lines[0])
+        if m and m.find('UP') > -1:
+            return True
+        # check classic ifconfig output style
         for line in lines[1:4]:
             if line.strip().startswith('UP'):
                 return True   
@@ -1088,9 +1106,7 @@ class BaseWirelessInterface(BaseInterface):
         bssid -- bssid of the network
 
         """
-        cmd = ['iwconfig', self.iface, 'essid', essid]
-        if self.verbose: print str(cmd)
-        misc.Run(cmd)
+        self.SetEssid(essid)
         base = "iwconfig %s" % self.iface
         if channel and str(channel).isdigit():
             cmd = "%s channel %s" % (base, str(channel))
@@ -1258,6 +1274,9 @@ class BaseWirelessInterface(BaseInterface):
 
         # Mode
         ap['mode'] = misc.RunRegex(mode_pattern, cell)
+        if ap['mode'] is None:
+            print 'Invalid network mode string, ignoring!'
+            return None
 
         # Break off here if we're using a ralink card
         if self.wpa_driver == RALINK_DRIVER:
