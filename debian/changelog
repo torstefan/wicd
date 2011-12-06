@@ -1,13 +1,18 @@
 wicd (1.7.1~b3-1) UNRELEASED; urgency=low
 
   * New upstream beta release
+    - useless patches removed, most of them merged upstream.
+      Remaining ones:
+      + 01-remove_unused_icons.patch
+      + 26-support_etc-network_scripts.patch
+      + 32-prefer_gksu.patch
   * Added Dutch Debconf translation, thanks to Jeroen Schot
     (Closes: #643640)
   * Drop kdesu, ktsuss and sudo from wicd-gtk's Recommends.
   * Make wicd-daemon Pre-Depend on debconf (>= 1.5.34) to correctly
     handle sr@latin translation (Closes: #647626)
 
- -- David Paleino <dapal@debian.org>  Tue, 06 Dec 2011 20:55:41 +0100
+ -- David Paleino <dapal@debian.org>  Tue, 06 Dec 2011 21:04:55 +0100
 
 wicd (1.7.0+ds1-9) unstable; urgency=high
 

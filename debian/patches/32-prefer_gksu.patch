@@ -9,7 +9,7 @@ Forwarded: no
 
 --- wicd.orig/wicd/misc.py
 +++ wicd/wicd/misc.py
-@@ -459,7 +459,7 @@ def choose_sudo_prog(prog_num=0):
+@@ -493,7 +493,7 @@ def choose_sudo_prog(prog_num=0):
      if desktop_env == "kde":
          progs = ["kdesu", "kdesudo", "ktsuss"]
      else:
