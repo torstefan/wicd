@@ -59,13 +59,3 @@ override_dh_python2:
 %:
 	dh $@ \
 		--with python2
-
-get-orig-source:
-	uscan --force-download --download-version $(CURVER) --destdir . --rename
-	tar xvf wicd_$(CURVER).orig.tar.bz2
-	( cd wicd-$(CURVER)/ ; \
-	patch -p1 < ../debian/patches/xx-get_translations.patch ; \
-	python setup.py get_translations ; \
-	rm -rf vcsinfo.pyc )
-	tar jcf wicd_$(CURVER)+ds1.orig.tar.bz2 wicd-$(CURVER)/
-	rm -rf wicd_$(CURVER).orig.tar.bz2 wicd-$(CURVER)/
