@@ -8,6 +8,7 @@ Build-Depends:
 Build-Depends-Indep:
  po-debconf
  , python-babel
+ , gettext
 Standards-Version: 3.9.2
 Homepage: http://wicd.sourceforge.net/
 Vcs-Browser: http://git.debian.org/?p=collab-maint/wicd.git
