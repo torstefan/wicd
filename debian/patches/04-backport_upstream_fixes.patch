@@ -1,0 +1,40 @@
+---
+ curses/wicd-curses.py |    2 +-
+ gtk/gui.py            |    3 +--
+ wicd/wicd-daemon.py   |    2 +-
+ 3 files changed, 3 insertions(+), 4 deletions(-)
+
+--- wicd.orig/curses/wicd-curses.py
++++ wicd/curses/wicd-curses.py
+@@ -747,7 +747,7 @@ class appGUI():
+                 iwconfig = wireless.GetIwconfig()
+             else:
+                 iwconfig = ''
+-            essid = wireless.GetCurrentNetwork()
++            essid = wireless.GetCurrentNetwork(iwconfig)
+             stat = wireless.CheckWirelessConnectingMessage()
+             return self.set_status("%s: %s" % (essid, stat), True)
+         if wired_connecting:
+--- wicd.orig/gtk/gui.py
++++ wicd/gtk/gui.py
+@@ -468,8 +468,7 @@ class appGui(object):
+             gobject.idle_add(self.status_bar.remove_message, 1, self.statusID)
+         if info[0] == "wireless":
+             stat = wireless.CheckWirelessConnectingMessage()
+-            gobject.idle_add(self.set_status, "%s: %s" % \
+-                (wireless.GetCurrentNetwork(), stat))
++            gobject.idle_add(self.set_status, "%s: %s" % (info[1], stat))
+         elif info[0] == "wired":
+             gobject.idle_add(self.set_status, _('Wired Network') + ': ' \
+                 + wired.CheckWiredConnectingMessage())
+--- wicd.orig/wicd/wicd-daemon.py
++++ wicd/wicd/wicd-daemon.py
+@@ -1392,7 +1392,7 @@ class WiredDaemon(dbus.service.Object):
+     def CheckWiredConnectingMessage(self):
+         """ Returns the wired interface's status message. """
+         if self.wired.connecting_thread:
+-            return _status_dict(self.CheckWiredConnectingStatus())
++            return _status_dict[self.CheckWiredConnectingStatus()]
+         else:
+             return False
+ 
