@@ -1,11 +1,11 @@
-wicd (1.7.1~b3-3) UNRELEASED; urgency=low
+wicd (1.7.1~b3-3) unstable; urgency=low
 
   * More backports from upstream:
     - fix various translation bugs (Closes: #651804)
     - fix check for configfile existence (Closes: #651933)
     - fix various issues with unicode (Closes: #588444, #612981)
 
- -- David Paleino <dapal@debian.org>  Fri, 16 Dec 2011 12:23:55 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 16 Dec 2011 12:33:29 +0100
 
 wicd (1.7.1~b3-2) unstable; urgency=low
 
