@@ -1,6 +1,6 @@
 ---
  curses/wicd-curses.py |    2 
- gtk/gui.py            |    3 
+ gtk/gui.py            |    5 
  other/wicd.service    |    1 
  po/ar_EG.po           |  257 +++++++++++-----------
  po/ast.po             |  380 +++++++++++++++++---------------
@@ -65,7 +65,7 @@
  wicd/monitor.py       |    4 
  wicd/wicd-daemon.py   |    2 
  wicd/wnettools.py     |    3 
- 66 files changed, 8550 insertions(+), 7685 deletions(-)
+ 66 files changed, 8551 insertions(+), 7686 deletions(-)
 
 --- wicd.orig/curses/wicd-curses.py
 +++ wicd/curses/wicd-curses.py
@@ -80,6 +80,15 @@
          if wired_connecting:
 --- wicd.orig/gtk/gui.py
 +++ wicd/gtk/gui.py
+@@ -36,7 +36,7 @@ from wicd import misc
+ from wicd import wpath
+ from wicd import dbusmanager
+ from wicd.misc import noneToString
+-from wicd.translations import _
++from wicd.translations import _, language
+ import prefs
+ from prefs import PreferencesDialog
+ import netentry
 @@ -468,8 +468,7 @@ class appGui(object):
              gobject.idle_add(self.status_bar.remove_message, 1, self.statusID)
          if info[0] == "wireless":
