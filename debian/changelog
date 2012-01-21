@@ -1,10 +1,10 @@
-wicd (1.7.1~b3-4) UNRELEASED; urgency=low
+wicd (1.7.1~b3-4) unstable; urgency=low
 
   * Fix translations even more (Closes: #655994)
   * Hopefully fixed bug with ESSIDs containing '\x00' (Closes: #655159)
   * Mask out sensitive info in logfiles (Closes: #652417)
 
- -- David Paleino <dapal@debian.org>  Sat, 21 Jan 2012 11:23:23 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 21 Jan 2012 11:24:53 +0100
 
 wicd (1.7.1~b3-3) unstable; urgency=low
 
