@@ -60,12 +60,12 @@
  po/zh_CN.po           |  257 +++++++++++-----------
  po/zh_HK.po           |  257 +++++++++++-----------
  po/zh_TW.po           |  256 +++++++++++----------
- wicd/configmanager.py |    9 
+ wicd/configmanager.py |   18 +
  wicd/misc.py          |   15 +
  wicd/monitor.py       |    4 
  wicd/wicd-daemon.py   |    2 
  wicd/wnettools.py     |    9 
- 66 files changed, 8557 insertions(+), 7686 deletions(-)
+ 66 files changed, 8564 insertions(+), 7688 deletions(-)
 
 --- wicd.orig/curses/wicd-curses.py
 +++ wicd/curses/wicd-curses.py
@@ -139,15 +139,26 @@
              sanitize_config_file(path)
          try:
              self.read(path)
-@@ -116,6 +117,7 @@ class ConfigManager(RawConfigParser):
+@@ -116,10 +117,16 @@ class ConfigManager(RawConfigParser):
              if (isinstance(ret, basestring) and ret.startswith(self.mrk_ws) 
                  and ret.endswith(self.mrk_ws)):
                  ret = ret[3:-3]
 +            ret = to_unicode(ret)
              if default:
                  if self.debug:
-                     print ''.join(['found ', option, ' in configuration ', 
-@@ -175,7 +177,8 @@ class ConfigManager(RawConfigParser):
+-                    print ''.join(['found ', option, ' in configuration ', 
+-                                   str(ret)])
++                    # mask out sensitive information
++                    if option in ['apsk', 'password', 'identity', 'private_key', \
++                                  'private_key_passwd', 'key', 'passphrase']:
++                        print ''.join(['found ', option, ' in configuration *****'])
++                    else:
++                        print ''.join(['found ', option, ' in configuration ',
++                                       str(ret)])
+         else:
+             if default != "__None__":
+                 print 'did not find %s in configuration, setting default %s' % (option, str(default))
+@@ -175,7 +182,8 @@ class ConfigManager(RawConfigParser):
          in the '.d' directory are read in normal sorted order and section
          entries in these files override entries in the main file.
          """
@@ -157,7 +168,7 @@
  
          path_d = path + ".d"
          files = []
-@@ -186,7 +189,7 @@ class ConfigManager(RawConfigParser):
+@@ -186,7 +194,7 @@ class ConfigManager(RawConfigParser):
  
          for fname in files:
              p = RawConfigParser()
