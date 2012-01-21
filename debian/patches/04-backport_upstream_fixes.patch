@@ -64,8 +64,8 @@
  wicd/misc.py          |   15 +
  wicd/monitor.py       |    4 
  wicd/wicd-daemon.py   |    2 
- wicd/wnettools.py     |    3 
- 66 files changed, 8551 insertions(+), 7686 deletions(-)
+ wicd/wnettools.py     |    9 
+ 66 files changed, 8557 insertions(+), 7686 deletions(-)
 
 --- wicd.orig/curses/wicd-curses.py
 +++ wicd/curses/wicd-curses.py
@@ -17037,7 +17037,20 @@
                      wireless.GetCurrentBitrate(iwconfig)]
 --- wicd.orig/wicd/wnettools.py
 +++ wicd/wicd/wnettools.py
-@@ -1502,8 +1502,7 @@ class BaseWirelessInterface(BaseInterfac
+@@ -1251,6 +1251,12 @@ class BaseWirelessInterface(BaseInterfac
+         except (UnicodeDecodeError, UnicodeEncodeError):
+             print 'Unicode problem with current network essid, ignoring!!'
+             return None
++
++        # We (well, DBus) don't support ESSIDs with null bytes in it.
++        # From some bugreports, it seems like some APs transmit the "hidden"
++        # essid as NULL bytes. Let's strip them off.
++        ap['essid'].replace('\x00', '')
++
+         if ap['essid'] in ['Hidden', '<hidden>', "", None]:
+             print 'hidden'
+             ap['hidden'] = True
+@@ -1502,8 +1508,7 @@ class BaseWirelessInterface(BaseInterfac
              output = self.GetIwconfig()
          else:
              output = iwconfig
