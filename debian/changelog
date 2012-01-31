@@ -1,9 +1,9 @@
-wicd (1.7.1~b3-5) UNRELEASED; urgency=low
+wicd (1.7.1~b3-5) unstable; urgency=low
 
   * Finally, really fix the issue with ESSIDs containing \x00
     (Closes: #655159)
 
- -- David Paleino <dapal@debian.org>  Tue, 31 Jan 2012 18:20:33 +0100
+ -- David Paleino <dapal@debian.org>  Tue, 31 Jan 2012 18:35:41 +0100
 
 wicd (1.7.1~b3-4) unstable; urgency=low
 
