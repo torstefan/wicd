@@ -1,3 +1,9 @@
+wicd (1.7.1-1) UNRELEASED; urgency=low
+
+  * New upstream release
+
+ -- David Paleino <dapal@debian.org>  Thu, 02 Feb 2012 20:22:42 +0100
+
 wicd (1.7.1~b3-5) unstable; urgency=low
 
   * Finally, really fix the issue with ESSIDs containing \x00
