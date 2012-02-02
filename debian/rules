@@ -51,6 +51,7 @@ override_dh_python2:
 	dh_python2 -p wicd-curses /usr/share/wicd/curses
 	dh_python2 -p wicd-daemon /usr/share/wicd/daemon
 	dh_python2 -p wicd-gtk /usr/share/wicd/gtk
+	dh_python2 -p wicd-cli /usr/share/wicd/cli
 
 %:
 	dh $@ \
