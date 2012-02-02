@@ -271,7 +271,10 @@ def ParseEncryption(network):
     """
     enctemplate = open(wpath.encryption + network["enctype"])
     template = enctemplate.readlines()
-    config_file = "ap_scan=1\n"
+    if network.get('essid'):
+        config_file = "ap_scan=1\n"
+    else:
+        config_file = "ap_scan=0\n"
     should_replace = False
     for index, line in enumerate(template):
         if not should_replace:
@@ -303,8 +306,11 @@ def ParseEncryption(network):
 
     # Write the data to the files then chmod them so they can't be read 
     # by normal users.
-    file_loc = os.path.join(wpath.networks,
-                            network['bssid'].replace(":", "").lower())
+    if network.get('bssid'):
+        file_name = network['bssid'].replace(":", "").lower()
+    else:
+        file_name = 'wired'
+    file_loc = os.path.join(wpath.networks, file_name)
     f = open(file_loc, "w")
     os.chmod(file_loc, 0600)
     os.chown(file_loc, 0, 0)
@@ -313,7 +319,7 @@ def ParseEncryption(network):
     f.write(config_file)
     f.close()
 
-def LoadEncryptionMethods():
+def LoadEncryptionMethods(wired = False):
     """ Load encryption methods from configuration files
 
     Loads all the encryption methods from the template files
@@ -321,8 +327,12 @@ def LoadEncryptionMethods():
     loaded, the template must be listed in the "active" file.
 
     """
+    if wired:
+        active_fname = "active_wired"
+    else:
+        active_fname = "active"
     try:
-        enctypes = open(wpath.encryption + "active","r").readlines()
+        enctypes = open(wpath.encryption + active_fname,"r").readlines()
     except IOError, e:
         print "Fatal Error: template index file is missing."
         raise IOError(e)
@@ -413,7 +423,19 @@ def noneToString(text):
     if text in (None, ""):
         return "None"
     else:
-        return str(text)
+        return to_unicode(text)
+
+def sanitize_escaped(s):
+    """ Sanitize double-escaped unicode strings. """
+    lastpos = 0
+    while True:
+        lastpos = s.find('\\x', lastpos + 1)
+        #print lastpos
+        if lastpos == -1:
+            break
+        c = s[lastpos+2:lastpos+4]  # i.e. get the next two characters
+        s = s.replace('\\x'+c, chr(int(c, 16)))
+    return s
 
 def to_unicode(x):
     """ Attempts to convert a string to utf-8. """
@@ -422,6 +444,9 @@ def to_unicode(x):
         return x
     if isinstance(x, unicode):
         return x.encode('utf-8')
+
+    x = sanitize_escaped(x)
+
     encoding = locale.getpreferredencoding()
     try:
         ret = x.decode(encoding).encode('utf-8')

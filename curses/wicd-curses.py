@@ -146,7 +146,7 @@ def check_for_wireless(iwconfig, wireless_ip, set_status):
     if not network:
         return False
 
-    network = unicode(network)
+    network = misc.to_unicode(network)
     if daemon.GetSignalDisplayType() == 0:
         strength = wireless.GetCurrentSignalStrength(iwconfig)
     else:
@@ -154,12 +154,12 @@ def check_for_wireless(iwconfig, wireless_ip, set_status):
 
     if strength is None:
         return False
-    strength = str(strength)            
-    ip = str(wireless_ip)
+    strength = misc.to_unicode(daemon.FormatSignalForPrinting(strength))
+    ip = misc.to_unicode(wireless_ip)
     set_status(_('Connected to $A at $B (IP: $C)').replace
                     ('$A', network).replace
-                    ('$B', daemon.FormatSignalForPrinting(strength)).replace
-                    ('$C', wireless_ip))
+                    ('$B', strength).replace
+                    ('$C', ip))
     return True
 
 
@@ -747,7 +747,7 @@ class appGUI():
                 iwconfig = wireless.GetIwconfig()
             else:
                 iwconfig = ''
-            essid = wireless.GetCurrentNetwork()
+            essid = wireless.GetCurrentNetwork(iwconfig)
             stat = wireless.CheckWirelessConnectingMessage()
             return self.set_status("%s: %s" % (essid, stat), True)
         if wired_connecting:
@@ -827,7 +827,7 @@ class appGUI():
                     focus = self.thePile.get_focus()
                     self.frame.set_footer(urwid.Pile([self.confCols,self.footer2]))
                     if focus == self.wiredCB:
-                        self.diag = WiredSettingsDialog(self.wiredCB.get_body().get_selected_profile())
+                        self.diag = WiredSettingsDialog(self.wiredCB.get_body().get_selected_profile(),self.frame)
                         self.frame.set_body(self.diag)
                     else:
                         # wireless list only other option
