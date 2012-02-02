@@ -1,10 +1,10 @@
 Metadata-Version: 1.0
 Name: wicd
-Version: 1.7.1~b3
+Version: 1.7.1
 Summary: A wireless and wired network manager
-Home-page: http://wicd.net
-Author: Adam Blackburn, Dan O'Reilly, Andrew Psaltis
-Author-email: compwiz18@gmail.com, oreilldf@gmail.com, ampsaltis@gmail.com
+Home-page: https://launchpad.net/wicd
+Author: Adam Blackburn, Dan O'Reilly, Andrew Psaltis, David Paleino
+Author-email: compwiz18@gmail.com, oreilldf@gmail.com, ampsaltis@gmail.com, d.paleino@gmail.com
 License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Description: A complete network connection manager
         Wicd supports wired and wireless networks, and capable of

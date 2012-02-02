@@ -768,6 +768,13 @@ class BaseInterface(object):
             print "Could not open %s, using ifconfig to determine status" % flags_file
             return self._slow_is_up(ifconfig)
         return bool(int(flags, 16) & 1)
+    
+    @neediface(False)
+    def StopWPA(self):
+        """ Terminates wpa using wpa_cli"""
+        cmd = 'wpa_cli -i %s terminate' % self.iface
+        if self.verbose: print cmd
+        misc.Run(cmd)
         
         
     def _slow_is_up(self, ifconfig=None):
@@ -892,6 +899,13 @@ class BaseWiredInterface(BaseInterface):
         else:
             return False
         
+    def Authenticate(self, network):
+        misc.ParseEncryption(network)
+        cmd = ['wpa_supplicant', '-B', '-i', self.iface, '-c',
+               os.path.join(wpath.networks, 'wired'),
+               '-Dwired']
+        if self.verbose: print cmd
+        misc.Run(cmd)
 
 class BaseWirelessInterface(BaseInterface):
     """ Control a wireless network interface. """
@@ -1251,6 +1265,12 @@ class BaseWirelessInterface(BaseInterface):
         except (UnicodeDecodeError, UnicodeEncodeError):
             print 'Unicode problem with current network essid, ignoring!!'
             return None
+
+        # We (well, DBus) don't support ESSIDs with null bytes in it.
+        # From some bugreports, it seems like some APs transmit the "hidden"
+        # essid as NULL bytes. Let's strip them off.
+        ap['essid'] = ap['essid'].replace('\x00', '')
+
         if ap['essid'] in ['Hidden', '<hidden>', "", None]:
             print 'hidden'
             ap['hidden'] = True
@@ -1379,13 +1399,6 @@ class BaseWirelessInterface(BaseInterface):
         print 'wpa_supplicant rescan forced...'
         cmd = 'wpa_cli -i' + self.iface + ' scan'
         misc.Run(cmd)
-        
-    @neediface(False)
-    def StopWPA(self):
-        """ Terminates wpa using wpa_cli"""
-        cmd = 'wpa_cli -i %s terminate' % self.iface
-        if self.verbose: print cmd
-        misc.Run(cmd)
 
     @neediface("")
     def GetBSSID(self, iwconfig=None):
@@ -1485,8 +1498,6 @@ class BaseWirelessInterface(BaseInterface):
             output = self.GetIwconfig()
         else:
             output = iwconfig
-        signaldbm_pattern = re.compile('.*Signal level:?=? ?(-\d\d*)',
-                                       re.I | re.M | re.S)
         dbm_strength = misc.RunRegex(signaldbm_pattern, output)
         return dbm_strength
 
@@ -1502,8 +1513,7 @@ class BaseWirelessInterface(BaseInterface):
             output = self.GetIwconfig()
         else:
             output = iwconfig
-        network = misc.RunRegex(re.compile('.*ESSID:"(.*?)"',
-                                           re.I | re.M  | re.S), output)
+        network = misc.to_unicode(misc.RunRegex(essid_pattern, output))
         if network:
             network = misc.to_unicode(network)
         return network
