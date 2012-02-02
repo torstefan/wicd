@@ -1,6 +1,4 @@
 01-remove_unused_icons.patch
 02-workaround_dhclient_bug.patch
-03-fix_configmanager_bug.patch
-04-backport_upstream_fixes.patch
 26-support_etc-network_scripts.patch
 32-prefer_gksu.patch

@@ -31,7 +31,7 @@ Forwarded: no
          misc.ExecuteScripts(wpath.postdisconnectscripts, self.debug,
                              extra_parameters=(nettype, name, mac))
          if self.post_disconnect_script:
-@@ -874,6 +882,12 @@ class WirelessConnectThread(ConnectThrea
+@@ -880,6 +888,12 @@ class WirelessConnectThread(ConnectThrea
          self.is_connecting = True
          
          # Run pre-connection script.
@@ -44,7 +44,7 @@ Forwarded: no
          self.run_global_scripts_if_needed(wpath.preconnectscripts,
                                            extra_parameters=('wireless',
                                                      self.network['essid'],
-@@ -923,6 +937,8 @@ class WirelessConnectThread(ConnectThrea
+@@ -929,6 +943,8 @@ class WirelessConnectThread(ConnectThrea
          self.verify_association(wiface)
          
          # Run post-connection script.
@@ -53,7 +53,7 @@ Forwarded: no
          self.run_global_scripts_if_needed(wpath.postconnectscripts,
                                            extra_parameters=('wireless',
                                                      self.network['essid'],
-@@ -1132,6 +1148,12 @@ class WiredConnectThread(ConnectThread):
+@@ -1135,6 +1151,12 @@ class WiredConnectThread(ConnectThread):
          self.is_connecting = True
  
          # Run pre-connection script.
@@ -66,7 +66,7 @@ Forwarded: no
          self.run_global_scripts_if_needed(wpath.preconnectscripts,
                                            extra_parameters=('wired', 'wired',
                                                              self.network['profilename'])
-@@ -1154,6 +1176,8 @@ class WiredConnectThread(ConnectThread):
+@@ -1162,6 +1184,8 @@ class WiredConnectThread(ConnectThread):
          self.set_dns_addresses(liface)
          
          # Run post-connection script.
