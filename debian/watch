@@ -1,4 +1,4 @@
 version=3
-#http://sf.net/wicd/wicd-([^a-zA-Z]*)\.tar\.gz
-opts=dversionmangle=s/\+ds1// \
-http://downloads.wicd.net/src/latest/wicd-(\d+.*)\.tar\.bz2
+opts=uversionmangle=s/%7E/~/ \
+https://launchpad.net/wicd/+download \
+	https://launchpad.net/wicd/\d.\d/\d.\d.\d/\+download/wicd-(\d+.*)\.tar\.(?:gz|bz2)

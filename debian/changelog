@@ -2,8 +2,9 @@ wicd (1.7.1-2) UNRELEASED; urgency=low
 
   * Added Indonesian debconf translation, thanks to Mahyuddin
     Susanto (Closes: #658785)
+  * Fixed debian/watch to look packages from launchpad
 
- -- David Paleino <dapal@debian.org>  Mon, 06 Feb 2012 06:50:40 +0100
+ -- David Paleino <dapal@debian.org>  Thu, 01 Mar 2012 09:30:15 +0100
 
 wicd (1.7.1-1) unstable; urgency=low
 
