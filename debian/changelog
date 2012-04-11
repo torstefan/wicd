@@ -1,4 +1,4 @@
-wicd (1.7.2-1) UNRELEASED; urgency=low
+wicd (1.7.2-1) unstable; urgency=low
 
   * New upstream version
     - fixed local privilege escalation, CVE-2012-2095 (Closes: #668397)
@@ -8,7 +8,7 @@ wicd (1.7.2-1) UNRELEASED; urgency=low
   * Bump Standards-Version to 3.9.3, no changes needed
   * Updated debian/copyright
 
- -- David Paleino <dapal@debian.org>  Thu, 12 Apr 2012 00:02:59 +0200
+ -- David Paleino <dapal@debian.org>  Thu, 12 Apr 2012 00:03:06 +0200
 
 wicd (1.7.1-1) unstable; urgency=low
 
