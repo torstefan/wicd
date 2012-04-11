@@ -1,7 +1,14 @@
-Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0
+Source: https://launchpad.net/wicd/+download
+
+Files: *
+Copyright: © 2007-2008, Adam Blackburn <compwiz18@users.sourceforge.net>
+ © 2007-2008, Dan O'Reilly <oreilldf@gmail.com>
+ © 2011-2012, David Paleino <d.paleino@gmail.com>
+License: GPL-2+
 
 Files: debian/*
-Copyright: © 2008-2011, David Paleino <d.paleino@gmail.com>
+Copyright: © 2008-2012, David Paleino <dapal@debian.org>
 License: GPL-2+
 
 Files: in/init=gentoo=wicd.in
@@ -20,19 +27,15 @@ Files: wicd/networking.py
  wicd/wicd-daemon.py
  wicd/wnettools.py
 Copyright: © 2007-2008, Adam Blackburn <compwiz18@users.sourceforge.net>
-Copyright: © 2007-2008, Dan O'Reilly <oreilldf@gmail.com>
-Copyright: © 2007-2008, Byron Hillis <b_hillis@optusnet.com.au>
+ © 2007-2008, Dan O'Reilly <oreilldf@gmail.com>
+ © 2007-2008, Byron Hillis <b_hillis@optusnet.com.au>
+ © 2011-2012, David Paleino <d.paleino@gmail.com>
 License: GPL-2+
 
 Files: uninstall.sh
 Copyright: © 2008, Robby Workman <rworkman@slackware.com>
-Copyright: © 2008, Alan Hicks <alan@slackware.com>
+ © 2008, Alan Hicks <alan@slackware.com>
 License: BSD-1
-
-Files: *
-Copyright: © 2007-2008, Adam Blackburn <compwiz18@users.sourceforge.net>
-Copyright: © 2007-2008, Dan O'Reilly <oreilldf@gmail.com>
-License: GPL-2+
 
 License: GPL-2+
  On Debian systems the full text of the GNU General Public License can 
@@ -43,10 +46,6 @@ License: GPL-2
  be found in the `/usr/share/common-licenses/GPL-2' file.
 
 License: BSD-1
- # Copyright 2008 Robby Workman <rworkman@slackware.com>, Northport, AL, USA
- # Copyright 2008 Alan Hicks <alan@slackware.com>, Lizella, GA, USA
- # All rights reserved.
- #
  # Redistribution and use of this script, with or without modification, is
  # permitted provided that the following conditions are met:
  #
