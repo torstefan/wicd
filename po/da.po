@@ -6,14 +6,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-07 23:04+0100\n"
-"PO-Revision-Date: 2012-01-15 20:03+0100\n"
+"PO-Revision-Date: 2012-03-05 21:01+0000\n"
 "Last-Translator: David Paleino <dapal@debian.org>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-12-10 05:02+0000\n"
-"X-Generator: Launchpad (build 14450)\n"
+"X-Launchpad-Export-Date: 2012-03-06 04:54+0000\n"
+"X-Generator: Launchpad (build 14900)\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: gtk/wicd-client.py:610
@@ -117,7 +117,7 @@ msgstr "Vælg fra nedenstående netværk:"
 
 #: curses/wicd-curses.py:556
 msgid "Config"
-msgstr ""
+msgstr "Opsætning"
 
 #: curses/wicd-curses.py:225
 msgid "Configure selected network"
@@ -224,7 +224,7 @@ msgstr "DHCP klient"
 
 #: curses/netentry_curses.py:63
 msgid "DHCP Hostname"
-msgstr ""
+msgstr "DHCP-serverens navn"
 
 #: curses/netentry_curses.py:56 curses/prefs_curses.py:74 gtk/netentry.py:79
 msgid "DNS domain"
@@ -271,7 +271,7 @@ msgstr "Vis denne hjælpedialogboks"
 
 #: wicd/translations.py:78
 msgid "Domain"
-msgstr "DNS domæne"
+msgstr "Domæne"
 
 #: wicd/misc.py:82
 msgid "Done connecting..."
@@ -356,7 +356,7 @@ msgstr "Identitet"
 
 #: gtk/wicd-client.py:500
 msgid "Information about the current connection"
-msgstr ""
+msgstr "Information om den opnåede forbindelse"
 
 #: gtk/netentry.py:167
 msgid "Invalid IP address entered."
@@ -380,7 +380,7 @@ msgstr "Netværksgrænseflader"
 
 #: gtk/netentry.py:818
 msgid "Never connect to this network"
-msgstr ""
+msgstr "Ignorer dette netværk"
 
 #: curses/wicd-curses.py:527 gtk/gui.py:604 gtk/wicd-client.py:797
 msgid "No wireless networks found."
@@ -419,7 +419,7 @@ msgstr ""
 
 #: wicd/translations.py:81
 msgid "Passphrase"
-msgstr ""
+msgstr "Adgangskode"
 
 #: wicd/translations.py:82
 msgid "Password"
@@ -427,7 +427,7 @@ msgstr "Adgangskode"
 
 #: wicd/translations.py:83
 msgid "Path to CA cert"
-msgstr ""
+msgstr "Stien til CA-certifikatet"
 
 #: wicd/translations.py:85
 msgid "Path to PAC file"
@@ -435,24 +435,25 @@ msgstr "Sti til PAC fil"
 
 #: wicd/translations.py:84
 msgid "Path to client cert"
-msgstr ""
+msgstr "Stien til klient certifikatet"
 
 #: curses/prefs_curses.py:122 gtk/prefs.py:339 data/wicd.ui:1644
 msgid "Ping static gateways after connecting to verify association"
 msgstr ""
-"Ping statisk gateway efter forbindelse, for at bekræfte tilslutningen"
+"Ping de statiske gateways, efter at have opnået forbindelse, for at bekræfte "
+"tilslutningen"
 
 #: curses/configscript_curses.py:57 gtk/configscript.py:129
 msgid "Post-connection Script"
-msgstr "Kør efter-afbrydelse skript"
+msgstr "\"Efter opnået forbindelse\" skript"
 
 #: curses/configscript_curses.py:59 gtk/configscript.py:132
 msgid "Post-disconnection Script"
-msgstr "Kør efter-afbrydelse skript"
+msgstr "\"Efter afbrydelse af forbindelsen\" skript"
 
 #: curses/configscript_curses.py:56 gtk/configscript.py:128
 msgid "Pre-connection Script"
-msgstr "Kør før-afbrydelse skript"
+msgstr "\"Forbered opkobling\" skript"
 
 #: curses/configscript_curses.py:58 gtk/configscript.py:130
 msgid "Pre-disconnection Script"
@@ -468,7 +469,7 @@ msgstr "Indstillingsdialogboks"
 
 #: curses/wicd-curses.py:562
 msgid "Prefs"
-msgstr ""
+msgstr "Præferencer"
 
 #: wicd/translations.py:86
 msgid "Preshared key"
@@ -476,7 +477,7 @@ msgstr ""
 
 #: curses/wicd-curses.py:229
 msgid "Press any key to return."
-msgstr ""
+msgstr "Tryk på en tast for at vende tilbage til det du var i gang med"
 
 #: wicd/translations.py:87
 msgid "Private key"
@@ -508,15 +509,15 @@ msgstr ""
 
 #: curses/wicd-curses.py:227
 msgid "Quit wicd-curses"
-msgstr ""
+msgstr "Afslut \"wicd-curses\""
 
 #: gtk/wicd-client.py:502
 msgid "Quit wicd-tray-icon"
-msgstr ""
+msgstr "Afslut \"wicd-tray-icon\""
 
 #: curses/wicd-curses.py:561
 msgid "Refresh"
-msgstr ""
+msgstr "Opdater"
 
 #: curses/wicd-curses.py:218
 msgid "Refresh network list"
@@ -677,7 +678,7 @@ msgstr "Ukrypteret"
 
 #: curses/netentry_curses.py:62
 msgid "Use DHCP Hostname"
-msgstr ""
+msgstr "Brug DHCP-serverens navn"
 
 #: curses/netentry_curses.py:256 gtk/netentry.py:356
 msgid "Use Encryption"
@@ -838,7 +839,7 @@ msgstr ""
 
 #: curses/wicd-curses.py:206
 msgid "wicd-curses help"
-msgstr ""
+msgstr "\"wicd-curses\" hjælp"
 
 #: data/wicd.ui:9
 msgid "Wicd Network Manager"
@@ -1045,3 +1046,6 @@ msgid ""
 "You should almost always use wext as the\n"
 "WPA supplicant driver."
 msgstr "Du bør næsten altid anvende wext som WPA supplikant-driver"
+
+#~ msgid "Help)"
+#~ msgstr "Hjælp)"

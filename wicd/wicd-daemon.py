@@ -946,6 +946,28 @@ class WirelessDaemon(dbus.service.Object):
         self.LastScan = []
         self.config = ConfigManager(wireless_conf, debug=debug)
 
+        self._validProperties = (
+            'bssid',
+            'essid',
+            'hidden',
+            'channel',
+            'mode',
+            'enctype',
+            'encryption_method',
+            'key',
+            'automatic',
+            'ip',
+            'netmask',
+            'broadcast',
+            'gateway',
+            'use_static_dns',
+            'use_global_dns',
+            'dns1',
+            'dns2',
+            'dns3',
+            'use_settings_globally',
+        )
+
     def get_debug_mode(self):
         return self._debug_mode
     def set_debug_mode(self, mode):
@@ -1064,9 +1086,9 @@ class WirelessDaemon(dbus.service.Object):
     def SetWirelessProperty(self, netid, prop, value):
         """ Sets property to value in network specified. """
         # We don't write script settings here.
-        if (prop.strip()).endswith("script"):
-            print "Setting script properties through the daemon is not" \
-                  + " permitted."
+        if prop.strip() not in self._validProperties:
+            print "Trying to set invalid property (or property not " \
+                  "permitted): "+ prop.strip() + "."
             return False
         self.LastScan[netid][prop] = misc.to_unicode(misc.Noneify(value))
 
@@ -1355,6 +1377,25 @@ class WiredDaemon(dbus.service.Object):
         self.WiredNetwork = {}
         self.config = ConfigManager(wired_conf, debug=debug)
 
+        self._validProperties = (
+            'ip',
+            'broadcast',
+            'netmask',
+            'gateway',
+            'search_domain',
+            'dns_domain',
+            'dns1',
+            'dns2',
+            'dns3',
+            'encryption_enabled',
+            'default',
+            'dhcphostname',
+            'lastused',
+            'profilename',
+            'use_global_dns',
+            'use_static_dns',
+        )
+
     def get_debug_mode(self):
         return self._debug_mode
     def set_debug_mode(self, mode):
@@ -1403,14 +1444,14 @@ class WiredDaemon(dbus.service.Object):
         return str(iface)
 
     @dbus.service.method('org.wicd.daemon.wired')
-    def SetWiredProperty(self, property, value):
+    def SetWiredProperty(self, prop, value):
         """ Sets the given property to the given value. """
         if self.WiredNetwork:
-            if (property.strip()).endswith("script"):
-                print "Setting script properties through the daemon" \
-                      + " is not permitted."
+            if prop.strip() not in self._validProperties:
+                print "Trying to set invalid property (or property not " \
+                      "permitted): "+ prop.strip() + "."
                 return False
-            self.WiredNetwork[property] = misc.to_unicode(misc.Noneify(value))
+            self.WiredNetwork[prop] = misc.to_unicode(misc.Noneify(value))
             return True
         else:
             print 'SetWiredProperty: WiredNetwork does not exist'
@@ -1764,6 +1805,11 @@ def main(argv):
         # quit, this should be the only option specified
         sys.exit(0)
 
+    if os.path.exists(wpath.pidfile):
+        print 'It seems like the daemon is already running.'
+        print 'If it is not, please remove %s and try again.' % wpath.pidfile
+        sys.exit(1)
+
     if not os.path.exists(wpath.networks):
         os.makedirs(wpath.networks)
    
@@ -1802,6 +1848,7 @@ def main(argv):
     bus = dbus.SystemBus()
     wicd_bus = dbus.service.BusName('org.wicd.daemon', bus=bus)
     daemon = WicdDaemon(wicd_bus, auto_connect=auto_connect)
+    child_pid = None
     if not no_poll:
         child_pid = Popen([wpath.python, "-O", 
                           os.path.join(wpath.daemon, "monitor.py")],
