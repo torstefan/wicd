@@ -75,9 +75,13 @@ from os import system
 CURSES_REV=wpath.curses_revision
 
 # Fix strings in wicd-curses
-from wicd.translations import language, _
+from wicd.translations import language
+from wicd.translations import _ as orig_
 for i in language.keys():
     language[i] = language[i].decode('utf8')
+
+def _(s):
+    orig_(s).decode('utf8')
 
 ########################################
 ##### SUPPORT CLASSES
@@ -828,6 +832,7 @@ class appGUI():
                     self.frame.set_footer(urwid.Pile([self.confCols,self.footer2]))
                     if focus == self.wiredCB:
                         self.diag = WiredSettingsDialog(self.wiredCB.get_body().get_selected_profile(),self.frame)
+                        self.diag.ready_widgets(ui,self.frame)
                         self.frame.set_body(self.diag)
                     else:
                         # wireless list only other option

@@ -6,14 +6,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-07 23:04+0100\n"
-"PO-Revision-Date: 2012-01-15 20:03+0100\n"
+"PO-Revision-Date: 2012-02-25 11:40+0000\n"
 "Last-Translator: David Paleino <dapal@debian.org>\n"
 "Language-Team: bg <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-12-08 05:45+0000\n"
-"X-Generator: Launchpad (build 14443)\n"
+"X-Launchpad-Export-Date: 2012-02-26 05:03+0000\n"
+"X-Generator: Launchpad (build 14860)\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: gtk/wicd-client.py:610
@@ -156,7 +156,7 @@ msgstr "Свързване"
 
 #: wicd/misc.py:77
 msgid "Connection Cancelled"
-msgstr "Връзката прекъсната"
+msgstr ""
 
 #: wicd/misc.py:83
 msgid "Connection Failed."
@@ -514,7 +514,7 @@ msgstr ""
 
 #: curses/wicd-curses.py:561
 msgid "Refresh"
-msgstr ""
+msgstr "Обнови"
 
 #: curses/wicd-curses.py:218
 msgid "Refresh network list"
@@ -866,7 +866,7 @@ msgstr "Връзката прекъсната"
 
 #: data/wicd.ui:108
 msgid "_Refresh"
-msgstr ""
+msgstr "_Обнови"
 
 #: data/wicd.ui:122
 msgid "_Preferences"
@@ -878,7 +878,7 @@ msgstr ""
 
 #: data/wicd.ui:213 data/wicd.ui:215
 msgid "Connecting..."
-msgstr ""
+msgstr "Свързване…"
 
 #: data/wicd.ui:228
 msgid "Cancel the current connection attempt"
