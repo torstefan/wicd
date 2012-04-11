@@ -1,6 +1,7 @@
 wicd (1.7.2-1) UNRELEASED; urgency=low
 
   * New upstream version
+    - fixed local privilege escalation, CVE-2012-2095 (Closes: #668397)
   * Added Indonesian debconf translation, thanks to Mahyuddin
     Susanto (Closes: #658785)
   * Fixed debian/watch to look packages from launchpad
