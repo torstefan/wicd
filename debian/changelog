@@ -1,3 +1,10 @@
+wicd (1.7.2.1-1) UNRELEASED; urgency=low
+
+  * New upstream version
+    - fix crash with wicd-curses (Closes: #668520)
+
+ -- David Paleino <dapal@debian.org>  Thu, 12 Apr 2012 22:08:11 +0200
+
 wicd (1.7.2-1) unstable; urgency=low
 
   * New upstream version
