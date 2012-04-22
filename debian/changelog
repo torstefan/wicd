@@ -1,3 +1,10 @@
+wicd (1.7.2.3-1) UNRELEASED; urgency=high
+
+  * New upstram version
+    - fix bug with wicd-curses and UTF-8 locales (Closes: #669602)
+
+ -- David Paleino <dapal@debian.org>  Sun, 22 Apr 2012 18:40:27 +0200
+
 wicd (1.7.2.2-1) unstable; urgency=high
 
   * New upstream version
