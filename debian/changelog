@@ -1,3 +1,10 @@
+wicd (1.7.2.4-1) UNRELEASED; urgency=high
+
+  * New upstream version
+    - really fix local privilege escalation, CVE-2012-2095 (Closes: #668397)
+
+ -- David Paleino <dapal@debian.org>  Mon, 30 Apr 2012 21:31:50 +0200
+
 wicd (1.7.2.3-1) unstable; urgency=high
 
   * New upstram version
