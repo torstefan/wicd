@@ -2,8 +2,10 @@ wicd (1.7.2.4-3) UNRELEASED; urgency=low
 
   * Fix debian/watch
   * Recommend rfkill in wicd-daemon (Closes: #683559)
+  * Substitute dependency on dhcp3-client with isc-dhcp-client
+    (Closes: #680976)
 
- -- David Paleino <dapal@debian.org>  Thu, 01 Nov 2012 00:14:21 +0100
+ -- David Paleino <dapal@debian.org>  Thu, 01 Nov 2012 00:16:56 +0100
 
 wicd (1.7.2.4-2) unstable; urgency=high
 

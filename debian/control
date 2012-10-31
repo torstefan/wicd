@@ -47,7 +47,7 @@ Depends:
  , dbus
  , wpasupplicant
  , wireless-tools
- , dhcpcd | dhcp3-client | pump | udhcpc
+ , dhcpcd | isc-dhcp-client | pump | udhcpc
  , net-tools | ethtool
  , net-tools | iproute
  , adduser
