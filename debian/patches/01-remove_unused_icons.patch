@@ -5,7 +5,7 @@ Don't install rarely-used icons, save disk space
 
 --- wicd.orig/setup.py
 +++ wicd/setup.py
-@@ -535,15 +535,11 @@ try:
+@@ -538,15 +538,11 @@ try:
          if not wpath.no_install_man:
              data.append((wpath.mandir + 'man1/', [ 'man/wicd-client.1' ]))
          data.append((wpath.icons + 'scalable/apps/', ['icons/scalable/wicd-gtk.svg']))

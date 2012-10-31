@@ -10,7 +10,7 @@ Forwarded: no
 
 --- wicd.orig/wicd/wnettools.py
 +++ wicd/wicd/wnettools.py
-@@ -284,7 +284,7 @@ class BaseInterface(object):
+@@ -285,7 +285,7 @@ class BaseInterface(object):
          
          client_dict = {
              "dhclient" : 
