@@ -1,4 +1,4 @@
-wicd (1.7.2.4-3) UNRELEASED; urgency=low
+wicd (1.7.2.4-3) unstable; urgency=low
 
   * Fix debian/watch
   * Recommend rfkill in wicd-daemon (Closes: #683559)
@@ -6,7 +6,7 @@ wicd (1.7.2.4-3) UNRELEASED; urgency=low
     (Closes: #680976)
   * Fix handling of /etc/resolv.conf when it's a symlink (Closes: #691973)
 
- -- David Paleino <dapal@debian.org>  Thu, 01 Nov 2012 00:30:25 +0100
+ -- David Paleino <dapal@debian.org>  Fri, 02 Nov 2012 21:49:32 +0100
 
 wicd (1.7.2.4-2) unstable; urgency=high
 
