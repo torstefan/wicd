@@ -1,9 +1,9 @@
-wicd (1.7.2.4-4) UNRELEASED; urgency=low
+wicd (1.7.2.4-4) unstable; urgency=low
 
   * Move user-adding code from debconf-config to wicd-daemon postinst
     (Closes: #692916)
 
- -- David Paleino <dapal@debian.org>  Sat, 10 Nov 2012 21:41:02 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 10 Nov 2012 21:41:50 +0100
 
 wicd (1.7.2.4-3) unstable; urgency=low
 
