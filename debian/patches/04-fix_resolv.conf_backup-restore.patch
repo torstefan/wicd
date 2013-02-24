@@ -5,26 +5,25 @@ Origin: upstream
 Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=691973
 
 ---
- wicd/wicd-daemon.py |   15 +++++++++++++--
- 1 file changed, 13 insertions(+), 2 deletions(-)
+ wicd/wicd-daemon.py |   14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
 
 --- wicd.orig/wicd/wicd-daemon.py
 +++ wicd/wicd/wicd-daemon.py
-@@ -1703,7 +1703,12 @@ def main(argv):
+@@ -1703,7 +1703,11 @@ def main(argv):
          # don't back up if .orig exists, probably there cause
          # wicd exploded
          if not os.path.exists(backup_location):
 -            shutil.copy2('/etc/resolv.conf', backup_location)
 +            if os.path.islink('/etc/resolv.conf'):
 +                dest = os.readlink('/etc/resolv.conf')
-+                os.unlink(backup_location)
 +                os.symlink(dest, backup_location)
 +            else:
 +                shutil.copy2('/etc/resolv.conf', backup_location)
              os.chmod(backup_location, 0644)
      except IOError:
          print 'error backing up resolv.conf'
-@@ -1750,7 +1755,13 @@ def main(argv):
+@@ -1750,7 +1754,13 @@ def main(argv):
  
          # restore resolv.conf on quit
          try:
