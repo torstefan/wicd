@@ -4,3 +4,4 @@
 04-fix_resolv.conf_backup-restore.patch
 26-support_etc-network_scripts.patch
 32-prefer_gksu.patch
+33-focus_property.patch

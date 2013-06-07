@@ -1,3 +1,12 @@
+wicd (1.7.2.4-4.1) unstable; urgency=low
+
+  * Non-maintainer upload
+  * Add patch by isis agora lovecruft to fix wicd-curses run time errors
+    caused by the changes of python-urwid 1.1 API (Closes: #709120)
+  * Bump wicd-curses dependency on python-urwid to >= 1.1
+
+ -- Axel Beckert <abe@debian.org>  Fri, 07 Jun 2013 18:42:23 +0200
+
 wicd (1.7.2.4-4) unstable; urgency=low
 
   * Move user-adding code from debconf-config to wicd-daemon postinst

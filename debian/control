@@ -109,7 +109,7 @@ Architecture: all
 Depends:
  ${misc:Depends}
  , ${python:Depends}
- , python-urwid
+ , python-urwid (>= 1.1)
  , wicd-daemon (= ${source:Version})
 Recommends: sudo
 Provides: wicd-client
