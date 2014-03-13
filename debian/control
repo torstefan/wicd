@@ -49,7 +49,7 @@ Depends:
  , wireless-tools
  , dhcpcd | isc-dhcp-client | pump | udhcpc
  , net-tools | ethtool
- , net-tools | iproute
+ , net-tools | iproute2
  , adduser
  , lsb-base (>= 3.2-13)
  , psmisc
