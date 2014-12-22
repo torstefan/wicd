@@ -5,6 +5,8 @@ wicd (1.7.2.4-5) UNRELEASED; urgency=medium
 
   [ Axel Beckert ]
   * Update Vcs-* headers.
+  * Change Homepage header from SourceForge to Launchpad as wicd's
+    SourceForge page is horribly out of date and refers to Launchpad.
 
  -- Axel Beckert <abe@debian.org>  Wed, 12 Nov 2014 01:32:32 +0100
 

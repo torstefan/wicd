@@ -10,7 +10,7 @@ Build-Depends-Indep:
  , python-babel
  , gettext
 Standards-Version: 3.9.3
-Homepage: http://wicd.sourceforge.net/
+Homepage: https://launchpad.net/wicd
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/wicd.git
 Vcs-Git: git://anonscm.debian.org/collab-maint/wicd.git
 
