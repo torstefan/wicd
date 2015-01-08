@@ -33,6 +33,7 @@ from subprocess import Popen, STDOUT, PIPE, call
 from commands import getoutput
 from itertools import repeat, chain, izip
 from pipes import quote
+import socket
 
 from wicd.translations import _
 
@@ -45,6 +46,13 @@ CONNECTING = 1
 WIRELESS = 2
 WIRED = 3
 SUSPENDED = 4
+_const_status_dict = {
+    NOT_CONNECTED: _('Not connected'),
+    CONNECTING: _('Connection in progress'),
+    WIRELESS: _('Connected to a wireless network'),
+    WIRED: _('Connected to a wired network'),
+    SUSPENDED: _('Connection suspended'),
+}
 
 # Automatic app selection constant
 AUTO = 0
@@ -76,7 +84,8 @@ _sudo_dict = {
 
 _status_dict = {
     'aborted': _('Connection Cancelled'),
-    'association_failed': _('Connection failed: Could not contact the wireless access point.'),
+    'association_failed': _('Connection failed: Could not contact the ' + \
+        'wireless access point.'),
     'bad_pass': _('Connection Failed: Bad password'),
     'configuring_interface': _('Configuring wireless interface...'),
     'dhcp_failed': _('Connection Failed: Unable to Get IP Address'),
@@ -99,6 +108,7 @@ _status_dict = {
 }
 
 class WicdError(Exception):
+    """ Custom Exception type. """
     pass
     
 
@@ -171,17 +181,29 @@ def LaunchAndWait(cmd):
 
 def IsValidIP(ip):
     """ Make sure an entered IP is valid. """
-    if not ip: return False
-
-    ipNumbers = ip.split('.')
-    if len(ipNumbers) < 4:
+    if not ip:
         return False
 
-    for number in ipNumbers:
-        if not number.isdigit() or int(number) > 255:
+    if not IsValidIPv4(ip):
+        if not IsValidIPv6(ip):
             return False
+    return True
 
-    return ipNumbers
+def IsValidIPv4(ip):
+    ''' Make sure an entered IP is a valid IPv4. '''
+    try:
+        socket.inet_pton(socket.AF_INET, ip)
+    except (TypeError, socket.error):
+        return False
+    return True
+
+def IsValidIPv6(ip):
+    ''' Make sure an entered IP is a valid IPv6. '''
+    try:
+        socket.inet_pton(socket.AF_INET6, ip)
+    except (TypeError, socket.error):
+        return False
+    return True
 
 def PromptToStartDaemon():
     """ Prompt the user to start the daemon """
@@ -199,9 +221,9 @@ def PromptToStartDaemon():
     os.spawnvpe(os.P_WAIT, sudo_prog, sudo_args, os.environ)
     return True
 
-def RunRegex(regex, string):
+def RunRegex(regex, s):
     """ runs a regex search on a string """
-    m = regex.search(string)
+    m = regex.search(s)
     if m:
         return m.groups()[0]
     else:
@@ -252,15 +274,17 @@ def to_bool(var):
         var = bool(var)
     return var
 
-def Noneify(variable):
+def Noneify(variable, convert_to_bool=True):
     """ Convert string types to either None or booleans"""
     #set string Nones to real Nones
     if variable in ("None", "", None):
         return None
-    if variable in ("False", "0"):
-        return False
-    if variable in ("True", "1"):
-        return True
+    if convert_to_bool:
+        # FIXME: should instead use above to_bool()?
+        if variable in ("False", "0"):
+            return False
+        if variable in ("True", "1"):
+            return True
     return variable
 
 def ParseEncryption(network):
@@ -286,22 +310,22 @@ def ParseEncryption(network):
                 # This is the last line, so we just write it.
                 config_file = ''.join([config_file, line])
             elif "$_" in line: 
-                cur_val = re.findall('\$_([A-Z0-9_]+)', line)
-                if cur_val:
-                    if cur_val[0] == 'SCAN':
-                        #TODO should this be hardcoded?
-                        line = line.replace("$_SCAN", "1")
-                        config_file = ''.join([config_file, line])
-                    else:
-                        rep_val = network.get(cur_val[0].lower())
+                for cur_val in re.findall('\$_([A-Z0-9_]+)', line):
+                    if cur_val:
+                        rep_val = network.get(cur_val.lower())
+                        if not rep_val:
+                            # hardcode some default values
+                            if cur_val == 'SCAN':
+                                rep_val = '1'
+                            elif cur_val == 'KEY_INDEX':
+                                rep_val = '0'
                         if rep_val:
-                            line = line.replace("$_%s" % cur_val[0], 
-                                                str(rep_val))
+                            line = line.replace("$_%s" % cur_val, str(rep_val))
                             config_file = ''.join([config_file, line])
                         else:
                             print "Ignoring template line: '%s'" % line
-                else:
-                    print "Weird parsing error occurred"
+                    else:
+                        print "Weird parsing error occurred"
             else:  # Just a regular entry.
                 config_file = ''.join([config_file, line])
 
@@ -395,8 +419,10 @@ def _parse_enc_template(enctype):
                 print "Invalid 'optional' line found in template %s" % enctype
                 continue
         elif line.startswith("protected"):
-            cur_type["protected"] = __parse_field_ent(parse_ent(line, "protected"),
-                                                    field_type="protected")
+            cur_type["protected"] = __parse_field_ent(
+                parse_ent(line, "protected"),
+                field_type="protected"
+            )
             if not cur_type["protected"]:
                 # An error occured parsing the protected line.
                 print "Invalid 'protected' line found in template %s" % enctype
@@ -430,7 +456,10 @@ def sanitize_config(s):
     """ Sanitize property names to be used in config-files. """
     allowed = string.ascii_letters + '_' + string.digits
     table = string.maketrans(allowed, ' ' * len(allowed))
-    return s.translate(None, table)
+
+    # s is a dbus.String -- since we don't allow unicode property keys,
+    # make it simple.
+    return s.encode('ascii', 'replace').translate(None, table)
 
 def sanitize_escaped(s):
     """ Sanitize double-escaped unicode strings. """
@@ -507,7 +536,8 @@ def detect_desktop_environment():
 def get_sudo_cmd(msg, prog_num=0):
     """ Returns a graphical sudo command for generic use. """
     sudo_prog = choose_sudo_prog(prog_num)
-    if not sudo_prog: return None
+    if not sudo_prog:
+        return None
     if re.search("(ktsuss|gksu|gksudo)$", sudo_prog):
         msg_flag = "-m"
     else:
@@ -567,6 +597,8 @@ def stringToNone(text):
         return str(text)
 
 def checkboxTextboxToggle(checkbox, textboxes):
+    """ Manage {de,}activation of textboxes depending on checkboxes. """
+    # FIXME: should be moved to UI-specific files?
     for textbox in textboxes:
         textbox.set_sensitive(checkbox.get_active())
 
@@ -590,7 +622,8 @@ def timeout_add(time, func, milli=False):
     if hasattr(gobject, "timeout_add_seconds") and not milli:
         return gobject.timeout_add_seconds(time, func)
     else:
-        if not milli: time = time * 1000
+        if not milli:
+            time = time * 1000
         return gobject.timeout_add(time, func)
 
 def izip_longest(*args, **kwds):

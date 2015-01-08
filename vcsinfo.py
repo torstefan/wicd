@@ -5,11 +5,11 @@ So don't edit it. :)
 """
 
 version_info = {'branch_nick': u'wicd',
- 'build_date': '2012-04-30 21:26:29 +0200',
+ 'build_date': '2014-12-21 21:21:37 +0100',
  'clean': None,
- 'date': '2012-04-30 21:26:10 +0200',
- 'revision_id': 'd.paleino@gmail.com-20120430192610-0eblawm4gmxvwn44',
- 'revno': '768'}
+ 'date': '2014-12-21 21:21:04 +0100',
+ 'revision_id': 'tomvanbraeckel@gmail.com-20141221202104-metyzp9ytk0phwe9',
+ 'revno': '933'}
 
 revisions = {}
 
