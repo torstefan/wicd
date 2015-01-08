@@ -10,6 +10,7 @@ override_dh_auto_configure:
 	python setup.py configure \
 		--no-install-acpi \
 		--no-install-docs \
+		--no-install-gnome-shell-extensions \
 		--lib=/usr/share/wicd \
 		--share=/usr/share/wicd \
 		--wicdgroup=netdev \
