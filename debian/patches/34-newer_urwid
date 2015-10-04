@@ -1,0 +1,25 @@
+Description: Fix to accomodate changes in python-urwid
+ Version 3 of the package is not backwards compatible.
+Origin: other https://bbs.archlinux.org/viewtopic.php?pid=1481016
+Bug-Debian: https://bugs.debian.org/800693
+Forwarded: https://github.com/dpaleino/wicd/pull/5
+Reviewed-By: Salvo 'LtWorf' Tomaselli <tiposchi@tiscali.it>
+Last-Update: 2015-10-03
+
+Index: wicd/curses/wicd-curses.py
+===================================================================
+--- wicd.orig/curses/wicd-curses.py	2015-10-04 23:43:22.373764371 +0200
++++ wicd/curses/wicd-curses.py	2015-10-04 23:43:22.365764325 +0200
+@@ -1153,9 +1153,10 @@
+         if not ui._started:
+             return False
+ 
+-        input_data = ui.get_input_nonblocking()
++        ui.set_input_timeouts(max_wait=0)
++        input_data = ui.get_input()
+         # Resolve any "alarms" in the waiting
+-        self.handle_keys(input_data[1])
++        self.handle_keys(input_data)
+ 
+         # Update the screen
+         canvas = self.frame.render((self.size), True)
