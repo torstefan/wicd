@@ -11,6 +11,7 @@ wicd (1.7.3-0.1) UNRELEASED; urgency=medium
   * Declare compliance with Debian Policy 3.9.6. (No changes needed.)
   * Fix lintian warning wildcard-matches-nothing-in-dep5-copyright.
   * Add install.log to debian/clean to allow building twice in a row.
+  * Remove all other/* entries from debian/clean, they seem obsolete.
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3
