@@ -8,6 +8,7 @@ wicd (1.7.3-0.1) UNRELEASED; urgency=medium
   * Change Homepage header from SourceForge to Launchpad as wicd's
     SourceForge page is horribly out of date and refers to Launchpad.
   * Integrate 1.7.2.4-4.2 NMU and refresh 34-newer_urwid accordingly.
+  * Declare compliance with Debian Policy 3.9.6. (No changes needed.)
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3
