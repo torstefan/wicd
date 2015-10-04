@@ -5,3 +5,4 @@
 26-support_etc-network_scripts.patch
 32-prefer_gksu.patch
 33-focus_property.patch
+34-newer_urwid
