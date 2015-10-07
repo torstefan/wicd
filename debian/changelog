@@ -1,5 +1,7 @@
 wicd (1.7.3-1) UNRELEASED; urgency=low
 
+  TODO: Fix crash in wicd-curses when accessing network property view
+
   * QA upload
 
   [ Andreas Henriksson ]
