@@ -17,6 +17,7 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
   * Set Maintainer to QA Group. (See #801253 for details.) Thanks to David
     for having developed and maintained this nice piece of software for so
     long.
+  * Apply wrap-and-sort.
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3

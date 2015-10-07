@@ -2,13 +2,11 @@ Source: wicd
 Section: net
 Priority: optional
 Maintainer: Debian QA Group <packages@qa.debian.org>
-Build-Depends:
- debhelper (>= 7.2.3~)
- , python (>= 2.6.6-3~)
-Build-Depends-Indep:
- po-debconf
- , python-babel
- , gettext
+Build-Depends: debhelper (>= 7.2.3~),
+               python (>= 2.6.6-3~)
+Build-Depends-Indep: gettext,
+                     po-debconf,
+                     python-babel
 Standards-Version: 3.9.6
 Homepage: https://launchpad.net/wicd
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/wicd.git
@@ -16,9 +14,9 @@ Vcs-Git: git://anonscm.debian.org/collab-maint/wicd.git
 
 Package: wicd
 Architecture: all
-Depends: ${misc:Depends}
- , wicd-daemon (= ${source:Version})
- , wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
+Depends: wicd-daemon (= ${source:Version}),
+         wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client,
+         ${misc:Depends}
 Description: wired and wireless network manager - metapackage
  Wicd is a general-purpose network configuration server which aims
  to provide a simple but flexible interface for connecting to networks.
@@ -38,26 +36,24 @@ Description: wired and wireless network manager - metapackage
 
 Package: wicd-daemon
 Architecture: all
-Depends:
- ${misc:Depends}
- , ${python:Depends}
- , python-dbus
- , python-gobject
-# , python-iniparse
- , dbus
- , wpasupplicant
- , wireless-tools
- , dhcpcd | isc-dhcp-client | pump | udhcpc
- , net-tools | ethtool
- , net-tools | iproute2
- , adduser
- , lsb-base (>= 3.2-13)
- , psmisc
- , iputils-ping | inetutils-ping
- , python-wicd (= ${source:Version})
+Depends: adduser,
+         dbus,
+         dhcpcd | isc-dhcp-client | pump | udhcpc,
+         iputils-ping | inetutils-ping,
+         lsb-base (>= 3.2-13),
+         net-tools | ethtool,
+         net-tools | iproute2,
+         psmisc,
+         python-dbus,
+         python-gobject,
+         python-wicd (= ${source:Version}),
+         wireless-tools,
+         wpasupplicant,
+         ${misc:Depends},
+         ${python:Depends}
 Pre-Depends: debconf (>= 1.5.34)
-Recommends: wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
- , rfkill
+Recommends: rfkill,
+            wicd-gtk (= ${source:Version}) | wicd-curses (= ${source:Version}) | wicd-cli (= ${source:Version}) | wicd-client
 Suggests: pm-utils
 Breaks: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
@@ -76,15 +72,13 @@ Description: wired and wireless network manager - daemon
 
 Package: wicd-gtk
 Architecture: all
-Depends:
- ${misc:Depends}
- , ${python:Depends}
- , python-gtk2
- , python-glade2
- , wicd-daemon (= ${source:Version})
-Recommends:
- gksu
- , python-notify
+Depends: python-glade2,
+         python-gtk2,
+         wicd-daemon (= ${source:Version}),
+         ${misc:Depends},
+         ${python:Depends}
+Recommends: gksu,
+            python-notify
 Provides: wicd-client
 Breaks: wicd (<= 1.6.2.2-4)
 Replaces: wicd (<= 1.6.2.2-4)
@@ -106,11 +100,10 @@ Description: wired and wireless network manager - GTK+ client
 
 Package: wicd-curses
 Architecture: all
-Depends:
- ${misc:Depends}
- , ${python:Depends}
- , python-urwid (>= 1.1)
- , wicd-daemon (= ${source:Version})
+Depends: python-urwid (>= 1.1),
+         wicd-daemon (= ${source:Version}),
+         ${misc:Depends},
+         ${python:Depends}
 Recommends: sudo
 Provides: wicd-client
 Breaks: wicd (<= 1.6.2.2-4)
@@ -131,10 +124,9 @@ Description: wired and wireless network manager - Curses client
 
 Package: wicd-cli
 Architecture: all
-Depends:
- ${misc:Depends}
- , ${python:Depends}
- , wicd-daemon (= ${source:Version})
+Depends: wicd-daemon (= ${source:Version}),
+         ${misc:Depends},
+         ${python:Depends}
 Recommends: sudo
 Provides: wicd-client
 Breaks: wicd (<< 1.7.0~a3)
@@ -155,9 +147,8 @@ Description: wired and wireless network manager - scriptable console client
 Package: python-wicd
 Architecture: all
 Section: python
-Depends:
- ${misc:Depends}
- , ${python:Depends}
+Depends: ${misc:Depends},
+         ${python:Depends}
 Breaks: wicd (<< 1.7.0~a3)
 Replaces: wicd (<< 1.7.0~a3)
 Description: wired and wireless network manager - Python module
