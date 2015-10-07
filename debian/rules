@@ -4,6 +4,9 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+%:
+	dh $@ --with python2
+
 override_dh_auto_configure:
 	if [ -e wicd/wpath.py ]; then cp -pf wicd/wpath.py debian/; fi
 	python setup.py configure \
@@ -50,7 +53,3 @@ override_dh_python2:
 	dh_python2 -p wicd-daemon /usr/share/wicd/daemon
 	dh_python2 -p wicd-gtk /usr/share/wicd/gtk
 	dh_python2 -p wicd-cli /usr/share/wicd/cli
-
-%:
-	dh $@ \
-		--with python2

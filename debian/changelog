@@ -24,6 +24,7 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
     + Restore wicd/wpath.py in clean target to have a pristine working copy
       again after running debian/rules clean.
     + No more set the unused variable CURVER.
+    + List % target first for clarity.
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3
