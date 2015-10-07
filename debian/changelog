@@ -25,6 +25,7 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
       again after running debian/rules clean.
     + No more set the unused variable CURVER.
     + List % target first for clarity.
+  * Add build-dependency on dh-python to fix dh_python2 warning.
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3
