@@ -2,7 +2,7 @@ Source: wicd
 Section: net
 Priority: optional
 Maintainer: Debian QA Group <packages@qa.debian.org>
-Build-Depends: debhelper (>= 7.2.3~),
+Build-Depends: debhelper (>= 9~),
                python (>= 2.6.6-3~)
 Build-Depends-Indep: gettext,
                      po-debconf,

@@ -18,6 +18,8 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
     for having developed and maintained this nice piece of software for so
     long.
   * Apply wrap-and-sort.
+  * Bump debhelper compatibility to 9 as recommended.
+    + Update versioned build-dependency on debhelper accordingly.
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3
