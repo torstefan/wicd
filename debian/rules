@@ -4,8 +4,6 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-CURVER := $(shell dpkg-parsechangelog | grep ^Version | cut -d\  -f2 | sed -e "s/\(\+.*\)\|\(\-.*\)//")
-
 override_dh_auto_configure:
 	if [ -e wicd/wpath.py ]; then cp -pf wicd/wpath.py debian/; fi
 	python setup.py configure \
