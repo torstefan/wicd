@@ -10,7 +10,6 @@ man/wicd-wired-settings.conf.5
 man/wicd-wireless-settings.conf.5
 man/wicd.8
 vcsinfo.pyc
-wicd/wpath.py
 wpath.py
 wpath.pyc
 install.log

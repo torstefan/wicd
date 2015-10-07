@@ -7,6 +7,7 @@
 CURVER := $(shell dpkg-parsechangelog | grep ^Version | cut -d\  -f2 | sed -e "s/\(\+.*\)\|\(\-.*\)//")
 
 override_dh_auto_configure:
+	if [ -e wicd/wpath.py ]; then cp -pf wicd/wpath.py debian/; fi
 	python setup.py configure \
 		--no-install-acpi \
 		--no-install-docs \
@@ -25,6 +26,7 @@ override_dh_auto_clean:
 	dh_auto_clean
 	-find . \( -name "*.pyc" -o -name "*.pyo" \) -delete
 	-rm -rf build/ init/ scripts/ translations/
+	if [ -e debian/wpath.py ]; then mv -f debian/wpath.py wicd/; fi
 
 override_dh_auto_install:
 	python setup.py install --root=$(CURDIR)/debian/tmp --install-layout=deb

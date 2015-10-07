@@ -20,6 +20,8 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
   * Apply wrap-and-sort.
   * Bump debhelper compatibility to 9 as recommended.
     + Update versioned build-dependency on debhelper accordingly.
+  * Restore wicd/wpath.py in clean target to have a pristine working copy
+    again after running debian/rules clean.
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3
