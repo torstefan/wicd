@@ -21,7 +21,9 @@ set -e
 
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-        find /usr/share/wicd/ \( -name "*.pyo" -o -name "*.pyc" \) -delete || true
+        if [ -d /usr/share/wicd ]; then
+            find /usr/share/wicd/ \( -name "*.pyo" -o -name "*.pyc" \) -delete || true
+        fi
     ;;
 
     *)
