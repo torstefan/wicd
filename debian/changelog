@@ -1,3 +1,13 @@
+wicd (1.7.2.4-5) unstable; urgency=low
+
+  * QA upload.
+  * Set Maintainer field to QA Group.
+  * Bump Standards-Version to 3.9.6.
+  * Remove install.log in override_dh_auto_clean to fix FTBFS when building
+    the package twice in a row.
+
+ -- Emanuele Rocca <ema@debian.org>  Sat, 12 Dec 2015 23:24:05 +0100
+
 wicd (1.7.2.4-4.2) unstable; urgency=high
 
   * Non-maintainer upload.
