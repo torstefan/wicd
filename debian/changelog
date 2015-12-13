@@ -11,14 +11,11 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
   * Update Vcs-* headers.
   * Change Homepage header from SourceForge to Launchpad as wicd's
     SourceForge page is horribly out of date and refers to Launchpad.
-  * Integrate 1.7.2.4-4.2 NMU and refresh 34-newer_urwid accordingly.
-  * Declare compliance with Debian Policy 3.9.6. (No changes needed.)
+  * Integrate 1.7.2.4-4.2 NMU + 1.7.2.4-5 QA upload and refresh
+    34-newer_urwid accordingly.
   * Fix lintian warning wildcard-matches-nothing-in-dep5-copyright.
   * Add install.log to debian/clean to allow building twice in a row.
   * Remove all other/* entries from debian/clean, they seem obsolete.
-  * Set Maintainer to QA Group. (See #801253 for details.) Thanks to David
-    for having developed and maintained this nice piece of software for so
-    long.
   * Apply wrap-and-sort.
   * Bump debhelper compatibility to 9 as recommended.
     + Update versioned build-dependency on debhelper accordingly.
@@ -38,6 +35,16 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
   * Disable installation of gnome-shell-extension
 
  -- Axel Beckert <abe@debian.org>  Wed, 12 Nov 2014 01:32:32 +0100
+
+wicd (1.7.2.4-5) unstable; urgency=low
+
+  * QA upload.
+  * Set Maintainer field to QA Group.
+  * Bump Standards-Version to 3.9.6.
+  * Remove install.log in override_dh_auto_clean to fix FTBFS when building
+    the package twice in a row.
+
+ -- Emanuele Rocca <ema@debian.org>  Sat, 12 Dec 2015 23:24:05 +0100
 
 wicd (1.7.2.4-4.2) unstable; urgency=high
 
