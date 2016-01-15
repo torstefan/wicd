@@ -4,6 +4,9 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
 
   * QA upload
 
+  [ toogley ]
+  * added turkish translation for debconf template (Closes: #759884)
+
   [ Andreas Henriksson ]
   * Depend on iproute2 instead of transitional package iproute
 
