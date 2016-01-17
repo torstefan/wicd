@@ -1,7 +1,5 @@
 wicd (1.7.3-1) UNRELEASED; urgency=low
 
-  TODO: Fix crash in wicd-curses when accessing network property view
-
   * QA upload
 
   [ toogley ]
@@ -30,6 +28,9 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
   * Add build-dependency on dh-python to fix dh_python2 warning.
   * wicd-*.postinst: Guard find call with check if directory exists.
     (Closes: #724031, #785671)
+  * Use patch from Voidlinux to fix "ValueError: None is not in list"
+    error when accessing the network properties of any wireless network in
+    wicd-curses.
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3 (Closes: #774894)

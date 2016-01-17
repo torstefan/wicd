@@ -2,3 +2,4 @@
 26-support_etc-network_scripts.patch
 32-prefer_gksu.patch
 34-newer_urwid
+35-fix_ValueError_None_is_not_in_list.patch
