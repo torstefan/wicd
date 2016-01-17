@@ -1,12 +1,16 @@
-wicd (1.7.3-1) UNRELEASED; urgency=low
+wicd (1.7.3-1) unstable; urgency=low
 
   * QA upload
 
-  [ toogley ]
-  * added turkish translation for debconf template (Closes: #759884)
-
   [ Andreas Henriksson ]
   * Depend on iproute2 instead of transitional package iproute
+
+  [ Ritesh Raj Sarraf ]
+  * Imported Upstream version 1.7.3 (Closes: #774894)
+    - fixes "wicd-daemon: no autoconnect when GUI is open" (Closes: #582567)
+  * Refresh patches and drop some patches (applied upstream)
+  * Fix build failure on ast.po.
+  * Disable installation of gnome-shell-extension
 
   [ Axel Beckert ]
   * Update Vcs-* headers.
@@ -34,14 +38,10 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
   * Add patch to show "Q" as key to quit the wireless network property
     view since the originally shown "Esc" doesn't work (anymore).
 
-  [ Ritesh Raj Sarraf ]
-  * Imported Upstream version 1.7.3 (Closes: #774894)
-    - fixes "wicd-daemon: no autoconnect when GUI is open" (Closes: #582567)
-  * Refresh patches and drop some patches (applied upstream)
-  * Fix build failure on ast.po.
-  * Disable installation of gnome-shell-extension
+  [ toogley ]
+  * added turkish translation for debconf template (Closes: #759884)
 
- -- Axel Beckert <abe@debian.org>  Wed, 12 Nov 2014 01:32:32 +0100
+ -- Axel Beckert <abe@debian.org>  Sun, 17 Jan 2016 19:34:51 +0100
 
 wicd (1.7.2.4-5) unstable; urgency=low
 
