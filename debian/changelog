@@ -31,6 +31,8 @@ wicd (1.7.3-1) UNRELEASED; urgency=low
   * Use patch from Voidlinux to fix "ValueError: None is not in list"
     error when accessing the network properties of any wireless network in
     wicd-curses.
+  * Add patch to show "Q" as key to quit the wireless network property
+    view since the originally shown "Esc" doesn't work (anymore).
 
   [ Ritesh Raj Sarraf ]
   * Imported Upstream version 1.7.3 (Closes: #774894)
