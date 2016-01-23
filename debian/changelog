@@ -1,3 +1,11 @@
+wicd (1.7.3-3) UNRELEASED; urgency=medium
+
+  * QA upload
+  * Add patch by Alex Talker from ArchLinux to fix "IndexError: list index
+    out of range" in wicd-curses. (Closes: #812224)
+
+ -- Axel Beckert <abe@debian.org>  Sat, 23 Jan 2016 22:18:57 +0100
+
 wicd (1.7.3-2) unstable; urgency=low
 
   * QA upload
