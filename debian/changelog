@@ -4,7 +4,7 @@ wicd (1.7.3-3) UNRELEASED; urgency=medium
   * Add patch from upstream bug report to fix "IndexError: list index out
     of range" in wicd-curses. (Closes: #812224)
   * Add patch to fix the parsing and writing of wep-hex configurations and
-    hence fix connecting to WEP based networks.
+    hence fix connecting to WEP based networks. (Closes: #812427)
 
  -- Axel Beckert <abe@debian.org>  Sat, 23 Jan 2016 22:18:57 +0100
 
