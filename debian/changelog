@@ -1,4 +1,4 @@
-wicd (1.7.3-3) UNRELEASED; urgency=medium
+wicd (1.7.3-3) unstable; urgency=low
 
   * QA upload
   * Add patch from upstream bug report to fix "IndexError: list index out
@@ -6,7 +6,7 @@ wicd (1.7.3-3) UNRELEASED; urgency=medium
   * Add patch to fix the parsing and writing of wep-hex configurations and
     hence fix connecting to WEP based networks. (Closes: #812427)
 
- -- Axel Beckert <abe@debian.org>  Sat, 23 Jan 2016 22:18:57 +0100
+ -- Axel Beckert <abe@debian.org>  Sun, 24 Jan 2016 02:35:17 +0100
 
 wicd (1.7.3-2) unstable; urgency=low
 
