@@ -5,3 +5,4 @@
 35-fix_ValueError_None_is_not_in_list.patch
 36-fix_wrongly_displayed_keybinding.patch
 37-fix_IndexError_list_index_out_of_range.patch
+38-fix_WEP-hex_connection_template.patch
