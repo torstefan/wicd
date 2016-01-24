@@ -8,6 +8,7 @@ Description: Fix the parsing and writing of wep-hex configurations
 Author: Axel Beckert <abe@debian.org>
 Bug-Debian: https://bugs.debian.org/812427
 Bug: https://bugs.launchpad.net/wicd/+bug/1419464
+Forwarded: https://bugs.launchpad.net/wicd/+bug/1419464/comments/16
 
 Index: wicd/wicd/misc.py
 ===================================================================
