@@ -3,6 +3,7 @@ wicd (1.7.4-1) UNRELEASED; urgency=medium
   * QA upload
   * Import new upstream release.
     + Remove 38-fix_WEP-hex_connection_template.patch (applied upstream)
+    + Refresh 26-support_etc-network_scripts.patch.
   * Remove 02-workaround_dhclient_bug.patch (#609851 has been fixed in
     dhclient)
 

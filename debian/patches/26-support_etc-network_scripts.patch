@@ -9,8 +9,8 @@ Forwarded: no
 
 Index: wicd/wicd/networking.py
 ===================================================================
---- wicd.orig/wicd/networking.py	2015-01-09 00:28:44.312997662 +0530
-+++ wicd/wicd/networking.py	2015-01-09 00:28:44.308997662 +0530
+--- wicd.orig/wicd/networking.py	2016-01-25 21:17:02.778306947 +0100
++++ wicd/wicd/networking.py	2016-01-25 21:17:02.770306974 +0100
 @@ -220,6 +220,12 @@
              mac = 'X'
          if name in (None, ''):
@@ -33,7 +33,7 @@ Index: wicd/wicd/networking.py
          misc.ExecuteScripts(wpath.postdisconnectscripts, self.debug,
                              extra_parameters=(nettype, name, mac))
          if self.post_disconnect_script:
-@@ -936,6 +944,12 @@
+@@ -943,6 +951,12 @@
          self.is_connecting = True
          
          # Run pre-connection script.
@@ -46,7 +46,7 @@ Index: wicd/wicd/networking.py
          self.run_global_scripts_if_needed(wpath.preconnectscripts,
                                            extra_parameters=('wireless',
                                                      self.network['essid'],
-@@ -987,6 +1001,8 @@
+@@ -994,6 +1008,8 @@
          self.verify_association(wiface)
          
          # Run post-connection script.
@@ -55,7 +55,7 @@ Index: wicd/wicd/networking.py
          self.run_global_scripts_if_needed(wpath.postconnectscripts,
                                            extra_parameters=('wireless',
                                                      self.network['essid'],
-@@ -1205,6 +1221,12 @@
+@@ -1212,6 +1228,12 @@
          self.is_connecting = True
  
          # Run pre-connection script.
@@ -68,7 +68,7 @@ Index: wicd/wicd/networking.py
          self.run_global_scripts_if_needed(wpath.preconnectscripts,
                                            extra_parameters=('wired', 'wired',
                                                      self.network['profilename'])
-@@ -1233,6 +1255,8 @@
+@@ -1240,6 +1262,8 @@
          self.set_dns_addresses(liface)
          
          # Run post-connection script.
