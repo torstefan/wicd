@@ -1,3 +1,11 @@
+wicd (1.7.4-1) UNRELEASED; urgency=medium
+
+  * QA upload
+  * Import new upstream release.
+    + Remove 38-fix_WEP-hex_connection_template.patch (applied upstream)
+
+ -- Axel Beckert <abe@debian.org>  Mon, 25 Jan 2016 21:02:51 +0100
+
 wicd (1.7.3-3) unstable; urgency=low
 
   * QA upload
