@@ -1,0 +1,17 @@
+--- wicd/networking.py	2012-07-20 11:22:22.113803306 -0300
++++ wicd/networking.py	2012-07-20 11:22:37.624802655 -0300
+@@ -457,8 +457,13 @@
+                 hname = os.uname()[1]
+             else:
+                 hname = self.network['dhcphostname']
++   
++            staticdns = False
++            if self.network.get('use_global_dns') or (self.network.get('use_static_dns') and (self.network.get('dns1') or self.network.get('dns2') or self.network.get('dns3'))):
++                staticdns = True
++
+             print "Running DHCP with hostname",hname
+-            dhcp_status = iface.StartDHCP(hname)
++            dhcp_status = iface.StartDHCP(hname, staticdns)
+             if dhcp_status in ['no_dhcp_offers', 'dhcp_failed']:
+                 if self.connect_result != "aborted":
+                     self.abort_connection(dhcp_status)
