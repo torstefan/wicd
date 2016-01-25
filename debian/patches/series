@@ -1,4 +1,3 @@
-02-workaround_dhclient_bug.patch
 26-support_etc-network_scripts.patch
 32-prefer_gksu.patch
 34-newer_urwid
