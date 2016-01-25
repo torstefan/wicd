@@ -17,8 +17,8 @@ current = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 # All directory paths *MUST* end in a /
 
-version = '1.7.3'
-revision = '931'
+version = '1.7.4'
+revision = '957'
 curses_revision = 'uimod'
 
 # DIRECTORIES
@@ -81,7 +81,7 @@ no_install_init = False
 no_install_man = False
 no_install_i18n = False
 no_install_i18n_man = False
-no_install_kde = True
+no_install_kde = False
 no_install_acpi = False
 no_install_docs = False
 no_install_gtk = False
