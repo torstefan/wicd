@@ -4,6 +4,8 @@ wicd (1.7.4+tb2-1) UNRELEASED; urgency=medium
 
   [ toogley ]
   * cleaned up trailing spaces inside d/changelog
+  * fixing lintian error "command-in-menu-file-and-desktop-file"
+    https://lintian.debian.org/tags/command-in-menu-file-and-desktop-file.html
 
   [ Axel Beckert ]
   * Import second tarball release of new upstream release.
