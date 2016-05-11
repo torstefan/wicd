@@ -22,6 +22,10 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
   * wicd-gtk: Add patch to initialize state of Wifi On/Off button
     properly. (Closes: #758737, LP: #1232521)
 
+  [ Vincent Lefevre ]
+  * Add patch to fix wicd-manager-settings.conf(5) man page
+    wrt. wired_connect_mode. (Closes: #557156)
+
  -- Axel Beckert <abe@debian.org>  Mon, 23 May 2016 22:26:22 +0200
 
 wicd (1.7.4+tb2-2) unstable; urgency=low
