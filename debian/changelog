@@ -2,7 +2,7 @@ wicd (1.7.4+tb2-2) UNRELEASED; urgency=medium
 
   * QA upload
   * Fix FTBFS if $LANG is unset (or set to something unexpected) by
-    hardcoding a sane value in debian/rules.
+    hardcoding a sane value in debian/rules. (Closes: #824596)
   * Declare compliance with Debian Policy 3.9.7. (No changes needed.)
 
  -- Axel Beckert <abe@debian.org>  Thu, 25 Feb 2016 22:35:22 +0100
