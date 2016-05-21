@@ -8,8 +8,8 @@ wicd (1.7.4+tb2-2) UNRELEASED; urgency=medium
   * Declare compliance with Debian Policy 3.9.7. (No changes needed.)
 
   [ Giáp Trần ]
-  * Add default: DAEMON_OPTIONS="--keep-connection" in
-    wicd-daemon.wicd.init (Closes: #816076)
+  * Add default DAEMON_ARGS="--keep-connection" to /etc/default/wicd
+    (Closes: #816076)
 
  -- Axel Beckert <abe@debian.org>  Thu, 25 Feb 2016 22:35:22 +0100
 
