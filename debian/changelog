@@ -1,3 +1,11 @@
+wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
+
+  * Now maintained by the Debian WICD Packaging Team. (Closes: #801253)
+    + Change Vcs-* URLs to …/pkg-wicd/wicd.git
+    + Update Maintainers field and add Uploaders field.
+
+ -- Axel Beckert <abe@debian.org>  Mon, 23 May 2016 22:26:22 +0200
+
 wicd (1.7.4+tb2-2) unstable; urgency=low
 
   * QA upload

@@ -1,7 +1,9 @@
 Source: wicd
 Section: net
 Priority: optional
-Maintainer: Debian QA Group <packages@qa.debian.org>
+Maintainer: Debian WICD Packaging Team <pkg-wicd-maint@lists.alioth.debian.org>
+Uploaders: Axel Beckert <abe@debian.org>,
+           Giáp Trần <txgvnn@gmail.com>
 Build-Depends: debhelper (>= 9~),
                dh-python,
                python (>= 2.6.6-3~)
@@ -10,8 +12,8 @@ Build-Depends-Indep: gettext,
                      python-babel
 Standards-Version: 3.9.8
 Homepage: https://launchpad.net/wicd
-Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/wicd.git
-Vcs-Git: https://anonscm.debian.org/git/collab-maint/wicd.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-wicd/wicd.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-wicd/wicd.git
 
 Package: wicd
 Architecture: all
