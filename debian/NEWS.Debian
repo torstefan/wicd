@@ -1,3 +1,15 @@
+wicd (1.7.4+tb2-3) unstable; urgency=medium
+
+    From 1.7.2.4 to 1.7.3 upstream changed the way the to-be-sent hostname
+    is replaced in /etc/wicd/dhclient.conf.template. If you use
+    "$_HOSTNAME" in there, please replace it accordingly to the updated
+    template at /etc/wicd/dhclient.conf.template.default.
+
+    Background is that from now on not only the hostname gets replaced but
+    the whole line.
+
+ -- Axel Beckert <abe@debian.org>  Mon, 16 Jan 2017 03:38:18 +0100
+
 wicd (1.7.0+ds1-3) unstable; urgency=low
 
     From version 1.7, wicd uses /etc/wicd/dhclient.conf.template as

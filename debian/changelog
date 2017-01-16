@@ -3,6 +3,9 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
   * Now maintained by the Debian WICD Packaging Team. (Closes: #801253)
     + Change Vcs-* URLs to …/pkg-wicd/wicd.git
     + Update Maintainers field and add Uploaders field.
+  * Add NEWS.Debian entry for changes between Jessie and Stretch
+    wrt. /etc/wicd/dhclient.conf.template and the possible need to update
+    the file manually.
 
  -- Axel Beckert <abe@debian.org>  Mon, 23 May 2016 22:26:22 +0200
 
