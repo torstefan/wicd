@@ -41,7 +41,7 @@ Package: wicd-daemon
 Architecture: all
 Depends: adduser,
          dbus,
-         dhcpcd | isc-dhcp-client | pump | udhcpc,
+         dhcpcd5 | isc-dhcp-client | pump | udhcpc,
          iputils-ping | inetutils-ping,
          lsb-base (>= 3.2-13),
          net-tools | ethtool,

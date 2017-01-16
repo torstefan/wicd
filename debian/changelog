@@ -6,6 +6,8 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
   * Add NEWS.Debian entry for changes between Jessie and Stretch
     wrt. /etc/wicd/dhclient.conf.template and the possible need to update
     the file manually.
+  * Update dependency on dhcpcd to dhcpcd5. (Closes: #783272) Thanks
+    Konrad Zimmermann!
 
  -- Axel Beckert <abe@debian.org>  Mon, 23 May 2016 22:26:22 +0200
 
