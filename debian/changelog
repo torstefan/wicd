@@ -1,5 +1,6 @@
 wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
 
+  [ Axel Beckert ]
   * Now maintained by the Debian WICD Packaging Team. (Closes: #801253)
     + Change Vcs-* URLs to …/pkg-wicd/wicd.git
     + Update Maintainers field and add Uploaders field.
@@ -8,6 +9,9 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
     the file manually.
   * Update dependency on dhcpcd to dhcpcd5. (Closes: #783272) Thanks
     Konrad Zimmermann!
+
+  [ Giáp Trần ]
+  * Remove $DAEMON_OPTIONS from reload function.
 
  -- Axel Beckert <abe@debian.org>  Mon, 23 May 2016 22:26:22 +0200
 
