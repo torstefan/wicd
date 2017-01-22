@@ -16,8 +16,8 @@ wicd (1.7.0+ds1-3) unstable; urgency=low
     its configuration file for dhclient(1), if you chose it as DHCP
     client.
 
-    Before connecting, this will copied to /etc/dhclient.conf, after
-    a backup of the original file has been made. The backup would be
+    Before connecting, this will copied to /var/lib/wicd/dhclient.conf,
+    after a backup of the original file has been made. The backup would be
     restored after the connection terminates.
     
     For more information about how to use this file, refer to

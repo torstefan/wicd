@@ -8,3 +8,4 @@
 39-add_wpa-peap_without_domain.patch
 40-initialize_wicd-gtk_wifi-on-off-button.patch
 41-fix_wicd-manager-settings.conf_5_man_page_wrt_wired_connect_mode.patch
+42-fix_documentation_wrt_generated_dhclient.conf.patch

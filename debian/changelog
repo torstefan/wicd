@@ -14,6 +14,9 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
     and suggested fix!
   * Add WPA*-PEAP templates without domain. (Closes: #831805, #759785, LP:
     #1591489)
+  * Add patch to fix documentation wrt. to which dhclient.conf wicd
+    (re)generates. Also update mention path in an older NEWS.Debian item
+    to avoid confusion. (Closes: #773809)
 
   [ Giáp Trần ]
   * Remove $DAEMON_OPTIONS from reload function.
