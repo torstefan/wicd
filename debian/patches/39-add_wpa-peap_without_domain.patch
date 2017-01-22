@@ -4,10 +4,8 @@ Bug: https://bugs.launchpad.net/wicd/+bug/1591489
 Bug-Debian: https://bugs.debian.org/831805
             https://bugs.debian.org/759785
 
-Index: wicd/encryption/templates/wpa-peap-wo-domain
-===================================================================
---- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ wicd/encryption/templates/wpa-peap-wo-domain	2017-01-22 02:56:11.874211062 +0100
+--- /dev/null
++++ b/encryption/templates/wpa-peap-wo-domain
 @@ -0,0 +1,17 @@
 +name = WPA1-PEAP with CCMP/MSCHAPV2 (without domain)
 +author = xtaran
@@ -26,10 +24,8 @@ Index: wicd/encryption/templates/wpa-peap-wo-domain
 +    password="$_PASSWORD"
 +    phase2="auth=MSCHAPV2"
 +}
-Index: wicd/encryption/templates/wpa2-peap-wo-domain
-===================================================================
---- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ wicd/encryption/templates/wpa2-peap-wo-domain	2017-01-22 02:55:46.633861144 +0100
+--- /dev/null
++++ b/encryption/templates/wpa2-peap-wo-domain
 @@ -0,0 +1,17 @@
 +name = WPA2-PEAP with CCMP/MSCHAPV2 (without domain)
 +author = xtaran
@@ -48,3 +44,17 @@ Index: wicd/encryption/templates/wpa2-peap-wo-domain
 +    password="$_PASSWORD"
 +    phase2="auth=MSCHAPV2"
 +}
+--- a/encryption/templates/active
++++ b/encryption/templates/active
+@@ -1,9 +1,11 @@
+ wpa
+ wpa-peap
++wpa-peap-wo-domain
+ wpa-psk
+ wpa-psk-hex
+ wpa2-leap
+ wpa2-peap
++wpa2-peap-wo-domain
+ wep-hex
+ wep-passphrase
+ wep-shared
