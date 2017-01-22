@@ -1,3 +1,10 @@
+wicd (1.7.4+tb2-4) UNRELEASED; urgency=medium
+
+  * Drop old quilt-related contents of debian/README.source and hijack it
+    for inter-distribution hints.
+
+ -- Axel Beckert <abe@debian.org>  Sun, 22 Jan 2017 20:55:52 +0100
+
 wicd (1.7.4+tb2-3) unstable; urgency=medium
 
   [ Axel Beckert ]

@@ -1,12 +1,24 @@
 wicd for Debian
----------------
+===============
 
-This package uses quilt to manage all modifications to the upstream
-source.  Changes are stored in the source package as diffs in
-debian/patches and applied during the build.
+Where to look for wicd patches from other distributions?
+--------------------------------------------------------
 
-Please read how to use quilt in the provided documentation:
+* Gentoo:
+  https://gitweb.gentoo.org/repo/gentoo.git/tree/net-misc/wicd/files
+* ArchLinux:
+  + https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/wicd
+  + https://aur.archlinux.org/cgit/aur.git/tree/?h=wicd-patched
+* Voidlinux:
+  https://github.com/voidlinux/void-packages/tree/master/srcpkgs/wicd/patches
+* Pull-requests against outdated upstream repo at GitHub:
+  https://github.com/dpaleino/wicd/pulls
 
-  /usr/share/doc/quilt/README.source
+Bug reports with patches
+------------------------
 
- -- David Paleino <d.paleino@gmail.com>  Wed, 24 Dec 2008 10:40:45 +0100
+* Upstream: https://bugs.launchpad.net/wicd/+bugs?field.tag=patch
+* Ubuntu:
+  https://bugs.launchpad.net/ubuntu/+source/wicd/+bugs?field.tag=patch
+
+ -- Axel Beckert <abe@debian.org>, Sun, 22 Jan 2017 21:03:50 +0100
