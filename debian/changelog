@@ -9,6 +9,9 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
     the file manually.
   * Update dependency on dhcpcd to dhcpcd5. (Closes: #783272) Thanks
     Konrad Zimmermann!
+  * Fix typo MSCHAPv2 vs MSCHAPV2 for more pedantic wpa_supplicant 2.6.
+    (LP: #1656061) Thanks to Piotr Karbowski for the upstream bug report
+    and suggested fix!
 
   [ Giáp Trần ]
   * Remove $DAEMON_OPTIONS from reload function.
