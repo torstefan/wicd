@@ -12,6 +12,8 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
   * Fix typo MSCHAPv2 vs MSCHAPV2 for more pedantic wpa_supplicant 2.6.
     (LP: #1656061) Thanks to Piotr Karbowski for the upstream bug report
     and suggested fix!
+  * Add WPA*-PEAP templates without domain. (Closes: #831805, #759785, LP:
+    #1591489)
 
   [ Giáp Trần ]
   * Remove $DAEMON_OPTIONS from reload function.

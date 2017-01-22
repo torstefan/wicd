@@ -5,3 +5,4 @@
 36-fix_wrongly_displayed_keybinding.patch
 37-fix_IndexError_list_index_out_of_range.patch
 38-fix_typo_for_pedantic_wpa_supplicant_2.6.patch
+39-add_wpa-peap_without_domain.patch
