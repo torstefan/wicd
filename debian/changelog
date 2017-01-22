@@ -1,4 +1,4 @@
-wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
+wicd (1.7.4+tb2-3) unstable; urgency=medium
 
   [ Axel Beckert ]
   * Now maintained by the Debian WICD Packaging Team. (Closes: #801253)
@@ -29,7 +29,7 @@ wicd (1.7.4+tb2-3) UNRELEASED; urgency=medium
   * Add patch to fix wicd-manager-settings.conf(5) man page
     wrt. wired_connect_mode. (Closes: #557156)
 
- -- Axel Beckert <abe@debian.org>  Mon, 23 May 2016 22:26:22 +0200
+ -- Axel Beckert <abe@debian.org>  Sun, 22 Jan 2017 17:16:07 +0100
 
 wicd (1.7.4+tb2-2) unstable; urgency=low
 
