@@ -3,7 +3,7 @@ Section: net
 Priority: optional
 Maintainer: Debian WICD Packaging Team <pkg-wicd-maint@lists.alioth.debian.org>
 Uploaders: Axel Beckert <abe@debian.org>,
-           Giáp Trần <txgvnn@gmail.com>
+           Giap Tran <txgvnn@gmail.com>
 Build-Depends: debhelper (>= 9~),
                dh-python,
                python (>= 2.6.6-3~)
