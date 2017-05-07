@@ -1,9 +1,13 @@
 wicd (1.7.4+tb2-4) UNRELEASED; urgency=medium
 
+  [ Axel Beckert ]
   * Drop old quilt-related contents of debian/README.source and hijack it
     for inter-distribution hints.
 
- -- Axel Beckert <abe@debian.org>  Sun, 22 Jan 2017 20:55:52 +0100
+  [ Giap Tran ]
+  * Add patch to fix wrong Galician translation (Closes: #856690)
+
+ -- Giap Tran <txgvnn@gmail.com>  Mon, 08 May 2017 01:38:59 +0700
 
 wicd (1.7.4+tb2-3) unstable; urgency=medium
 
@@ -25,7 +29,7 @@ wicd (1.7.4+tb2-3) unstable; urgency=medium
     (re)generates. Also update mention path in an older NEWS.Debian item
     to avoid confusion. (Closes: #773809)
 
-  [ Giáp Trần ]
+  [ Giap Tran ]
   * Remove $DAEMON_OPTIONS from reload function.
 
   [ John C. Peterson ]
@@ -48,7 +52,7 @@ wicd (1.7.4+tb2-2) unstable; urgency=low
   * Declare compliance with Debian Policy 3.9.8. (No changes needed.)
   * Switch Vcs-Git header from git:// to https://.
 
-  [ Giáp Trần ]
+  [ Giap Tran ]
   * Add default DAEMON_ARGS="--keep-connection" to /etc/default/wicd
     (Closes: #816076)
 
