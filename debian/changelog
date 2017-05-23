@@ -6,6 +6,7 @@ wicd (1.7.4+tb2-4) UNRELEASED; urgency=medium
 
   [ Giap Tran ]
   * Add patch to fix wrong Galician translation (Closes: #856690)
+  * Add Vietnamese translation.
 
  -- Giap Tran <txgvnn@gmail.com>  Mon, 08 May 2017 01:38:59 +0700
 
