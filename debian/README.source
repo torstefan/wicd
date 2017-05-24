@@ -14,7 +14,7 @@ Where to look for wicd patches from other distributions?
 * Pull-requests against outdated upstream repo at GitHub:
   https://github.com/dpaleino/wicd/pulls
 * openSUSE:
-  https://build.opensuse.org/package/show?project=home%3Amsalle%3Aextras&package=wicd
+  https://build.opensuse.org/package/show/home:msalle:extras/wicd
 
 Bug reports with patches
 ------------------------
@@ -23,4 +23,4 @@ Bug reports with patches
 * Ubuntu:
   https://bugs.launchpad.net/ubuntu/+source/wicd/+bugs?field.tag=patch
 
- -- Axel Beckert <abe@debian.org>, Sun, 22 Jan 2017 21:21:10 +0100
+ -- Axel Beckert <abe@debian.org>, Wed, 24 May 2017 21:36:58 +0200
