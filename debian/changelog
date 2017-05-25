@@ -8,6 +8,7 @@ wicd (1.7.4+tb2-4) UNRELEASED; urgency=medium
   * Add patch to fix wrong Galician translation (Closes: #856690,
     LP: #1689138)
   * Add Vietnamese translation.
+  * Change my name to ASCII-compatible variant also in debian/changelog.
 
  -- Giap Tran <txgvnn@gmail.com>  Mon, 08 May 2017 01:38:59 +0700
 
