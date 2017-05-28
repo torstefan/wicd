@@ -1,4 +1,4 @@
-wicd (1.7.4+tb2-4) UNRELEASED; urgency=medium
+wicd (1.7.4+tb2-4) unstable; urgency=medium
 
   [ Axel Beckert ]
   * Drop old quilt-related contents of debian/README.source and hijack it
@@ -10,7 +10,7 @@ wicd (1.7.4+tb2-4) UNRELEASED; urgency=medium
   * Add Vietnamese translation.
   * Change my name to ASCII-compatible variant also in debian/changelog.
 
- -- Giap Tran <txgvnn@gmail.com>  Mon, 08 May 2017 01:38:59 +0700
+ -- Axel Beckert <abe@debian.org>  Sun, 28 May 2017 22:20:00 +0200
 
 wicd (1.7.4+tb2-3) unstable; urgency=medium
 
