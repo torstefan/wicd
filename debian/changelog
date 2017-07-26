@@ -1,3 +1,9 @@
+wicd (1.7.4+tb2-5) UNRELEASED; urgency=medium
+
+  * Add location of Debian derivatives patches in debian/README.source.
+
+ -- Axel Beckert <abe@debian.org>  Thu, 27 Jul 2017 01:20:11 +0200
+
 wicd (1.7.4+tb2-4) unstable; urgency=medium
 
   [ Axel Beckert ]
