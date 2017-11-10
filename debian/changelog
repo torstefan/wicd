@@ -2,6 +2,10 @@ wicd (1.7.4+tb2-5) UNRELEASED; urgency=medium
 
   * Add location of Debian derivatives patches in debian/README.source.
   * Declare compliance with Debian Policy 4.0.0.
+  * Replace dependencies on "net-tools | ethtool" and "net-tools |
+    iproute2" in wicd-daemon with a hard dependency on net-tools and
+    suggesting ethtool and iproute2 in python-wicd. Thanks to Neels
+    Hofmeyr for the bug report. (Closes: #881225)
 
  -- Axel Beckert <abe@debian.org>  Thu, 27 Jul 2017 01:20:11 +0200
 

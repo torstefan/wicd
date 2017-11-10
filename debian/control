@@ -44,8 +44,6 @@ Depends: adduser,
          dhcpcd5 | isc-dhcp-client | pump | udhcpc,
          iputils-ping | inetutils-ping,
          lsb-base (>= 3.2-13),
-         net-tools | ethtool,
-         net-tools | iproute2,
          psmisc,
          python-dbus,
          python-gobject,
@@ -151,7 +149,10 @@ Package: python-wicd
 Architecture: all
 Section: python
 Depends: ${misc:Depends},
-         ${python:Depends}
+         ${python:Depends},
+         net-tools
+Suggests: ethtool,
+          iproute2
 Breaks: wicd (<< 1.7.0~a3)
 Replaces: wicd (<< 1.7.0~a3)
 Description: wired and wireless network manager - Python module
