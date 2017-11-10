@@ -1,6 +1,6 @@
 From: David Paleino <dapal@debian.org>
 Subject: support /etc/network/ hierarchy for connection scripts
-Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=579497
+Bug-Debian: https://bugs.debian.org/579497
 Forwarded: no
 
 ---

@@ -1,6 +1,6 @@
 From: David Paleino <dapal@debian.org>
 Subject: prefer gksu over gksudo, fixes weird behaviour on some systems
-Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=575403
+Bug-Debian: https://bugs.debian.org/575403
 Forwarded: no
 
 ---
