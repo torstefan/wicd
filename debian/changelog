@@ -1,7 +1,8 @@
 wicd (1.7.4+tb2-5) UNRELEASED; urgency=medium
 
   * Add location of Debian derivatives patches in debian/README.source.
-  * Declare compliance with Debian Policy 4.0.0.
+  * Declare compliance with Debian Policy 4.1.1.
+    + Switch DEP5 copyright format URL to HTTPS.
   * Replace dependencies on "net-tools | ethtool" and "net-tools |
     iproute2" in wicd-daemon with a hard dependency on net-tools and
     suggesting ethtool and iproute2 in python-wicd. Thanks to Neels
