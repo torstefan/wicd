@@ -1,4 +1,4 @@
-wicd (1.7.4+tb2-5) UNRELEASED; urgency=medium
+wicd (1.7.4+tb2-5) unstable; urgency=medium
 
   * Add location of Debian derivatives patches in debian/README.source.
   * Declare compliance with Debian Policy 4.1.1.
@@ -9,7 +9,7 @@ wicd (1.7.4+tb2-5) UNRELEASED; urgency=medium
     Hofmeyr for the bug report. (Closes: #881225)
   * Switch bugs.debian.org URLs in DEP3 headers to HTTPS and short form.
 
- -- Axel Beckert <abe@debian.org>  Thu, 27 Jul 2017 01:20:11 +0200
+ -- Axel Beckert <abe@debian.org>  Sat, 11 Nov 2017 00:18:14 +0100
 
 wicd (1.7.4+tb2-4) unstable; urgency=medium
 
