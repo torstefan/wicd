@@ -1,3 +1,9 @@
+wicd (1.7.4+tb2-6) UNRELEASED; urgency=medium
+
+  * Set "Rules-Requires-Root: no".
+
+ -- Axel Beckert <abe@debian.org>  Sat, 11 Nov 2017 15:20:25 +0100
+
 wicd (1.7.4+tb2-5) unstable; urgency=medium
 
   * Add location of Debian derivatives patches in debian/README.source.
