@@ -1,6 +1,8 @@
 wicd (1.7.4+tb2-6) UNRELEASED; urgency=medium
 
   * Set "Rules-Requires-Root: no".
+  * Add debian/duck-override for "moved to" false positive on
+    bugs.debian.org.
 
  -- Axel Beckert <abe@debian.org>  Sat, 11 Nov 2017 15:20:25 +0100
 
