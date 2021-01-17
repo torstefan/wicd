@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """ configscript -- Configure the scripts for a particular network.
 

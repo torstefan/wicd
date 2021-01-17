@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -* coding: utf-8 -*-
 
 """ translations -- module for handling the translation strings for wicd. """

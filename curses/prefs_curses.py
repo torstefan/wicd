@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """prefs_curses.py -- Pretty, tabbable, console preferences dialog"""
 

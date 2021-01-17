@@ -18,7 +18,7 @@ current = os.path.dirname(os.path.realpath(__file__)) + '/'
 # All directory paths *MUST* end in a /
 
 version = '1.7.4'
-revision = '957'
+revision = '961'
 curses_revision = 'uimod'
 
 # DIRECTORIES
@@ -64,7 +64,7 @@ kdedir = '/usr/share/autostart/'
 # FILES
 
 # python begins the file section
-python = '/usr/bin/python'
+python = '/usr/bin/python2'
 pidfile = '/var/run/wicd/wicd.pid'
 # stores something like other/wicd
 # really only used in the install
@@ -79,15 +79,15 @@ log_perms = '0640'
 no_install_pmutils = False
 no_install_init = False
 no_install_man = False
-no_install_i18n = False
-no_install_i18n_man = False
+no_install_i18n = True
+no_install_i18n_man = True
 no_install_kde = False
 no_install_acpi = False
 no_install_docs = False
 no_install_gtk = False
 no_install_ncurses = False
 no_install_cli = False
-no_install_gnome_shell_extensions = False
+no_install_gnome_shell_extensions = True
 no_use_notifications = False
 
 def chdir(f):
